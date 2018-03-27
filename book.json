@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    "prism",
+    "-highlight",
+    "-sharing"
+  ],
+  "title" : "EMQ 设备管理平台 ActorCloud 使用手册",
+  "language" : "zh-hans",
+  "links": {
+    "sharing": {
+      "facebook": false,
+      "twitter": false
+    }
+  }
+}

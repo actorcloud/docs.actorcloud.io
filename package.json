@@ -1,0 +1,29 @@
+{
+  "name": "ActorCloud-doc",
+  "version": "1.0.0",
+  "description": "***EMQ* 设备管理平台** **ActorCloud** 正式上线，访问 [https://www.actorcloud.io](https://www.actorcloud.io/) 可进行功能预览、使用体验。",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "gitbook": "^3.2.3",
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-prism": "^2.3.0",
+    "markdown-table": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/gitbook serve",
+    "plugins": "./node_modules/.bin/gitbook install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emqx/docs.actorcloud.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emqx/docs.actorcloud.io/issues"
+  },
+  "homepage": "https://github.com/emqx/docs.actorcloud.io#readme"
+}
