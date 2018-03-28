@@ -84,18 +84,42 @@ GET /api/v1/products?_page=1&_limit=10
 {
   "items": [
     {
-      "createAt": "2018-03-01 16:43:57",
-      "description": "共享单车",
-      "devices": [],
-      "id": 9,
-      "productID": "Gq2kxM",
-      "productName": "共享单车",
+      "createAt": "2018-03-24 13:59:02",
+      "description": "desc",
+      "devices": [
+        {
+          "id": 433
+        }
+      ],
+      "id": 18,
+      "productID": "fSPvWw",
+      "productName": "默认产品",
       "updateAt": null,
-      "userID": 2
+      "userIntID": 6
+    },
+    {
+      "createAt": "2018-03-23 11:38:28",
+      "description": "环境监测系列",
+      "devices": [
+        {
+          "id": 427
+        },
+        {
+          "id": 428
+        },
+        {
+          "id": 432
+        }
+      ],
+      "id": 11,
+      "productID": "kGBizO",
+      "productName": "环境监测",
+      "updateAt": null,
+      "userIntID": 6
     }
   ],
   "meta": {
-    "count": 5,
+    "count": 2,
     "limit": 10,
     "page": 1
   }

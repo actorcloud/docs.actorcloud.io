@@ -1,6 +1,36 @@
 # 分组设备管理
 
 
+### 获取分组可添加设备
+
+ **API 定义：**
+```bash
+GET /api/v1/emq_select/groups/{group_id}/not_joined_devices
+```
+
+**成功响应：**
+
+```json
+[
+  {
+    "label": "综合传感器_10C61FA1F47",
+    "value": 439
+  },
+  {
+    "label": "传感器_10C61F1A1F44",
+    "value": 432
+  }
+]
+```
+
+**字段说明：**
+
+| 字段名 | 示例值             | 字段类型   | 说明  |
+| --- | --------------- | ------ | --- |
+| --   | [] | Object | 设备基本信息    |
+
+
+
 ### 分组内添加设备
 
  **API 定义：**
@@ -22,7 +52,7 @@ POST /api/v1/groups/{group_id}/devices
 
 | 字段名 | 示例值 | 字段类型   | 是否必填 | 说明  |
 | --- | --- | ------ | ---- | --- |
-| ids | 9   | Array | true |  待添加设备 id 列表  |
+| ids | [9, 10]   | Array | true |  待添加设备 ID  |
 
 
 
@@ -34,62 +64,90 @@ GET /api/v1/groups/{group_id}/devices
 ```
 
 **成功响应：**
+
 ```json
-[
-  {
-    "authType": 1,
-    "blocked": 0,
-    "createAt": "2018-03-02 15:49:53",
-    "description": "一批次",
-    "deviceID": "c4c9f031cace9a",
-    "deviceName": "共享单车_c4c9f031cace9a",
-    "deviceType": 1,
-    "deviceTypeLabel": "终端",
-    "deviceUsername": "c4c9f031cace9a",
-    "hardwareVersion": "v 1.0",
-    "id": 9,
-    "location": "江南厂",
-    "manufacturer": "A 号制造商",
-    "productID": "Gq2kxM",
-    "serialInteger": "c4c9f031cace9a",
-    "softVersion": "v 1.0",
-    "status": 0,
-    "tenantID": "CCgnIXTAh",
-    "token": "c4c9f031cace9a",
-    "updateAt": null,
-    "userID": 2
+{
+  "items": [
+    {
+      "authType": 1,
+      "blocked": 0,
+      "createAt": "2018-03-23 11:40:46",
+      "description": "v 1.0",
+      "deviceID": "10C61F1A1F41",
+      "deviceName": "传感器_10C61F1A1F41",
+      "deviceType": 1,
+      "deviceTypeLabel": "终端",
+      "deviceUsername": "10C61F1A1F41",
+      "hardwareVersion": "v 1.0",
+      "id": 428,
+      "location": "玉泉校区",
+      "manufacturer": "A 厂",
+      "productID": "kGBizO",
+      "serialNumber": "10C61F1A1F41",
+      "softVersion": "10C61F1A1F41",
+      "status": 0,
+      "tenantID": "CyOTtJod0",
+      "token": "10C61F1A1F41",
+      "updateAt": "2018-03-24 15:43:55",
+      "userIntID": 6
+    },
+    {
+      "authType": 1,
+      "blocked": 0,
+      "createAt": "2018-03-23 11:39:44",
+      "description": "v 1.0",
+      "deviceID": "10C61F1A1F40",
+      "deviceName": "传感器_10C61F1A1F40",
+      "deviceType": 1,
+      "deviceTypeLabel": "终端",
+      "deviceUsername": "10C61F1A1F40",
+      "hardwareVersion": "v 1.0",
+      "id": 427,
+      "location": "玉泉校区",
+      "manufacturer": "A 厂",
+      "productID": "kGBizO",
+      "serialNumber": "10C61F1A1F40",
+      "softVersion": "10C61F1A1F40",
+      "status": 0,
+      "tenantID": "CyOTtJod0",
+      "token": "10C61F1A1F40",
+      "updateAt": "2018-03-24 14:02:08",
+      "userIntID": 6
+    }
+  ],
+  "meta": {
+    "count": 2,
+    "limit": 10,
+    "page": 1
   }
-]
+}
 ```
 
 **字段说明：**
 
-| 字段名             | 示例值                 | 字段类型    | 说明                       |
-| --------------- | ------------------- | ------- | ------------------------ |
-| authType        | 1                   | Integer | 认证方式，1: token 2: 证书      |
-| blocked         | 0                   | Integer  |  是否允许访问，0: 允许 1: 不允许                        |
-| createAt        | 2018-03-02 15:49:53 | Date    | 创建时间                     |
-| description     | 一批次                 | String  | 描述                       |
-| deviceID        | c4c9f031cace9a      | String  | 设备编号                     |
-| deviceName      | 共享单车_c4c9f031cace9a | String  | 设备名称                     |
-| deviceType      | 1                   | Integer | 设备类型，0: 终端 1: 网关 2: 智能手机 |
-| deviceTypeLabel | 终端                  | String  |    设备类型描述                      |
-| deviceUsername  | c4c9f031cace9a      | String  |  设备连接用户名                        |
-| hardwareVersion | v 1.0               | String  | 硬件版本                     |
-| id              | 9                   | Integer | 主键 ID                    |
-| location        | 江南厂                 | String  | 安装位置                     |
-| manufacturer    | A 号制造商              | String  | 制造商                      |
-| productID       | Gq2kxM              | String  |        所属产品标识符                  |
-| serialInteger    | c4c9f031cace9a      | String  | 序列号                      |
-| softVersion     | v 1.0               | String  | 软件版本                     |
-| status          | 0                   | Integer  |   运行状态，0: 离线 1: 在线                       |
-| tenantID        | CCgnIXTAh           | String  |    所属租户标识符                      |
-| token           | c4c9f031cace9a      | String  | 设备密钥                     |
-| updateAt        |                     | Date    | 更新时间                     |
-| userID          | 2                   | Integer | 创建者主键 ID                 |
-
-
-
+| 字段名             | 示例值                 | 字段类型    | 说明                  |
+| --------------- | ------------------- | ------- | ------------------- |
+| authType        | 1                   | Integer | 认证方式，1:token 2:证书    |
+| blocked         | 0                   | Integer | 是否允许访问，0:允许 1:不允许    |
+| createAt        | 2018-03-23 11:40:46 | Date    | 创建时间                |
+| description     | v 1.0               | String  | 产品描述                |
+| deviceID        | 10C61F1A1F41        | String  | 设备编号                |
+| deviceName      | 传感器_10C61F1A1F41    | String  | 设备名称                |
+| deviceType      | 1                   | Integer | 设备类型，0:终端 1:网关 2:智能手机 |
+| deviceTypeLabel | 终端                  | String  | 设备类型说明              |
+| deviceUsername  | 10C61F1A1F41        | String  | 设备连接用户名             |
+| hardwareVersion | v 1.0               | String  | 硬件版本                |
+| id              | 428                 | Integer | 主键 ID               |
+| location        | 玉泉校区                | String  | 安装位置                |
+| manufacturer    | A 厂                 | String  | 制造商                 |
+| productID       | kGBizO              | String  | 产品识别码               |
+| serialNumber    | 10C61F1A1F41        | String  | 序列号                 |
+| softVersion     | 10C61F1A1F41        | String  | 软件版本                |
+| status          | 0                   | Integer | 运行状态，0:离线 1:在线       |
+| tenantID        | CyOTtJod0           | String  | 所属租户标识符             |
+| token           | 10C61F1A1F41        | String  | 设备密钥                |
+| updateAt        | 2018-03-24 15:43:55 | Date    | 更新时间                |
+| userIntID       | 6                   | Integer | 创建用户主键 ID            |
 
 
 
@@ -114,10 +172,9 @@ HTTP Status Code 204
 
 
 
-
 ### 分组内设备控制
 
- **API 定义：**
+**API 定义：**
 ```bash
 POST /api/v1/group_publish
 ```
@@ -126,56 +183,67 @@ POST /api/v1/group_publish
 
 ```json
 {
-  "groupID": "84Ffn9",
-  "isNeedAck": 0,
-  "payload": "{\"message\":\"Hello\"}"
+  "groupID": "9H6t1L",
+  "payload": "{\"message\":\"Hello\"}",
+  "needAck": 0
 }
 ```
 
 **字段说明：**
 
-| 字段名       | 示例值                 | 字段类型   | 是否必填  | 说明  |
-| --------- | ------------------- | ------ | ----- | --- |
-| groupID   | 84Ffn9              | String | true  |     |
-| isNeedAck | 0                   | Integer | true | 是否需要回执， 0: 不需要 1: 需要   |
-| payload   | {"message":"Hello"} | String | true  | 载荷  |
+| 字段名     | 示例值                 | 字段类型    | 是否必填  | 说明    |
+| ------- | ------------------- | ------- | ----- | ----- |
+| groupID | 9H6t1L              | String  | true  | 分组标识符 |
+| payload | {"message":"Hello"} | String  | true  | 载荷    |
+| needAck | 0                   | Integer | false | 需要回执： 0: 不需要，发送到分组主题 1: 需要，发送到设备主题      |
 
 
 
-#### 查看分组控制历史
+### 查看分组控制历史
 
 **API 定义：**
 ```bash
 GET /api/v1/groups/{group_id}/control_logs?_page=1&_limit=10
 ```
 **成功响应：**
+
 ```json
 {
-      "createAt": "2018-03-02 17:55:35",
-      "groupID": "84Ffn9",
-      "groupName": "默认分组",
-      "id": 5,
-      "payload": "{\"message\":\"Hello\"}",
+  "items": [
+    {
+      "createAt": "2018-03-24 11:09:38",
+      "groupID": "9H6t1L",
+      "groupName": "上报分组",
+      "id": 7,
+      "payload": "\"{\\n  \\\"cmd\\\": \\\"upload\\\"\\n}\"",
       "publishStatus": 1,
       "publishStatusLabel": "已下发",
       "publishUser": "EMQ",
-      "updateAt": "2018-03-02 17:55:35",
-      "userID": 2
+      "updateAt": "2018-03-24 11:09:38",
+      "userIntID": 6
+    }
+  ],
+  "meta": {
+    "count": 1,
+    "limit": 10,
+    "page": 1
+  }
 }
 ```
 
 **字段说明：**
 
-| 字段名                | 示例值                 | 字段类型    | 说明       |
-| ------------------ | ------------------- | ------- | -------- |
-| createAt           | 2018-03-02 17:55:35 | Date    | 创建时间     |
-| groupID            | 84Ffn9              | String  |  分组标识符        |
-| groupName          | 默认分组                | String  |  分组名称        |
-| id                 | 5                   | Integer | 控制历史主键 ID    |
-| payload            | {"message":"Hello"} | String  | 载荷       |
-| publishStatus      | 1                   | Integer  |   下发状态：0: 下发失败 1: 已下发 2: 发送成功      |
-| publishStatusLabel | 已下发                 | String  | 下发回执描述         |
-| publishUser        | EMQ              | String  |  下发者用户名        |
-| updateAt           | 2018-03-02 17:55:35 | Date    | 更新时间     |
-| userID             | 2                   | Integer | 下发者主键 ID |
+| 字段名                | 示例值                           | 字段类型    | 说明                     |
+| ------------------ | ----------------------------- | ------- | ---------------------- |
+| createAt           | 2018-03-24 11:09:38           | Date    | 创建时间                   |
+| groupID            | 9H6t1L                        | String  | 分组标识符                  |
+| groupName          | 上报分组                          | String  | 所属分组                   |
+| id                 | 7                             | Integer | 主键 ID                  |
+| payload            | "{\n  \"cmd\": \"upload\"\n}" | String  | 载荷                     |
+| publishStatus      | 1                             | Integer | 下发状态：0:下发失败 1:已下发 2:发送成功 |
+| publishStatusLabel | 已下发                           | String  | 下发回执描述                 |
+| publishUser        | EMQ                           | String  | 下发者用户名                 |
+| updateAt           | 2018-03-24 11:09:38           | Date    | 更新时间                   |
+| userIntID          | 6                             | Integer | 下发用户主键 ID               |
+
 

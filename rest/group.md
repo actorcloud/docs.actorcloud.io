@@ -13,20 +13,23 @@ GET /api/v1/groups?_page=1&_limit=10
 {
   "items": [
     {
-      "createAt": "2018-03-02 17:30:40",
-      "description": "默认分组",
+      "createAt": "2018-03-23 13:51:48",
+      "description": "上报数据",
       "devices": [
         {
-          "id": 9
+          "id": 427
+        },
+        {
+          "id": 428
         }
       ],
-      "groupID": "84Ffn9",
-      "groupName": "默认分组",
-      "id": 3,
-      "productID": "Gq2kxM",
-      "productName": "共享单车",
+      "groupID": "9H6t1L",
+      "groupName": "上报分组",
+      "id": 4,
+      "productID": "kGBizO",
+      "productName": "环境监测",
       "updateAt": null,
-      "userID": 2
+      "userIntID": 6
     }
   ],
   "meta": {
@@ -39,18 +42,18 @@ GET /api/v1/groups?_page=1&_limit=10
 
 **字段说明：**
 
-| 字段名         | 示例值                 | 字段类型    | 说明       |
-| ----------- | ------------------- | ------- | -------- |
-| createAt    | 2018-03-02 17:30:40 | Date    | 创建时间     |
-| description | 默认分组                | String  | 描述       |
-| devices     | [3]     | Array   | 分组下所有设备 ID  |
-| groupID     | 84Ffn9              | String  |  分组标识符        |
-| groupName   | 默认分组                | String  |          |
-| id          | 3                   | Integer | 分组主键 ID    |
-| productID   | Gq2kxM              | String  |   所属产品标识符       |
-| productName | 共享单车                | String  | 所属产品名称     |
-| updateAt    |                     | Date    | 更新时间     |
-| userID      | 2                   | Integer | 创建者主键 ID |
+| 字段名         | 示例值                             | 字段类型    | 说明         |
+| ----------- | ------------------------------- | ------- | ---------- |
+| createAt    | 2018-03-23 13:51:48             | Date    | 创建时间       |
+| description | 上报数据                            | String  | 产品描述       |
+| devices     | [] | Array   | 该产品下所有设备 ID |
+| groupID     | 9H6t1L                          | String  | 分组标识符      |
+| groupName   | 上报分组                            | String  | 分组名称       |
+| id          | 4                               | Integer | 主键 ID      |
+| productID   | kGBizO                          | String  | 产品识别码      |
+| productName | 环境监测                            | String  | 产品名称       |
+| updateAt    |                                 | Date    | 更新时间       |
+| userIntID   | 6                               | Integer | 创建用户主键ID   |
 
 
 **查询参数：**
@@ -66,8 +69,6 @@ GET /api/v1/products?_page=1&_limit=10&pruductName_like=共享单车
 | groupID_like  | String | 按分组标识符过滤   |
 
 
-
-
 ### 创建一个分组
 
 **API 定义：**
@@ -80,18 +81,18 @@ POST /api/v1/groups
 ```json
 {
   "groupName": "默认分组",
-  "productID": "Gq2kxM",
+  "productID": "kGBizO",
   "description": "默认分组"
 }
 ```
 
 **字段说明：**
 
-| 字段名         | 示例值    | 字段类型   | 是否必填  | 说明  |
-| ----------- | ------ | ------ | ----- | --- |
-| groupName   | 默认分组   | String | true  | 分组名称    |
-| productID   | Gq2kxM | String | true  | 所属产品标识符    |
-| description | 默认分组   | String | false | 描述  |
+| 字段名         | 示例值    | 字段类型   | 是否必填 | 说明    |
+| ----------- | ------ | ------ | ---- | ----- |
+| groupName   | 默认分组   | String | true | 所属分组  |
+| productID   | kGBizO | String | true | 产品识别码 |
+| description | 默认分组   | String | true | 分组描述  |
 
 
 ### 查看分组详情
@@ -104,35 +105,42 @@ GET /api/v1/groups/{group_id}
 
 **成功响应：**
 
-```bash
+```json
 {
-  "createAt": "2018-03-02 17:30:40",
+  "createAt": "2018-03-23 13:51:48",
   "createUser": "EMQ",
-  "description": "默认分组",
-  "devices": [],
-  "groupID": "84Ffn9",
-  "groupName": "默认分组",
-  "id": 3,
-  "productID": "Gq2kxM",
+  "description": "上报数据",
+  "devices": [
+    {
+      "id": 427
+    },
+    {
+      "id": 428
+    }
+  ],
+  "groupID": "9H6t1L",
+  "groupName": "上报分组",
+  "id": 4,
+  "productID": "kGBizO",
   "updateAt": null,
-  "userID": 2
+  "userIntID": 6
 }
 ```
 
 **字段说明：**
 
- | 字段名         | 示例值                 | 字段类型    | 说明       |
-| ----------- | ------------------- | ------- | -------- |
-| createAt    | 2018-03-02 17:30:40 | Date    | 创建时间     |
-| createUser  | EMQ              | String  |  创建者用户名        |
-| description | 默认分组                | String  | 描述       |
-| devices     |                     | Array   | 分组下所有设备 ID  |
-| groupID     | 84Ffn9              | String  |   分组标识符       |
-| groupName   | 默认分组                | String  |  分组名称        |
-| id          | 3                   | Integer | 分组主键 ID    |
-| productID   | Gq2kxM              | String  |  分组所属产品标识符        |
-| updateAt    |                     | Date    | 更新时间     |
-| userID      | 2                   | Integer | 创建者主键 ID | 
+| 字段名         | 示例值                             | 字段类型    | 说明         |
+| ----------- | ------------------------------- | ------- | ---------- |
+| createAt    | 2018-03-23 13:51:48             | Date    | 创建时间       |
+| createUser  | EMQ                             | String  | 创建用户名      |
+| description | 上报数据                            | String  | 产品描述       |
+| devices     | [] | Array   | 该产品下所有设备主键 ID |
+| groupID     | 9H6t1L                          | String  | 分组标识符      |
+| groupName   | 上报分组                            | String  | 所属分组       |
+| id          | 4                               | Integer | 主键 ID      |
+| productID   | kGBizO                          | String  | 产品识别码      |
+| updateAt    |                                 | Date    | 更新时间       |
+| userIntID   | 6                               | Integer | 创建用户主键 ID   |
 
 
 ### 编辑分组信息
@@ -149,7 +157,7 @@ PUT /api/v1/groups/{group_id}
 {
   "description": "默认分组",
   "groupName": "默认分组",
-  "id": 3,
+  "id": 4,
   "productID": "Gq2kxM"
 }
 ```

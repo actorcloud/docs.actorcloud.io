@@ -7,26 +7,30 @@
 GET /api/v1/devices?_page=1&_limit=10 
 ```
 
-**成功响应：**
+ **成功响应：**
 
 ```json
 {
   "items": [
     {
+      "authType": 1,
       "blocked": 0,
-      "createAt": "2018-03-02 15:49:53",
-      "deviceName": "共享单车_c4c9f031cace9a",
+      "createAt": "2018-03-23 11:39:44",
+      "deviceID": "10C61F1A1F40",
+      "deviceName": "传感器_10C61F1A1F40",
       "deviceType": 1,
       "deviceTypeLabel": "终端",
-      "id": 9,
-      "productID": "Gq2kxM",
-      "productName": "共享单车",
+      "deviceUsername": "10C61F1A1F40",
+      "id": 427,
+      "productID": "kGBizO",
+      "productName": "环境监测",
       "status": 0,
-      "statusLabel": "离线"
+      "statusLabel": "离线",
+      "token": "10C61F1A1F40"
     }
   ],
   "meta": {
-    "count": 1,
+    "count": 4,
     "limit": 10,
     "page": 1
   }
@@ -35,20 +39,28 @@ GET /api/v1/devices?_page=1&_limit=10
 
 **字段说明：**
 
-| 字段名             | 示例值                 | 字段类型    | 说明                       |
-| --------------- | ------------------- | ------- | ------------------------ |
-| blocked         | 0                   | Integer  | 是否允许访问，0: 允许 1: 不允许                         |
-| createAt        | 2018-03-02 15:49:53 | Date    | 创建时间                     |
-| deviceName      | 共享单车_c4c9f031cace9a | String  | 设备名称                     |
-| deviceType      | 1                   | Integer | 设备类型，0: 终端 1: 网关 2: 智能手机 |
-| deviceTypeLabel | 终端                  | String  |  设备类型描述                        |
-| id              | 9                   | Integer | 主键 ID                    |
-| productID       | Gq2kxM              | String  |  所属产品标识符                        |
-| productName     | 共享单车                | String  | 产品名称                     |
-| status          | 0                   | Integer  |  运行状态，0: 离线 1: 在线                         |
-| statusLabel     | 离线                  | String  |  运行状态描述                        |
+| 字段名             | 示例值                 | 字段类型    | 说明                  |
+| --------------- | ------------------- | ------- | ------------------- |
+| authType        | 1                   | Integer | 认证方式，1:token 2:证书    |
+| blocked         | 0                   | Integer | 是否允许访问，0:允许 1:不允许    |
+| createAt        | 2018-03-24 14:00:06 | Date    | 创建时间                |
+| deviceID        | 10C61F1A1F11        | String  | 设备编号                |
+| deviceName      | 传感器_10C61F1A1F11    | String  | 设备名称                |
+| deviceType      | 1                   | Integer | 设备类型，0:终端 1:网关 2:智能手机 |
+| deviceTypeLabel | 终端                  | String  | 设备类型说明              |
+| deviceUsername  | 10C61F1A1F11        | String  | 设备连接用户名             |
+| id              | 433                 | Integer | 主键 ID                |
+| productID       | fSPvWw              | String  | 产品识别码               |
+| productName     | 默认产品                | String  | 产品名称                |
+| status          | 0                   | Integer | 运行状态，0:离线 1:在线       |
+| statusLabel     | 离线                  | String  | 运行状态信息              |
+| token           | 10C61F1A1F11        | String  | 设备密钥                |
+
+
+
 
 **查询参数：**
+
 ```bash
 GET /api/v1/devices?_page=1&_limit=10&deviceName_like=共享单车
 ```
@@ -64,8 +76,6 @@ GET /api/v1/devices?_page=1&_limit=10&deviceName_like=共享单车
 | productID  | String | 按所属产品标识符过滤   |
 
 
-
-
 ### 创建一个设备
 
 **API 定义：**
@@ -77,40 +87,37 @@ POST /api/v1/devices
 
 ```json
 {
-  "deviceName": "共享单车_c4c9f031cace9a512fb6",
+  "deviceName": "综合传感器_10C61FA1F47",
+  "productID": "kGBizO",
   "deviceType": 1,
-  "manufacturer": "A 号制造商",
-  "productID": "Gq2kxM",
-  "serialInteger": "c4c9f031cace9a512fb6",
+  "manufacturer": "A 厂",
+  "serialNumber": "10C61FA1F47",
   "softVersion": "v 1.0",
   "hardwareVersion": "v 1.0",
-  "description": "一批次",
-  "location": "江南厂",
-  "deviceID": "c4c9f031cace9a512fb6",
-  "deviceUsername": "c4c9f031cace9a512fb6",
-  "token": "c4c9f031cace9a512fb6",
+  "description": "10C61FA1F47",
+  "location": "玉泉校区",
+  "deviceID": "10C61FA1F47",
+  "deviceUsername": "10C61FA1F47",
   "authType": 1
 }
 ```
 
 **字段说明：**
 
-| 字段名             | 示例值                       | 字段类型    | 是否必填  | 说明   |
-| --------------- | ------------------------- | ------- | ----- | ---- |
-| deviceName      | 共享单车_c4c9f031cace9a512fb6 | String  | true  | 设备名称 |
-| deviceType      | 1                         | Integer | true  | 设备类型，0: 终端 1: 网关 2: 智能手机 |
-| manufacturer    | A 号制造商                    | String  | false | 制造商  |
-| productID       | Gq2kxM                    | String  | true  | 所属产品识别码     |
-| serialInteger    | c4c9f031cace9a512fb6      | String  | false | 序列号  |
-| softVersion     | v 1.0                     | String  | false | 软件版本 |
-| hardwareVersion | v 1.0                     | String  | false | 硬件版本 |
-| description     | 一批次                       | String  | false | 描述   |
-| location        | 江南厂                       | String  | false | 安装位置 |
-| deviceID        | c4c9f031cace9a512fb6      | String  | true  | 设备编号， 8 - 32位 |
-| deviceUsername  | c4c9f031cace9a512fb6      | String  | true  | 连接用户名， 8 - 32位     |
-| token           | c4c9f031cace9a512fb6      | String  | false | 设备密钥， 8 - 32位 |
-| authType        | 1                         | Integer  | true  |  认证方式，1: token 2: 证书    | 
-
+| 字段名             | 示例值               | 字段类型    | 是否必填  | 说明                  |
+| --------------- | ----------------- | ------- | ----- | ------------------- |
+| deviceName      | 综合传感器_10C61FA1F47 | String  | true  | 设备名称                |
+| productID       | kGBizO            | String  | true  | 产品识别码               |
+| deviceType      | 1                 | Integer | true  | 设备类型，0:终端1:网关2:智能手机 |
+| manufacturer    | A 厂               | String  | false  | 制造商                 |
+| serialNumber    | 10C61FA1F47       | String  | false | 序列号                 |
+| softVersion     | v 1.0             | String  | false  | 软件版本                |
+| hardwareVersion | v 1.0             | String  | false  | 硬件版本                |
+| description     | 10C61FA1F47       | String  | false  | 产品描述                |
+| location        | 玉泉校区              | String  | false  | 安装位置                |
+| deviceID        | 10C61FA1F47       | String  | false  | 设备编号， 不填自动生成 36 位                |
+| deviceUsername  | 10C61FA1F47       | String  | false  | 设备连接用户名，不填自动生成 36 位             |
+| authType        | 1                 | Integer | true  | 认证方式，1:token 2:证书    |
 
 
 ### 查看设备详情
@@ -123,68 +130,79 @@ GET /api/v1/devices/{device_id}
 
 **成功响应：**
 
-```bash
+```json
 {
   "authType": 1,
   "blocked": 0,
   "clientIP": "",
+  "coapBroker": "118.24.50.125:5683",
+  "coapsBroker": "118.24.50.125:5684",
+  "coapssBroker": "118.24.50.125:5685",
   "connectedAt": "",
-  "createAt": "2018-03-02 15:49:53",
+  "createAt": "2018-03-23 11:39:44",
   "createUser": "EMQ",
-  "description": "一批次",
-  "deviceID": "c4c9f031cace9a",
-  "deviceName": "共享单车_c4c9f031cace9a",
+  "description": "v 1.0",
+  "deviceID": "10C61F1A1F40",
+  "deviceName": "传感器_10C61F1A1F40",
   "deviceType": 1,
-  "deviceUsername": "c4c9f031cace9a",
+  "deviceUsername": "10C61F1A1F40",
   "hardwareVersion": "v 1.0",
-  "id": 9,
-  "location": "江南厂",
-  "manufacturer": "A 号制造商",
-  "mqttBroker": "actorcloud.io:1883",
-  "mqttsBroker": "actorcloud.io:8883",
-  "productID": "Gq2kxM",
-  "serialInteger": "c4c9f031cace9a",
-  "softVersion": "v 1.0",
+  "id": 427,
+  "keepAlive": "",
+  "location": "玉泉校区",
+  "manufacturer": "A 厂",
+  "mqttBroker": "118.24.50.125:1883",
+  "mqttsBroker": "118.24.50.125:8883",
+  "mqttssBroker": "118.24.50.125:8884",
+  "productID": "kGBizO",
+  "serialNumber": "10C61F1A1F40",
+  "softVersion": "10C61F1A1F40",
   "status": 0,
   "statusLabel": "离线",
-  "tenantID": "CCgnIXTAh",
-  "token": "c4c9f031cace9a",
-  "updateAt": null,
-  "userID": 2
+  "tenantID": "CyOTtJod0",
+  "token": "10C61F1A1F40",
+  "updateAt": "2018-03-24 14:02:08",
+  "userIntID": 6
 }
 ```
 
 **字段说明：**
 
- | 字段名             | 示例值                 | 字段类型    | 说明                       |
-| --------------- | ------------------- | ------- | ------------------------ |
-| authType        | 1                   | Integer | 认证方式，1: token 2: 证书      |
-| blocked         | 0                   | Integer  |  是否允许访问，0: 允许 1: 不允许                        |
-| clientIP        |                     | String  | 客户端 IP，连接时可见                         |
-| connectedAt     |                     | String  | 连接时间，连接时可见                         |
-| createAt        | 2018-03-02 15:49:53 | Date    | 创建时间                     |
-| createUser      | EMQ              | String  |  创建者用户名                        |
-| description     | 一批次                 | String  | 描述                       |
-| deviceID        | c4c9f031cace9a      | String  | 设备编号                     |
-| deviceName      | 共享单车_c4c9f031cace9a | String  | 设备名称                     |
-| deviceType      | 1                   | Integer | 设备类型，0: 终端 1: 网关 2: 智能手机 |
-| deviceUsername  | c4c9f031cace9a      | String  |  连接用户名                        |
-| hardwareVersion | v 1.0               | String  | 硬件版本                     |
-| id              | 9                   | Integer | 主键 ID                    |
-| location        | 江南厂                 | String  | 安装位置                     |
-| manufacturer    | A 号制造商              | String  | 制造商                      |
-| mqttBroker      | actorcloud.io:1883  | String  | MQTT 服务器地址                       |
-| mqttsBroker     | actorcloud.io:8883  | String  | MQTT 服务器地址（TLS）                         |
-| productID       | Gq2kxM              | String  | 所属产品标识符                         |
-| serialInteger    | c4c9f031cace9a      | String  | 序列号                      |
-| softVersion     | v 1.0               | String  | 软件版本                     |
-| status          | 0                   | Integer  | 运行状态，0: 离线 1: 在线                         |
-| statusLabel     | 离线                  | String  | 运行状态信息                         |
-| tenantID        | CCgnIXTAh           | String  |  所属租户标识符                        |
-| token           | c4c9f031cace9a      | String  | 设备密钥                     |
-| updateAt        |                     | Date    | 更新时间                     |
-| userID          | 2                   | Integer | 创建者主键 ID                 | 
-
+| 字段名             | 示例值                 | 字段类型    | 说明                  |
+| --------------- | ------------------- | ------- | ------------------- |
+| authType        | 1                   | Integer | 认证方式，1:token2:证书    |
+| blocked         | 0                   | Integer | 是否允许访问，0:允许1:不允许    |
+| clientIP        |                     | String  | 客户端IP，连接时可见         |
+| coapBroker      | 118.24.50.125:5683  | String  |  CoAP 服务器地址                   |
+| coapsBroker     | 118.24.50.125:5684  | String  |  CoAP 服务器地址（DTLS）                   |
+| coapssBroker    | 118.24.50.125:5685  | String  |                     |
+| connectedAt     |                     | String  | 连接时间，连接时可见          |
+| createAt        | 2018-03-23 11:39:44 | Date    | 创建时间                |
+| createUser      | EMQ                 | String  | 创建用户名               |
+| description     | v 1.0               | String  | 产品描述                |
+| deviceID        | 10C61F1A1F40        | String  | 设备编号                |
+| deviceName      | 传感器_10C61F1A1F40    | String  | 设备名称                |
+| deviceType      | 1                   | Integer | 设备类型，0:终端 1:网关 2:智能手机 |
+| deviceUsername  | 10C61F1A1F40        | String  | 设备连接用户名             |
+| hardwareVersion | v 1.0               | String  | 硬件版本                |
+| id              | 427                 | Integer | 产品 ID                |
+| keepAlive       |                     | Integer | 心跳时长 （秒）                |
+| location        | 玉泉校区                | String  | 安装位置                |
+| manufacturer    | A 厂                 | String  | 制造商                 |
+| mqttBroker      | 118.24.50.125:1883  | String  | MQTT服务器地址           |
+| mqttsBroker     | 118.24.50.125:8883  | String  | MQTT服务器地址（TLS）      |
+| mqttssBroker    | 118.24.50.125:8884  | String  | MQTT服务器地址（双向认证）                    |
+| productID       | kGBizO              | String  | 产品识别码               |
+| serialNumber    | 10C61F1A1F40        | String  | 序列号                 |
+| softVersion     | 10C61F1A1F40        | String  | 软件版本                |
+| status          | 0                   | Integer | 运行状态，0:离线 1:在线       |
+| statusLabel     | 离线                  | String  | 运行状态信息              |
+| tenantID        | CyOTtJod0           | String  | 所属租户标识符             |
+| token           | 10C61F1A1F40        | String  | 设备密钥                |
+| updateAt        | 2018-03-24 14:02:08 | Date    | 更新时间                |
+| userIntID       | 6                   | Integer | 创建用户主键ID            |
+  
+  
 
 ### 编辑设备信息
 
@@ -198,14 +216,14 @@ PUT /api/v1/devices/{device_id}
 
 ```json
 {
-  "deviceName": "共享单车_c4c9f031cace9a",
+  "deviceName": "传感器_10C61F1A1F40",
   "deviceType": 1,
-  "softVersion": "v 1.0",
+  "softVersion": "10C61F1A1F40",
   "hardwareVersion": "v 1.0",
-  "manufacturer": "A 号制造商",
-  "serialNumber": "c4c9f031cace9a",
-  "location": "江南厂",
-  "description": "一批次",
+  "manufacturer": "A 厂",
+  "serialNumber": "10C61F1A1F40",
+  "location": "玉泉校区",
+  "description": "v 1.0",
   "authType": 1,
   "blocked": 0
 }

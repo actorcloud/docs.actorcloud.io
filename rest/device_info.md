@@ -1,4 +1,4 @@
-# 产品信息
+# 设备信息
 
 
 ### 查看设备运行日志
@@ -12,42 +12,65 @@ GET /api/v1/devices/{device_id}/connect_logs?_page=1&_limit=10
 **成功响应：**
 
 ```json
-
 {
   "items": [
     {
-      "IP": "112.115.163.50", 
-      "createAt": "2018-03-02 16:33:43", 
-      "deviceID": "c4c9f031cace9a", 
-      "deviceName": "共享单车_c4c9f031cace9a", 
-      "deviceStatus": "1", 
-      "deviceStatusLabel": "上线", 
-      "id": 5, 
-      "updateAt": ""
+      "IP": "221.226.150.197",
+      "createAt": "2018-03-27 05:30:37",
+      "deviceID": "10C61F1A1F40",
+      "deviceName": "传感器_10C61F1A1F40",
+      "deviceStatus": 0,
+      "deviceStatusLabel": "下线",
+      "id": 3229,
+      "keepAlive": null,
+      "tenantID": "CyOTtJod0",
+      "updateAt": null
+    },
+    {
+      "IP": "221.226.150.197",
+      "createAt": "2018-03-27 05:30:36",
+      "deviceID": "10C61F1A1F40",
+      "deviceName": "传感器_10C61F1A1F40",
+      "deviceStatus": 1,
+      "deviceStatusLabel": "上线",
+      "id": 3228,
+      "keepAlive": 60,
+      "tenantID": "CyOTtJod0",
+      "updateAt": null
     }
-  ], 
+  ],
   "meta": {
-    "count": 1, 
-    "limit": 10, 
+    "count": 66,
+    "limit": 10,
     "page": 1
   }
 }
-
 ```
 
 **字段说明：**
 
-| 字段名               | 示例值                 | 字段类型    | 说明    |
-| ----------------- | ------------------- | ------- | ----- |
-| IP                | 112.115.163.50      | String  | 客户端 IP    |
-| createAt          | 2018-03-02 16:33:43 | Date    | 发生时间  |
-| deviceID          | c4c9f031cace9a      | String  | 设备标识符  |
-| deviceName        | 共享单车_c4c9f031cace9a | String  | 设备名称  |
-| deviceStatus      | 1                   | String  | 连接状态码，0: 下线 1: 上线 2: 认证失败      |
-| deviceStatusLabel | 上线                  | String  | 连接状态描述   |
-| id                | 9                   | Integer | 运行日志主键 ID |
-| updateAt          |                     | Date    | 更新时间  |
+| 字段名               | 示例值                 | 字段类型    | 说明                   |
+| ----------------- | ------------------- | ------- | -------------------- |
+| IP                | 221.226.150.197     | String  | 设备连接IP               |
+| createAt          | 2018-03-27 05:30:37 | Date    | 创建时间                 |
+| deviceID          | 10C61F1A1F40        | String  | 设备编号                 |
+| deviceName        | 传感器_10C61F1A1F40    | String  | 设备名称                 |
+| deviceStatus      | 0                   | String  | 连接状态码，0:下线 1:上线 2:认证失败 |
+| deviceStatusLabel | 下线                  | String  | 连接状态描述               |
+| id                | 3229                | Integer | 主键 ID                 |
+| keepAlive         |                     | Integer | 心跳时长                 |
+| tenantID          | CyOTtJod0           | String  | 所属租户标识符              |
+| updateAt          |                     | Date    | 更新时间                 |
 
+
+
+### 设备安全信息
+
+设备安全分为证书与策略信息，详见：
+
+- [证书 API](certs.md)
+
+- [策略 API](policies.md)
 
 
 
@@ -59,46 +82,36 @@ GET /api/v1/devices/{device_id}/events?_page=1&_limit=10
 ```
 
 **成功响应：**
+
 ```json
 {
   "items": [
     {
-      "IP": null, 
-      "createAt": "2018-03-02 22:58:21", 
-      "deviceID": "c4c9f031cace9a", 
-      "deviceName": "共享单车_c4c9f031cace9a", 
-      "id": 3, 
-      "payload": "{\"running\": true}", 
-      "productName": "共享单车", 
-      "topic": "/status", 
+      "IP": null,
+      "createAt": "2018-03-24 08:19:09",
+      "deviceID": "10C61F1A1F40",
+      "deviceName": "传感器_10C61F1A1F40",
+      "id": 594,
+      "payload": "Hello world!",
+      "productName": "环境监测",
+      "topic": "hello_topic",
       "updateAt": null
-    }, 
+    },
     {
-      "IP": null, 
-      "createAt": "2018-03-02 22:58:19", 
-      "deviceID": "c4c9f031cace9a", 
-      "deviceName": "共享单车_c4c9f031cace9a", 
-      "id": 2, 
-      "payload": "{\"running\": true}", 
-      "productName": "共享单车", 
-      "topic": "/status", 
-      "updateAt": null
-    }, 
-    {
-      "IP": null, 
-      "createAt": "2018-03-02 22:58:16", 
-      "deviceID": "c4c9f031cace9a", 
-      "deviceName": "共享单车_c4c9f031cace9a", 
-      "id": 1, 
-      "payload": "{\"running\": true}", 
-      "productName": "共享单车", 
-      "topic": "/status", 
+      "IP": null,
+      "createAt": "2018-03-24 08:19:07",
+      "deviceID": "10C61F1A1F40",
+      "deviceName": "传感器_10C61F1A1F40",
+      "id": 593,
+      "payload": "Hello world!",
+      "productName": "环境监测",
+      "topic": "hello_topic",
       "updateAt": null
     }
-  ], 
+  ],
   "meta": {
-    "count": 3, 
-    "limit": 10, 
+    "count": 127,
+    "limit": 10,
     "page": 1
   }
 }
@@ -106,21 +119,23 @@ GET /api/v1/devices/{device_id}/events?_page=1&_limit=10
 
 **字段说明：**
 
-| 字段名         | 示例值                 | 字段类型    | 说明    |
-| ----------- | ------------------- | ------- | ----- |
-| IP          |                     | String  | 设备连接 IP    |
-| createAt    | 2018-03-02 22:58:16 | Date    | 创建时间  |
-| deviceID    | c4c9f031cace9a      | String  | 设备编号  |
-| deviceName  | 共享单车_c4c9f031cace9a | String  | 设备名称  |
-| id          | 1                   | Integer | 事件主键 ID |
-| payload     | {"running": true}   | String  | 载荷    |
-| productName | 共享单车                | String  | 产品名称  |
-| topic       | /status             | String  | 事件主题      |
-| updateAt    |                     | Date    | 更新时间  |
+| 字段名         | 示例值                 | 字段类型    | 说明     |
+| ----------- | ------------------- | ------- | ------ |
+| IP          |                     | String  | 设备连接IP |
+| createAt    | 2018-03-24 08:19:09 | Date    | 创建时间   |
+| deviceID    | 10C61F1A1F40        | String  | 设备编号   |
+| deviceName  | 传感器_10C61F1A1F40    | String  | 设备名称   |
+| id          | 594                 | Integer | 主键 ID   |
+| payload     | Hello world!        | String  | 载荷     |
+| productName | 环境监测                | String  | 产品名称   |
+| topic       | hello_topic         | String  | 作用主题   |
+| updateAt    |                     | Date    | 更新时间   |
+
+
 
 ### 设备指令下发
 
- **API 定义：**
+**API 定义：**
 ```bash
 POST /api/v1/device_publish
 ```
@@ -129,8 +144,9 @@ POST /api/v1/device_publish
 
 ```json
 {
-  "deviceID": "c4c9f031cace9a",
-  "payload": "{ \"message\": \"Hello\"}"
+  "deviceID": "10C61F1A1F40",
+  "payload": "{\"message\":\"Hello\"}",
+  "topic": "/hello"
 }
 ```
 
@@ -138,8 +154,11 @@ POST /api/v1/device_publish
 
 | 字段名      | 示例值                 | 字段类型   | 是否必填 | 说明   |
 | -------- | ------------------- | ------ | ---- | ---- |
-| deviceID | c4c9f031cace9a      | String | true | 设备编号 |
-| payload  | {\"message\":\"Hello\"} | JSON | true | 载荷   |
+| deviceID | 10C61F1A1F40        | String | true | 设备编号 |
+| payload  | {"message":"Hello"} | String | true | 载荷   |
+| topic    | /hello              | String | false | 作用主题，不填则为设备自订阅主题 |
+  
+
 
 
 ### 查看设备控制历史
@@ -150,36 +169,39 @@ GET /api/v1/devices/{device_id}/control_logs?_page=1&_limit=10
 ```
 
 **成功响应：**
+
 ```json
 {
   "items": [
     {
-      "createAt": "2018-03-02 16:50:54",
-      "deviceID": "c4c9f031cace9a",
-      "deviceName": "共享单车_c4c9f031cace9a",
-      "id": 17,
-      "payload": "\"{\\n  \\\"cmd\\\": \\\"reboot\\\"\\n}\"",
-      "publishStatus": 1,
-      "publishStatusLabel": "已下发",
+      "createAt": "2018-03-28 11:19:18",
+      "deviceIntID": 427,
+      "deviceName": "传感器_10C61F1A1F40",
+      "id": 134,
+      "payload": "{\"message\":\"Hello\"}",
+      "publishStatus": 0,
+      "publishStatusLabel": "下发失败",
       "publishUser": "EMQ",
-      "updateAt": "2018-03-02 16:50:54",
-      "userID": 2
+      "topic": "/hello",
+      "updateAt": "2018-03-28 11:19:18",
+      "userIntID": 6
     },
     {
-      "createAt": "2018-03-02 16:45:46",
-      "deviceID": "c4c9f031cace9a",
-      "deviceName": "共享单车_c4c9f031cace9a",
-      "id": 16,
-      "payload": "{\"message\":\"Hello\"}",
-      "publishStatus": 1,
-      "publishStatusLabel": "已下发",
+      "createAt": "2018-03-24 11:09:38",
+      "deviceIntID": 427,
+      "deviceName": "传感器_10C61F1A1F40",
+      "id": 128,
+      "payload": "\"{\\n  \\\"cmd\\\": \\\"upload\\\"\\n}\"",
+      "publishStatus": 3,
+      "publishStatusLabel": "不需要回执",
       "publishUser": "EMQ",
-      "updateAt": "2018-03-02 16:45:46",
-      "userID": 2
+      "topic": null,
+      "updateAt": null,
+      "userIntID": 6
     }
   ],
   "meta": {
-    "count": 2,
+    "count": 8,
     "limit": 10,
     "page": 1
   }
@@ -188,64 +210,19 @@ GET /api/v1/devices/{device_id}/control_logs?_page=1&_limit=10
 
 **字段说明：**
 
-| 字段名                | 示例值                 | 字段类型    | 说明       |
-| ------------------ | ------------------- | ------- | -------- |
-| createAt           | 2018-03-02 16:45:46 | Date    | 发送时间     |
-| deviceID           | c4c9f031cace9a      | String  | 设备编号     |
-| deviceName         | 共享单车_c4c9f031cace9a | String  | 设备名称     |
-| id                 | 16                  | Integer | 主键 ID    |
-| payload            | {"message":"Hello"} | String  | 载荷       |
-| publishStatus      | 1                   | Integer  |   下发状态：0: 下发失败 1: 已下发 2: 发送成功      |
-| publishStatusLabel | 已下发                 | String  | 下发回执描述         |
-| publishUser        | EMQ              | String  |   下发者用户名       |
-| updateAt           | 2018-03-02 16:45:46 | Date    | 更新时间     |
-| userID             | 2                   | Integer | 下发者主键 ID |
-
-
-### 代理订阅列表
-
-**API 定义：**
-```bash
-GET api/v1/devices/{device_id}/subscriptions
-
-```
-
-**成功响应：**
-
-```json
-{
-    "items": [
-        {
-            "createAt": "2018-03-17 15:09:30",
-            "id": 5,
-            "qos": 1,
-            "topic": "hello",
-            "updateAt": null
-        },
-        {
-            "createAt": "2018-03-17 15:08:55",
-            "id": 4,
-            "qos": 1,
-            "topic": "/hello",
-            "updateAt": null
-        }
-    ],
-    "meta": {
-        "count": 2,
-        "limit": 10,
-        "page": 1
-    }
-}
-```
-
-**字段说明：**
-
-| 字段名             | 示例值                 | 字段类型    | 说明                       |
-| --------------- | ------------------- | ------- | ------------------------ |
-| createAt        | 2018-03-02 15:49:53 | Date    | 创建时间                     |
-| id              | 4                   | Integer | 主键 ID                    |
-| topic     |  /hello                  | String  |  主题                        |
-| qos     |  1                  | String  |  订阅 QOS                        |
+| 字段名                | 示例值                 | 字段类型    | 说明                     |
+| ------------------ | ------------------- | ------- | ---------------------- |
+| createAt           | 2018-03-28 11:19:18 | Date    | 创建时间                   |
+| deviceIntID        | 427                 | Integer | 设备主键 ID                |
+| deviceName         | 传感器_10C61F1A1F40    | String  | 设备名称                   |
+| id                 | 134                 | Integer | 主键 ID                  |
+| payload            | {"message":"Hello"} | String  | 载荷                     |
+| publishStatus      | 0                   | Integer | 下发状态：0:下发失败 1:已下发 2:发送成功 |
+| publishStatusLabel | 下发失败                | String  | 下发回执描述                 |
+| publishUser        | EMQ                 | String  | 下发者用户名                 |
+| topic              | /hello              | String  | 作用主题                   |
+| updateAt           | 2018-03-28 11:19:18 | Date    | 更新时间                   |
+| userIntID          | 6                   | Integer | 下发用户主键 ID               |
 
 
 
@@ -266,7 +243,48 @@ POST api/v1/devices/{device_id}/subscriptions
 
 **字段说明：**
 
-| 字段名             | 示例值                       | 字段类型    | 是否必填  | 说明   |
-| --------------- | ------------------------- | ------- | ----- | ---- |
-| topic      | /hello | String  | true  | 主题名称 |
+| 字段名   | 示例值    | 字段类型   | 是否必填 | 说明   |
+| ----- | ------ | ------ | ---- | ---- |
+| topic | /hello | String | true | 作用主题 |
+
+
+
+### 查看代理订阅列表
+
+**API 定义：**
+```bash
+GET api/v1/devices/{device_id}/subscriptions
+
+```
+**成功响应：**
+
+```json
+{
+  "items": [
+    {
+      "createAt": "2018-03-28 11:21:39",
+      "id": 15,
+      "qos": 1,
+      "topic": "/hello",
+      "updateAt": null
+    }
+  ],
+  "meta": {
+    "count": 1,
+    "limit": 10,
+    "page": 1
+  }
+}
+```
+
+**字段说明：**
+
+| 字段名      | 示例值                 | 字段类型    | 说明    |
+| -------- | ------------------- | ------- | ----- |
+| createAt | 2018-03-28 11:21:39 | Date    | 创建时间  |
+| id       | 15                  | Integer | 主键 ID |
+| qos      | 1                   | String  | 订阅QOS |
+| topic    | /hello              | String  | 作用主题  |
+| updateAt |                     | Date    | 更新时间  |
+
 
