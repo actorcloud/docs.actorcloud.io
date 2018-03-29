@@ -9,14 +9,14 @@
 
 - REST API 访问 URL 地址：
 ```bash
-https://www.actorcloud.io/api/v1/
+https://mqtt.actorcloud.io/api/v1/
 ```
 
 ### 认证方式
 
 - 基于 Basic Auth 认证，用户名为应用 ID，密码为应用密钥：
 ```bash
-curl -v --basic -u <AppID>:<AppSecret> -k https://www.actorcloud.io/api/v1/overview/current_count
+curl -v --basic -u <AppID>:<AppSecret> -k https://mqtt.actorcloud.io/api/v1/overview/current_count
 ```
 
 ### 消息体格式

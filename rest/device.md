@@ -135,9 +135,9 @@ GET /api/v1/devices/{device_id}
   "authType": 1,
   "blocked": 0,
   "clientIP": "",
-  "coapBroker": "118.24.50.125:5683",
-  "coapsBroker": "118.24.50.125:5684",
-  "coapssBroker": "118.24.50.125:5685",
+  "coapBroker": "mqtt.actorcloud.io:5683",
+  "coapsBroker": "mqtt.actorcloud.io:5684",
+  "coapssBroker": "mqtt.actorcloud.io:5685",
   "connectedAt": "",
   "createAt": "2018-03-23 11:39:44",
   "createUser": "EMQ",
@@ -151,9 +151,9 @@ GET /api/v1/devices/{device_id}
   "keepAlive": "",
   "location": "玉泉校区",
   "manufacturer": "A 厂",
-  "mqttBroker": "118.24.50.125:1883",
-  "mqttsBroker": "118.24.50.125:8883",
-  "mqttssBroker": "118.24.50.125:8884",
+  "mqttBroker": "mqtt.actorcloud.io:1883",
+  "mqttsBroker": "mqtt.actorcloud.io:8883",
+  "mqttssBroker": "mqtt.actorcloud.io:8884",
   "productID": "kGBizO",
   "serialNumber": "10C61F1A1F40",
   "softVersion": "10C61F1A1F40",
@@ -173,9 +173,9 @@ GET /api/v1/devices/{device_id}
 | authType        | 1                   | Integer | 认证方式，1:token2:证书    |
 | blocked         | 0                   | Integer | 是否允许访问，0:允许1:不允许    |
 | clientIP        |                     | String  | 客户端IP，连接时可见         |
-| coapBroker      | 118.24.50.125:5683  | String  |  CoAP 服务器地址                   |
-| coapsBroker     | 118.24.50.125:5684  | String  |  CoAP 服务器地址（DTLS）                   |
-| coapssBroker    | 118.24.50.125:5685  | String  |                     |
+| coapBroker      | actorcloud.io:5683  | String  |  CoAP 服务器地址                   |
+| coapsBroker     | actorcloud.io:5684  | String  |  CoAP 服务器地址（DTLS）                   |
+| coapssBroker    | actorcloud.io:5685  | String  |                     |
 | connectedAt     |                     | String  | 连接时间，连接时可见          |
 | createAt        | 2018-03-23 11:39:44 | Date    | 创建时间                |
 | createUser      | EMQ                 | String  | 创建用户名               |
@@ -189,9 +189,9 @@ GET /api/v1/devices/{device_id}
 | keepAlive       |                     | Integer | 心跳时长 （秒）                |
 | location        | 玉泉校区                | String  | 安装位置                |
 | manufacturer    | A 厂                 | String  | 制造商                 |
-| mqttBroker      | 118.24.50.125:1883  | String  | MQTT服务器地址           |
-| mqttsBroker     | 118.24.50.125:8883  | String  | MQTT服务器地址（TLS）      |
-| mqttssBroker    | 118.24.50.125:8884  | String  | MQTT服务器地址（双向认证）                    |
+| mqttBroker      | actorcloud.io:1883  | String  | MQTT服务器地址           |
+| mqttsBroker     | actorcloud.io:8883  | String  | MQTT服务器地址（TLS）      |
+| mqttssBroker    | actorcloud.io:8884  | String  | MQTT服务器地址（双向认证）                    |
 | productID       | kGBizO              | String  | 产品识别码               |
 | serialNumber    | 10C61F1A1F40        | String  | 序列号                 |
 | softVersion     | 10C61F1A1F40        | String  | 软件版本                |

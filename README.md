@@ -2,7 +2,7 @@ EMQ 设备管理平台 ActorCloud 使用手册
 ----
 **ActorCloud** 是一个综合的物联网设备管理平台，具备完善的设备管理、设备连接（MQTT与CoAP）、认证鉴权、设备消息存储、设备控制、应用能力、用户管理、用户/应用角色管理 等功能。
 
-访问 [https://www.actorcloud.io](https://www.actorcloud.io/) 可试用 **ActorCloud** 完整功能。
+访问 [https://mqtt.actorcloud.io](https://mqtt.actorcloud.io/) 可试用 **ActorCloud** 完整功能。
 
 
 ### 接入准备
@@ -11,7 +11,7 @@ EMQ 设备管理平台 ActorCloud 使用手册
 
   - 如果您已经有现成设备，则可以使用设备接入 **ActorCloud** 来完成本教程；
 
-  - 如果您没有现成设备，可以通过使用 [MQTT 客户端](http://emqtt.com/clients)或[在线测试中心](https://www.actorcloud.io/mqtt_client)利用软件环境来模拟一个接入设备，查看[设备接入指南](./access_guide/device.md)。
+  - 如果您没有现成设备，可以通过使用 [MQTT 客户端](http://emqtt.com/clients)或[在线测试中心](https://mqtt.actorcloud.io/mqtt_client)利用软件环境来模拟一个接入设备，查看[设备接入指南](./access_guide/device.md)。
 
 
 ### 接入方式

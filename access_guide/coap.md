@@ -26,7 +26,9 @@ CoAP 连接示例代码：
 from coapthon.client.helperclient import HelperClient
 
 
-host = "actorcloud.io"
+# 演示库仅支持使用 IP 地址接入
+
+host = "139.198.190.35"
 port = 5683
 path = "/mqtt/hello_topic?c=10C61F1A1F40&u=10C61F1A1F40&p=ce07c199187811e8a12b525440546606"
 
@@ -53,7 +55,9 @@ from dtls.wrapper import wrap_client
 from coapthon.client.helperclient import HelperClient
 
 
-host = "actorcloud.io"
+# 演示库仅支持使用 IP 地址接入
+
+host = "139.198.190.35"
 # 默认端口 5683，单向认证使用 5684 端口
 port = 5684
 path = "/mqtt/hello_topic?c=10C61F1A1F40&u=10C61F1A1F40&p=ce07c199187811e8a12b525440546606"
