@@ -1,7 +1,7 @@
 {
   "name": "ActorCloud-doc",
   "version": "1.0.0",
-  "description": "***EMQ* 设备管理平台** **ActorCloud** 正式上线，访问 [https://mqtt.actorcloud.io](https://mqtt.actorcloud.io/) 可进行功能预览、使用体验。",
+  "description": "***EMQ* 设备管理平台** **ActorCloud** 正式上线，访问 [https://console.actorcloud.io](https://console.actorcloud.io/) 可进行功能预览、使用体验。",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
