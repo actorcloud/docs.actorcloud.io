@@ -57,3 +57,9 @@
 - **ActorCloud** 或 **外部应用** 向该设备下发的消息，点击**添加指令**可向当前设备发送 JSON 格式的消息。
 
 ![](/assets/device_control.png)
+
+
+### 导出设备
+- **ActorCloud** 支持将平台设备导出为 Excel 文件，设备列表页点击**导出为 Excel**即可导出。
+
+![](/assets/device_export.png)

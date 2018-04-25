@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn build
+  /usr/local/bin/node /usr/local/bin/yarn dewf
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/emqtt/mvn/bin
@@ -8,7 +8,7 @@ Yarn version:
   1.5.1
 
 Node version: 
-  9.9.0
+  9.10.1
 
 Platform: 
   darwin x64
@@ -17,7 +17,7 @@ npm manifest:
   {
     "name": "ActorCloud-doc",
     "version": "1.0.0",
-    "description": "***EMQ* 设备管理平台** **ActorCloud** 正式上线，访问 [https://www.actorcloud.io](https://www.actorcloud.io/) 可进行功能预览、使用体验。",
+    "description": "***EMQ* 设备管理平台** **ActorCloud** 正式上线，访问 [https://console.actorcloud.io](https://console.actorcloud.io/) 可进行功能预览、使用体验。",
     "main": "index.js",
     "dependencies": {
       "axios": "^0.18.0",
@@ -4801,7 +4801,7 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command "build" not found.
+  Error: Command "dewf" not found.
       at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
       at /usr/local/lib/node_modules/yarn/lib/cli.js:87307:17
       at Generator.next (<anonymous>)
