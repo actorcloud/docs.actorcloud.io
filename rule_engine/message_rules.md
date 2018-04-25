@@ -34,21 +34,29 @@ Webhook 服务器需通过检验 signature 对请求进行校验（结合预定 
 
 #### 接入
 
-完成消息规则创建后， ***EMQ X*** 消息服务器会将相关设备上报消息以 JSON 形式推送到填入的 Webhook URL 地址中，数据格式如下：
+完成消息规则创建后， ***EMQ X*** 消息服务器会将相关设备上报消息以 JSON 形式推送到填入的 Webhook URL 地址中，
+该 HTTP 请求头中会以 Bearer Token 形式携带 token 信息以便 Webhook 服务器进行合法性认证。
+
+- 请求数据如下：
+
+```bash
+# Bearer Token 请求头
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsImV4cCI6MTUyNDkwMDEwNywiaWF0IjoxNTI0N
+```
 
 ```json
-{ deviceID: 'f50b69da0f2e5686be3413e29151aacd',
-  productID: 'oUZSzN',
-  groupID: '',
-  topic: '/temperature',
-  qos: 1,
-  retain: false,
-  payload: '{"temperature": 77}',
-  ts: 1524635104
+{ "deviceID": "f50b69da0f2e5686be3413e29151aacd",
+  "productID": "oUZSzN",
+  "groupID": """,
+  "topic": ""/temperature",
+  "qos": 1,
+  "retain": false,
+  "payload": "{\"temperature\": 77}",
+  "ts": 1524635104
 }
 ```
 
-数据定义：
+- 数据定义：
 
 | 字段名             | 说明            |
 | --------------- | ----------------- |
