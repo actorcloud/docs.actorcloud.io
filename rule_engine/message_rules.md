@@ -9,22 +9,21 @@ Webhook 支持将相关设备上报数据以 HTTP POST 方法推送到服务器�
 
 #### 认证
 
-新建 Webhook 消息规则时，**ActorCloud** 会根据填入的 URL 地址与 token 进行认证，服务器将发送GET请求到填写的服务器地址 URL 上，请求携带参数如下:
+新建 Webhook 消息规则时，**ActorCloud** 会根据填入的 URL 地址与 token 进行认证，服务器将发送 GET 请求到填写的服务器地址 URL 上，请求携带参数如下:
 
 - timestamp 时间戳；
 - nonce 随机数；
-- signature	加密签名，signature 结合了 token 参数和请求中的 timestamp 参数、nonce 参数。
+- signature 加密签名，signature 为 token、 timestamp、nonce 变量值拼接并进行 sha1 加密后的值。。
 
-即请求地址为：`{{url}}?signature=xxx&?timestamp=yyy&nonce=zzz`
+请求地址为：`{{url}}?signature=xxx&?timestamp=yyy&nonce=zzz`
 
 
-校验方式：
+Webhook接口收到请求后，需要进行校验，校验规则如下：
 
-- 将token、timestamp、nonce三个参数进行字典序排序；
-- 将三个参数字符串拼接成一个字符串进行sha1加密；
-- 开发者获得加密后的字符串可与signature对比。
+- 按 token、timestamp、nonce 顺序，将三个变量的值拼接为一个字符串，并用 sha1 进行加密；
+- 将加密后的字符串与请求中的 signature 字符串对比。
 
-Webhook 服务器需通过检验 signature 对请求进行校验（结合预定 token 进行 sha1 加密对比），若确认该请求来自 **ActorCloud**，则以 JSON 格式返回 nonce 随机数：
+若相等则验证通过，直接以 JSON 格式返回 nonce 随机数：
 
 ```json
 {
@@ -34,7 +33,7 @@ Webhook 服务器需通过检验 signature 对请求进行校验（结合预定 
 
 #### 接入
 
-完成消息规则创建后， ***EMQ X*** 消息服务器会将相关设备上报消息以 JSON 形式推送到填入的 Webhook URL 地址中，
+完成消息规则创建后， 平台会将相关设备上报消息以 JSON 形式推送到填入的 Webhook URL 地址中，
 该 HTTP 请求头中会以 Bearer Token 形式携带 token 信息以便 Webhook 服务器进行合法性认证。
 
 - 请求数据如下：
@@ -47,8 +46,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsImV4cCI6MTUyNDkwMDEwNywiaWF0IjoxNTI0N
 ```json
 { "deviceID": "f50b69da0f2e5686be3413e29151aacd",
   "productID": "oUZSzN",
-  "groupID": """,
-  "topic": ""/temperature",
+  "groupID": "",
+  "topic": "/temperature",
   "qos": 1,
   "retain": false,
   "payload": "{\"temperature\": 77}",
