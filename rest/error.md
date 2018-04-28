@@ -19,23 +19,27 @@ HTTP Status Code = 20X 可视为操作成功，状态码大于 300 时错误信�
 
 ### 错误信息
 
-请求错误时 REST API 返回 JSON 格式错误信息，结构定义如下：
-
-- message： 错误的语义化说明；
-- errors： 不定数量的错误信息；
-- errorCode：错误码，用于区分错误类型。
-
+请求错误时 REST API 返回 JSON 格式错误信息：
 
 ```json
 {
-    "errorCode": "BAD_REQUEST",
-    "errors": null,
-    "message": "Bad request"
+    "errorCode": "AUTH_FAILED",
+    "errors": {
+    	"email": ["auth failed"]
+    },
+    "message": "auth failed"
 }
 ```
 
+结构定义如下：
 
-### 常见的错误码
+- message： 错误的语义化说明；
+- errors： 错误信息，可为空。包含发生错误的字段以及对应的错误信息；
+- errorCode：错误码，用于区分错误类型。
+
+
+
+### 常见的错误码对照表
 
 | 错误码     | 中文含义  | 英文含义 |
 | ------ | ----------- | ------- |
