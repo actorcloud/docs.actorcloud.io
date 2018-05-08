@@ -18,7 +18,7 @@ Webhook 支持将相关设备上报数据以 HTTP POST 方法推送到服务器�
 请求地址为：`{{url}}?signature=xxx&?timestamp=yyy&nonce=zzz`
 
 
-Webhook接口收到请求后，需要进行校验，校验规则如下：
+Webhook 接口收到请求后，需要进行校验，校验规则如下：
 
 - 按 token、timestamp、nonce 顺序，将三个变量的值拼接为一个字符串，并用 sha1 进行加密；
 - 将加密后的字符串与请求中的 signature 字符串对比。
