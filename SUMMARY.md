@@ -19,7 +19,7 @@
 * [设备日志](connect_logs.md)
 * [规则引擎](rule_engine/rule_engine.md)
   * [消息规则](rule_engine/message_rules.md)
-  <!-- * [业务规则](rule_engine/business_rules.md) -->
+  * [业务规则](rule_engine/business_rules.md)
 * [测试中心](mqtt.md)
 * [应用管理](application.md)
 * [用户管理](user.md)
