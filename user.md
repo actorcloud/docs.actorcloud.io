@@ -40,6 +40,12 @@
 ![](/assets/user_roles.png)
 
 
+### 消息中心
+
+消息中心包含 **ActorCloud** 一些消息通知，如财务消息、购买套件成功通知消息、其他消息等。
+
+![](/assets/messages.png)
+
 
 ### 登陆日志
 
