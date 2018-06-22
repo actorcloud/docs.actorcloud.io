@@ -14,7 +14,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/.bin/gitbook serve",
-    "plugins": "./node_modules/.bin/gitbook install"
+    "plugins": "./node_modules/.bin/gitbook install",
+    "pdf": "gitbook pdf"
   },
   "repository": {
     "type": "git",
