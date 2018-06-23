@@ -21,7 +21,6 @@
 * [安全管理](security/security.md)
   * [证书](security/certs.md)
   * [策略](security/policies.md)
-* [地图管理](map_manage/map_manage.md)
 * [设备日志](connect_logs.md)
 * [规则管理](rule_engine/rule_engine.md)
   * [消息规则](rule_engine/message_rules.md)
