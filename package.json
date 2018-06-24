@@ -15,6 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/.bin/gitbook serve",
     "plugins": "./node_modules/.bin/gitbook install",
+    "ico": "node _tools/favicon.js",
     "pdf": "gitbook pdf"
   },
   "repository": {
