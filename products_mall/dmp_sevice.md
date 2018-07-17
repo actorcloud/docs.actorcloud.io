@@ -1,6 +1,6 @@
-# DMP 服务
+# 设备管理平台 DMP
 
-DMP 服务包含高级的产品与设备管理服务，可支持数据聚合、监控告警、位置与轨迹地图展示、设备资产与消费者管理等进阶服务。
+设备管理平台 DMP 包含高级的产品与设备管理服务，可支持数据聚合、监控告警、位置与轨迹地图展示、设备资产与消费者管理等进阶服务。
 
 
 #### 产品开发
@@ -61,3 +61,16 @@ DMP 服务包含高级的产品与设备管理服务，可支持数据聚合、�
 
 ![consome](assets/consome.png)
 
+
+
+#### 仪表盘
+
+数据可视化增强服务，支持各类数据、多种形式的图表、地图等定义与展示，使用说明详见[数据可视化-仪表盘](../data_visualization/dashboard.md)。
+
+- 数据展示
+
+![dashboard](assets/dashboard.png)
+
+- 数据编辑
+
+![dashboard_create](assets/dashboard_create.png)
