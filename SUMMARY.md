@@ -27,6 +27,8 @@
   * [业务规则](rule_engine/business_rules.md)
 * [告警管理](alert/alert.md)
 * [测试中心](mqtt.md)
+* [数据可视化](data_visualization/data_visualization.md)
+  * [仪表盘](data_visualization/dashboard.md)
 * [应用管理](application.md)
 * [用户管理](user.md)
 * [资产管理](assets_manage/assets_manage.md)
