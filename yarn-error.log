@@ -24,6 +24,7 @@ npm manifest:
       "gitbook": "^3.2.3",
       "gitbook-cli": "^2.3.2",
       "gitbook-plugin-prism": "^2.3.0",
+      "gitbook-plugin-toggle-chapters": "^0.0.3",
       "markdown-table": "^1.1.1"
     },
     "devDependencies": {},
@@ -1563,6 +1564,10 @@ Lockfile:
   gitbook-plugin-theme-default@1.0.7:
     version "1.0.7"
     resolved "http://registry.npm.taobao.org/gitbook-plugin-theme-default/download/gitbook-plugin-theme-default-1.0.7.tgz#51f71fbca74a261054e9e9d141c42167afefce88"
+  
+  gitbook-plugin-toggle-chapters@^0.0.3:
+    version "0.0.3"
+    resolved "http://registry.npm.taobao.org/gitbook-plugin-toggle-chapters/download/gitbook-plugin-toggle-chapters-0.0.3.tgz#6e5f5aa61b9b2e221c380cdf6e928320015ecfb9"
   
   gitbook@^3.2.3:
     version "3.2.3"

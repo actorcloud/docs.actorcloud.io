@@ -8,6 +8,7 @@
     "gitbook": "^3.2.3",
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-prism": "^2.3.0",
+    "gitbook-plugin-toggle-chapters": "^0.0.3",
     "markdown-table": "^1.1.1"
   },
   "devDependencies": {},
