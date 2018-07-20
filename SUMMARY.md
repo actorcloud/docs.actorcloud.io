@@ -37,8 +37,8 @@
 ## 设备管理平台
 
 * [告警管理](alert/alert.md)
-* [数据可视化](data_visualization/data_visualization.md)
-  * [仪表盘](data_visualization/dashboard.md)
+<!--* [数据可视化](data_visualization/data_visualization.md)-->
+* [仪表盘](data_visualization/dashboard.md)
 * [位置管理](location/location.md)
 * [资产管理](assets_manage/assets_manage.md)
   * [设备资产](assets_manage/device_assets.md)
