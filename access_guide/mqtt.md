@@ -50,7 +50,7 @@ client_id = '10C61F1A1F40'
 username = '10C61F1A1F40'
 password = 'ce07c199187811e8a12b525440546606'
 PORT = 1883
-HOST = 'actorcloud.io'
+HOST = 'iot.actorcloud.io'
 
 
 def on_connect(client, userdata, flags, rc):
@@ -98,7 +98,7 @@ import json
 client_id = '10C61F1A1F40'
 username = '10C61F1A1F40'
 password = 'ce07c199187811e8a12b525440546606'
-HOST = 'actorcloud.io'
+HOST = 'iot.actorcloud.io'
 PORT = 8883
 
 
@@ -140,7 +140,7 @@ client.loop_forever()
 - **证书名称.crt** ： 自签名证书；
 - **证书名称.key** ：自签名证书密钥。
 
-> 使用双向认证接入的设备无需用户名密码验证，且双向认证设备需绑定并使用其匹配证书才能认证成功。
+> 使用双向认证接入的设备无需密码验证，但双向认证设备需绑定并使用其匹配证书才能认证成功。
 
 ![](/assets/certs_files.png)
 
@@ -158,7 +158,7 @@ import json
 client_id = '10C61F1A1F41'
 username = '10C61F1A1F41'
 password = '630a7f6b54d75e50a2e59b4baca722d4'
-HOST = 'actorcloud.io'
+HOST = 'iot.actorcloud.io'
 
 # 双向认证端口
 PORT = 8884
@@ -179,7 +179,9 @@ def on_message(client, userdata, msg):
     pass
 
 client = mqtt.Client(client_id=client_id)
-# 设置 PROT 为 8883 并设置根证书、签名证书及密钥路径
+# 双向认证只需要使用用户名
+client.username_pw_set(username)
+# 设置 PROT 为 8884 并设置根证书、签名证书及密钥路径
 client.tls_set(ca_certs='./root_ca.crt', certfile='./default.crt', keyfile='./default.key', cert_reqs=ssl.CERT_REQUIRED,
     tls_version=ssl.PROTOCOL_TLS, ciphers=None)
 client.on_connect = on_connect

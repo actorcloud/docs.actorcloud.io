@@ -2,8 +2,26 @@
   "plugins": [
     "prism",
     "-highlight",
-    "-sharing"
+    "-sharing",
+    "expandable-chapters-small",
+    "simple-page-toc",
+    "anchors",
+    "copy-code-button",
+    "favicon"
   ],
+  "pluginsConfig": {
+    "favicon": {
+      "shortcut": "assets/favicon.ico",
+      "bookmark": "assets/favicon.ico"
+    }
+  },
+  "styles": {
+    "website": "styles/website.css",
+    "ebook": "styles/ebook.css",
+    "pdf": "styles/pdf.css",
+    "mobi": "styles/mobi.css",
+    "epub": "styles/epub.css"
+  },
   "title": "ActorCloud 使用手册",
   "language": "zh-hans",
   "links": {

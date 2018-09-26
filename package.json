@@ -13,9 +13,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/gitbook serve",
-    "plugins": "./node_modules/.bin/gitbook install",
+    "dev": "gitbook serve",
+    "plugins": "gitbook install",
     "ico": "node _tools/favicon.js",
     "pdf": "gitbook pdf"
   },
