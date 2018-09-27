@@ -79,11 +79,7 @@ client.loop_forever()
 
 ### 单向认证
 
-- 单向认证适用于认证方式为 **Token** 的设备，需要使用 **ActorCloud** 根证书 + 设备**编码信息**进行认证；
-
-任意证书详情页中，点击**下载证书**后解压文件，**root_ca.crt** 即为 **ActorCloud** 根证书：
-
-![](/assets/certs_download.png)
+- 单向认证适用于认证方式为 **Token** 的设备，需要设备**编码信息**进行认证；
 
 示例代码：
 
@@ -119,9 +115,8 @@ def on_message(client, userdata, msg):
 client = mqtt.Client(client_id=client_id)
 # 单向认证仍需要用户名密码
 client.username_pw_set(username, password)
-# 设置 PROT 为 8883 并设置根证书路径
-client.tls_set(ca_certs='./root_ca.crt', certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
-    tls_version=ssl.PROTOCOL_TLS, ciphers=None)
+# 设置证书信息
+client.tls_set(certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED, ciphers=None)
 client.on_connect = on_connect
 client.on_message = on_message
 
@@ -133,6 +128,8 @@ client.loop_forever()
 # 双向认证
 
 - 双向认证适用于认证方式为**证书**的设备，需要使用 **ActorCloud** 根证书 + 自签名证书，证书密钥进行认证。
+
+![](/assets/certs_download.png)
 
 设备绑定相应证书详情页中，点击**下载证书**后解压文件得到：
 
