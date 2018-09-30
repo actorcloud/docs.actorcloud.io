@@ -3,3 +3,9 @@
     color: #008cff;
 }
 
+
+.book-summary a:hover {
+    text-decoration: none;
+    color: #008cff;
+
+}

@@ -17,7 +17,7 @@
     "plugins": "gitbook install",
     "ico": "node _tools/favicon.js",
     "pdf": "gitbook pdf",
-    "html": "gitbook build"
+    "html": "gitbook build && npm run ico"
   },
   "repository": {
     "type": "git",
