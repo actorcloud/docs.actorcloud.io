@@ -44,23 +44,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| codeValue| "serialNumber" | Integer  | true  | code 的值 |
-| codeValueLabel| "序列号" | String  | true  | 序列号 |
-| createAt| "2018-10-17 13:43:03" | Date  | true  | 创建时间 |
-| dataPointIntID| 42 | Integer  | true  | 功能点 ID |
-| dataPointName| "测试字符" | String  | true  | 功能点名称 |
-| id| 6 | Integer  | true  | id |
-| itemName| "null" | String  | true  | 属性名 |
-| productItemIntID| "null" | Integer  | true  | 产品 Item |
-| updateAt| "null" | Date  | true  | 更新时间 |
-
-
-
-
 
 
 

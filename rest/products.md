@@ -60,26 +60,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| appCount| 2 | Number  | true  | 暂无 |
-| cloudProtocol| 1 | Integer  | true  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| cloudProtocolLabel| "MQTT" | String  | true  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| createAt| "2019-09-13 21:26:01" | Date  | true  | 创建时间 |
-| dataPointCount| 7 | Number  | true  | 暂无 |
-| dataStreamCount| 1 | Number  | true  | 暂无 |
-| description| "qtt产品测试1" | String  | true  | 描述 |
-| deviceCount| 106 | Integer  | true  | 月设备数量 |
-| id| 60 | Integer  | true  | id |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productName| "MQTT产品" | String  | true  | 产品名称 |
-| updateAt| "2018-10-17 11:50:16" | Date  | true  | 更新时间 |
-
-
-
-
 
 
 
@@ -123,18 +103,18 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| cloudProtocol| 1 | Integer  | true  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| cloudProtocolLabel| "MQTT" | String  | true  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| createAt| "2019-09-13 21:26:01" | Date  | true  | 创建时间 |
-| createUser| "actorcloud" | String  | true  | 创建用户 |
-| description| "qtt产品测试1" | String  | true  | 描述 |
-| deviceCount| 106 | Integer  | true  | 月设备数量 |
-| id| 60 | Integer  | true  | id |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productName| "MQTT产品" | String  | true  | 产品名称 |
-| updateAt| "2018-10-17 11:50:16" | Date  | true  | 更新时间 |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| cloudProtocol| 1 | Integer  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| cloudProtocolLabel| "MQTT" | String  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| createAt| "2019-09-13 21:26:01" | Date  | 创建时间 |
+| createUser| "actorcloud" | String  | 创建用户 |
+| description| "qtt产品测试1" | String  | 描述 |
+| deviceCount| 106 | Integer  | 月设备数量 |
+| id| 60 | Integer  | id |
+| productID| "2ioNzM" | String  | 产品 ID |
+| productName| "MQTT产品" | String  | 产品名称 |
+| updateAt| "2018-10-17 11:50:16" | Date  | 更新时间 |
 
 
 

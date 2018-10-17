@@ -69,24 +69,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| createAt| "2018-10-17 13:55:47" | Date  | true  | 创建时间 |
-| id| 4 | Integer  | true  | id |
-| package| [{"name":"diff.zip","uploadID":10,"url":"/api/v1/download?fileType=package&filename=aadce17e340c536308d394eb46966d4a.zip"}] | Integer  | true  | 数据包 |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productName| "MQTT产品" | String  | true  | 产品名称 |
-| sdkName| "升级包3" | String  | true  | 软件包名字 |
-| sdkType| 1 | Integer  | true  | 软件包类型 可选参数: 应用程序: 1, 固件: 2, 内核: 3 |
-| sdkTypeLabel| "应用程序" | String  | true  | 软件包类型 可选参数: 应用程序: 1, 固件: 2, 内核: 3 |
-| sdkVersion| "1.1" | String  | true  | 软件包版本 |
-| updateAt| "2018-10-17 13:59:13" | Date  | true  | 更新时间 |
-
-
-
-
 
 
 
@@ -138,20 +120,20 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| createAt| "2018-09-30 16:52:15" | Date  | true  | 创建时间 |
-| displayName| "默认证书 (1).zip" | String  | true  | 文件原始名称 |
-| fileUrl| "/api/v1/download?fileType=package&filename=e81e7077344b8187d0afbdf054461974.zip" | String  | true  | 下载地址 |
-| id| 3 | Integer  | true  | id |
-| package| [{"name":"默认证书 (1).zip","uploadID":9,"url":"/api/v1/download?fileType=package&filename=e81e7077344b8187d0afbdf054461974.zip"}] | Integer  | true  | 数据包 |
-| productID| "p3zZMy" | String  | true  | 产品 ID |
-| productName| "智能锁" | String  | true  | 产品名称 |
-| sdkName| "默认软件包" | String  | true  | 软件包名字 |
-| sdkType| 1 | Integer  | true  | 软件包类型 可选参数: 应用程序: 1, 固件: 2, 内核: 3 |
-| sdkTypeLabel| "应用程序" | String  | true  | 软件包类型 可选参数: 应用程序: 1, 固件: 2, 内核: 3 |
-| sdkVersion| "v 1.3" | String  | true  | 软件包版本 |
-| updateAt| "null" | Date  | true  | 更新时间 |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| createAt| "2018-09-30 16:52:15" | Date  | 创建时间 |
+| displayName| "默认证书 (1).zip" | String  | 文件原始名称 |
+| fileUrl| "/api/v1/download?fileType=package&filename=e81e7077344b8187d0afbdf054461974.zip" | String  | 下载地址 |
+| id| 3 | Integer  | id |
+| package| [{"name":"默认证书 (1).zip","uploadID":9,"url":"/api/v1/download?fileType=package&filename=e81e7077344b8187d0afbdf054461974.zip"}] | Integer  | 数据包 |
+| productID| "p3zZMy" | String  | 产品 ID |
+| productName| "智能锁" | String  | 产品名称 |
+| sdkName| "默认软件包" | String  | 软件包名字 |
+| sdkType| 1 | Integer  | 软件包类型 可选参数: 应用程序: 1, 固件: 2, 内核: 3 |
+| sdkTypeLabel| "应用程序" | String  | 软件包类型 可选参数: 应用程序: 1, 固件: 2, 内核: 3 |
+| sdkVersion| "v 1.3" | String  | 软件包版本 |
+| updateAt| "null" | Date  | 更新时间 |
 
 
 

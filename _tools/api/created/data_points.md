@@ -83,37 +83,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| binarySize| "null" | Integer  | true  | 二进制长度 (数值类型为二进制(11)时选填) |
-| createAt| "2018-10-15 17:37:53" | Date  | true  | 创建时间 |
-| dataPointID| "fsdf" | String  | true  | 功能点 ID |
-| dataPointName| "测试字符" | String  | true  | 功能点名称 |
-| dataStep| "null" | Float  | true  | 数据步长 (数据类型为数值类型(1)时选填) |
-| dataTransType| 1 | Integer  | true  | 数据传输类型 可选参数: 只上报: 1, 只下发: 2, 可上报可下发: 3 |
-| dataTransTypeLabel| "只上报" | String  | true  | 只上报 |
-| detail| "null" | String  | true  | 备注 |
-| enum| [] | JSON  | true  | 枚举值 |
-| faultValue| "null" | String  | true  | 故障值 (数据类型为故障类型(4)时必填) |
-| id| 42 | Integer  | true  | id |
-| isDiscard| "null" | Integer  | true  | 是否丢弃该消息 (数据类型为故障类型(4)时选填) |
-| isLocationType| "null" | Integer  | true  | 是否为位置类型(默认 1) 可选参数: 是: 1, 否: 2 |
-| locationType| "null" | Integer  | true  | 位置类型 可选参数: 经度: 1, 纬度: 2, 海拔: 3 |
-| lowerLimit| "null" | Float  | true  | 下限 (数据类型为数值类型(1)时选填) |
-| pointDataType| 3 | Integer  | true  | 数据格式 可选参数: 数值: 1, 字符串: 3, 故障: 4, 布尔: 5, 定长字符串: 11, 变长字符串: 12, 定长binary: 13, 变长binary: 14, 有符号整型: 15, 无符号整型: 16, 单精度浮点型: 17, 双精度浮点型: 18, bit类型: 19 |
-| pointDataTypeLabel| "字符串" | String  | true  | 字符串 |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productName| "MQTT产品" | String  | true  | 产品名称 |
-| unitName| "null" | String  | true  | 单位名称 (数据类型为数值类型(1)时选填) |
-| unitSymbol| "null" | String  | true  | 单位符号 (数据类型为数值类型(1)时选填) |
-| updateAt| "null" | Date  | true  | 更新时间 |
-| upperLimit| "null" | Float  | true  | 上限 (数据类型为数值类型(1)时选填) |
-
-
-
-
 
 
 
@@ -168,29 +137,29 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| binarySize| "null" | Integer  | true  | 二进制长度 (数值类型为二进制(11)时选填) |
-| createAt| "2018-10-15 17:37:53" | Date  | true  | 创建时间 |
-| createUser| "actorcloud" | String  | true  | 创建用户 |
-| dataPointID| "fsdf" | String  | true  | 功能点 ID |
-| dataPointName| "测试字符" | String  | true  | 功能点名称 |
-| dataStep| "null" | Float  | true  | 数据步长 (数据类型为数值类型(1)时选填) |
-| dataTransType| 1 | Integer  | true  | 数据传输类型 可选参数: 只上报: 1, 只下发: 2, 可上报可下发: 3 |
-| detail| "null" | String  | true  | 备注 |
-| enum| [] | JSON  | true  | 枚举值 |
-| faultValue| "null" | String  | true  | 故障值 (数据类型为故障类型(4)时必填) |
-| id| 42 | Integer  | true  | id |
-| isDiscard| "null" | Integer  | true  | 是否丢弃该消息 (数据类型为故障类型(4)时选填) |
-| isLocationType| "null" | Integer  | true  | 是否为位置类型(默认 1) 可选参数: 是: 1, 否: 2 |
-| locationType| "null" | Integer  | true  | 位置类型 可选参数: 经度: 1, 纬度: 2, 海拔: 3 |
-| lowerLimit| "null" | Float  | true  | 下限 (数据类型为数值类型(1)时选填) |
-| pointDataType| 3 | Integer  | true  | 数据格式 可选参数: 数值: 1, 字符串: 3, 故障: 4, 布尔: 5, 定长字符串: 11, 变长字符串: 12, 定长binary: 13, 变长binary: 14, 有符号整型: 15, 无符号整型: 16, 单精度浮点型: 17, 双精度浮点型: 18, bit类型: 19 |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| unitName| "null" | String  | true  | 单位名称 (数据类型为数值类型(1)时选填) |
-| unitSymbol| "null" | String  | true  | 单位符号 (数据类型为数值类型(1)时选填) |
-| updateAt| "null" | Date  | true  | 更新时间 |
-| upperLimit| "null" | Float  | true  | 上限 (数据类型为数值类型(1)时选填) |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| binarySize| "null" | Integer  | 二进制长度 (数值类型为二进制(11)时选填) |
+| createAt| "2018-10-15 17:37:53" | Date  | 创建时间 |
+| createUser| "actorcloud" | String  | 创建用户 |
+| dataPointID| "fsdf" | String  | 功能点 ID |
+| dataPointName| "测试字符" | String  | 功能点名称 |
+| dataStep| "null" | Float  | 数据步长 (数据类型为数值类型(1)时选填) |
+| dataTransType| 1 | Integer  | 数据传输类型 可选参数: 只上报: 1, 只下发: 2, 可上报可下发: 3 |
+| detail| "null" | String  | 备注 |
+| enum| [] | JSON  | 枚举值 |
+| faultValue| "null" | String  | 故障值 (数据类型为故障类型(4)时必填) |
+| id| 42 | Integer  | id |
+| isDiscard| "null" | Integer  | 是否丢弃该消息 (数据类型为故障类型(4)时选填) |
+| isLocationType| "null" | Integer  | 是否为位置类型(默认 1) 可选参数: 是: 1, 否: 2 |
+| locationType| "null" | Integer  | 位置类型 可选参数: 经度: 1, 纬度: 2, 海拔: 3 |
+| lowerLimit| "null" | Float  | 下限 (数据类型为数值类型(1)时选填) |
+| pointDataType| 3 | Integer  | 数据格式 可选参数: 数值: 1, 字符串: 3, 故障: 4, 布尔: 5, 定长字符串: 11, 变长字符串: 12, 定长binary: 13, 变长binary: 14, 有符号整型: 15, 无符号整型: 16, 单精度浮点型: 17, 双精度浮点型: 18, bit类型: 19 |
+| productID| "2ioNzM" | String  | 产品 ID |
+| unitName| "null" | String  | 单位名称 (数据类型为数值类型(1)时选填) |
+| unitSymbol| "null" | String  | 单位符号 (数据类型为数值类型(1)时选填) |
+| updateAt| "null" | Date  | 更新时间 |
+| upperLimit| "null" | Float  | 上限 (数据类型为数值类型(1)时选填) |
 
 
 

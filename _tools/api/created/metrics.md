@@ -47,19 +47,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| dataPointName| "温度" | String  | true  | 功能点名称 |
-| id| 25 | Integer  | true  | id |
-| metricName| "555555555" | String  | true  | 指标名称 |
-| metricType| 2 | Number  | true  | 指标类型 可选参数： 公式指标：1，聚合指标：2 |
-| metricTypeLabel| "聚合指标" | String  | true  | 指标类型 |
-
-
-
-
 
 
 
@@ -113,28 +100,28 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| aggregateData| 1 | String  | true  | 聚合数据 |
-| aggregateDataLabel| "公式值" | String  | true  | 公式值 |
-| aggregateType| 1 | Integer  | true  | 聚合方式 可选参数: 最大值: 1, 最小值: 2, 平均值: 3, 累计值: 4 |
-| aggregateTypeLabel| "最大值" | String  | true  | 聚合方式 可选参数: 最大值: 1, 最小值: 2, 平均值: 3, 累计值: 4 |
-| chartType| 1 | Integer  | true  | 展示图表类型 可选参数: 折线图: 1, 柱状图: 2 |
-| chartTypeLabel| "折线图" | String  | true  | 展示图表类型 可选参数: 折线图: 1, 柱状图: 2 |
-| createAt| "2018-10-15 15:55:15" | Date  | true  | 创建时间 |
-| createUser| "actorcloud" | String  | true  | 创建用户 |
-| dataPointIntID| 1 | Integer  | true  | 功能点 ID |
-| dataPointName| "温度" | String  | true  | 功能点名称 |
-| expressions| "null" | String  | true  | 计算公式 |
-| id| 25 | Integer  | true  | id |
-| isShow| 1 | Integer  | true  | 是否显示在设备详情页面: 0否 1是 |
-| metricName| "555555555" | String  | true  | 指标名称 |
-| metricType| 2 | Number  | true  | 指标类型 可选参数： 公式指标：1，聚合指标：2 |
-| metricTypeLabel| "聚合指标" | String  | true  | 指标类型 |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productItemIntID| "null" | Integer  | true  | 产品 Item |
-| remark| "null" | String  | true  | 备注 |
-| updateAt| "null" | Date  | true  | 更新时间 |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| aggregateData| 1 | String  | 聚合数据 |
+| aggregateDataLabel| "公式值" | String  | 公式值 |
+| aggregateType| 1 | Integer  | 聚合方式 可选参数: 最大值: 1, 最小值: 2, 平均值: 3, 累计值: 4 |
+| aggregateTypeLabel| "最大值" | String  | 聚合方式 可选参数: 最大值: 1, 最小值: 2, 平均值: 3, 累计值: 4 |
+| chartType| 1 | Integer  | 展示图表类型 可选参数: 折线图: 1, 柱状图: 2 |
+| chartTypeLabel| "折线图" | String  | 展示图表类型 可选参数: 折线图: 1, 柱状图: 2 |
+| createAt| "2018-10-15 15:55:15" | Date  | 创建时间 |
+| createUser| "actorcloud" | String  | 创建用户 |
+| dataPointIntID| 1 | Integer  | 功能点 ID |
+| dataPointName| "温度" | String  | 功能点名称 |
+| expressions| "null" | String  | 计算公式 |
+| id| 25 | Integer  | id |
+| isShow| 1 | Integer  | 是否显示在设备详情页面: 0否 1是 |
+| metricName| "555555555" | String  | 指标名称 |
+| metricType| 2 | Number  | 指标类型 可选参数： 公式指标：1，聚合指标：2 |
+| metricTypeLabel| "聚合指标" | String  | 指标类型 |
+| productID| "2ioNzM" | String  | 产品 ID |
+| productItemIntID| "null" | Integer  | 产品 Item |
+| remark| "null" | String  | 备注 |
+| updateAt| "null" | Date  | 更新时间 |
 
 
 

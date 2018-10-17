@@ -119,55 +119,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| IMEI| "null" | String  | true  | 设备IMEI |
-| IMSI| "null" | String  | true  | 设备IMSI |
-| authType| 1 | Integer  | true  | 认证方式 可选参数: Token: 1, 证书: 2 |
-| authTypeLabel| "Token" | String  | true  | Token |
-| autoSub| "null" | Integer  | true  | 自动订阅，0:关闭，1:开启 |
-| blocked| "null" | Integer  | true  | 是否允许访问 0:允许 1:禁止 |
-| carrier| 1 | Integer  | true  | 运营商 可选参数: 中国电信: 1, 中国移动: 2, 中国联通: 3, 其他: 4 |
-| cloudProtocol| 1 | Integer  | true  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| cloudProtocolLabel| "MQTT" | String  | true  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| createAt| "2019-09-14 14:55:20" | Date  | true  | 创建时间 |
-| description| "ull" | String  | true  | 描述 |
-| deviceConsoleIP| "null" | String  | true  | 控制台ip |
-| deviceConsolePort| 22 | Integer  | true  | 控制台端口 |
-| deviceConsoleUsername| "null" | String  | true  | 控制台用户名 |
-| deviceID| "063da5117b8c5ea5a6b3441edbf99d03" | String  | true  | 设备 ID |
-| deviceName| "mqtt设备_1" | String  | true  | 设备名称 |
-| deviceStatus| "null" | Integer  | true  | 设备运行状态 可选参数: 离线: 0, 在线: 1, 休眠: 2 |
-| deviceStatusLabel| "离线" | String  | true  | 设备运行状态 可选参数: 离线: 0, 在线: 1, 休眠: 2 |
-| deviceType| 1 | Integer  | true  | 设备类型 可选参数: 终端: 1, 智能手机: 3  与上联系统互斥：该处值为 `终端: 1` 时才能填写 `upLinkSystem` 字段 |
-| deviceTypeLabel| "终端" | String  | true  | 设备类型 可选参数: 终端: 1, 智能手机: 3 |
-| deviceUsername| "063da5117b8c5ea5a6b3441edbf99d03" | String  | true  | 设备用户名，用于连接emq |
-| gateway| "null" | Integer  | true  | 所属网关 |
-| hardwareVersion| "null" | String  | true  | 硬件版本 |
-| id| 46 | Integer  | true  | id |
-| latitude| 25.064918 | Float  | true  | 纬度 |
-| location| "云南省昆明市五华区丰宁街道金鼎科技园" | JSON  | true  | 位置 |
-| longitude| 102.678732 | Float  | true  | 经度 |
-| lora| "null" | JSON  | true  | 是否 LoRa 协议 |
-| manufacturer| "null" | String  | true  | 制造商 |
-| physicalNetwork| 1 | Integer  | true  | 物理网络 可选参数: WIFI: 1, 2G: 2, 3G: 3, 4G: 4, NB-IOT: 5, BlueTooth: 6 |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productIntID| 60 | Integer  | true  | 产品 ID |
-| productName| "MQTT产品" | String  | true  | 产品名称 |
-| scopes| [] | Array  | true  | 围栏范围 |
-| serialNumber| "null" | String  | true  | 序列号 |
-| softVersion| "null" | String  | true  | 软件版本 |
-| tenantID| "C2xPah6mn" | String  | true  | 租户 ID |
-| token| "990afd1e9448584abfca5b7154f9bcba" | String  | true  | 设备秘钥 |
-| upLinkSystem| 1 | Integer  | true  | 上联系统 可选参数: 云: 1, 网关: 2 |
-| updateAt| "2018-10-12 09:39:52" | Date  | true  | 更新时间 |
-| userIntID| 2 | Integer  | true  | 用户 ID |
-
-
-
-
 
 
 
@@ -247,54 +198,54 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| IMEI| "null" | String  | true  | 设备IMEI |
-| IMSI| "null" | String  | true  | 设备IMSI |
-| authType| 1 | Integer  | true  | 认证方式 可选参数: Token: 1, 证书: 2 |
-| authTypeLabel| "Token" | String  | true  | Token |
-| autoSub| "null" | Integer  | true  | 自动订阅，0:关闭，1:开启 |
-| blocked| "null" | Integer  | true  | 是否允许访问 0:允许 1:禁止 |
-| carrier| 1 | Integer  | true  | 运营商 可选参数: 中国电信: 1, 中国移动: 2, 中国联通: 3, 其他: 4 |
-| clientIP| "null" | String  | true  | 客户端 IP |
-| cloudProtocol| 1 | Integer  | true  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| cloudProtocolLabel| "MQTT" | String  | true  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| connectedAt| "null" | String  | true  | 连接时间 |
-| createAt| "2019-09-14 14:55:20" | Date  | true  | 创建时间 |
-| createUser| "actorcloud" | String  | true  | 创建用户 |
-| description| "ull" | String  | true  | 描述 |
-| deviceConsoleIP| "null" | String  | true  | 控制台ip |
-| deviceConsolePort| 22 | Integer  | true  | 控制台端口 |
-| deviceConsoleUsername| "null" | String  | true  | 控制台用户名 |
-| deviceID| "063da5117b8c5ea5a6b3441edbf99d03" | String  | true  | 设备 ID |
-| deviceName| "mqtt设备_1" | String  | true  | 设备名称 |
-| deviceStatus| "null" | Integer  | true  | 设备运行状态 可选参数: 离线: 0, 在线: 1, 休眠: 2 |
-| deviceStatusLabel| "离线" | String  | true  | 设备运行状态 可选参数: 离线: 0, 在线: 1, 休眠: 2 |
-| deviceType| 1 | Integer  | true  | 设备类型 可选参数: 终端: 1, 智能手机: 3  与上联系统互斥：该处值为 `终端: 1` 时才能填写 `upLinkSystem` 字段 |
-| deviceTypeLabel| "终端" | String  | true  | 设备类型 可选参数: 终端: 1, 智能手机: 3 |
-| deviceUsername| "063da5117b8c5ea5a6b3441edbf99d03" | String  | true  | 设备用户名，用于连接emq |
-| gateway| "null" | Integer  | true  | 所属网关 |
-| gatewayName| "null" | String  | true  | 网关名称 |
-| hardwareVersion| "null" | String  | true  | 硬件版本 |
-| id| 46 | Integer  | true  | id |
-| keepAlive| "null" | Integer  | true  | 心跳时间 |
-| latitude| 25.064918 | Float  | true  | 纬度 |
-| location| "云南省昆明市五华区丰宁街道金鼎科技园" | JSON  | true  | 位置 |
-| longitude| 102.678732 | Float  | true  | 经度 |
-| lora| "null" | JSON  | true  | 是否 LoRa 协议 |
-| manufacturer| "null" | String  | true  | 制造商 |
-| physicalNetwork| 1 | Integer  | true  | 物理网络 可选参数: WIFI: 1, 2G: 2, 3G: 3, 4G: 4, NB-IOT: 5, BlueTooth: 6 |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productIntID| 60 | Integer  | true  | 产品 ID |
-| productName| "MQTT产品" | String  | true  | 产品名称 |
-| scopes| [] | Array  | true  | 围栏范围 |
-| serialNumber| "null" | String  | true  | 序列号 |
-| softVersion| "null" | String  | true  | 软件版本 |
-| tenantID| "C2xPah6mn" | String  | true  | 租户 ID |
-| token| "990afd1e9448584abfca5b7154f9bcba" | String  | true  | 设备秘钥 |
-| upLinkSystem| 1 | Integer  | true  | 上联系统 可选参数: 云: 1, 网关: 2 |
-| updateAt| "2018-10-12 09:39:52" | Date  | true  | 更新时间 |
-| userIntID| 2 | Integer  | true  | 用户 ID |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| IMEI| "null" | String  | 设备IMEI |
+| IMSI| "null" | String  | 设备IMSI |
+| authType| 1 | Integer  | 认证方式 可选参数: Token: 1, 证书: 2 |
+| authTypeLabel| "Token" | String  | Token |
+| autoSub| "null" | Integer  | 自动订阅，0:关闭，1:开启 |
+| blocked| "null" | Integer  | 是否允许访问 0:允许 1:禁止 |
+| carrier| 1 | Integer  | 运营商 可选参数: 中国电信: 1, 中国移动: 2, 中国联通: 3, 其他: 4 |
+| clientIP| "null" | String  | 客户端 IP |
+| cloudProtocol| 1 | Integer  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| cloudProtocolLabel| "MQTT" | String  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| connectedAt| "null" | String  | 连接时间 |
+| createAt| "2019-09-14 14:55:20" | Date  | 创建时间 |
+| createUser| "actorcloud" | String  | 创建用户 |
+| description| "ull" | String  | 描述 |
+| deviceConsoleIP| "null" | String  | 控制台ip |
+| deviceConsolePort| 22 | Integer  | 控制台端口 |
+| deviceConsoleUsername| "null" | String  | 控制台用户名 |
+| deviceID| "063da5117b8c5ea5a6b3441edbf99d03" | String  | 设备 ID |
+| deviceName| "mqtt设备_1" | String  | 设备名称 |
+| deviceStatus| "null" | Integer  | 设备运行状态 可选参数: 离线: 0, 在线: 1, 休眠: 2 |
+| deviceStatusLabel| "离线" | String  | 设备运行状态 可选参数: 离线: 0, 在线: 1, 休眠: 2 |
+| deviceType| 1 | Integer  | 设备类型 可选参数: 终端: 1, 智能手机: 3  与上联系统互斥：该处值为 `终端: 1` 时才能填写 `upLinkSystem` 字段 |
+| deviceTypeLabel| "终端" | String  | 设备类型 可选参数: 终端: 1, 智能手机: 3 |
+| deviceUsername| "063da5117b8c5ea5a6b3441edbf99d03" | String  | 设备用户名，用于连接emq |
+| gateway| "null" | Integer  | 所属网关 |
+| gatewayName| "null" | String  | 网关名称 |
+| hardwareVersion| "null" | String  | 硬件版本 |
+| id| 46 | Integer  | id |
+| keepAlive| "null" | Integer  | 心跳时间 |
+| latitude| 25.064918 | Float  | 纬度 |
+| location| "云南省昆明市五华区丰宁街道金鼎科技园" | JSON  | 位置 |
+| longitude| 102.678732 | Float  | 经度 |
+| lora| "null" | JSON  | 是否 LoRa 协议 |
+| manufacturer| "null" | String  | 制造商 |
+| physicalNetwork| 1 | Integer  | 物理网络 可选参数: WIFI: 1, 2G: 2, 3G: 3, 4G: 4, NB-IOT: 5, BlueTooth: 6 |
+| productID| "2ioNzM" | String  | 产品 ID |
+| productIntID| 60 | Integer  | 产品 ID |
+| productName| "MQTT产品" | String  | 产品名称 |
+| scopes| [] | Array  | 围栏范围 |
+| serialNumber| "null" | String  | 序列号 |
+| softVersion| "null" | String  | 软件版本 |
+| tenantID| "C2xPah6mn" | String  | 租户 ID |
+| token| "990afd1e9448584abfca5b7154f9bcba" | String  | 设备秘钥 |
+| upLinkSystem| 1 | Integer  | 上联系统 可选参数: 云: 1, 网关: 2 |
+| updateAt| "2018-10-12 09:39:52" | Date  | 更新时间 |
+| userIntID| 2 | Integer  | 用户 ID |
 
 
 
@@ -586,9 +537,9 @@ status 202
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| statusUrl| "/task_status/2bcfc5eb-9ccb-487b-94aa-612f64dae53c" | String  | true  | 任务回调地址 |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| statusUrl| "/task_status/2bcfc5eb-9ccb-487b-94aa-612f64dae53c" | String  | 任务回调地址 |
 
 
 
@@ -683,23 +634,6 @@ status 200
   }
 }
 ```
-
-
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| IP| "null" | String  | true  | 连接IP |
-| createAt| "2018-09-30 16:55:31" | Date  | true  | 创建时间 |
-| deviceID| "10c61f1a1f47" | String  | true  | 设备 ID |
-| deviceName| "智能锁" | String  | true  | 设备名称 |
-| id| 7623 | Integer  | true  | id |
-| msgTime| "2018-09-30 16:55:31" | Date  | true  | 消息时间 |
-| payload| "{ \"x\": 33.2, \"y\": 31.4 }" | JSON  | true  | 推送消息内容 |
-| topic| "topic" | String  | true  | 主题 |
-| updateAt| "null" | Date  | true  | 更新时间 |
-
-
 
 
 
@@ -870,23 +804,23 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| aggregateData| "null" | String  | true  | 聚合数据 |
-| aggregateType| 1 | Integer  | true  | 聚合方式 可选参数: 最大值: 1, 最小值: 2, 平均值: 3, 累计值: 4 |
-| chartType| 1 | Integer  | true  | 展示图表类型 可选参数: 折线图: 1, 柱状图: 2 |
-| createAt| "2018-10-12 17:49:42" | Date  | true  | 创建时间 |
-| dataPointIntID| 1 | Integer  | true  | 功能点 ID |
-| expressions| "currentValue - lastValue" | String  | true  | 计算公式 |
-| id| 13 | Integer  | true  | id |
-| isShow| 1 | Integer  | true  | 是否显示在设备详情页面: 0否 1是 |
-| metricData| {"time":[],"value":[]} | Object  | true  | 指标数据 |
-| metricName| "111" | String  | true  | 指标名称 |
-| metricType| 1 | Number  | true  | 指标类型 可选参数： 公式指标：1，聚合指标：2 |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productItemIntID| "null" | Integer  | true  | 产品 Item |
-| remark| "null" | String  | true  | 备注 |
-| updateAt| "null" | Date  | true  | 更新时间 |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| aggregateData| "null" | String  | 聚合数据 |
+| aggregateType| 1 | Integer  | 聚合方式 可选参数: 最大值: 1, 最小值: 2, 平均值: 3, 累计值: 4 |
+| chartType| 1 | Integer  | 展示图表类型 可选参数: 折线图: 1, 柱状图: 2 |
+| createAt| "2018-10-12 17:49:42" | Date  | 创建时间 |
+| dataPointIntID| 1 | Integer  | 功能点 ID |
+| expressions| "currentValue - lastValue" | String  | 计算公式 |
+| id| 13 | Integer  | id |
+| isShow| 1 | Integer  | 是否显示在设备详情页面: 0否 1是 |
+| metricData| {"time":[],"value":[]} | Object  | 指标数据 |
+| metricName| "111" | String  | 指标名称 |
+| metricType| 1 | Number  | 指标类型 可选参数： 公式指标：1，聚合指标：2 |
+| productID| "2ioNzM" | String  | 产品 ID |
+| productItemIntID| "null" | Integer  | 产品 Item |
+| remark| "null" | String  | 备注 |
+| updateAt| "null" | Date  | 更新时间 |
 
 
 
@@ -940,11 +874,11 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| dataPointIntID| 1 | Integer  | true  | 功能点 ID |
-| dataPointName| "温度" | String  | true  | 功能点名称 |
-| originalData| {"time":[],"value":[]} | Object  | true  | 原始数据 |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| dataPointIntID| 1 | Integer  | 功能点 ID |
+| dataPointName| "温度" | String  | 功能点名称 |
+| originalData| {"time":[],"value":[]} | Object  | 原始数据 |
 
 
 

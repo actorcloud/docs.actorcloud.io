@@ -47,18 +47,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| createAt| "2018-09-30 16:38:38" | Date  | true  | 创建时间 |
-| enable| 1 | Integer  | true  | 是否可用 可选参数: 允许: 1, 不允许: 0 |
-| id| 31 | Integer  | true  | id |
-| name| "证书2" | String  | true  | 设备名称 |
-
-
-
-
 
 
 
@@ -102,18 +90,18 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| CN| "C1g8RWNwv:4EgbqSUKsONlMZjGVTAwchHYdC" | String  | true  | 是否中国区 |
-| cert| "----BEGIN CERTIFICATE-----\nMIIDEzCCAfsCAQAwDQYJKoZIhvcNAQELBQAwcDEbMBkGA1UEAwwSbXF0dC5hY3Rv\ncmNsb3" | String  | true  | 证书文件内容 |
-| createAt| "2018-09-30 16:38:38" | Date  | true  | 创建时间 |
-| createUser| "ActorCloud" | String  | true  | 创建用户 |
-| enable| 1 | Integer  | true  | 是否可用 可选参数: 允许: 1, 不允许: 0 |
-| id| 31 | Integer  | true  | id |
-| key| "----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDOeg93PVHsMyUf\noXv9+z" | String  | true  | key file string |
-| name| "证书2" | String  | true  | 设备名称 |
-| root| "----BEGIN CERTIFICATE-----\nMIIErjCCA5agAwIBAgIQBYAmfwbylVM0jhwYWl7uLjANBgkqhkiG9w0BAQsFADBh\nMQswCQ" | String  | true  | root ca 内容 |
-| updateAt| "null" | Date  | true  | 更新时间 |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| CN| "C1g8RWNwv:4EgbqSUKsONlMZjGVTAwchHYdC" | String  | 是否中国区 |
+| cert| "----BEGIN CERTIFICATE-----\nMIIDEzCCAfsCAQAwDQYJKoZIhvcNAQELBQAwcDEbMBkGA1UEAwwSbXF0dC5hY3Rv\ncmNsb3" | String  | 证书文件内容 |
+| createAt| "2018-09-30 16:38:38" | Date  | 创建时间 |
+| createUser| "ActorCloud" | String  | 创建用户 |
+| enable| 1 | Integer  | 是否可用 可选参数: 允许: 1, 不允许: 0 |
+| id| 31 | Integer  | id |
+| key| "----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDOeg93PVHsMyUf\noXv9+z" | String  | key file string |
+| name| "证书2" | String  | 设备名称 |
+| root| "----BEGIN CERTIFICATE-----\nMIIErjCCA5agAwIBAgIQBYAmfwbylVM0jhwYWl7uLjANBgkqhkiG9w0BAQsFADBh\nMQswCQ" | String  | root ca 内容 |
+| updateAt| "null" | Date  | 更新时间 |
 
 
 
@@ -338,26 +326,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| access| 1 | Integer  | true  | 操作 可选参数: 发布: 1, 订阅: 2, 发布或订阅: 3 |
-| accessLabel| "发布" | String  | true  | 操作 可选参数: 发布: 1, 订阅: 2, 发布或订阅: 3 |
-| allow| 1 | Integer  | true  | 访问控制 可选参数: 拒绝: 0, 允许: 1 |
-| allowLabel| "允许" | String  | true  | 访问控制 可选参数: 拒绝: 0, 允许: 1 |
-| createAt| "2018-10-17 13:51:29" | Date  | true  | 创建时间 |
-| description| "ull" | String  | true  | 描述 |
-| id| 16 | Integer  | true  | id |
-| mqtt_acl| [] | Array  | true  | MQTT ACL ID |
-| name| "策略" | String  | true  | 设备名称 |
-| topic| "hello" | String  | true  | 主题 |
-| updateAt| "2018-10-17 13:51:48" | Date  | true  | 更新时间 |
-| userIntID| 2 | Integer  | true  | 用户 ID |
-
-
-
-
 
 
 
@@ -404,21 +372,21 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| access| 1 | Integer  | true  | 操作 可选参数: 发布: 1, 订阅: 2, 发布或订阅: 3 |
-| accessLabel| "发布" | String  | true  | 操作 可选参数: 发布: 1, 订阅: 2, 发布或订阅: 3 |
-| allow| 1 | Integer  | true  | 访问控制 可选参数: 拒绝: 0, 允许: 1 |
-| allowLabel| "允许" | String  | true  | 访问控制 可选参数: 拒绝: 0, 允许: 1 |
-| createAt| "2018-10-17 13:51:29" | Date  | true  | 创建时间 |
-| createUser| "actorcloud" | String  | true  | 创建用户 |
-| description| "ull" | String  | true  | 描述 |
-| id| 16 | Integer  | true  | id |
-| mqtt_acl| [] | Array  | true  | MQTT ACL ID |
-| name| "策略" | String  | true  | 设备名称 |
-| topic| "hello" | String  | true  | 主题 |
-| updateAt| "2018-10-17 13:51:48" | Date  | true  | 更新时间 |
-| userIntID| 2 | Integer  | true  | 用户 ID |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| access| 1 | Integer  | 操作 可选参数: 发布: 1, 订阅: 2, 发布或订阅: 3 |
+| accessLabel| "发布" | String  | 操作 可选参数: 发布: 1, 订阅: 2, 发布或订阅: 3 |
+| allow| 1 | Integer  | 访问控制 可选参数: 拒绝: 0, 允许: 1 |
+| allowLabel| "允许" | String  | 访问控制 可选参数: 拒绝: 0, 允许: 1 |
+| createAt| "2018-10-17 13:51:29" | Date  | 创建时间 |
+| createUser| "actorcloud" | String  | 创建用户 |
+| description| "ull" | String  | 描述 |
+| id| 16 | Integer  | id |
+| mqtt_acl| [] | Array  | MQTT ACL ID |
+| name| "策略" | String  | 设备名称 |
+| topic| "hello" | String  | 主题 |
+| updateAt| "2018-10-17 13:51:48" | Date  | 更新时间 |
+| userIntID| 2 | Integer  | 用户 ID |
 
 
 

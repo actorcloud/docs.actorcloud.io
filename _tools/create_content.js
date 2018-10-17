@@ -106,6 +106,7 @@ function getContent(model) {
   }
   if (data.items) {
     data = data.items[0]
+    return ''
   }
   if (!data) {
     return ''
@@ -113,8 +114,8 @@ function getContent(model) {
 
   let content = `**字段说明：**\n\n`
   // 表头
-  content += '| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |\n'
-  content += '| --------------- | ----------------- | ------- | ----- | ------------------- |\n'
+  content += '| 字段名             | 示例值               | 字段类型    |  说明                  |\n'
+  content += '| --------------- | ----------------- | ------- | ------------------- |\n'
 
   Object.keys(data).forEach((key) => {
     let value = data[key] || 'null'
@@ -132,7 +133,7 @@ function getContent(model) {
       value = value.slice(1, 99)
     }
 
-    content += `| ${key}| ${JSON.stringify(value || keyData.value)} | ${toUpperOne(keyData.type)}  | ${keyData.required}  | ${typeof keyData.label === 'string' ? keyData.label : '暂无'} |\n`
+    content += `| ${key}| ${JSON.stringify(value || keyData.value)} | ${toUpperOne(keyData.type)}  | ${typeof keyData.label === 'string' ? keyData.label : '暂无'} |\n`
   })
 
   return `${content}\n\n\n\n`

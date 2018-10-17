@@ -53,22 +53,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| id| 17 | Integer  | true  | id |
-| productName| "MQTT产品" | String  | true  | 产品名称 |
-| streamDataType| 1 | Integer  | true  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
-| streamDataTypeLabel| "JSON" | String  | true  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
-| streamName| "测试" | String  | true  | 数据流名称 |
-| streamType| 2 | Integer  | true  | 数据流类型 可选参数: 终端上报: 1, 数据下发: 2 |
-| streamTypeLabel| "数据下发" | String  | true  | 数据下发 |
-| topic| "hello" | String  | true  | 主题 |
-
-
-
-
 
 
 
@@ -121,21 +105,21 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| createAt| "2018-09-30 16:48:22" | Date  | true  | 创建时间 |
-| dataPointNames| ["经度","纬度"] | Array  | true  | 功能点名称 |
-| dataPoints| [28,29] | Array  | true  | 功能点 ID |
-| detail| "null" | String  | true  | 备注 |
-| id| 9 | Integer  | true  | id |
-| productID| "p3zZMy" | String  | true  | 产品 ID |
-| streamDataType| 1 | Integer  | true  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
-| streamDataTypeLabel| "JSON" | String  | true  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
-| streamName| "location" | String  | true  | 数据流名称 |
-| streamType| 1 | Integer  | true  | 数据流类型 可选参数: 终端上报: 1, 数据下发: 2 |
-| topic| "topic" | String  | true  | 主题 |
-| updateAt| "null" | Date  | true  | 更新时间 |
-| userIntID| 23 | Integer  | true  | 用户 ID |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| createAt| "2018-09-30 16:48:22" | Date  | 创建时间 |
+| dataPointNames| ["经度","纬度"] | Array  | 功能点名称 |
+| dataPoints| [28,29] | Array  | 功能点 ID |
+| detail| "null" | String  | 备注 |
+| id| 9 | Integer  | id |
+| productID| "p3zZMy" | String  | 产品 ID |
+| streamDataType| 1 | Integer  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
+| streamDataTypeLabel| "JSON" | String  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
+| streamName| "location" | String  | 数据流名称 |
+| streamType| 1 | Integer  | 数据流类型 可选参数: 终端上报: 1, 数据下发: 2 |
+| topic| "topic" | String  | 主题 |
+| updateAt| "null" | Date  | 更新时间 |
+| userIntID| 23 | Integer  | 用户 ID |
 
 
 

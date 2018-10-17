@@ -55,23 +55,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| createAt| "2018-10-17 11:20:30" | Date  | true  | 创建时间 |
-| description| "OST.*groups/" | String  | true  | 描述 |
-| deviceCount| "null" | Integer  | true  | 月设备数量 |
-| groupID| "EtTuHU" | String  | true  | 分组 ID |
-| groupName| "默认分组" | String  | true  | 分组名称 |
-| id| 18 | Integer  | true  | id |
-| productID| "2ioNzM" | String  | true  | 产品 ID |
-| productName| "MQTT产品" | String  | true  | 产品名称 |
-| updateAt| "null" | Date  | true  | 更新时间 |
-
-
-
-
 
 
 
@@ -114,17 +97,17 @@ status 200
 
 **字段说明：**
 
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| createAt| "2018-09-30 16:42:38" | Date  | true  | 创建时间 |
-| createUser| "ActorCloud" | String  | true  | 创建用户 |
-| description| "认分组" | String  | true  | 描述 |
-| groupID| "rTpABa" | String  | true  | 分组 ID |
-| groupName| "默认分组" | String  | true  | 分组名称 |
-| id| 15 | Integer  | true  | id |
-| productID| "p3zZMy" | String  | true  | 产品 ID |
-| productName| "智能锁" | String  | true  | 产品名称 |
-| updateAt| "null" | Date  | true  | 更新时间 |
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| createAt| "2018-09-30 16:42:38" | Date  | 创建时间 |
+| createUser| "ActorCloud" | String  | 创建用户 |
+| description| "认分组" | String  | 描述 |
+| groupID| "rTpABa" | String  | 分组 ID |
+| groupName| "默认分组" | String  | 分组名称 |
+| id| 15 | Integer  | id |
+| productID| "p3zZMy" | String  | 产品 ID |
+| productName| "智能锁" | String  | 产品名称 |
+| updateAt| "null" | Date  | 更新时间 |
 
 
 

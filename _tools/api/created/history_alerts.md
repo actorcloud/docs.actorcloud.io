@@ -71,27 +71,6 @@ status 200
 ```
 
 
-**字段说明：**
-
-| 字段名             | 示例值               | 字段类型    | 必填(创建/更新)  | 说明                  |
-| --------------- | ----------------- | ------- | ----- | ------------------- |
-| alertContent| "湿度过高" | String  | true  | 告警内容 |
-| alertDetail| {"HUMIDITY":59.9,"TEMPERATURE":21.8,"TimeStamp":1539140375} | JSON  | true  | 告警详情 |
-| alertName| "湿度过高" | String  | true  | 告警名称 |
-| alertSeverity| 1 | Integer  | true  | 告警级别，可选参数: 紧急: 1, 主要: 2, 次要: 3, 警告: 4 |
-| alertSeverityLabel| "紧急" | String  | true  | 紧急 |
-| alertTimes| 48 | Integer  | true  | 告警次数 |
-| createAt| "2018-10-10 10:59:35" | Date  | true  | 创建时间 |
-| deviceID| "3F_TEMP_1" | String  | true  | 设备 ID |
-| deviceName| "工业温湿度传感器" | String  | true  | 设备名称 |
-| endTime| "2018-10-10 10:59:35" | Date  | true  | 结束时间 |
-| id| 7 | Integer  | true  | id |
-| startTime| "2018-10-10 10:55:30" | Date  | true  | 开始时间 |
-| updateAt| "null" | Date  | true  | 更新时间 |
-
-
-
-
 
 
 
