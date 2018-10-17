@@ -1,0 +1,134 @@
+[
+  {
+    "key": "authTypeLabel",
+    "value": "Token",
+    "label": "Token",
+    "type": "string"
+  },
+  {
+    "key": "authTypeLabel",
+    "value": "Token",
+    "label": "Token",
+    "type": "string"
+  },
+  {
+    "key": "authTypeLabel",
+    "value": "Token",
+    "label": "Token",
+    "type": "string"
+  },
+  {
+    "key": "mac",
+    "value": "0e:85:90:67:bb:d8",
+    "label": "0e:85:90:67:bb:d8",
+    "type": "string"
+  },
+  {
+    "key": "mac",
+    "value": "0e:85:90:67:bb:d8",
+    "label": "0e:85:90:67:bb:d8",
+    "type": "string"
+  },
+  {
+    "key": "authTypeLabel",
+    "value": "null",
+    "label": "null",
+    "type": "string"
+  },
+  {
+    "key": "connectStatusLabel",
+    "value": "下线",
+    "label": "下线",
+    "type": "string"
+  },
+  {
+    "key": "publishStatusLabel",
+    "value": "已下发",
+    "label": "已下发",
+    "type": "string"
+  },
+  {
+    "key": "publishUser",
+    "value": "actorcloud",
+    "label": "actorcloud",
+    "type": "string"
+  },
+  {
+    "key": "alertSeverityLabel",
+    "value": "紧急",
+    "label": "紧急",
+    "type": "string"
+  },
+  {
+    "key": "alertSeverityLabel",
+    "value": "紧急",
+    "label": "紧急",
+    "type": "string"
+  },
+  {
+    "key": "appCount",
+    "value": 2,
+    "label": 2,
+    "type": "number"
+  },
+  {
+    "key": "dataPointCount",
+    "value": 7,
+    "label": 7,
+    "type": "number"
+  },
+  {
+    "key": "dataStreamCount",
+    "value": 1,
+    "label": 1,
+    "type": "number"
+  },
+  {
+    "key": "dataTransTypeLabel",
+    "value": "只上报",
+    "label": "只上报",
+    "type": "string"
+  },
+  {
+    "key": "pointDataTypeLabel",
+    "value": "字符串",
+    "label": "字符串",
+    "type": "string"
+  },
+  {
+    "key": "streamTypeLabel",
+    "value": "数据下发",
+    "label": "数据下发",
+    "type": "string"
+  },
+  {
+    "key": "codeValueLabel",
+    "value": "序列号",
+    "label": "序列号",
+    "type": "string"
+  },
+  {
+    "key": "dataStreamName",
+    "value": "测试",
+    "label": "测试",
+    "type": "string"
+  },
+  {
+    "key": "templateTypeLabel",
+    "value": "开关",
+    "label": "开关",
+    "type": "string"
+  },
+  {
+    "key": "dataStreamName",
+    "value": "测试",
+    "label": "测试",
+    "type": "string"
+  },
+  {
+    "key": "templateTypeLabel",
+    "value": "开关",
+    "label": "开关",
+    "type": "string"
+  }
+]

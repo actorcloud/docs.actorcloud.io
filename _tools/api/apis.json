@@ -1,0 +1,627 @@
+{
+  "GET_/api/v1/devices?_page={page}&_limit={pageSize}": {
+    "id": 181,
+    "label": "查看设备列表",
+    "name": "devices-view",
+    "disabled": true,
+    "api": "GET_/api/v1/devices?_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/devices/{id}": {
+    "id": 194,
+    "label": "查看设备详情",
+    "name": "device_track-view",
+    "disabled": true,
+    "api": "GET_/api/v1/devices/{id}",
+    "rule": {
+      "{id}": "{deviceIntID}"
+    }
+  },
+  "POST_/api/v1/devices": {
+    "id": 177,
+    "label": "创建设备",
+    "name": "devices-create",
+    "disabled": true,
+    "api": "POST_/api/v1/devices"
+  },
+  "PUT_/api/v1/devices/{id}": {
+    "id": 174,
+    "label": "编辑设备",
+    "name": "devices-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/devices/{id}",
+    "rule": {
+      "{id}": "{deviceIntID}"
+    }
+  },
+  "DELETE_/api/v1/devices?ids={ids}": {
+    "id": 171,
+    "label": "删除设备",
+    "name": "devices-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/devices?ids={ids}",
+    "rule": {
+      "{ids}": "{deviceIntIDS}"
+    }
+  },
+  "GET_/api/v1/devices_export": {
+    "id": 163,
+    "label": "导出设备",
+    "name": "devices_export-view",
+    "disabled": true,
+    "api": "GET_/api/v1/devices_export"
+  },
+  "POST_/api/v1/devices_import": {
+    "id": 170,
+    "label": "导入设备",
+    "name": "devices_import-create",
+    "disabled": true,
+    "api": "POST_/api/v1/devices_import"
+  },
+  "GET_/api/v1/devices/{id}/events?_page={page}&_limit={pageSize}": {
+    "id": 175,
+    "label": "设备事件",
+    "name": "device_detail_event-view",
+    "disabled": true,
+    "api": "GET_/api/v1/devices/{id}/events?_page={page}&_limit={pageSize}",
+    "rule": {
+      "{id}": "{deviceIntID}"
+    }
+  },
+  "POST_/api/v1/device_publish": {
+    "id": 178,
+    "label": "设备控制",
+    "name": "device_publish-create",
+    "disabled": true,
+    "api": "POST_/api/v1/device_publish"
+  },
+  "POST_/api/v1/device_schedule_publish": {
+    "id": 188,
+    "label": "新建设备定时任务",
+    "name": "device_schedule_publish-create",
+    "disabled": true,
+    "api": "POST_/api/v1/device_schedule_publish"
+  },
+  "DELETE_/api/v1/device_schedule_publish?ids={ids}": {
+    "id": 172,
+    "label": "删除设备定时任务",
+    "name": "device_schedule_publish-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/device_schedule_publish?ids={ids}",
+    "rule": {
+      "{ids}": "{scheduleIDS}"
+    }
+  },
+  "GET_/api/v1/metrics_data?deviceID={deviceID}&metricType=1": {
+    "id": 207,
+    "label": "查看设备指标数据",
+    "name": "devices_metrics_data-view",
+    "disabled": true,
+    "api": "GET_/api/v1/metrics_data?deviceID={deviceID}&metricType=1"
+  },
+  "GET_/api/v1/original_data?deviceID={deviceID}&metricType=2&time_unit=day": {
+    "id": 206,
+    "label": "查看设备原始数据",
+    "name": "devices_original_data-view",
+    "disabled": true,
+    "api": "GET_/api/v1/original_data?deviceID={deviceID}&metricType=2&time_unit=day"
+  },
+  "GET_/api/v1/groups": {
+    "id": 165,
+    "label": "查看分组列表",
+    "name": "groups-view-list",
+    "disabled": true,
+    "api": "GET_/api/v1/groups"
+  },
+  "GET_/api/v1/groups/{id}": {
+    "id": 165,
+    "label": "查看分组详情",
+    "name": "groups-view",
+    "disabled": true,
+    "api": "GET_/api/v1/groups/{id}",
+    "rule": {
+      "{id}": "{groupIntID}"
+    }
+  },
+  "POST_/api/v1/groups": {
+    "id": 176,
+    "label": "创建分组",
+    "name": "groups-create",
+    "disabled": true,
+    "api": "POST_/api/v1/groups"
+  },
+  "PUT_/api/v1/groups/{id}": {
+    "id": 162,
+    "label": "编辑分组",
+    "name": "groups-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/groups/{id}",
+    "rule": {
+      "{id}": "{groupIntID}"
+    }
+  },
+  "DELETE_/api/v1/groups?ids={ids}": {
+    "id": 186,
+    "label": "删除分组",
+    "name": "groups-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/groups?ids={ids}",
+    "rule": {
+      "{ids}": "{groupIntIDS}"
+    }
+  },
+  "POST_/api/v1/group_publish": {
+    "id": 184,
+    "label": "分组控制",
+    "name": "group_publish-create",
+    "disabled": true,
+    "api": "POST_/api/v1/group_publish"
+  },
+  "POST_/api/v1/group_schedule_publish": {
+    "id": 179,
+    "label": "创建分组定时任务",
+    "name": "group_schedule_publish-create",
+    "disabled": true,
+    "api": "POST_/api/v1/group_schedule_publish"
+  },
+  "DELETE_/api/v1/group_schedule_publish?ids={ids}": {
+    "id": 189,
+    "label": "删除分组定时任务",
+    "name": "group_schedule_publish-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/group_schedule_publish?ids={ids}",
+    "rule": {
+      "{ids}": "{scheduleIDS}"
+    }
+  },
+  "GET_/api/v1/gateways?_page={page}&_limit={pageSize}": {
+    "id": 90,
+    "label": "查看网关列表",
+    "name": "gateways-view",
+    "disabled": true,
+    "api": "GET_/api/v1/gateways?_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/gateways/{id}": {
+    "id": 90,
+    "label": "查看网关详情",
+    "name": "gateways-view",
+    "disabled": true,
+    "api": "GET_/api/v1/gateways/{id}",
+    "rule": {
+      "{id}": "{gatewayIntIDS}"
+    }
+  },
+  "GET_/api/v1/devices?gateway={id}&_page={page}&_limit={pageSize}": {
+    "id": 90,
+    "label": "查看网关下设备列表",
+    "name": "gateways-view-device-list",
+    "disabled": true,
+    "api": "GET_/api/v1/devices?gateway={id}&_page={page}&_limit={pageSize}",
+    "rule": {
+      "{id}": "{gatewayIntID}"
+    }
+  },
+  "GET_/api/v1/gateways/{id}/events?_page={page}&_limit={pageSize}": {
+    "id": 90,
+    "label": "查看网关事件",
+    "name": "gateways-view-events",
+    "disabled": true,
+    "api": "GET_/api/v1/gateways/{id}/events?_page={page}&_limit={pageSize}",
+    "rule": {
+      "{id}": "{gatewayInt}"
+    }
+  },
+  "POST_/api/v1/gateways": {
+    "id": 93,
+    "label": "创建网关",
+    "name": "gateways-create",
+    "disabled": true,
+    "api": "POST_/api/v1/gateways"
+  },
+  "PUT_/api/v1/gateways/{id}": {
+    "id": 96,
+    "label": "编辑网关",
+    "name": "gateways-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/gateways/{id}",
+    "rule": {
+      "{id}": "{gatewayIntIDS}"
+    }
+  },
+  "DELETE_/api/v1/gateways?ids={ids}": {
+    "id": 88,
+    "label": "删除网关",
+    "name": "gateways-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/gateways?ids={ids}",
+    "rule": {
+      "{ids}": "{gatewayIntIDS}"
+    }
+  },
+  "GET_/api/v1/certs?_page={page}&_limit={pageSize}": {
+    "id": 169,
+    "label": "查看证书列表",
+    "name": "certs-view",
+    "disabled": true,
+    "api": "GET_/api/v1/certs?_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/certs/{id}": {
+    "id": 169,
+    "label": "查看证书详情",
+    "name": "certs-view",
+    "disabled": true,
+    "api": "GET_/api/v1/certs/{id}",
+    "rule": {
+      "{id}": "{certsID}"
+    }
+  },
+  "POST_/api/v1/certs": {
+    "id": 187,
+    "label": "创建证书",
+    "name": "certs-create",
+    "disabled": true,
+    "api": "POST_/api/v1/certs"
+  },
+  "PUT_/api/v1/certs/{id}": {
+    "id": 168,
+    "label": "编辑证书",
+    "name": "certs-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/certs/{id}",
+    "rule": {
+      "{id}": "{certsID}"
+    }
+  },
+  "DELETE_/api/v1/certs?ids={ids}": {
+    "id": 173,
+    "label": "删除证书",
+    "name": "certs-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/certs?ids={ids}",
+    "rule": {
+      "{ids}": "certIDS"
+    }
+  },
+  "GET_/api/v1/policies?_page={page}&_limit={pageSize}": {
+    "id": 183,
+    "label": "查看策略列表",
+    "name": "policies-view",
+    "disabled": true,
+    "api": "GET_/api/v1/policies?_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/policies/{id}": {
+    "id": 183,
+    "label": "查看策略详情",
+    "name": "policies-view",
+    "disabled": true,
+    "api": "GET_/api/v1/policies/{id}",
+    "rule": {
+      "{id}": "policiesID"
+    }
+  },
+  "POST_/api/v1/policies": {
+    "id": 185,
+    "label": "创建策略",
+    "name": "policies-create",
+    "disabled": true,
+    "api": "POST_/api/v1/policies"
+  },
+  "PUT_/api/v1/policies/{id}": {
+    "id": 167,
+    "label": "编辑策略",
+    "name": "policies-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/policies/{id}",
+    "rule": {
+      "{id}": "policiesID"
+    }
+  },
+  "DELETE_/api/v1/policies?ids={ids}": {
+    "id": 180,
+    "label": "删除策略",
+    "name": "policies-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/policies?ids={ids}",
+    "rule": {
+      "{ids}": "policiesIDS"
+    }
+  },
+  "GET_/api/v1/sdk?_page={page}&_limit={pageSize}": {
+    "id": 73,
+    "label": "查看升级包列表",
+    "name": "sdk-view",
+    "disabled": true,
+    "api": "GET_/api/v1/sdk?_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/sdk/{id}": {
+    "id": 73,
+    "label": "查看升级包详情",
+    "name": "sdk-view",
+    "disabled": true,
+    "api": "GET_/api/v1/sdk/{id}",
+    "rule": {
+      "{id}": "sdkID"
+    }
+  },
+  "POST_/api/v1/sdk": {
+    "id": 72,
+    "label": "创建升级包",
+    "name": "sdk-create",
+    "disabled": true,
+    "api": "POST_/api/v1/sdk"
+  },
+  "PUT_/api/v1/sdk/{id}": {
+    "id": 74,
+    "label": "编辑升级包",
+    "name": "sdk-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/sdk/{id}",
+    "rule": {
+      "{id}": "sdkID"
+    }
+  },
+  "DELETE_/api/v1/sdk?ids={ids}": {
+    "id": 71,
+    "label": "删除升级包",
+    "name": "sdk-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/sdk?ids={ids}",
+    "rule": {
+      "{ids}": "sdkIDS"
+    }
+  },
+  "GET_/api/v1/device_connect_logs?_page={page}&_limit={pageSize}": {
+    "id": 166,
+    "label": "查看连接日志",
+    "name": "connect_logs-view",
+    "disabled": true,
+    "api": "GET_/api/v1/device_connect_logs?_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/device_control_logs?_page={page}&_limit={pageSize}": {
+    "id": 182,
+    "label": "查看下行消息",
+    "name": "control_logs-view",
+    "disabled": true,
+    "api": "GET_/api/v1/device_control_logs?_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/device_events?_page={page}&_limit={pageSize}": {
+    "id": 164,
+    "label": "查看上行消息",
+    "name": "device_events-view",
+    "disabled": true,
+    "api": "GET_/api/v1/device_events?_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/current_alerts?_page={page}&_limit={pageSize}": {
+    "id": 77,
+    "label": "查看当前告警",
+    "name": "current_alerts-view",
+    "disabled": true,
+    "api": "GET_/api/v1/current_alerts?_page={page}&_limit={pageSize}"
+  },
+  "DELETE_/api/v1/current_alerts?ids={ids}": {
+    "id": 79,
+    "label": "处理当前告警",
+    "name": "current_alerts-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/current_alerts?ids={ids}",
+    "rule": {
+      "{ids}": "{alertIDS}"
+    }
+  },
+  "GET_/api/v1/history_alerts?_page={page}&_limit={pageSize}": {
+    "id": 80,
+    "label": "查看历史告警",
+    "name": "history_alerts-view",
+    "disabled": true,
+    "api": "GET_/api/v1/history_alerts?_page={page}&_limit={pageSize}"
+  },
+  "DELETE_/api/v1/history_alerts?ids={ids}": {
+    "id": 78,
+    "label": "删除历史告警",
+    "name": "history_alerts-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/history_alerts?ids={ids}",
+    "rule": {
+      "{ids}": "alertIDS"
+    }
+  },
+  "GET_/api/v1/products": {
+    "id": 84,
+    "label": "查看产品列表",
+    "name": "products-view",
+    "disabled": true,
+    "api": "GET_/api/v1/products"
+  },
+  "GET_/api/v1/products/{id}": {
+    "id": 84,
+    "label": "查看产品详情",
+    "name": "products-view",
+    "disabled": true,
+    "api": "GET_/api/v1/products/{id}",
+    "rule": {
+      "{id}": "{productIntID}"
+    }
+  },
+  "POST_/api/v1/products": {
+    "id": 94,
+    "label": "创建产品",
+    "name": "products-create",
+    "disabled": true,
+    "api": "POST_/api/v1/products"
+  },
+  "PUT_/api/v1/products/{id}": {
+    "id": 91,
+    "label": "编辑产品",
+    "name": "products-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/products/{id}",
+    "rule": {
+      "{id}": "{productIntID}"
+    }
+  },
+  "DELETE_/api/v1/products?ids={ids}": {
+    "id": 86,
+    "label": "删除产品",
+    "name": "products-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/products?ids={ids}",
+    "rule": {
+      "{ids}": "{productIntIDS}"
+    }
+  },
+  "GET_/api/v1/data_points?productID={productID}&_page={page}&_limit={pageSize}": {
+    "id": 221,
+    "label": "查看功能点列表",
+    "name": "data_points-view",
+    "disabled": true,
+    "api": "GET_/api/v1/data_points?productID={productID}&_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/data_points/{id}": {
+    "id": 221,
+    "label": "查看功能点详情",
+    "name": "data_points-view",
+    "disabled": true,
+    "api": "GET_/api/v1/data_points/{id}",
+    "rule": {
+      "{id}": "{dataPointIntID}"
+    }
+  },
+  "POST_/api/v1/data_points": {
+    "id": 217,
+    "label": "创建数据流",
+    "name": "data_streams-create",
+    "disabled": true,
+    "api": "POST_/api/v1/data_points"
+  },
+  "PUT_/api/v1/data_points/{id}": {
+    "id": 224,
+    "label": "编辑数据流",
+    "name": "data_streams-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/data_points/{id}",
+    "rule": {
+      "{id}": "{dataStreamsID}"
+    }
+  },
+  "DELETE_/api/v1/data_points?ids={ids}": {
+    "id": 225,
+    "label": "删除数据流",
+    "name": "data_streams-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/data_points?ids={ids}",
+    "rule": {
+      "{ids}": "{dataStreamsIDS}"
+    }
+  },
+  "GET_/api/v1/data_streams?productID={productID}&_page={page}&_limit={pageSize}": {
+    "id": 214,
+    "label": "查看数据流列表",
+    "name": "data_streams-view",
+    "disabled": true,
+    "api": "GET_/api/v1/data_streams?productID={productID}&_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/data_streams/{id}": {
+    "id": 214,
+    "label": "查看数据流详情",
+    "name": "data_streams-view-details",
+    "disabled": true,
+    "api": "GET_/api/v1/data_streams/{id}",
+    "rule": {
+      "{id}": "{dataStreamsID}"
+    }
+  },
+  "GET_/api/v1/metrics?productID={productID}&_page={page}&_limit={pageSize}": {
+    "id": 211,
+    "label": "查看指标列表",
+    "name": "metrics-view",
+    "disabled": true,
+    "api": "GET_/api/v1/metrics?productID={productID}&_page={page}&_limit={pageSize}"
+  },
+  "GET_/api/v1/metrics/{id}": {
+    "id": 211,
+    "label": "查看指标详情",
+    "name": "metrics-view",
+    "disabled": true,
+    "api": "GET_/api/v1/metrics/{id}",
+    "rule": {
+      "{id}": "{metricsID}"
+    }
+  },
+  "POST_/api/v1/metrics": {
+    "id": 209,
+    "label": "创建指标",
+    "name": "metrics-create",
+    "disabled": true,
+    "api": "POST_/api/v1/metrics"
+  },
+  "PUT_/api/v1/metrics/{id}": {
+    "id": 208,
+    "label": "编辑指标",
+    "name": "metrics-edit",
+    "disabled": true,
+    "api": "PUT_/api/v1/metrics/{id}",
+    "rule": {
+      "{id}": "{metricsID}"
+    }
+  },
+  "DELETE_/api/v1/metrics?ids={ids}": {
+    "id": 210,
+    "label": "删除指标",
+    "name": "metrics-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/metrics?ids={ids}",
+    "rule": {
+      "{ids}": "{metricsIDS}"
+    }
+  },
+  "GET_/api/v1/product_resources?productID={productID}&_page={page}&_limit={pageSize}": {
+    "id": 218,
+    "label": "查看资源列表",
+    "name": "product_resources-view",
+    "disabled": true,
+    "api": "GET_/api/v1/product_resources?productID={productID}&_page={page}&_limit={pageSize}"
+  },
+  "POST_/api/v1/product_resources": {
+    "id": 228,
+    "label": "创建资源",
+    "name": "product_resources-create",
+    "disabled": true,
+    "api": "POST_/api/v1/product_resources"
+  },
+  "DELETE_/api/v1/product_resources?ids={ids}": {
+    "id": 219,
+    "label": "删除资源",
+    "name": "product_resources-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/product_resources?ids={ids}",
+    "rule": {
+      "{ids}": "{resourcesIDS}"
+    }
+  },
+  "GET_/api/v1/app_templates?productID={productID}": {
+    "id": 220,
+    "label": "查看应用模板列表",
+    "name": "app_templates-view",
+    "disabled": true,
+    "api": "GET_/api/v1/app_templates?productID={productID}"
+  },
+  "DELETE_/api/v1/app_templates?ids={ids}": {
+    "id": 229,
+    "label": "删除应用模板",
+    "name": "app_templates-delete",
+    "disabled": true,
+    "api": "DELETE_/api/v1/app_templates?ids={ids}",
+    "rule": {
+      "{ids}": "{appTemplateIDS}"
+    }
+  },
+  "GET_/api/v1/device_consoles/{id}": {
+    "id": 226,
+    "label": "查看设备应用模板",
+    "name": "device_consoles-view",
+    "disabled": true,
+    "api": "GET_/api/v1/device_consoles/{id}",
+    "rule": {
+      "{id}": "{deviceIntID}"
+    }
+  }
+}

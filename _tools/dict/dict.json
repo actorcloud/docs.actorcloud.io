@@ -1,0 +1,780 @@
+{
+  "access": [
+    {
+      "label": "发布",
+      "value": 1
+    },
+    {
+      "label": "订阅",
+      "value": 2
+    },
+    {
+      "label": "发布或订阅",
+      "value": 3
+    }
+  ],
+  "actionType": [
+    {
+      "label": "告警",
+      "value": 1
+    },
+    {
+      "label": "邮件",
+      "value": 2
+    },
+    {
+      "label": "Webhook",
+      "value": 3
+    },
+    {
+      "label": "指令下发",
+      "value": 4
+    }
+  ],
+  "aggregateData": [
+    {
+      "label": "公式值",
+      "value": 1
+    },
+    {
+      "label": "原始值",
+      "value": 2
+    }
+  ],
+  "aggregateType": [
+    {
+      "label": "最大值",
+      "value": 1
+    },
+    {
+      "label": "最小值",
+      "value": 2
+    },
+    {
+      "label": "平均值",
+      "value": 3
+    },
+    {
+      "label": "累计值",
+      "value": 4
+    }
+  ],
+  "alertSeverity": [
+    {
+      "label": "紧急",
+      "value": 1
+    },
+    {
+      "label": "主要",
+      "value": 2
+    },
+    {
+      "label": "次要",
+      "value": 3
+    },
+    {
+      "label": "警告",
+      "value": 4
+    }
+  ],
+  "allow": [
+    {
+      "label": "拒绝",
+      "value": 0
+    },
+    {
+      "label": "允许",
+      "value": 1
+    }
+  ],
+  "appStatus": [
+    {
+      "label": "不可用",
+      "value": 0
+    },
+    {
+      "label": "可用",
+      "value": 1
+    }
+  ],
+  "authType": [
+    {
+      "label": "Token",
+      "value": 1
+    },
+    {
+      "label": "证书",
+      "value": 2
+    }
+  ],
+  "autoCreateCert": [
+    {
+      "label": "否",
+      "value": 0
+    },
+    {
+      "label": "是",
+      "value": 1
+    }
+  ],
+  "carrier": [
+    {
+      "label": "中国电信",
+      "value": 1
+    },
+    {
+      "label": "中国移动",
+      "value": 2
+    },
+    {
+      "label": "中国联通",
+      "value": 3
+    },
+    {
+      "label": "其他",
+      "value": 4
+    }
+  ],
+  "certEnable": [
+    {
+      "label": "不可用",
+      "value": 0
+    },
+    {
+      "label": "可用",
+      "value": 1
+    }
+  ],
+  "chargeType": [
+    {
+      "label": "免费",
+      "value": 1
+    },
+    {
+      "label": "时长",
+      "value": 2
+    },
+    {
+      "label": "次数",
+      "value": 3
+    },
+    {
+      "label": "条数",
+      "value": 4
+    }
+  ],
+  "chartType": [
+    {
+      "label": "折线图",
+      "value": 1
+    },
+    {
+      "label": "柱状图",
+      "value": 2
+    }
+  ],
+  "cloudProtocol": [
+    {
+      "label": "MQTT",
+      "value": 1
+    },
+    {
+      "label": "CoAP",
+      "value": 2
+    },
+    {
+      "label": "LwM2M",
+      "value": 3
+    },
+    {
+      "label": "LoRa",
+      "value": 4
+    },
+    {
+      "label": "HTTP",
+      "value": 5
+    },
+    {
+      "label": "WebSocket",
+      "value": 6
+    }
+  ],
+  "connectStatus": [
+    {
+      "label": "下线",
+      "value": 0
+    },
+    {
+      "label": "上线",
+      "value": 1
+    },
+    {
+      "label": "认证失败",
+      "value": 2
+    }
+  ],
+  "dataTransType": [
+    {
+      "label": "只上报",
+      "value": 1
+    },
+    {
+      "label": "只下发",
+      "value": 2
+    },
+    {
+      "label": "可上报可下发",
+      "value": 3
+    }
+  ],
+  "deviceBlocked": [
+    {
+      "label": "允许访问",
+      "value": 0
+    },
+    {
+      "label": "不允许访问",
+      "value": 1
+    }
+  ],
+  "deviceStatus": [
+    {
+      "label": "离线",
+      "value": 0
+    },
+    {
+      "label": "在线",
+      "value": 1
+    },
+    {
+      "label": "休眠",
+      "value": 2
+    }
+  ],
+  "deviceType": [
+    {
+      "label": "终端",
+      "value": 1
+    },
+    {
+      "label": "智能手机",
+      "value": 3
+    }
+  ],
+  "enable": [
+    {
+      "label": "允许",
+      "value": 1
+    },
+    {
+      "label": "不允许",
+      "value": 0
+    }
+  ],
+  "fcntCheck": [
+    {
+      "label": "Strict 16-bit",
+      "value": 0
+    },
+    {
+      "label": "Strict 32-bit",
+      "value": 1
+    },
+    {
+      "label": "Reset on zero",
+      "value": 2
+    },
+    {
+      "label": "Disabled",
+      "value": 3
+    }
+  ],
+  "feeType": [
+    {
+      "label": "充值",
+      "value": 1
+    },
+    {
+      "label": "消费",
+      "value": 2
+    }
+  ],
+  "gatewayProtocol": [
+    {
+      "label": "MQTT",
+      "value": 1
+    },
+    {
+      "label": "CoAP",
+      "value": 2
+    },
+    {
+      "label": "LwM2M",
+      "value": 3
+    },
+    {
+      "label": "LoRa",
+      "value": 4
+    },
+    {
+      "label": "HTTP",
+      "value": 5
+    },
+    {
+      "label": "WebSocket",
+      "value": 6
+    }
+  ],
+  "inviteStatus": [
+    {
+      "label": "未加入",
+      "value": 0
+    },
+    {
+      "label": "已加入",
+      "value": 1
+    }
+  ],
+  "invoiceStatus": [
+    {
+      "label": "审核中",
+      "value": 0
+    },
+    {
+      "label": "已取消",
+      "value": 1
+    },
+    {
+      "label": "已邮寄",
+      "value": 2
+    },
+    {
+      "label": "未过审",
+      "value": 3
+    }
+  ],
+  "invoiceType": [
+    {
+      "label": "个人增值税普通发票",
+      "value": 1
+    },
+    {
+      "label": "企业增值税普通发票",
+      "value": 2
+    }
+  ],
+  "isLogged": [
+    {
+      "label": "失败",
+      "value": 0
+    },
+    {
+      "label": "成功",
+      "value": 1
+    }
+  ],
+  "locationType": [
+    {
+      "label": "经度",
+      "value": 1
+    },
+    {
+      "label": "纬度",
+      "value": 2
+    },
+    {
+      "label": "海拔",
+      "value": 3
+    }
+  ],
+  "messageType": [
+    {
+      "label": "财务消息",
+      "value": 1
+    },
+    {
+      "label": "产品消息",
+      "value": 2
+    },
+    {
+      "label": "安全消息",
+      "value": 3
+    },
+    {
+      "label": "其它消息",
+      "value": 4
+    },
+    {
+      "label": "公告",
+      "value": 5
+    }
+  ],
+  "metricType": [
+    {
+      "label": "公式指标",
+      "value": 1
+    },
+    {
+      "label": "聚合指标",
+      "value": 2
+    }
+  ],
+  "msgType": [
+    {
+      "label": "login",
+      "value": 1
+    },
+    {
+      "label": "subscribe",
+      "value": 2
+    },
+    {
+      "label": "unsubscribe",
+      "value": 3
+    },
+    {
+      "label": "publish",
+      "value": 4
+    },
+    {
+      "label": "receive",
+      "value": 5
+    }
+  ],
+  "physicalNetwork": [
+    {
+      "label": "WIFI",
+      "value": 1
+    },
+    {
+      "label": "2G",
+      "value": 2
+    },
+    {
+      "label": "3G",
+      "value": 3
+    },
+    {
+      "label": "4G",
+      "value": 4
+    },
+    {
+      "label": "NB-IOT",
+      "value": 5
+    },
+    {
+      "label": "BlueTooth",
+      "value": 6
+    }
+  ],
+  "pointDataType": [
+    {
+      "label": "数值",
+      "value": 1
+    },
+    {
+      "label": "字符串",
+      "value": 3
+    },
+    {
+      "label": "故障",
+      "value": 4
+    },
+    {
+      "label": "布尔",
+      "value": 5
+    },
+    {
+      "label": "定长字符串",
+      "value": 11
+    },
+    {
+      "label": "变长字符串",
+      "value": 12
+    },
+    {
+      "label": "定长binary",
+      "value": 13
+    },
+    {
+      "label": "变长binary",
+      "value": 14
+    },
+    {
+      "label": "有符号整型",
+      "value": 15
+    },
+    {
+      "label": "无符号整型",
+      "value": 16
+    },
+    {
+      "label": "单精度浮点型",
+      "value": 17
+    },
+    {
+      "label": "双精度浮点型",
+      "value": 18
+    },
+    {
+      "label": "bit类型",
+      "value": 19
+    }
+  ],
+  "productResource": [
+    {
+      "label": "序列号",
+      "value": "serialNumber"
+    },
+    {
+      "label": "软件版本",
+      "value": "softVersion"
+    },
+    {
+      "label": "硬件版本",
+      "value": "hardwareVersion"
+    },
+    {
+      "label": "制造商",
+      "value": "manufacturer"
+    }
+  ],
+  "publishStatus": [
+    {
+      "label": "下发失败",
+      "value": 0
+    },
+    {
+      "label": "已下发",
+      "value": 1
+    },
+    {
+      "label": "已到达",
+      "value": 2
+    },
+    {
+      "label": "定时下发",
+      "value": 3
+    }
+  ],
+  "publishType": [
+    {
+      "label": "设备下发",
+      "value": 0
+    },
+    {
+      "label": "分组下发",
+      "value": 1
+    }
+  ],
+  "region": [
+    {
+      "label": "EU 863-870MHz",
+      "value": "EU863-870"
+    },
+    {
+      "label": "US 902-928MHz",
+      "value": "US902-928"
+    },
+    {
+      "label": "US 902-928MHz (Private)",
+      "value": "US902-928-PR"
+    },
+    {
+      "label": "China 779-787MHz",
+      "value": "CN779-787"
+    },
+    {
+      "label": "EU 433MHz",
+      "value": "EU433"
+    },
+    {
+      "label": "Australia 915-928MHz",
+      "value": "AU915-928"
+    },
+    {
+      "label": "China 470-510MHz",
+      "value": "CN470-510"
+    },
+    {
+      "label": "South Korea 920-923MHz",
+      "value": "KR920-923"
+    }
+  ],
+  "ruleType": [
+    {
+      "label": "Webhook",
+      "value": 1
+    }
+  ],
+  "scheduleType": [
+    {
+      "label": "定时不重复",
+      "value": 0
+    },
+    {
+      "label": "定时重复",
+      "value": 1
+    },
+    {
+      "label": "已完成",
+      "value": 2
+    }
+  ],
+  "scopeType": [
+    {
+      "label": "活动区域",
+      "value": 1
+    },
+    {
+      "label": "禁止区域",
+      "value": 2
+    }
+  ],
+  "sdkType": [
+    {
+      "label": "应用程序",
+      "value": 1
+    },
+    {
+      "label": "固件",
+      "value": 2
+    },
+    {
+      "label": "内核",
+      "value": 3
+    }
+  ],
+  "serviceGroup": [
+    {
+      "label": "基础服务",
+      "value": 1
+    },
+    {
+      "label": "设备管理平台 DMP",
+      "value": 2
+    },
+    {
+      "label": "应用使能平台 AEP",
+      "value": 3
+    },
+    {
+      "label": "增值服务",
+      "value": 4
+    }
+  ],
+  "streamDataType": [
+    {
+      "label": "JSON",
+      "value": 1
+    },
+    {
+      "label": "二进制",
+      "value": 2
+    }
+  ],
+  "streamType": [
+    {
+      "label": "终端上报",
+      "value": 1
+    },
+    {
+      "label": "数据下发",
+      "value": 2
+    }
+  ],
+  "templateType": [
+    {
+      "label": "开关",
+      "value": 1
+    },
+    {
+      "label": "枚举",
+      "value": 2
+    },
+    {
+      "label": "数值",
+      "value": 3
+    },
+    {
+      "label": "字符串",
+      "value": 4
+    },
+    {
+      "label": "布尔",
+      "value": 5
+    },
+    {
+      "label": "时间",
+      "value": 6
+    }
+  ],
+  "tenantType": [
+    {
+      "label": "个人用户",
+      "value": 1
+    },
+    {
+      "label": "企业用户",
+      "value": 2
+    }
+  ],
+  "topUpStatus": [
+    {
+      "label": "充值失败",
+      "value": 0
+    },
+    {
+      "label": "充值等待",
+      "value": 1
+    },
+    {
+      "label": "充值完成",
+      "value": 2
+    }
+  ],
+  "topUpType": [
+    {
+      "label": "支付宝充值",
+      "value": 1
+    },
+    {
+      "label": "微信充值",
+      "value": 2
+    }
+  ],
+  "upLinkSystem": [
+    {
+      "label": "云",
+      "value": 1
+    },
+    {
+      "label": "网关",
+      "value": 2
+    }
+  ],
+  "userAuthType": [
+    {
+      "label": "角色",
+      "value": 1
+    },
+    {
+      "label": "角色和分组",
+      "value": 2
+    }
+  ],
+  "webhookType": [
+    {
+      "label": "私有",
+      "value": 1
+    },
+    {
+      "label": "APICloud",
+      "value": 2
+    },
+    {
+      "label": "LeanCloud",
+      "value": 3
+    }
+  ]
+}
