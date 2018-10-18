@@ -3,19 +3,13 @@
     "prism",
     "-highlight",
     "-sharing",
-    "expandable-chapters-small",
     "simple-page-toc",
     "anchors",
-    "favicon",
     "copy-code-button",
     "anchor-navigation-ex",
     "cuav-chapters"
   ],
   "pluginsConfig": {
-    "favicon": {
-      "shortcut": "assets/favicon.ico",
-      "bookmark": "assets/favicon.ico"
-    },
     "anchor-navigation-ex": {
       "showLevel": false
     }
