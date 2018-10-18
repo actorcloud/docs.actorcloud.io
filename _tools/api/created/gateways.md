@@ -2,19 +2,19 @@
 
 ## 查看网关列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/gateways?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/gateways?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -96,19 +96,19 @@ status 200
 
 ## 查看网关详情
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/gateways/{gatewayIntIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/gateways/207
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -144,7 +144,7 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
@@ -152,7 +152,7 @@ status 200
 | blocked| "null" | Integer  | 是否允许访问 0:允许 1:禁止 |
 | createAt| "2018-10-10 15:55:15" | Date  | 创建时间 |
 | createUser| "actorcloud" | String  | 创建用户 |
-| description| "ull" | String  | 描述 |
+| description| "ull..." | String  | 描述 |
 | deviceConsoleIP| "null" | String  | 控制台ip |
 | deviceConsolePort| 22 | Integer  | 控制台端口 |
 | deviceConsoleUsername| "null" | String  | 控制台用户名 |
@@ -183,19 +183,19 @@ status 200
 
 ## 查看网关下设备列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/devices?gateway={gatewayIntID}&_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/devices?gateway=207&_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -307,19 +307,19 @@ status 200
 
 ## 查看网关事件
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/gateways/{gatewayInt}/events?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/gateways/207/events?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -367,13 +367,13 @@ status 200
 
 ## 创建网关
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/gateways
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/gateways
@@ -397,7 +397,7 @@ POST /api/v1/gateways
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -432,13 +432,13 @@ status 201
 
 ## 编辑网关
 
-**API 定义：**
+#### API 定义
 
 ```bash
 PUT /api/v1/gateways/{gatewayIntIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 PUT /api/v1/gateways/10
@@ -468,7 +468,7 @@ PUT /api/v1/gateways/10
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -503,19 +503,19 @@ status 200
 
 ## 删除网关
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/gateways?ids={gatewayIntIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/gateways?ids=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204

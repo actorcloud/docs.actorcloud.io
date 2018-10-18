@@ -2,19 +2,19 @@
 
 ## 查看应用模板列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/app_templates?productID={productID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/app_templates?productID=2ioNzM
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -101,19 +101,19 @@ status 200
 
 ## 删除应用模板
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/app_templates?ids={appTemplateIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/app_templates?ids=5
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204
@@ -131,19 +131,19 @@ status 204
 
 ## 查看设备应用模板
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/device_consoles/{deviceIntID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/device_consoles/46
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200

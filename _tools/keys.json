@@ -1972,8 +1972,8 @@
     },
     {
       "key": "gateway",
-      "value": 0,
-      "label": "所属网关",
+      "value": null,
+      "label": "所属网关 当设备类型 `upLinkSystem` 为 `2 (网关)` 时必须填写网关 ID",
       "type": "Integer"
     },
     {

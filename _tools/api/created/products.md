@@ -2,19 +2,19 @@
 
 ## 查看产品列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/products?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/products?_page=1&_limit=9
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -67,19 +67,19 @@ status 200
 
 ## 查看产品详情
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/products/{productIntID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/products/60
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -101,7 +101,7 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
@@ -109,7 +109,7 @@ status 200
 | cloudProtocolLabel| "MQTT" | String  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
 | createAt| "2019-09-13 21:26:01" | Date  | 创建时间 |
 | createUser| "actorcloud" | String  | 创建用户 |
-| description| "qtt产品测试1" | String  | 描述 |
+| description| "qtt产品测试1..." | String  | 描述 |
 | deviceCount| 106 | Integer  | 月设备数量 |
 | id| 60 | Integer  | id |
 | productID| "2ioNzM" | String  | 产品 ID |
@@ -126,13 +126,13 @@ status 200
 
 ## 创建产品
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/products
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/products
@@ -147,7 +147,7 @@ POST /api/v1/products
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -173,13 +173,13 @@ status 201
 
 ## 编辑产品
 
-**API 定义：**
+#### API 定义
 
 ```bash
 PUT /api/v1/products/{productIntID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 PUT /api/v1/products/60
@@ -201,7 +201,7 @@ PUT /api/v1/products/60
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -227,19 +227,19 @@ status 200
 
 ## 删除产品
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/products?ids={productIntIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/products?ids=127
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204

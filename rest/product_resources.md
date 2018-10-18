@@ -2,19 +2,19 @@
 
 ## 查看资源列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/product_resources?productID={productID}&_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/product_resources?productID=2ioNzM&_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -51,13 +51,13 @@ status 200
 
 ## 创建资源
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/product_resources
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/product_resources
@@ -73,7 +73,7 @@ POST /api/v1/product_resources
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -98,19 +98,19 @@ status 201
 
 ## 删除资源
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/product_resources?ids={resourcesIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/product_resources?ids=3
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204

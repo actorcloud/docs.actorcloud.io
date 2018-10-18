@@ -2,19 +2,19 @@
 
 ## 查看设备列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/devices?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/devices?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -126,19 +126,19 @@ status 200
 
 ## 查看设备详情
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/devices/{deviceIntID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/devices/46
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -196,7 +196,7 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
@@ -213,7 +213,7 @@ status 200
 | connectedAt| "null" | String  | 连接时间 |
 | createAt| "2019-09-14 14:55:20" | Date  | 创建时间 |
 | createUser| "actorcloud" | String  | 创建用户 |
-| description| "ull" | String  | 描述 |
+| description| "ull..." | String  | 描述 |
 | deviceConsoleIP| "null" | String  | 控制台ip |
 | deviceConsolePort| 22 | Integer  | 控制台端口 |
 | deviceConsoleUsername| "null" | String  | 控制台用户名 |
@@ -224,7 +224,7 @@ status 200
 | deviceType| 1 | Integer  | 设备类型 可选参数: 终端: 1, 智能手机: 3  与上联系统互斥：该处值为 `终端: 1` 时才能填写 `upLinkSystem` 字段 |
 | deviceTypeLabel| "终端" | String  | 设备类型 可选参数: 终端: 1, 智能手机: 3 |
 | deviceUsername| "063da5117b8c5ea5a6b3441edbf99d03" | String  | 设备用户名，用于连接emq |
-| gateway| "null" | Integer  | 所属网关 |
+| gateway| "null" | Integer  | 所属网关 当设备类型 `upLinkSystem` 为 `2 (网关)` 时必须填写网关 ID |
 | gatewayName| "null" | String  | 网关名称 |
 | hardwareVersion| "null" | String  | 硬件版本 |
 | id| 46 | Integer  | id |
@@ -257,13 +257,42 @@ status 200
 
 ## 创建设备
 
-**API 定义：**
+#### 创建说明
+
+
+##### 字段约束
+
+- 设备类型与上联系统：
+
+  设备类型 `deviceType` 为 `1 (终端)` 时，必须携带上联系统 `upLinkSystem` 字段，否则 `upLinkSystem` 应当为空；
+
+- 上联系统与所属网关：
+
+  上联系统 `upLinkSystem` 为 `2 (网关)` 时必须携带有效 `gateway` 网关 ID 字段。
+
+
+> 详细字段间约束请见设备字段说明，网关信息参考[网关列表 API](rest/gateways.html#%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%85%B3%E5%88%97%E8%A1%A8)。
+
+
+##### 多种设备类型
+
+请求参数根据所选产品的云端协议有所不同，除去基础信息之外，下表给出相关差异：
+
+| 云端协议     | 必填项        | 锁定项   |
+| --------------- | ----------------- | ------- |
+| MQTT、CoAP、HTTP、WebSocket | 认证方式：`authType` | -- |
+| LwM2M | 接入 IEMI：`IMEI` 、自动订阅： `autoSub` | -- |
+| LoRa | LoRa 协议相关信息，入网方式：`lora.type` 、DevEUI：`deviceID`、AppEUI： `lora.appEUI`、AppKey： `lora.appKey` 、FCnt Check： `lora.fcntCheck`、允许加入：`lora.canJoin` | 入网方式：`lora.type`等于 `otaa` 时 |
+| LoRa | LoRa 协议相关信息，入网方式：`lora.type` 、所属网关：`gateway`、DevAddr： `deviceID`、发射频率： `lora.region` 、NwkSKey： `lora.nwkSKey`、AppSKey：`lora.appSKey`、FCnt Up：`lora.fcntUp`、FCnt Down： `lora.fcntDown`、FCnt Check：`lora.fcntCheck` | 入网方式：`lora.type`等于 `abp` 时 |
+
+
+#### API 定义
 
 ```bash
 POST /api/v1/devices
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/devices
@@ -299,7 +328,7 @@ POST /api/v1/devices
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -348,30 +377,15 @@ status 201
 
 
 
-### 创建说明
-
-支持创建多种类型设备，请求参数根据所选产品的云端协议有所不同，除去基础信息之外，下表给出相关差异：
-
-| 云端协议     | 必填项        | 锁定项   |
-| --------------- | ----------------- | ------- |
-| MQTT、CoAP、HTTP、WebSocket | 认证方式：`authType` | -- |
-| LwM2M | 接入 IEMI：`IMEI` 、自动订阅： `autoSub` | -- |
-| LoRa | LoRa 协议相关信息，入网方式：`lora.type` 、DevEUI：`deviceID`、AppEUI： `lora.appEUI`、AppKey： `lora.appKey` 、FCnt Check： `lora.fcntCheck`、允许加入：`lora.canJoin` | 入网方式：`lora.type`等于 `otaa` 时 |
-| LoRa | LoRa 协议相关信息，入网方式：`lora.type` 、所属网关：`gateway`、DevAddr： `deviceID`、发射频率： `lora.region` 、NwkSKey： `lora.nwkSKey`、AppSKey：`lora.appSKey`、FCnt Up：`lora.fcntUp`、FCnt Down： `lora.fcntDown`、FCnt Check：`lora.fcntCheck` | 入网方式：`lora.type`等于 `abp` 时 |
-
-
-
-
-
 ## 编辑设备
 
-**API 定义：**
+#### API 定义
 
 ```bash
 PUT /api/v1/devices/{deviceIntID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 PUT /api/v1/devices/191
@@ -427,7 +441,7 @@ PUT /api/v1/devices/191
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -480,19 +494,19 @@ status 200
 
 ## 删除设备
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/devices?ids={deviceIntIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/devices?ids=190
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204
@@ -510,19 +524,19 @@ status 204
 
 ## 导出设备
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/devices_export
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/devices_export
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 202
@@ -535,7 +549,7 @@ status 202
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
@@ -551,19 +565,19 @@ status 202
 
 ## 导入设备
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/devices_import
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/devices_import
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 202
@@ -583,19 +597,19 @@ status 202
 
 ## 设备事件
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/devices/{deviceIntID}/events?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/devices/189/events?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -643,13 +657,13 @@ status 200
 
 ## 设备控制
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/device_publish
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/device_publish
@@ -665,7 +679,7 @@ POST /api/v1/device_publish
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -685,13 +699,13 @@ status 201
 
 ## 新建设备定时任务
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/device_schedule_publish
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/device_schedule_publish
@@ -710,7 +724,7 @@ POST /api/v1/device_schedule_publish
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -728,19 +742,19 @@ status 201
 
 ## 删除设备定时任务
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/device_schedule_publish?ids={scheduleIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/device_schedule_publish?ids=28
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204
@@ -758,19 +772,19 @@ status 204
 
 ## 查看设备指标数据
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/metrics_data?deviceID={deviceID}&metricType=1
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/metrics_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=1
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -802,7 +816,7 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
@@ -832,19 +846,19 @@ status 200
 
 ## 查看设备原始数据
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/original_data?deviceID={deviceID}&metricType=2&time_unit=day
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/original_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=2&time_unit=day
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -872,7 +886,7 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |

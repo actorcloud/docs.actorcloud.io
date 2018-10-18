@@ -2,19 +2,19 @@
 
 ## 查看分组列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/groups?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/groups?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -62,19 +62,19 @@ status 200
 
 ## 查看分组详情
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/groups/{groupIntID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/groups/15
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -95,13 +95,13 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
 | createAt| "2018-09-30 16:42:38" | Date  | 创建时间 |
 | createUser| "ActorCloud" | String  | 创建用户 |
-| description| "认分组" | String  | 描述 |
+| description| "认分组..." | String  | 描述 |
 | groupID| "rTpABa" | String  | 分组 ID |
 | groupName| "默认分组" | String  | 分组名称 |
 | id| 15 | Integer  | id |
@@ -119,13 +119,13 @@ status 200
 
 ## 创建分组
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/groups
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/groups
@@ -140,7 +140,7 @@ POST /api/v1/groups
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -166,13 +166,13 @@ status 201
 
 ## 编辑分组
 
-**API 定义：**
+#### API 定义
 
 ```bash
 PUT /api/v1/groups/{groupIntID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 PUT /api/v1/groups/15
@@ -193,7 +193,7 @@ PUT /api/v1/groups/15
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -219,19 +219,19 @@ status 200
 
 ## 删除分组
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/groups?ids={groupIntIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/groups?ids=15
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204
@@ -249,13 +249,13 @@ status 204
 
 ## 分组控制
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/group_publish
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/group_publish
@@ -270,7 +270,7 @@ POST /api/v1/group_publish
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -290,13 +290,13 @@ status 201
 
 ## 创建分组定时任务
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/group_schedule_publish
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/group_schedule_publish
@@ -314,7 +314,7 @@ POST /api/v1/group_schedule_publish
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -332,19 +332,19 @@ status 201
 
 ## 删除分组定时任务
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/group_schedule_publish?ids={scheduleIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/group_schedule_publish?ids=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204

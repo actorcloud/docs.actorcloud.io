@@ -2,19 +2,19 @@
 
 ## 查看功能点列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/data_points?productID={productID}&_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/data_points?productID=2ioNzM&_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -90,19 +90,19 @@ status 200
 
 ## 查看功能点详情
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/data_points/{dataPointIntID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/data_points/42
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -135,7 +135,7 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
@@ -171,13 +171,13 @@ status 200
 
 ## 创建功能点
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/data_points
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/data_points
@@ -202,7 +202,7 @@ POST /api/v1/data_points
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -241,13 +241,13 @@ status 201
 
 ## 编辑功能点
 
-**API 定义：**
+#### API 定义
 
 ```bash
 PUT /api/v1/data_points/{dataStreamsID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 PUT /api/v1/data_points/31
@@ -280,7 +280,7 @@ PUT /api/v1/data_points/31
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -319,19 +319,19 @@ status 200
 
 ## 删除功能点
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/data_points?ids={dataStreamsIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/data_points?ids=30
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204

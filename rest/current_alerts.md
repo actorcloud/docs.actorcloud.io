@@ -2,19 +2,19 @@
 
 ## 查看当前告警
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/current_alerts?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/current_alerts?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -61,19 +61,19 @@ status 200
 
 ## 处理当前告警
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/current_alerts?ids={alertIDS}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/current_alerts?ids=11
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204

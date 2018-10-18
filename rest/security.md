@@ -4,19 +4,19 @@
 
 ### 查看证书列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/certs?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/certs?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -54,19 +54,19 @@ status 200
 
 ### 查看证书详情
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/certs/{certsID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/certs/31
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -88,19 +88,19 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
 | CN| "C1g8RWNwv:4EgbqSUKsONlMZjGVTAwchHYdC" | String  | 是否中国区 |
-| cert| "----BEGIN CERTIFICATE-----\nMIIDEzCCAfsCAQAwDQYJKoZIhvcNAQELBQAwcDEbMBkGA1UEAwwSbXF0dC5hY3Rv\ncmNsb3" | String  | 证书文件内容 |
+| cert| "----BEGIN CERTIFICATE-----\nMIIDEzCCAfsCAQAwDQYJKo..." | String  | 证书文件内容 |
 | createAt| "2018-09-30 16:38:38" | Date  | 创建时间 |
 | createUser| "ActorCloud" | String  | 创建用户 |
 | enable| 1 | Integer  | 是否可用 可选参数: 允许: 1, 不允许: 0 |
 | id| 31 | Integer  | id |
-| key| "----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDOeg93PVHsMyUf\noXv9+z" | String  | key file string |
+| key| "----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w..." | String  | key file string |
 | name| "证书2" | String  | 设备名称 |
-| root| "----BEGIN CERTIFICATE-----\nMIIErjCCA5agAwIBAgIQBYAmfwbylVM0jhwYWl7uLjANBgkqhkiG9w0BAQsFADBh\nMQswCQ" | String  | root ca 内容 |
+| root| "----BEGIN CERTIFICATE-----\nMIIErjCCA5agAwIBAgIQBY..." | String  | root ca 内容 |
 | updateAt| "null" | Date  | 更新时间 |
 
 
@@ -113,13 +113,13 @@ status 200
 
 ### 创建证书
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/certs
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/certs
@@ -133,7 +133,7 @@ POST /api/v1/certs
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -170,13 +170,13 @@ status 201
 
 ### 编辑证书
 
-**API 定义：**
+#### API 定义
 
 ```bash
 PUT /api/v1/certs/{certsID}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 PUT /api/v1/certs/32
@@ -198,7 +198,7 @@ PUT /api/v1/certs/32
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -225,19 +225,19 @@ status 200
 
 ### 删除证书
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/certs?ids=certIDS
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/certs?ids=29
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 400
@@ -263,19 +263,19 @@ status 400
 
 ### 查看策略列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/policies?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/policies?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -333,19 +333,19 @@ status 200
 
 ### 查看策略详情
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/policies/policiesID
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/policies/16
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -370,7 +370,7 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
@@ -380,7 +380,7 @@ status 200
 | allowLabel| "允许" | String  | 访问控制 可选参数: 拒绝: 0, 允许: 1 |
 | createAt| "2018-10-17 13:51:29" | Date  | 创建时间 |
 | createUser| "actorcloud" | String  | 创建用户 |
-| description| "ull" | String  | 描述 |
+| description| "ull..." | String  | 描述 |
 | id| 16 | Integer  | id |
 | mqtt_acl| [] | Array  | MQTT ACL ID |
 | name| "策略" | String  | 设备名称 |
@@ -398,13 +398,13 @@ status 200
 
 ### 创建策略
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/policies
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/policies
@@ -421,7 +421,7 @@ POST /api/v1/policies
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -450,13 +450,13 @@ status 201
 
 ### 编辑策略
 
-**API 定义：**
+#### API 定义
 
 ```bash
 PUT /api/v1/policies/policiesID
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 PUT /api/v1/policies/16
@@ -481,7 +481,7 @@ PUT /api/v1/policies/16
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -510,19 +510,19 @@ status 200
 
 ### 删除策略
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/policies?ids=policiesIDS
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/policies?ids=12
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204

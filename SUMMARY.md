@@ -10,11 +10,10 @@
   * [CoAP 设备接入](access_guide/coap.md)
   * [设备控制](access_guide/control.md)
   * [REST API](access_guide/rest.md)
-* [产品商城](products_mall/products_mall.md)  
+* [产品商城](products_mall/products_mall.md)
   * [基础服务](products_mall/badic_sevice.md)
   * [设备管理平台 DMP](products_mall/dmp_sevice.md)
   * [应用使能平台 AEP](products_mall/aep_sevice.md)
-
 
 ## 仪表盘
 
@@ -32,27 +31,27 @@
   * [指标管理](device/product.md#指标管理)
   * [代理订阅](device/product.md#代理订阅)
   * [资源定义](device/product.md#资源定义)
-  * [应用模板](device/product.md#应用模板)  
-  
+  * [应用模板](device/product.md#应用模板)
+
 * [安全管理](device/security.md)
 * [OTA 升级](device/OTA.md)
 * [设备日志](device/connect_logs.md)
-  
+
 ## 资产管理
 * [设备资产](assets_manage/device_assets.md)
 * [SIM 卡](assets_manage/sim.md)
-* [消费者](assets_manage/consumers.md) 
+* [消费者](assets_manage/consumers.md)
 
 ## 位置管理
 * [地图管理](location/location.md#地图管理)
-* [电子围栏](location/location.md#电子围栏)  
+* [电子围栏](location/location.md#电子围栏)
 
 ## 规则管理
 * [消息规则](rule_engine/message_rules.md)
 * [业务规则](rule_engine/business_rules.md#业务规则)
 * [动作](rule_engine/business_rules.md#动作)
 * [定时任务](rule_engine/schedule.md)
-  
+
 ## 告警管理
 * [当前告警](alert/alert.md)
 * [历史告警](alert/alert.md#历史告警)
@@ -62,21 +61,21 @@
 * [CoAP 客户端](test_center/mqtt.md#coap-客户端)
 
 ## 应用管理
-* [应用列表](application/application.md#应用列表)  
-* [应用角色](application/application.md#应用角色)  
+* [应用列表](application/application.md#应用列表)
+* [应用角色](application/application.md#应用角色)
 
 ## 财务管理
 * [财务中心](finance/finance_center.md)
 * [充值管理](finance/top_up.md)
 * [发票管理](finance/invoices.md)
-  
-## 用户管理  
+
+## 用户管理
 * [用户](user/user.md#用户)
 * [角色](user/user.md#角色)
 * [消息中心](user/user.md#消息中心)
 * [登录日志](user/user.md#登录日志)
 
- 
+
 ## 附录
 * [REST API](rest/rest.md)
   * [认证与基础查询](rest/url.md)

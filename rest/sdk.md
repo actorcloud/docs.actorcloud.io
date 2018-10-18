@@ -2,19 +2,19 @@
 
 ## 查看升级包列表
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/sdk?_page={page}&_limit={pageSize}
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/sdk?_page=1&_limit=10
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -76,19 +76,19 @@ status 200
 
 ## 查看升级包详情
 
-**API 定义：**
+#### API 定义
 
 ```bash
 GET /api/v1/sdk/sdkID
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 GET /api/v1/sdk/3
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -118,7 +118,7 @@ status 200
 ```
 
 
-**字段说明：**
+#### 字段说明
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
@@ -145,13 +145,13 @@ status 200
 
 ## 创建升级包
 
-**API 定义：**
+#### API 定义
 
 ```bash
 POST /api/v1/sdk
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 POST /api/v1/sdk
@@ -168,7 +168,7 @@ POST /api/v1/sdk
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 201
@@ -201,13 +201,13 @@ status 201
 
 ## 编辑升级包
 
-**API 定义：**
+#### API 定义
 
 ```bash
 PUT /api/v1/sdk/sdkID
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 PUT /api/v1/sdk/3
@@ -231,7 +231,7 @@ PUT /api/v1/sdk/3
 ```
 
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 200
@@ -264,19 +264,19 @@ status 200
 
 ## 删除升级包
 
-**API 定义：**
+#### API 定义
 
 ```bash
 DELETE /api/v1/sdk?ids=sdkIDS
 ```
 
-**请求示例：**
+#### 请求示例
 
 ```bash
 DELETE /api/v1/sdk?ids=3
 ```
 
-**成功响应：**
+#### 成功响应
 
 ```bash
 status 204
