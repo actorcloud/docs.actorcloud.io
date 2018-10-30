@@ -26,12 +26,15 @@
 * [网关管理](device/gateway.md)
 
 * [产品管理](device/product.md)
+  * [属性列表](device/product.md#属性列表)
   * [功能点](device/product.md#功能点)
   * [数据流](device/product.md#数据流)
+  * [设备列表](device/product.md#设备列表)
   * [指标管理](device/product.md#指标管理)
+  * [聚合数据](device/product.md#聚合数据)
   * [代理订阅](device/product.md#代理订阅)
-  * [资源定义](device/product.md#资源定义)
   * [应用模板](device/product.md#应用模板)
+  * [资源定义](device/product.md#资源定义)
 
 * [安全管理](device/security.md)
 * [OTA 升级](device/OTA.md)
