@@ -2,6 +2,8 @@
 
 ## 查看功能点列表
 
+<!-- !#!GET_/api/v1/data_points?productID={productID}&_page={page}&_limit={pageSize}!#! -->
+
 #### API 定义
 
 ```bash
@@ -43,6 +45,7 @@ status 200
       "pointDataTypeLabel": "字符串",
       "productID": "2ioNzM",
       "productName": "MQTT产品",
+      "registerAddr": null,
       "unitName": null,
       "unitSymbol": null,
       "updateAt": null,
@@ -68,6 +71,7 @@ status 200
       "pointDataTypeLabel": "布尔",
       "productID": "2ioNzM",
       "productName": "MQTT产品",
+      "registerAddr": null,
       "unitName": null,
       "unitSymbol": null,
       "updateAt": "2018-10-15 17:14:39",
@@ -85,10 +89,9 @@ status 200
 
 
 
-
-
-
 ## 查看功能点详情
+
+<!-- !#!GET_/api/v1/data_points/{id}!#! -->
 
 #### API 定义
 
@@ -127,6 +130,7 @@ status 200
   "lowerLimit": null,
   "pointDataType": 3,
   "productID": "2ioNzM",
+  "registerAddr": null,
   "unitName": null,
   "unitSymbol": null,
   "updateAt": null,
@@ -139,7 +143,7 @@ status 200
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
-| binarySize| "null" | Integer  | 二进制长度 (数值类型为二进制(11)时选填) |
+| binarySize| "null" | Integer  | 二进制长度 (数值类型为二进制(11)时选填)。Modbus 协议产品时，若数据类型是布尔，表示数据在第几位 |
 | createAt| "2018-10-15 17:37:53" | Date  | 创建时间 |
 | createUser| "actorcloud" | String  | 创建用户 |
 | dataPointID| "fsdf" | String  | 功能点 ID |
@@ -154,8 +158,9 @@ status 200
 | isLocationType| "null" | Integer  | 是否为位置类型(默认 1) 可选参数: 是: 1, 否: 2 |
 | locationType| "null" | Integer  | 位置类型 可选参数: 经度: 1, 纬度: 2, 海拔: 3 |
 | lowerLimit| "null" | Float  | 下限 (数据类型为数值类型(1)时选填) |
-| pointDataType| 3 | Integer  | 数据格式 可选参数: 数值: 1, 字符串: 3, 故障: 4, 布尔: 5, 定长字符串: 11, 变长字符串: 12, 定长binary: 13, 变长binary: 14, 有符号整型: 15, 无符号整型: 16, 单精度浮点型: 17, 双精度浮点型: 18, bit类型: 19 |
+| pointDataType| 3 | Integer  | 数据格式 可选参数: 数值: 1, 字符串: 3, 故障: 4, 布尔: 5, 地理位置: 6, 定长字符串: 11, 变长字符串: 12, 定长binary: 13, 变长binary: 14, 有符号整型: 15, 无符号整型: 16, 单精度浮点型: 17, 双精度浮点型: 18, bit类型: 19。Modbus 协议产品时，有符号长整型: 21, 无符号长整型: 22, 布尔: 23, 时间: 24, 浮点: 25 |
 | productID| "2ioNzM" | String  | 产品 ID |
+| registerAddr | "null" | String | 地址，Modbus 协议产品时，必须填写 |
 | unitName| "null" | String  | 单位名称 (数据类型为数值类型(1)时选填) |
 | unitSymbol| "null" | String  | 单位符号 (数据类型为数值类型(1)时选填) |
 | updateAt| "null" | Date  | 更新时间 |
@@ -164,12 +169,9 @@ status 200
 
 
 
-
-
-
-
-
 ## 创建功能点
+
+<!-- !#!POST_/api/v1/data_points!#! -->
 
 #### API 定义
 
@@ -236,10 +238,9 @@ status 201
 
 
 
-
-
-
 ## 编辑功能点
+
+<!-- !#!PUT_/api/v1/data_points/{id}!#! -->
 
 #### API 定义
 
@@ -310,9 +311,6 @@ status 200
   "upperLimit": null
 }
 ```
-
-
-
 
 
 

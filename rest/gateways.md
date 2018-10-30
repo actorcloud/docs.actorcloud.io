@@ -160,7 +160,7 @@ status 200
 | deviceStatus| 1 | Integer  | 设备运行状态 可选参数: 离线: 0, 在线: 1, 休眠: 2 |
 | deviceUsername| "gw123456" | String  | 设备用户名，用于连接emq |
 | gatewayName| "智能电表网关" | String  | 网关名称 |
-| gatewayProtocol| 1 | Integer  | 网关协议类型 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| gatewayProtocol| 1 | Integer  | 网关协议类型 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
 | gatewayProtocolLabel| "MQTT" | String  | 网关协议类型 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
 | hardwareVersion| "null" | String  | 硬件版本 |
 | id| 207 | Integer  | id |

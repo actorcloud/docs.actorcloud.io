@@ -215,7 +215,7 @@
     {
       "key": "pointDataType",
       "value": 0,
-      "label": "数据格式 可选参数: 数值: 1, 字符串: 3, 故障: 4, 布尔: 5, 定长字符串: 11, 变长字符串: 12, 定长binary: 13, 变长binary: 14, 有符号整型: 15, 无符号整型: 16, 单精度浮点型: 17, 双精度浮点型: 18, bit类型: 19",
+      "label": "数据格式 可选参数: 数值: 1, 字符串: 3, 故障: 4, 布尔: 5, 定长字符串: 11, 变长字符串: 12, 定长binary: 13, 变长binary: 14, 有符号整型: 15, 无符号整型: 16, 单精度浮点型: 17, 双精度浮点型: 18, bit类型: 19。Modbus 协议产品时，有符号长整型: 21, 无符号长整型: 22, 布尔: 23, 时间: 24, 浮点: 25",
       "type": "Integer"
     },
     {
@@ -287,7 +287,7 @@
     {
       "key": "binarySize",
       "value": 0,
-      "label": "二进制长度 (数值类型为二进制(11)时选填)",
+      "label": "二进制长度 (数值类型为二进制(11)时选填)。Modbus 协议产品时，若数据类型是布尔，表示数据在第几位",
       "type": "Integer"
     },
     {
@@ -300,6 +300,12 @@
       "key": "productID",
       "value": "",
       "label": "产品 ID",
+      "type": "String"
+    },
+    {
+      "key": "registerAddr",
+      "value": "",
+      "label": "地址，Modbu 协议产品时，必须填写",
       "type": "String"
     }
   ],
@@ -2037,7 +2043,7 @@
     {
       "key": "cloudProtocol",
       "value": 0,
-      "label": "云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6",
+      "label": "云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7",
       "type": "Integer"
     },
     {
@@ -3167,7 +3173,7 @@
     {
       "key": "gatewayProtocol",
       "value": 0,
-      "label": "网关协议类型 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6",
+      "label": "网关协议类型 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7",
       "type": "Integer"
     },
     {

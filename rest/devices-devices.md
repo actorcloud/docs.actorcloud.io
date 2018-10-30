@@ -2,6 +2,8 @@
 
 ## 查看设备列表
 
+<!--!#!GET_/api/v1/devices?_page={page}&_limit={pageSize}!#!-->
+
 #### API 定义
 
 ```bash
@@ -24,95 +26,55 @@ status 200
 {
   "items": [
     {
-      "IMEI": null,
-      "IMSI": null,
-      "authType": 1,
-      "authTypeLabel": "Token",
-      "autoSub": null,
-      "blocked": 0,
-      "carrier": 1,
-      "cloudProtocol": 1,
-      "cloudProtocolLabel": "MQTT",
-      "createAt": "2019-09-14 14:55:20",
-      "description": null,
-      "deviceConsoleIP": null,
-      "deviceConsolePort": 22,
-      "deviceConsoleUsername": null,
-      "deviceID": "063da5117b8c5ea5a6b3441edbf99d03",
-      "deviceName": "mqtt设备_1",
-      "deviceStatus": 0,
-      "deviceStatusLabel": "离线",
-      "deviceType": 1,
-      "deviceTypeLabel": "终端",
-      "deviceUsername": "063da5117b8c5ea5a6b3441edbf99d03",
-      "gateway": null,
-      "hardwareVersion": null,
-      "id": 46,
-      "latitude": 25.064918,
-      "location": "云南省昆明市五华区丰宁街道金鼎科技园",
-      "longitude": 102.678732,
-      "lora": null,
-      "manufacturer": null,
-      "physicalNetwork": 1,
-      "productID": "2ioNzM",
-      "productIntID": 60,
-      "productName": "MQTT产品",
-      "scopes": [],
-      "serialNumber": null,
-      "softVersion": null,
-      "tenantID": "C2xPah6mn",
-      "token": "990afd1e9448584abfca5b7154f9bcba",
-      "upLinkSystem": 1,
-      "updateAt": "2018-10-12 09:39:52",
-      "userIntID": 2
-    },
-    {
-      "IMEI": "1wqwqqwqqqqqqqq",
-      "IMSI": "1wqwqqwqqqqqqq1",
-      "authType": 1,
-      "authTypeLabel": "Token",
-      "autoSub": 1,
-      "blocked": 0,
-      "carrier": 1,
-      "cloudProtocol": 3,
-      "cloudProtocolLabel": "LwM2M",
-      "createAt": "2018-10-16 16:25:00",
-      "description": null,
-      "deviceConsoleIP": null,
-      "deviceConsolePort": 22,
-      "deviceConsoleUsername": null,
-      "deviceID": "1wqwqqwqqqqqqqq",
-      "deviceName": "lwm2m图表测试",
-      "deviceStatus": 0,
-      "deviceStatusLabel": "离线",
-      "deviceType": 1,
-      "deviceTypeLabel": "终端",
-      "deviceUsername": "1wqwqqwqqqqqqqq",
-      "gateway": null,
-      "hardwareVersion": null,
-      "id": 216,
-      "latitude": null,
-      "location": null,
-      "longitude": null,
-      "lora": null,
-      "manufacturer": null,
-      "physicalNetwork": 1,
-      "productID": "67eH9V",
-      "productIntID": 141,
-      "productName": "lwm2m图表测试",
-      "scopes": [],
-      "serialNumber": null,
-      "softVersion": null,
-      "tenantID": "C2xPah6mn",
-      "token": "0f4d2a3cf0615c4fa338ccb297220b8d",
-      "upLinkSystem": 1,
-      "updateAt": null,
-      "userIntID": 2
+      "IMEI": null, 
+      "IMSI": null, 
+      "authType": null, 
+      "authTypeLabel": null, 
+      "autoSub": null, 
+      "blocked": 0, 
+      "carrier": 1, 
+      "cloudProtocol": 7, 
+      "cloudProtocolLabel": "Modbus", 
+      "createAt": "2018-10-26 11:27:56", 
+      "description": null, 
+      "deviceConsoleIP": null, 
+      "deviceConsolePort": 22, 
+      "deviceConsoleUsername": null, 
+      "deviceID": "ea78e8af256d57b2a52dcda2f05282cf", 
+      "deviceName": "modubs设备1", 
+      "deviceStatus": 0, 
+      "deviceStatusLabel": "离线", 
+      "deviceType": 1, 
+      "deviceTypeLabel": "终端", 
+      "deviceUsername": "ea78e8af256d57b2a52dcda2f05282cf", 
+      "gateway": 94, 
+      "hardwareVersion": null, 
+      "id": 95, 
+      "latitude": null, 
+      "location": null, 
+      "longitude": null, 
+      "lora": null, 
+      "manufacturer": null, 
+      "metaData": null, 
+      "modBusIndex": 3, 
+      "parentDevice": null, 
+      "physicalNetwork": 1, 
+      "productID": "4jMRrz", 
+      "productIntID": 36, 
+      "productName": "Modbus产品", 
+      "scopes": [], 
+      "serialNumber": null, 
+      "softVersion": null, 
+      "tenantID": "CkqVIYpeh", 
+      "token": "da77cafead065dbf8ac1844f11db9d8c", 
+      "upLinkSystem": 2, 
+      "updateAt": null, 
+      "userIntID": 6
     }
-  ],
+  ], 
   "meta": {
-    "count": 151,
-    "limit": 10,
+    "count": 1, 
+    "limit": 10, 
     "page": 1
   }
 }
@@ -120,11 +82,9 @@ status 200
 
 
 
-
-
-
-
 ## 查看设备详情
+
+<!-- !#!GET_/api/v1/devices/{id}!#! -->
 
 #### API 定义
 
@@ -146,52 +106,56 @@ status 200
 
 ```json
 {
-  "IMEI": null,
-  "IMSI": null,
-  "authType": 1,
-  "authTypeLabel": "Token",
-  "autoSub": null,
-  "blocked": 0,
-  "carrier": 1,
-  "clientIP": null,
-  "cloudProtocol": 1,
-  "cloudProtocolLabel": "MQTT",
-  "connectedAt": null,
-  "createAt": "2019-09-14 14:55:20",
-  "createUser": "actorcloud",
-  "description": null,
-  "deviceConsoleIP": null,
-  "deviceConsolePort": 22,
-  "deviceConsoleUsername": null,
-  "deviceID": "063da5117b8c5ea5a6b3441edbf99d03",
-  "deviceName": "mqtt设备_1",
-  "deviceStatus": 0,
-  "deviceStatusLabel": "离线",
-  "deviceType": 1,
-  "deviceTypeLabel": "终端",
-  "deviceUsername": "063da5117b8c5ea5a6b3441edbf99d03",
-  "gateway": null,
-  "gatewayName": null,
-  "hardwareVersion": null,
-  "id": 46,
-  "keepAlive": null,
-  "latitude": 25.064918,
-  "location": "云南省昆明市五华区丰宁街道金鼎科技园",
-  "longitude": 102.678732,
-  "lora": null,
-  "manufacturer": null,
-  "physicalNetwork": 1,
-  "productID": "2ioNzM",
-  "productIntID": 60,
-  "productName": "MQTT产品",
-  "scopes": [],
-  "serialNumber": null,
-  "softVersion": null,
-  "tenantID": "C2xPah6mn",
-  "token": "990afd1e9448584abfca5b7154f9bcba",
-  "upLinkSystem": 1,
-  "updateAt": "2018-10-12 09:39:52",
-  "userIntID": 2
+  "IMEI": null, 
+  "IMSI": null, 
+  "authType": null, 
+  "authTypeLabel": null, 
+  "autoSub": null, 
+  "blocked": 0, 
+  "carrier": 1, 
+  "clientIP": null, 
+  "cloudProtocol": 7, 
+  "cloudProtocolLabel": "Modbus", 
+  "connectedAt": null, 
+  "createAt": "2018-10-26 11:27:56", 
+  "createUser": "modbus", 
+  "description": null, 
+  "deviceConsoleIP": null, 
+  "deviceConsolePort": 22, 
+  "deviceConsoleUsername": null, 
+  "deviceID": "ea78e8af256d57b2a52dcda2f05282cf", 
+  "deviceName": "modubs设备1", 
+  "deviceStatus": 0, 
+  "deviceStatusLabel": "离线", 
+  "deviceType": 1, 
+  "deviceTypeLabel": "终端", 
+  "deviceUsername": "ea78e8af256d57b2a52dcda2f05282cf", 
+  "gateway": 94, 
+  "gatewayName": "Modbus网关", 
+  "hardwareVersion": null, 
+  "id": 95, 
+  "keepAlive": null, 
+  "latitude": null, 
+  "location": null, 
+  "longitude": null, 
+  "lora": null, 
+  "manufacturer": null, 
+  "metaData": null, 
+  "modBusIndex": 3, 
+  "parentDevice": null, 
+  "parentDeviceName": null, 
+  "physicalNetwork": 1, 
+  "productID": "4jMRrz", 
+  "productIntID": 36, 
+  "productName": "Modbus产品", 
+  "scopes": [], 
+  "serialNumber": null, 
+  "softVersion": null, 
+  "tenantID": "CkqVIYpeh", 
+  "token": "da77cafead065dbf8ac1844f11db9d8c", 
+  "upLinkSystem": 2, 
+  "updateAt": null, 
+  "userIntID": 6
 }
 ```
 
@@ -208,8 +172,8 @@ status 200
 | blocked| "null" | Integer  | 是否允许访问 0:允许 1:禁止 |
 | carrier| 1 | Integer  | 运营商 可选参数: 中国电信: 1, 中国移动: 2, 中国联通: 3, 其他: 4 |
 | clientIP| "null" | String  | 客户端 IP |
-| cloudProtocol| 1 | Integer  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| cloudProtocolLabel| "MQTT" | String  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| cloudProtocol| 1 | Integer  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
+| cloudProtocolLabel| "MQTT" | String  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
 | connectedAt| "null" | String  | 连接时间 |
 | createAt| "2019-09-14 14:55:20" | Date  | 创建时间 |
 | createUser| "actorcloud" | String  | 创建用户 |
@@ -234,6 +198,10 @@ status 200
 | longitude| 102.678732 | Float  | 经度 |
 | lora| "null" | JSON  | 是否 LoRa 协议 |
 | manufacturer| "null" | String  | 制造商 |
+| metaData | "null" | json | 元数据 |
+| modBuxIndex | 3 | Integer | 索引，所属产品是 `Modbus` 协议时，必须填写(0~255之间的数字，同级设备不能重复) |
+| parentDevice | "null" | Integer | 上联设备 ID， 当上联系统选择 `设备` 时，必须填写|
+| parentDeviceName | "null" | String | 上联设备名称 |
 | physicalNetwork| 1 | Integer  | 物理网络 可选参数: WIFI: 1, 2G: 2, 3G: 3, 4G: 4, NB-IOT: 5, BlueTooth: 6 |
 | productID| "2ioNzM" | String  | 产品 ID |
 | productIntID| 60 | Integer  | 产品 ID |
@@ -243,14 +211,9 @@ status 200
 | softVersion| "null" | String  | 软件版本 |
 | tenantID| "C2xPah6mn" | String  | 租户 ID |
 | token| "990afd1e9448584abfca5b7154f9bcba" | String  | 设备秘钥 |
-| upLinkSystem| 1 | Integer  | 上联系统 可选参数: 云: 1, 网关: 2 |
+| upLinkSystem| 1 | Integer  | 上联系统 可选参数: 云: 1, 网关: 2, 设备: 3 |
 | updateAt| "2018-10-12 09:39:52" | Date  | 更新时间 |
 | userIntID| 2 | Integer  | 用户 ID |
-
-
-
-
-
 
 
 
@@ -262,13 +225,20 @@ status 200
 
 ##### 字段约束
 
+- 所属产品与索引：
+
+  所属产品 `productID` 为 `Modbus` 协议的产品时，必须携带索引 `modBusIndex` 字段。
 - 设备类型与上联系统：
 
-  设备类型 `deviceType` 为 `1 (终端)` 时，必须携带上联系统 `upLinkSystem` 字段，否则 `upLinkSystem` 应当为空；
+  设备类型 `deviceType` 为 `1 (终端)` 时，必须携带上联系统 `upLinkSystem` 字段，否则 `upLinkSystem` 应当为空。
 
 - 上联系统与所属网关：
 
   上联系统 `upLinkSystem` 为 `2 (网关)` 时必须携带有效 `gateway` 网关 ID 字段。
+
+- 上联系统与所属设备：
+
+  上线系统 `upLinkSystem` 为 `3 (设备)` 时必须携带有效 `parentDevice` 设备 ID 字段。
 
 
 > 详细字段间约束请见设备字段说明，网关信息参考[网关列表 API](rest/gateways.html#%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%85%B3%E5%88%97%E8%A1%A8)。
@@ -284,7 +254,10 @@ status 200
 | LwM2M | 接入 IEMI：`IMEI` 、自动订阅： `autoSub` | -- |
 | LoRa | LoRa 协议相关信息，入网方式：`lora.type` 、DevEUI：`deviceID`、AppEUI： `lora.appEUI`、AppKey： `lora.appKey` 、FCnt Check： `lora.fcntCheck`、允许加入：`lora.canJoin` | 入网方式：`lora.type`等于 `otaa` 时 |
 | LoRa | LoRa 协议相关信息，入网方式：`lora.type` 、所属网关：`gateway`、DevAddr： `deviceID`、发射频率： `lora.region` 、NwkSKey： `lora.nwkSKey`、AppSKey：`lora.appSKey`、FCnt Up：`lora.fcntUp`、FCnt Down： `lora.fcntDown`、FCnt Check：`lora.fcntCheck` | 入网方式：`lora.type`等于 `abp` 时 |
+| Modbus | 索引：`modBuxIndex`、认证方式：`authType` | -- |
 
+
+<!-- !#!POST_/api/v1/devices!#! -->
 
 #### API 定义
 
@@ -360,6 +333,10 @@ status 201
   "longitude": 120.124144,
   "lora": null,
   "manufacturer": "江南",
+  "metaData": null, 
+  "modBusIndex": null, 
+  "parentDevice": null, 
+  "parentDeviceName": null, 
   "physicalNetwork": 1,
   "productID": "p3zZMy",
   "scopes": [],
@@ -376,8 +353,9 @@ status 201
 
 
 
-
 ## 编辑设备
+
+<!-- !#!PUT_/api/v1/devices/{id}!#! -->
 
 #### API 定义
 
@@ -425,6 +403,10 @@ PUT /api/v1/devices/191
   "location": null,
   "longitude": null,
   "manufacturer": null,
+  "metaData": null, 
+  "modBusIndex": null, 
+  "parentDevice": null, 
+  "parentDeviceName": null, 
   "physicalNetwork": 1,
   "productID": "Bwj2pn",
   "productIntID": 129,
@@ -473,6 +455,10 @@ status 200
   "longitude": null,
   "lora": null,
   "manufacturer": null,
+  "metaData": null, 
+  "modBusIndex": null, 
+  "parentDevice": null, 
+  "parentDeviceName": null, 
   "physicalNetwork": 1,
   "productID": "Bwj2pn",
   "scopes": [],
@@ -485,9 +471,6 @@ status 200
   "userIntID": 23
 }
 ```
-
-
-
 
 
 
@@ -595,6 +578,107 @@ status 202
 
 
 
+## 查看子设备列表
+
+#### API 定义
+
+```bash
+GET /api/v1/devices?parentDevice={deviceIntID}&_page={page}&_limit={pageSize}
+```
+
+#### 请求示例
+
+```bash
+GET /api/v1/devices?parentDevice=95&_page=1&_limit=10
+```
+
+#### 成功响应
+
+```bash
+status 200
+```
+
+```json
+{
+  "items": [
+    {
+      "IMEI": null, 
+      "IMSI": null, 
+      "authType": 1, 
+      "authTypeLabel": "Token", 
+      "autoSub": null, 
+      "blocked": 0, 
+      "carrier": 1, 
+      "cloudProtocol": 7, 
+      "cloudProtocolLabel": "Modbus", 
+      "createAt": "2018-10-29 14:48:37", 
+      "description": null, 
+      "deviceConsoleIP": null, 
+      "deviceConsolePort": 22, 
+      "deviceConsoleUsername": null, 
+      "deviceID": "A_0573be62c1565f7dbe636765ae46af1a_1", 
+      "deviceName": "modbus设备2", 
+      "deviceStatus": 0, 
+      "deviceStatusLabel": "离线", 
+      "deviceType": 1, 
+      "deviceTypeLabel": "终端", 
+      "deviceUsername": "0573be62c1565f7dbe636765ae46af1a", 
+      "gateway": null, 
+      "hardwareVersion": null, 
+      "id": 99, 
+      "latitude": null, 
+      "location": null, 
+      "longitude": null, 
+      "lora": null, 
+      "manufacturer": null, 
+      "metaData": null, 
+      "modBusIndex": 5, 
+      "parentDevice": 95, 
+      "physicalNetwork": 1, 
+      "productID": "4jMRrz", 
+      "productIntID": 36, 
+      "productName": "Modbus产品", 
+      "scopes": [], 
+      "serialNumber": null, 
+      "softVersion": null, 
+      "tenantID": "CkqVIYpeh", 
+      "token": "88823fd94f0c5fcab1de844821a0810b", 
+      "upLinkSystem": 3, 
+      "updateAt": null, 
+      "userIntID": 6
+    }
+  ], 
+  "meta": {
+    "count": 1, 
+    "limit": 10, 
+    "page": 1
+  }
+}
+```
+
+
+
+
+
+
+
+## 子设备的创建、编辑
+
+> 与普通设备的创建、编辑类似，唯一不同的地方是 `parentDevice` 必填，且必须是上联设备的 ID
+
+
+
+
+
+
+
+## 子设备删除
+
+> 参考普通设备的删除接口
+
+
+
+
 ## 设备事件
 
 #### API 定义
@@ -648,6 +732,138 @@ status 200
   }
 }
 ```
+
+
+
+
+
+
+
+## 查看设备原始数据
+
+#### API 定义
+
+```bash
+GET /api/v1/original_data?deviceID={deviceID}&metricType=2&time_unit=day
+```
+
+#### 请求示例
+
+```bash
+GET /api/v1/original_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=2&time_unit=day
+```
+
+#### 成功响应
+
+```bash
+status 200
+```
+
+```json
+[
+  {
+    "dataPointIntID": 1,
+    "dataPointName": "温度",
+    "originalData": {
+      "time": [],
+      "value": []
+    }
+  },
+  {
+    "dataPointIntID": 2,
+    "dataPointName": "湿度",
+    "originalData": {
+      "time": [],
+      "value": []
+    }
+  }
+]
+```
+
+
+#### 字段说明
+
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| dataPointIntID| 1 | Integer  | 功能点 ID |
+| dataPointName| "温度" | String  | 功能点名称 |
+| originalData| {"time":[],"value":[]} | Object  | 原始数据 |
+
+
+
+
+
+
+
+
+
+## 查看设备指标数据
+
+#### API 定义
+
+```bash
+GET /api/v1/metrics_data?deviceID={deviceID}&metricType=1
+```
+
+#### 请求示例
+
+```bash
+GET /api/v1/metrics_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=1
+```
+
+#### 成功响应
+
+```bash
+status 200
+```
+
+```json
+[
+  {
+    "aggregateData": null,
+    "aggregateType": 1,
+    "chartType": 1,
+    "createAt": "2018-10-12 17:49:42",
+    "dataPointIntID": 1,
+    "expressions": "currentValue - lastValue",
+    "id": 13,
+    "isShow": 1,
+    "metricData": {
+      "time": [],
+      "value": []
+    },
+    "metricName": "111",
+    "metricType": 1,
+    "productID": "2ioNzM",
+    "productItemIntID": null,
+    "remark": null,
+    "updateAt": null
+  }
+]
+```
+
+
+#### 字段说明
+
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| aggregateData| "null" | String  | 聚合数据 |
+| aggregateType| 1 | Integer  | 聚合方式 可选参数: 最大值: 1, 最小值: 2, 平均值: 3, 累计值: 4 |
+| chartType| 1 | Integer  | 展示图表类型 可选参数: 折线图: 1, 柱状图: 2 |
+| createAt| "2018-10-12 17:49:42" | Date  | 创建时间 |
+| dataPointIntID| 1 | Integer  | 功能点 ID |
+| expressions| "currentValue - lastValue" | String  | 计算公式 |
+| id| 13 | Integer  | id |
+| isShow| 1 | Integer  | 是否显示在设备详情页面: 0否 1是 |
+| metricData| {"time":[],"value":[]} | Object  | 指标数据 |
+| metricName| "111" | String  | 指标名称 |
+| metricType| 1 | Number  | 指标类型 可选参数： 公式指标：1，聚合指标：2 |
+| productID| "2ioNzM" | String  | 产品 ID |
+| productItemIntID| "null" | Integer  | 产品 Item |
+| remark| "null" | String  | 备注 |
+| updateAt| "null" | Date  | 更新时间 |
+
+
 
 
 
@@ -766,133 +982,6 @@ status 204
 
 
 
-
-
-
-
-## 查看设备指标数据
-
-#### API 定义
-
-```bash
-GET /api/v1/metrics_data?deviceID={deviceID}&metricType=1
-```
-
-#### 请求示例
-
-```bash
-GET /api/v1/metrics_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=1
-```
-
-#### 成功响应
-
-```bash
-status 200
-```
-
-```json
-[
-  {
-    "aggregateData": null,
-    "aggregateType": 1,
-    "chartType": 1,
-    "createAt": "2018-10-12 17:49:42",
-    "dataPointIntID": 1,
-    "expressions": "currentValue - lastValue",
-    "id": 13,
-    "isShow": 1,
-    "metricData": {
-      "time": [],
-      "value": []
-    },
-    "metricName": "111",
-    "metricType": 1,
-    "productID": "2ioNzM",
-    "productItemIntID": null,
-    "remark": null,
-    "updateAt": null
-  }
-]
-```
-
-
-#### 字段说明
-
-| 字段名             | 示例值               | 字段类型    |  说明                  |
-| --------------- | ----------------- | ------- | ------------------- |
-| aggregateData| "null" | String  | 聚合数据 |
-| aggregateType| 1 | Integer  | 聚合方式 可选参数: 最大值: 1, 最小值: 2, 平均值: 3, 累计值: 4 |
-| chartType| 1 | Integer  | 展示图表类型 可选参数: 折线图: 1, 柱状图: 2 |
-| createAt| "2018-10-12 17:49:42" | Date  | 创建时间 |
-| dataPointIntID| 1 | Integer  | 功能点 ID |
-| expressions| "currentValue - lastValue" | String  | 计算公式 |
-| id| 13 | Integer  | id |
-| isShow| 1 | Integer  | 是否显示在设备详情页面: 0否 1是 |
-| metricData| {"time":[],"value":[]} | Object  | 指标数据 |
-| metricName| "111" | String  | 指标名称 |
-| metricType| 1 | Number  | 指标类型 可选参数： 公式指标：1，聚合指标：2 |
-| productID| "2ioNzM" | String  | 产品 ID |
-| productItemIntID| "null" | Integer  | 产品 Item |
-| remark| "null" | String  | 备注 |
-| updateAt| "null" | Date  | 更新时间 |
-
-
-
-
-
-
-
-
-
-## 查看设备原始数据
-
-#### API 定义
-
-```bash
-GET /api/v1/original_data?deviceID={deviceID}&metricType=2&time_unit=day
-```
-
-#### 请求示例
-
-```bash
-GET /api/v1/original_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=2&time_unit=day
-```
-
-#### 成功响应
-
-```bash
-status 200
-```
-
-```json
-[
-  {
-    "dataPointIntID": 1,
-    "dataPointName": "温度",
-    "originalData": {
-      "time": [],
-      "value": []
-    }
-  },
-  {
-    "dataPointIntID": 2,
-    "dataPointName": "湿度",
-    "originalData": {
-      "time": [],
-      "value": []
-    }
-  }
-]
-```
-
-
-#### 字段说明
-
-| 字段名             | 示例值               | 字段类型    |  说明                  |
-| --------------- | ----------------- | ------- | ------------------- |
-| dataPointIntID| 1 | Integer  | 功能点 ID |
-| dataPointName| "温度" | String  | 功能点名称 |
-| originalData| {"time":[],"value":[]} | Object  | 原始数据 |
 
 
 

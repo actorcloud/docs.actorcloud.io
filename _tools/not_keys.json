@@ -1,11 +1,5 @@
 [
   {
-    "key": "authTypeLabel",
-    "value": "Token",
-    "label": "Token",
-    "type": "string"
-  },
-  {
     "key": "mac",
     "value": "0e:85:90:67:bb:d8",
     "label": "0e:85:90:67:bb:d8",

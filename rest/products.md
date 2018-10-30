@@ -105,7 +105,7 @@ status 200
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
-| cloudProtocol| 1 | Integer  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| cloudProtocol| 1 | Integer  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
 | cloudProtocolLabel| "MQTT" | String  | 云端协议 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
 | createAt| "2019-09-13 21:26:01" | Date  | 创建时间 |
 | createUser| "actorcloud" | String  | 创建用户 |
