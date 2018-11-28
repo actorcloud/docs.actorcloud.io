@@ -48,6 +48,7 @@
 ## 位置管理
 * [地图管理](location/location.md#地图管理)
 * [电子围栏](location/location.md#电子围栏)
+* [拓扑管理](location/location.md#拓扑管理)
 
 ## 规则管理
 * [消息规则](rule_engine/message_rules.md)
@@ -75,6 +76,7 @@
 ## 用户管理
 * [用户](user/user.md#用户)
 * [角色](user/user.md#角色)
+* [标签](user/user.md#标签)
 * [消息中心](user/user.md#消息中心)
 * [登录日志](user/user.md#登录日志)
 
@@ -111,6 +113,8 @@
     * [查看网关详情](rest/gateways.md#查看网关详情)
     * [查看网关下设备列表](rest/gateways.md#查看网关下设备列表)
     * [查看网关事件](rest/gateways.md#查看网关事件)
+    * [查看网关控制](rest/gateways.md#查看网关控制)
+    * [查看网关下设备数据](rest/gateways.md#查看网关下设备数据) 
     * [创建网关](rest/gateways.md#创建网关)
     * [编辑网关](rest/gateways.md#编辑网关)
     * [删除网关](rest/gateways.md#删除网关)

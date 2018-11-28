@@ -116,7 +116,7 @@ status 200
 | streamDataType| 1 | Integer  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
 | streamDataTypeLabel| "JSON" | String  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
 | streamName| "location" | String  | 数据流名称 |
-| streamType| 1 | Integer  | 数据流类型 可选参数: 终端上报: 1, 数据下发: 2 |
+| streamType| 1 | Integer  | 数据流类型 可选参数: 设备数据上报: 1, 设备数据下发: 2, 网关数据上报: 3, 网关数据下发: 4. 其中只有网关产品才可选网关数据上报、网关数据下发 |
 | topic| "topic" | String  | 主题 |
 | updateAt| "null" | Date  | 更新时间 |
 | userIntID| 23 | Integer  | 用户 ID |

@@ -222,7 +222,8 @@ PUT /api/v1/metrics/25
   "productItemIntID": null,
   "remark": null,
   "updateAt": null,
-  "expressionsLabel": ""
+  "expressionsLabel": "",
+  "dataStreamIntID": 7
 }
 ```
 
