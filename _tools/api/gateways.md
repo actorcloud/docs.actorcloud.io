@@ -28,6 +28,20 @@
 
 
 
+## 查看网关控制
+
+!#!GET_/api/v1/gateways/{id}/control_logs?_page={page}&_limit={pageSize}!#!
+
+
+
+
+## 查看网关下设备数据
+
+!#!GET_/api/v1/gateways/{id}/devices_data?_page={page}&_limit={pageSize}!#!
+
+
+
+
 ## 创建网关
 
 !#!POST_/api/v1/gateways!#!

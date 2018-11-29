@@ -159,7 +159,7 @@
     {
       "key": "streamType",
       "value": 0,
-      "label": "数据流类型 可选参数: 终端上报: 1, 数据下发: 2",
+      "label": "数据流类型 可选参数: 设备数据上报: 1, 设备数据下发: 2, 网关数据上报: 3, 网关数据下发: 4. 其中只有网关产品才可选网关数据上报、网关数据下发",
       "type": "Integer"
     },
     {
@@ -962,6 +962,12 @@
       "key": "userIntID",
       "value": 0,
       "label": "用户 ID",
+      "type": "Integer"
+    },
+    {
+      "key": "isShare",
+      "value": 0,
+      "label": "是否公共，不公共: 0, 公共: 1 公共的仪表板对租户所有用户可见",
       "type": "Integer"
     }
   ],
@@ -1986,6 +1992,12 @@
       "key": "lora",
       "value": {},
       "label": "是否 LoRa 协议",
+      "type": "JSON"
+    },
+    {
+      "key": "tags",
+      "value": {},
+      "label": "标签",
       "type": "JSON"
     }
   ],
@@ -3171,6 +3183,12 @@
       "type": "String"
     },
     {
+      "key": "productID",
+      "value": "",
+      "label": "所属产品标识",
+      "type": "String"
+    },
+    {
       "key": "gatewayProtocol",
       "value": 0,
       "label": "网关协议类型 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7",
@@ -3247,6 +3265,24 @@
       "value": "",
       "label": "租户 ID",
       "type": "String"
+    },
+    {
+      "key": "upLinkProtocol",
+      "value": 0,
+      "label": "上联协议，可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7",
+      "type": "Integer"
+    },
+    {
+      "key": "upLinkNetwork",
+      "value": 0,
+      "label": "上联网络，可选参数：2G: 1, 3G: 2, 4G: 3, Wi-Fi: 4, NB-IoT: 5",
+      "type": "Integer"
+    },
+    {
+      "key": "tags",
+      "value": {},
+      "label": "标签",
+      "type": "JSON"
     }
   ],
   "DeviceLocation": [
@@ -3392,6 +3428,12 @@
       "key": "userIntID",
       "value": 0,
       "label": "用户 ID",
+      "type": "Integer"
+    },
+    {
+      "key": "dataStreamIntID",
+      "value": 0,
+      "label": "数据流 ID：只有 MQTT 协议产品时才需传入该值",
       "type": "Integer"
     },
     {

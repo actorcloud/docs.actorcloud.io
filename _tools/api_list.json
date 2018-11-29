@@ -240,6 +240,26 @@
             }
           },
           {
+            "id": 90,
+            "label": "查看网关控制",
+            "name": "gateways-view-control_logs",
+            "disabled": true,
+            "api": "GET_/api/v1/gateways/{id}/control_logs?_page={page}&_limit={pageSize}",
+            "rule": {
+              "{id}": "{gatewayInt}"
+            }
+          },
+          {
+            "id": 90,
+            "label": "查看网关下设备数据",
+            "name": "gateways-view-devices_data",
+            "disabled": true,
+            "api": "GET_/api/v1/gateways/{id}/devices_data?_page={page}&_limit={pageSize}",
+            "rule": {
+              "{id}": "{gatewayInt}"
+            }
+          },
+          {
             "id": 93,
             "label": "创建网关",
             "name": "gateways-create",

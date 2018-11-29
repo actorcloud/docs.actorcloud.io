@@ -34,3 +34,16 @@
 
 
 ![scope_create](/assets/scope_create.png)
+
+
+# 拓扑管理
+
+依次点击**位置管理** -> **拓扑管理**可进行拓扑管理。
+
+拓扑管理定义了设备的层级关系，用于管理设备的层级关系。拓扑图的子设备图标里只有一个图，上联设备有2个图
+
+![topology](/assets/topology.png)
+
+当光标处在某个设备时，会显示相关的设备信息
+
+![topology_detail](/assets/topology_detail.png)

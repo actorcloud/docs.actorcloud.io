@@ -4,5 +4,17 @@
     "value": "0e:85:90:67:bb:d8",
     "label": "0e:85:90:67:bb:d8",
     "type": "string"
+  },
+  {
+    "key": "upLinkNetworkLabel",
+    "value": "2G",
+    "label": "2G",
+    "type": "string"
+  },
+  {
+    "key": "upLinkProtocolLabel",
+    "value": "Modbus",
+    "label": "Modbus",
+    "type": "string"
   }
 ]

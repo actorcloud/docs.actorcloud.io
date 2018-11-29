@@ -33,6 +33,8 @@
     * [查看网关详情](rest/gateways.md#查看网关详情)
     * [查看网关下设备列表](rest/gateways.md#查看网关下设备列表)
     * [查看网关事件](rest/gateways.md#查看网关事件)
+    * [查看网关控制](rest/gateways.md#查看网关控制)
+    * [查看网关下设备数据](rest/gateways.md#查看网关下设备数据)        
     * [创建网关](rest/gateways.md#创建网关)
     * [编辑网关](rest/gateways.md#编辑网关)
     * [删除网关](rest/gateways.md#删除网关)
