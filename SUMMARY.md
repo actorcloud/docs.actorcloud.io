@@ -12,18 +12,16 @@
   * [REST API](access_guide/rest.md)
 * [产品商城](products_mall/products_mall.md)
   * [基础服务](products_mall/badic_sevice.md)
+  * [增值服务](products_mall/badic_sevice.md#增值服务)
   * [设备管理平台 DMP](products_mall/dmp_sevice.md)
   * [应用使能平台 AEP](products_mall/aep_sevice.md)
+
 
 ## 仪表盘
 
 * [仪表盘](data_visualization/dashboard.md)
 
 ## 设备管理
-* [设备列表](device/device.md)
-  * [设备信息](device/device.md#设备信息)
-  * [分组管理](device/device.md#分组管理)
-* [网关管理](device/gateway.md)
 
 * [产品管理](device/product.md)
   * [属性列表](device/product.md#属性列表)
@@ -35,6 +33,12 @@
   * [代理订阅](device/product.md#代理订阅)
   * [应用模板](device/product.md#应用模板)
   * [资源定义](device/product.md#资源定义)
+
+* [设备列表](device/device.md#设备列表)
+* [设备信息](device/device.md#设备信息)
+* [网关管理](device/device.md#网关管理)
+* [分组管理](device/device.md#分组管理)
+
 
 * [安全管理](device/security.md)
 * [OTA 升级](device/OTA.md)
@@ -76,9 +80,8 @@
 ## 用户管理
 * [用户](user/user.md#用户)
 * [角色](user/user.md#角色)
-* [标签](user/user.md#标签)
 * [消息中心](user/user.md#消息中心)
-* [登录日志](user/user.md#登录日志)
+* [登录日志](user/user.md#登陆日志)
 
 
 ## 附录

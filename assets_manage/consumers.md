@@ -2,4 +2,5 @@
 
 设备最终交付消费者后，可将设备与消费者关联管理，一位消费者可对应（持有）多个设备。
 
-![custome](./assets/custome.png)
+![custome](_assets/image-20190313165046047.png)
+

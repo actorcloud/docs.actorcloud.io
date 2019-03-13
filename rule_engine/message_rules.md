@@ -67,5 +67,3 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsImV4cCI6MTUyNDkwMDEwNywiaWF0IjoxNTI0N
 | retain      | 是否 retain |
 | payload      | 消息内容 |
 | ts      | 消息时间戳 |
-
-![](/assets/message_rules.png)

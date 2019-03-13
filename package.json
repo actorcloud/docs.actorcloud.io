@@ -1,5 +1,5 @@
 {
-  "name": "ActorCloud-doc",
+  "name": "actorcloud-doc",
   "version": "1.0.0",
   "description": "***EMQ* 设备管理平台** **ActorCloud** 正式上线，访问 [https://console.actorcloud.io](https://console.actorcloud.io/) 可进行功能预览、使用体验。",
   "main": "index.js",
@@ -9,7 +9,8 @@
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-prism": "^2.3.0",
     "gitbook-plugin-toggle-chapters": "^0.0.3",
-    "markdown-table": "^1.1.1"
+    "markdown-table": "^1.1.1",
+    "glob": "^7.1.3"
   },
   "devDependencies": {},
   "scripts": {
