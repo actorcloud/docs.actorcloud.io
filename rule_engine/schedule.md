@@ -16,6 +16,6 @@
 
 
 
-![schedule](_assets/image-20190313170959355.png)
+![schedule](_assets/schedule.png)
 
 

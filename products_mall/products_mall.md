@@ -10,4 +10,4 @@
   * [设备管理平台 DMP](dmp_sevice.md)
   * [应用使能平台 AEP](aep_sevice.md)
 
-![service_card](_assets/image-20190313140104885.png)
+![service_card](_assets/service_card.png)

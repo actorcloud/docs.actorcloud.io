@@ -10,12 +10,12 @@
 
 
 
-![connect_logs](_assets/image-20190313163914794.png)
+![connect_logs](_assets/connect_logs.png)
 
 - 在设备详情页**设备信息**标签页中，可以查看具体设备基本信息及运行日志：
               
 
-![connect_log_device](_assets/image-20190313164144279.png)
+![connect_log_device](_assets/connect_log_device.png)
 
 
 
@@ -29,7 +29,7 @@
 
 - 进入设备管理->设备日志页面，点击**下行消息**标签页，可查看下行消息：
 
-![down_stream](_assets/image-20190313164035529.png)
+![down_stream](_assets/down_stream.png)
 
 
 

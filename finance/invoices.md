@@ -6,7 +6,7 @@
 
 
 
-![invoice_info](_assets/image-20190313172614351.png)
+![invoice_info](_assets/invoice_info.png)
 
 
 

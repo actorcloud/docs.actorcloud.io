@@ -8,12 +8,12 @@
 
 
 
-![dashboard_create](_assets/image-20190313173808371.png)
+![dashboard_create](_assets/dashboard_create.png)
 
 
 
 仪表盘可以包含任意设备、分组、产品等数据指标图表，每个图表可以拖拽改变位置、点击右下角拖放改变图表尺寸。
 
-![dashboard](_assets/image-20190313173848598.png)
+![dashboard](_assets/dashboard.png)
 
 

@@ -6,14 +6,14 @@
 
 - 新用户必须归属于一个角色，新建用户前需创建好用户所属角色。
 
-![user_create](_assets/image-20190313172723995.png)
+![user_create](_assets/user_create.png)
 
 
 ### 用户邀请
 
 进入用户管理->用户->邀请记录标签页，可查看当前账户邀请用户记录，点击右上角**邀请**可进行邀请用户注册操作，该用户隶属于当前账号所在公司，**ActorCloud** 将发送包含邀请链接的邮件到用户邮箱，通过点击邀请链接可以完成激活注册。
 
-![invitation_create](_assets/image-20190313172807512.png)
+![invitation_create](_assets/invitation_create.png)
 
 
 
@@ -38,7 +38,7 @@
 
 
 
-![messages](_assets/image-20190313173040211.png)
+![messages](_assets/messages.png)
 
 
 
@@ -50,4 +50,4 @@
 
 
 
-![login_log](_assets/image-20190313173333261.png)
+![login_log](_assets/login_log.png)

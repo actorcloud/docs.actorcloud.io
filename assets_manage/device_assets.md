@@ -10,5 +10,5 @@
 
 - 二维码：包含设备信息的二维码图片文件。
 
-![assets_create](_assets/image-20190313164623498.png)
+![assets_create](_assets/assets_create.png)
 
