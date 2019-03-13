@@ -38,7 +38,9 @@
   - 比较对象：可选静态值与该数据流下另一个功能点，选择静态值时需手动输入要比较的静态值；
   - 条件间关系：一个规则有多个条件时可选该项，表示条件与条件之间的运算关系。
 
-![](/assets/business_rule_create.png)
+
+
+![business_rule_create](_assets/image-20190313170428642.png)
 
 
 # 动作
@@ -57,7 +59,9 @@
 
 - 描述：该动作的描述信息。
 
-![](/assets/action_create.png)
+
+
+
 
 **附：Webhook 验证流程**
 

@@ -1,6 +1,26 @@
 # 基础服务
 
-基础服务包含基本的 **ActorCloud** 用户管理、财务管理、设备管理服务，基础服务默认开通且无法关闭。
+基础服务包含基本的 **ActorCloud** 设备管理、用户管理、财务管理服务，基础服务默认开通且无法关闭。
+
+#### 设备管理
+
+基础设备接入、认证与安全、消息事件、设备控制、订阅 ACL、分组等管理服务 [设备管理](../device/manage.md)。
+
+- 设备列表
+
+![devices](assets/devices.png)
+
+
+- 设备控制
+
+![device_control](assets/device_control.png)
+
+
+- 设备安全
+
+![device_auth](assets/device_auth.png)
+
+
 
 
 #### 用户管理
@@ -45,22 +65,3 @@
 
 ![invoice](assets/invoice.png)
 
-
-
-#### 设备管理
-
-基础设备接入、认证与安全、消息事件、设备控制、订阅 ACL、分组等管理，使用说明详见[设备管理](../device/manage.md)。
-
-- 设备列表
-
-![devices](assets/devices.png)
-
-
-- 设备控制
-
-![device_control](assets/device_control.png)
-
-
-- 设备安全
-
-![device_auth](assets/device_auth.png)

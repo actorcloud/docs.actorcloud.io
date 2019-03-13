@@ -7,11 +7,18 @@
     "anchors",
     "copy-code-button",
     "anchor-navigation-ex",
-    "cuav-chapters"
+    "cuav-chapters",
+    "local-pagefooter"
   ],
   "pluginsConfig": {
     "anchor-navigation-ex": {
       "showLevel": false
+    },
+    "local-pagefooter": {
+      "copyright": "© Copyright 2016-2019, EMQ 杭州映云科技有限公司",
+      "islocal": true,
+      "modify_label": "文档更新时间: ",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
     }
   },
   "styles": {

@@ -8,27 +8,16 @@
 
 - 进入设备管理->设备日志页面，点击**连接日志**标签页，可查看连接日志：
 
-![](/assets/connect_logs.png)
+
+
+![connect_logs](_assets/image-20190313163914794.png)
 
 - 在设备详情页**设备信息**标签页中，可以查看具体设备基本信息及运行日志：
               
-![](/assets/connect_log_device.png)
+
+![connect_log_device](_assets/image-20190313164144279.png)
 
 
-
-
-### 上行消息
-
-- 上行消息是设备发送的消息记录，包含主题、载荷等信息；
-
-- 进入设备管理->设备日志页面，点击**上行消息**标签页，可查看上行消息：
-
-![](/assets/upstream.png)
-
-
-- 在设备详情页**设备事件**标签页中可以查看具体设备上行消息记录：
-
-![](/assets/device_event.png)
 
 
 
@@ -40,9 +29,10 @@
 
 - 进入设备管理->设备日志页面，点击**下行消息**标签页，可查看下行消息：
 
-![](/assets/downstream.png)
+![down_stream](_assets/image-20190313164035529.png)
+
+
+
+
 
 - 在设备详情页**设备控制**标签页中可以查看具体设备下行消息记录：
-
-![](/assets/device_control.png)
-

@@ -10,4 +10,3 @@
 
 - 最近消费记录：最近消费流水。
 
-![finance_center](/assets/finance_center.png)
