@@ -40,7 +40,7 @@
 
 
 
-![business_rule_create](_assets/image-20190313170428642.png)
+![business_rule_create](_assets/business_rule_create.png)
 
 
 # 动作

@@ -10,7 +10,7 @@
 
 
 
-![map_manage](_assets/image-20190313165253953.png)
+![map_manage](_assets/map_manage.png)
 
 
 
@@ -32,7 +32,7 @@
 
 - 触发动作：进入/离开围栏区域后触发的动作，支持多选。
 
-![scope_create](_assets/image-20190313165623928.png)
+![scope_create](_assets/scope_create.png)
 
 
 
@@ -44,4 +44,4 @@
 
 
 
-![topology_detail](_assets/image-20190313165721132.png)
+![topology_detail](_assets/topology_detail.png)

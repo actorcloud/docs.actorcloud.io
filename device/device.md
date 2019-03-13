@@ -3,7 +3,7 @@
 点击**设备**列表页设备名称，进入设备信息页。该页包括
 **设备信息**、**设备安全**、**子设备**、**设备事件**、**原始数据**、**指标数据**、**设备轨迹**、**设备控制**、**控制台**九个页面，其功能与展示信息如下：
 
-![device_](_assets/image-20190313142206756.png)
+![device_](_assets/device_.png)
 
 
 
@@ -20,7 +20,7 @@
 
 点击设备基础信息，位置信息右上角编辑按钮可进行相关信息修改：
 
-![select_location](_assets/image-20190313142508797.png)
+![select_location](_assets/select_location.png)
 
 
 
@@ -51,7 +51,7 @@
 
   
 
-![device_security](_assets/image-20190313142603717.png)
+![device_security](_assets/device_security.png)
 
 > 编码信息、证书为设备连接认证重要信息，请妥善保管。
 
@@ -67,7 +67,7 @@
 
 - 设备上行消息记录，即设备上报的消息，该页面无需刷新也可实时展示设备最新上报的消息。
 
-  ![device_evnets](_assets/image-20190313143134474.png)
+  ![device_evnets](_assets/device_evnets.png)
 
 
 
@@ -75,7 +75,7 @@
 
 - 具体功能点数据展示，实时数据将自动刷新展示。
 
-![original_data](_assets/image-20190313155826163.png)
+![original_data](_assets/original_data.png)
 
 
 
@@ -90,7 +90,7 @@
 
 - 当设备所属产品定义的功能点为位置功能点时，该功能点上报的位置轨迹信息将在地图上展示。
 
-![location_path](_assets/image-20190313160521532.png)
+![location_path](_assets/location_path.png)
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-![device_control](_assets/image-20190313160610003.png)
+![device_control](_assets/device_control.png)
 
 
 
@@ -151,7 +151,7 @@
 
 
 
-![device_list](_assets/image-20190313160741545.png)
+![device_list](_assets/device_list.png)
 
 
 
@@ -163,7 +163,7 @@
 
 为方便管理统计，如设备上联系统为网关，需在设备新建时创建并选择相应网关。
 
-![device_gateway_product](_assets/image-20190313162034285.png)
+![device_gateway_product](_assets/device_gateway_product.png)
 
 
 
@@ -186,7 +186,7 @@
 
 
 
-![gateway_way](_assets/image-20190313162421554.png)
+![gateway_way](_assets/gateway_way.png)
 
 
 
@@ -233,7 +233,7 @@
 
   
 
-![group_add_device](_assets/image-20190313162559818.png)
+![group_add_device](_assets/group_add_device.png)
 
 
 

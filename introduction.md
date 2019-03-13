@@ -49,7 +49,7 @@
 
 ### 顶部菜单栏操作
 
-![top_bar_details](_assets/image-20190313115640230.png)
+![top_bar_details](_assets/top_bar_details.png)
 
 
 

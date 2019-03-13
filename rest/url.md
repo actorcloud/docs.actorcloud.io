@@ -2,8 +2,6 @@
 
 使用 REST API 之前需要创建一个[应用](../application/application.md)，使用应用 ID 与应用密钥作为调用 API。
 
-![](/assets/app_create.png)
-
 
 ### URL 地址
 

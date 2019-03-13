@@ -19,7 +19,7 @@
 
 - 输入证书名称，选择证书可用性后创建证书。创建后请立即下载并妥善保管相关证书。
 
-![certs_create](_assets/image-20190313163108290.png)
+![certs_create](_assets/certs_create.png)
 
 
 
@@ -27,7 +27,7 @@
 
 - 设备使用 SSL/TLS 安全连接时应当使用已绑定证书进行加密通信，在证书详情页可以修改证书信息，管理绑定设备。
 
-![certs_bind](_assets/image-20190313163216698.png)
+![certs_bind](_assets/certs_bind.png)
 
 
 
@@ -52,7 +52,7 @@
 
 - 输入策略名称，作用主题与控制操作、访问规则可以创建证书，其中主题需满足 MQTT 主题规则。
 
-![alc_list](_assets/image-20190313163317220.png)
+![alc_list](_assets/alc_list.png)
 
 
 

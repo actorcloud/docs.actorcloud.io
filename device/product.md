@@ -19,7 +19,7 @@
 **LWM2M** 协议特殊性，**LWM2M** 接入产品无需定义功能点与数据流，
 可在协议范围内定义支持的属性，新建属性时请根据协议手册输入对象 ID 与 属性 ID 进行属性查找与定义。
 
-![product_item_list](_assets/image-20190313145412553.png)
+![product_item_list](_assets/product_item_list.png)
 
 
 
@@ -70,7 +70,7 @@
 
 该功能可按照下图定义：
 
-![product_data_point](_assets/image-20190313150056871.png)
+![product_data_point](_assets/product_data_point.png)
 
 
 
@@ -101,7 +101,7 @@
 
 - 温湿度传感器需要上报温度与湿度信息，则数据流名称可以为温湿度数据流，功能点包含温度与湿度，主题为 `temp_hum`：
 
-![product_stream_create](_assets/image-20190313150535440.png)
+![product_stream_create](_assets/product_stream_create.png)
 
 
 
@@ -165,7 +165,7 @@
 
     
 
-![app_templates](_assets/image-20190313155215905.png)
+![app_templates](_assets/app_templates.png)
 
 
 

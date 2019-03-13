@@ -8,7 +8,7 @@
 
 
 
-![alert_list](_assets/image-20190313170722780.png)
+![alert_list](_assets/alert_list.png)
 
 
 
