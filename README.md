@@ -26,7 +26,7 @@
 
   - 如果您已经有物理设备，则可以使用设备接入 **ActorCloud** 来完成本教程；
 
-  - 如果您没有物理设备，可以通过使用 [MQTT 客户端](https://developer.emqx.io/sdk_tools?category=MQTT_Clients)或[在线测试中心](https://console.actorcloud.io/mqtt_client)利用软件环境来模拟一个接入设备，查看[设备接入指南](./access_guide/device.md)。
+  - 如果您没有物理设备，可以通过使用 [MQTT 客户端](https://developer.emqx.io/sdk_tools?category=MQTT_Clients)或[在线测试中心](https://console.actorcloud.io/mqtt_client)利用软件环境来模拟一个接入设备，查看[设备接入指南](./access_guide/notice.md)。
 
     
 
