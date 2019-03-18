@@ -1,21 +1,16 @@
-# CoAP 设备接入
-
-### 在线测试
+# CoAP 客户端
 
 - 成功创建设备后，点击**测试中心** -> **CoAP 客户端**可以选取设备进行连接测试。按照设备名称搜索选择一个设备，点击上报数据即可发送消息。
 
-![](/assets/coap.png)
+![](_assets/coap.png)
 
 
 
 ### CoAP 在 **ActorCloud** 的实现
 
 - 暂只支持 GET、PUT 方法，分别对应**订阅**、**发布**概念；
-
 - 核心层逻辑、业务功能与 MQTT 客户端一致；
-
 - 暂不支持双向认证接入。
-
 
 CoAP 连接示例代码：
 
@@ -83,4 +78,11 @@ response = client.observe(path, callback=foo)
 ```
 
 > 参考项目地址：https://github.com/emqtt/emq-coap
+
+
+
+#### 注意事项
+
+- 暂只支持 GET、PUT 方法，分别对应**订阅**、**发布**概念；
+- 暂不支持双向认证接入。
 
