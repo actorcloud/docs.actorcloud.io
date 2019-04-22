@@ -33,6 +33,8 @@
 * [网关管理](device/device.md#网关管理)
 * [分组管理](device/device.md#分组管理)
 * [安全管理](device/security.md)
+  * [证书管理](device/certs.md)
+  * [策略管理](device/policy.md)
 * [OTA 升级](device/OTA.md)
 * [设备日志](device/connect_logs.md)
 
