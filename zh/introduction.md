@@ -1,5 +1,3 @@
-
-
 ### 注册 ActorCloud 账户
 
 1. 打开 [ActorCloud 控制台主页](https://console.actorcloud.io/)，如果之前未登陆过平台或者登录信息已过期将会跳转到登录页面；
@@ -10,7 +8,7 @@
 
 4. 可使用[用户邀请](/user/user.md#用户邀请)功能直接将邀请链接发送到指定邮箱进行注册。
 
-![sinup.png](_assets/sinup.png)
+![sinup.png](assets/sinup.png)
 
 > 如果用户通过邀请链接进入注册页面，页面不再提供账户类型选择。
 
@@ -20,7 +18,7 @@
 
 - 使用已注册账号的邮箱和密码登录。
 
-![login.png](_assets/login.png)
+![login.png](assets/login.png)
 
 
 
@@ -43,13 +41,13 @@
 - 消息数统计：设备登录、发布、接收、订阅、取消订阅次数折线图统计；
 - 流量统计：设备登录、发布、接收、订阅、取消订阅流量折线图统计。
 
-![overview.png](_assets/overview.png)
+![overview.png](assets/overview.png)
 
 
 
 ### 顶部菜单栏操作
 
-![top_bar_details](_assets/top_bar_details.png)
+![top_bar_details](assets/top_bar_details.png)
 
 
 

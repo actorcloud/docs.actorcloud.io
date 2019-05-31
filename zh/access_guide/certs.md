@@ -9,14 +9,14 @@
 
 输入证书名称，选择证书可用性后创建证书。创建后请立即下载并妥善保管好相关证书、密钥。
 
-![](/assets/certs_download.png)
+![](../assets/certs_download.png)
 
 
 ### 绑定设备
 
 当设备使用 SSL/TLS 双向认证进行连接时应当使用其已绑定证书进行加密通信，在证书详情页可以修改证书信息，管理绑定设备。
 
-![](/assets/certs_bind.png)
+![](../assets/certs_bind.png)
 
 
 ### 使用示例

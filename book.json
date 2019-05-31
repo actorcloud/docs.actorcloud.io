@@ -8,7 +8,8 @@
     "copy-code-button",
     "anchor-navigation-ex",
     "cuav-chapters",
-    "local-pagefooter"
+    "local-pagefooter",
+    "emqx-docs"
   ],
   "pluginsConfig": {
     "anchor-navigation-ex": {
@@ -29,14 +30,11 @@
     "epub": "styles/epub.css"
   },
   "title": "ActorCloud 使用手册",
-  "language": "zh-hans",
+  "language": "zh",
   "links": {
     "sharing": {
       "facebook": false,
       "twitter": false
     }
-  },
-  "structure": {
-    "summary": "SUMMARY.md"
   }
 }
