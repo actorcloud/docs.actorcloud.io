@@ -9,7 +9,5 @@
   * [设备信息](device_info.md)
   * [分组操作](group.md)
   * [分组设备管理](group_device.md)
-  * [设备日志](device_monitor.md)
   * [证书](certs.md)
-  * [策略](policies.md)
   
