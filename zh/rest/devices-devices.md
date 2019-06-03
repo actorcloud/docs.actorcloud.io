@@ -516,6 +516,191 @@ status 200
 ```
 
 
+
+
+
+
+
+## 子设备的创建、编辑
+
+> 与普通设备的创建、编辑类似，唯一不同的地方是 `parentDevice` 必填，且必须是上联设备的 ID
+
+
+
+
+
+
+
+## 子设备删除
+
+> 参考普通设备的删除接口
+
+
+
+
+## 设备事件
+
+#### API 定义
+
+```bash
+GET /api/v1/devices/{deviceIntID}/events?_page={page}&_limit={pageSize}
+```
+
+#### 请求示例
+
+```bash
+GET /api/v1/devices/189/events?_page=1&_limit=10
+```
+
+#### 成功响应
+
+```bash
+status 200
+```
+
+```json
+{
+  "items": [
+    {
+      "IP": null,
+      "createAt": "2018-09-30 16:55:31",
+      "deviceID": "10c61f1a1f47",
+      "deviceName": "智能锁",
+      "id": 7623,
+      "msgTime": "2018-09-30 16:55:31",
+      "payload": "{ \"x\": 33.2, \"y\": 31.4 }",
+      "topic": "topic",
+      "updateAt": null
+    },
+    {
+      "IP": null,
+      "createAt": "2018-09-30 16:55:30",
+      "deviceID": "10c61f1a1f47",
+      "deviceName": "智能锁",
+      "id": 7622,
+      "msgTime": "2018-09-30 16:55:30",
+      "payload": "{ \"x\": 33.2, \"y\": 31.4 }",
+      "topic": "topic",
+      "updateAt": null
+    }
+  ],
+  "meta": {
+    "count": 6,
+    "limit": 10,
+    "page": 1
+  }
+}
+```
+
+
+
+
+
+
+
+## 查看设备原始数据
+
+#### API 定义
+
+```bash
+GET /api/v1/original_data?deviceID={deviceID}&metricType=2&time_unit=day
+```
+
+#### 请求示例
+
+```bash
+GET /api/v1/original_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=2&time_unit=day
+```
+
+#### 成功响应
+
+```bash
+status 200
+```
+
+```json
+[
+  {
+    "dataPointIntID": 1,
+    "dataPointName": "温度",
+    "originalData": {
+      "time": [],
+      "value": []
+    }
+  },
+  {
+    "dataPointIntID": 2,
+    "dataPointName": "湿度",
+    "originalData": {
+      "time": [],
+      "value": []
+    }
+  }
+]
+```
+
+
+#### 字段说明
+
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| dataPointIntID| 1 | Integer  | 功能点 ID |
+| dataPointName| "温度" | String  | 功能点名称 |
+| originalData| {"time":[],"value":[]} | Object  | 原始数据 |
+
+
+
+
+
+
+
+
+
+## 查看设备指标数据
+
+#### API 定义
+
+```bash
+GET /api/v1/metrics_data?deviceID={deviceID}&metricType=1
+```
+
+#### 请求示例
+
+```bash
+GET /api/v1/metrics_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=1
+```
+
+#### 成功响应
+
+```bash
+status 200
+```
+
+```json
+[
+  {
+    "aggregateData": null,
+    "aggregateType": 1,
+    "chartType": 1,
+    "createAt": "2018-10-12 17:49:42",
+    "dataPointIntID": 1,
+    "expressions": "currentValue - lastValue",
+    "id": 13,
+    "isShow": 1,
+    "metricData": {
+      "time": [],
+      "value": []
+    },
+    "metricName": "111",
+    "metricType": 1,
+    "productID": "2ioNzM",
+    "productItemIntID": null,
+    "remark": null,
+    "updateAt": null
+  }
+]
+```
+
 ## 设备控制
 
 #### API 定义

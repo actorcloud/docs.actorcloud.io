@@ -5,22 +5,12 @@
 * [ActorCloud 入门](introduction.md)
 * [设备快速接入指南](access_guide/notice.md)
 
-## 仪表盘
-
-* [仪表盘](data_visualization/dashboard.md)
-
 ## 设备管理
 * [产品管理](device/product.md)
   * [创建产品](device/product_create.md)
-  * [属性列表](device/product.md#属性列表)
   * [功能点](device/product.md#功能点)
   * [数据流](device/product.md#数据流)
   * [设备列表](device/product.md#设备列表)
-  * [指标管理](device/product.md#指标管理)
-  * [聚合数据](device/product.md#聚合数据)
-  * [代理订阅](device/product.md#代理订阅)
-  * [应用模板](device/product.md#应用模板)
-  * [资源定义](device/product.md#资源定义)
 * [设备注册](device/device_create.md)
 * [设备列表](device/device.md#设备列表)
 * [设备信息](device/device.md#设备信息)
@@ -28,19 +18,6 @@
 * [分组管理](device/device.md#分组管理)
 * [安全管理](device/security.md)
   * [证书管理](device/certs.md)
-  * [策略管理](device/policy.md)
-* [OTA 升级](device/OTA.md)
-* [设备日志](device/connect_logs.md)
-
-## 资产管理
-* [设备资产](assets_manage/device_assets.md)
-* [SIM 卡](assets_manage/sim.md)
-* [消费者](assets_manage/consumers.md)
-
-## 位置管理
-* [地图管理](location/location.md#地图管理)
-* [电子围栏](location/location.md#电子围栏)
-* [拓扑管理](location/location.md#拓扑管理)
 
 ## 规则管理
 * [消息规则](rule_engine/message_rules.md)
@@ -59,11 +36,6 @@
 ## 应用管理
 * [应用列表](application/application.md#应用列表)
 * [应用角色](application/application.md#应用角色)
-
-## 财务管理
-* [财务中心](finance/finance_center.md)
-* [充值管理](finance/top_up.md)
-* [发票管理](finance/invoices.md)
 
 ## 用户管理
 * [用户](user/user.md#用户)
@@ -96,9 +68,6 @@
     * [创建分组](rest/devices-groups.md#创建分组)
     * [编辑分组](rest/devices-groups.md#编辑分组)
     * [删除分组](rest/devices-groups.md#删除分组)
-    * [分组控制](rest/devices-groups.md#分组控制)
-    * [创建分组定时任务](rest/devices-groups.md#创建分组定时任务)
-    * [删除分组定时任务](rest/devices-groups.md#删除分组定时任务)
   * [网关管理](rest/gateways.md)
     * [查看网关列表](rest/gateways.md#查看网关列表)
     * [查看网关详情](rest/gateways.md#查看网关详情)
@@ -116,25 +85,6 @@
       * [创建证书](rest/security.md#创建证书)
       * [编辑证书](rest/security.md#编辑证书)
       * [删除证书](rest/security.md#删除证书)
-    * [策略](rest/security.md#策略)
-      * [查看策略列表](rest/security.md#查看策略列表)
-      * [查看策略详情](rest/security.md#查看策略详情)
-      * [创建策略](rest/security.md#创建策略)
-      * [编辑策略](rest/security.md#编辑策略)
-      * [删除策略](rest/security.md#删除策略)
-  * [OTA 升级](rest/sdk.md)
-    * [查看升级包列表](rest/sdk.md#查看升级包列表)
-    * [查看升级包详情](rest/sdk.md#查看升级包详情)
-    * [创建升级包](rest/sdk.md#创建升级包)
-    * [编辑升级包](rest/sdk.md#编辑升级包)
-    * [删除升级包](rest/sdk.md#删除升级包)
-  * [设备日志](rest/device_logs.md)
-    * [连接日志](rest/device_logs.md#连接日志)
-      * [查看连接日志](rest/device_logs.md#查看连接日志)
-    * [下行消息](rest/device_logs.md#下行消息)
-      * [查看下行消息](rest/device_logs.md#查看下行消息)
-    * [上行消息](rest/device_logs.md#上行消息)
-      * [查看上行消息](rest/device_logs.md#查看上行消息)
   * [当前告警](rest/current_alerts.md)
     * [查看当前告警](rest/current_alerts.md#查看当前告警)
     * [处理当前告警](rest/current_alerts.md#处理当前告警)
@@ -159,17 +109,3 @@
     * [创建数据流](rest/data_streams.md#创建数据流)
     * [编辑数据流](rest/data_streams.md#编辑数据流)
     * [删除数据流](rest/data_streams.md#删除数据流)
-  * [指标管理](rest/metrics.md)
-    * [查看指标列表](rest/metrics.md#查看指标列表)
-    * [查看指标详情](rest/metrics.md#查看指标详情)
-    * [创建指标](rest/metrics.md#创建指标)
-    * [编辑指标](rest/metrics.md#编辑指标)
-    * [删除指标](rest/metrics.md#删除指标)
-  * [资源定义](rest/product_resources.md)
-    * [查看资源列表](rest/product_resources.md#查看资源列表)
-    * [创建资源](rest/product_resources.md#创建资源)
-    * [删除资源](rest/product_resources.md#删除资源)
-  * [应用模板](rest/app_templates.md)
-    * [查看应用模板列表](rest/app_templates.md#查看应用模板列表)
-    * [删除应用模板](rest/app_templates.md#删除应用模板)
-    * [查看设备应用模板](rest/app_templates.md#查看设备应用模板)

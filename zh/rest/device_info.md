@@ -66,12 +66,9 @@ GET /api/v1/devices/{device_id}/connect_logs?_page=1&_limit=10
 
 ### 设备安全信息
 
-设备安全分为证书与策略信息，详见：
+设备安全分为证书信息，详见：
 
 - [证书 API](certs.md)
-
-- [策略 API](policies.md)
-
 
 
 ### 查看设备事件
@@ -223,68 +220,3 @@ GET /api/v1/devices/{device_id}/control_logs?_page=1&_limit=10
 | topic              | /hello              | String  | 作用主题                   |
 | updateAt           | 2018-03-28 11:19:18 | Date    | 更新时间                   |
 | userIntID          | 6                   | Integer | 下发用户主键 ID               |
-
-
-
-### 添加代理订阅
-
-**API 定义：**
-```bash
-POST api/v1/devices/{device_id}/subscriptions
-```
-
-**请求体：**
-
-```json
-{
-  "topic": "/hello"
-}
-```
-
-**字段说明：**
-
-| 字段名   | 示例值    | 字段类型   | 是否必填 | 说明   |
-| ----- | ------ | ------ | ---- | ---- |
-| topic | /hello | String | true | 作用主题 |
-
-
-
-### 查看代理订阅列表
-
-**API 定义：**
-```bash
-GET api/v1/devices/{device_id}/subscriptions
-
-```
-**成功响应：**
-
-```json
-{
-  "items": [
-    {
-      "createAt": "2018-03-28 11:21:39",
-      "id": 15,
-      "qos": 1,
-      "topic": "/hello",
-      "updateAt": null
-    }
-  ],
-  "meta": {
-    "count": 1,
-    "limit": 10,
-    "page": 1
-  }
-}
-```
-
-**字段说明：**
-
-| 字段名      | 示例值                 | 字段类型    | 说明    |
-| -------- | ------------------- | ------- | ----- |
-| createAt | 2018-03-28 11:21:39 | Date    | 创建时间  |
-| id       | 15                  | Integer | 主键 ID |
-| qos      | 1                   | String  | 订阅QOS |
-| topic    | /hello              | String  | 作用主题  |
-| updateAt |                     | Date    | 更新时间  |
-
-
