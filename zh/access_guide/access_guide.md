@@ -6,4 +6,3 @@
   * [设备证书](certs.md)
   * [设备控制](control.md)
   * [REST API](rest.md)
-

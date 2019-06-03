@@ -4,12 +4,6 @@
 * [概览](README.md)
 * [ActorCloud 入门](introduction.md)
 * [设备快速接入指南](access_guide/notice.md)
-* [产品商城](products_mall/products_mall.md)
-  * [基础服务](products_mall/badic_sevice.md)
-  * [增值服务](products_mall/badic_sevice.md#增值服务)
-  * [设备管理平台 DMP](products_mall/dmp_sevice.md)
-  * [应用使能平台 AEP](products_mall/aep_sevice.md)
-
 
 ## 仪表盘
 
