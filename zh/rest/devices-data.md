@@ -54,6 +54,7 @@ GET /api/v1/devices/<device_id>/events?_page={page}&_limit={pageSize}&timeType=h
 ```
 
 参数说明
+
 | 参数             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
 | timeType| history | String  | 事件类型 |
@@ -272,9 +273,11 @@ GET /api/v1/devices/11/capability_data?_page=1&_limit=10&timeType=realtime&start
 GET /api/v1/devices/<device_id>/last_data_charts?timeUnit={time_unit}
 ```
 
-|参数|示例|类型|说明|
-|---|--|--|--|--|
-|timeUnit|5m|String|时间单位，支持：5m、1h、6h、1d、1w|
+参数说明
+
+| 参数     | 示例 | 类型   | 说明                               |
+| -------- | ---- | ------ | ---------------------------------- |
+| timeUnit | 5m   | String | 时间单位，支持：5m、1h、6h、1d、1w |
 
 #### 请求示例
 
@@ -326,9 +329,11 @@ GET /api/v1/devices/11/last_data_charts?timeUnit=1h
 GET /api/v1/devices/<device_id>/charts?timeUnit={time_unit}
 ```
 
-|参数|示例|类型|说明|
-|---|--|--|--|--|
-|timeUnit|5m|String|时间单位，支持：5m、1h、6h、1d、1w|
+参数说明
+
+| 参数     | 示例 | 类型   | 说明                               |
+| -------- | ---- | ------ | ---------------------------------- |
+| timeUnit | 5m   | String | 时间单位，支持：5m、1h、6h、1d、1w |
 
 #### 请求示例
 
@@ -422,9 +427,11 @@ GET /api/v1/devices/11/charts?timeUnit=1w
 GET /api/v1/device_capability_data?gatewayIntID={gateway_id}
 ```
 
-|参数|示例|类型|说明|
-|---|--|--|--|--|
-|gatewayIntID|12|Integer|网关 id|
+参数说明
+
+| 参数         | 示例 | 类型    | 说明    |
+| ------------ | ---- | ------- | ------- |
+| gatewayIntID | 12   | Integer | 网关 id |
 
 #### 请求示例
 
