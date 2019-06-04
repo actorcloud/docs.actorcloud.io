@@ -62,7 +62,7 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe('some_topic')
 
 
-# 设备控制、分组控制及其他方式 publish 的消息统一在此处理
+# 设备下发、分组控制及其他方式 publish 的消息统一在此处理
 def on_message(client, userdata, msg):
     print('topic: {0}, payload: {1}'.format(msg.topic, str(msg.payload)))
     # 其他处理逻辑
@@ -110,7 +110,7 @@ def on_connect(client, userdata, flags, rc):
     }))
 
 
-# 设备控制、分组控制及其他方式 publish 的消息统一在此处理
+# 设备下发、分组控制及其他方式 publish 的消息统一在此处理
 def on_message(client, userdata, msg):
     print('topic: {0}, payload: {1}'.format(msg.topic, str(msg.payload)))
     # 其他处理逻辑
@@ -172,7 +172,7 @@ def on_connect(client, userdata, flags, rc):
     }))
 
 
-# 设备控制、分组控制及其他方式 publish 的消息统一在此处理
+# 设备下发、分组控制及其他方式 publish 的消息统一在此处理
 def on_message(client, userdata, msg):
     print('topic: {0}, payload: {1}'.format(msg.topic, str(msg.payload)))
     # 其他处理逻辑
