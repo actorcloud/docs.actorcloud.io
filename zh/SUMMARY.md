@@ -8,9 +8,10 @@
 ## 设备管理
 * [产品管理](device/product.md)
   * [创建产品](device/product_create.md)
-  * [数据流](device/product.md#数据流)
-  * [功能点](device/product.md#功能点)
   * [设备列表](device/product.md#设备列表)
+  * [功能定义](device/product.md#功能定义)
+    * [数据流](device/product.md#数据流)
+    * [功能点](device/product.md#功能点)
 * [设备注册](device/device_create.md)
 * [设备列表](device/device.md#设备列表)
 * [设备信息](device/device.md#设备信息)
