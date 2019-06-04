@@ -1,5 +1,155 @@
 # 分组
 
+## 创建分组
+
+#### API 定义
+
+```bash
+POST /api/v1/groups
+```
+
+#### 请求示例
+
+```bash
+POST /api/v1/groups
+```
+
+```json
+{
+  "groupName": "默认分组",
+  "description": "默认分组"
+}
+```
+
+
+#### 成功响应
+
+```bash
+status 201
+```
+
+```json
+{
+  "createAt": "2018-09-30 16:42:38",
+  "description": "默认分组",
+  "groupID": "rTpABa",
+  "groupName": "默认分组",
+  "id": 15,
+  "username":"actorcloud",
+  "updateAt": null
+}
+```
+
+#### 字段说明
+
+| 字段名             | 示例值               | 字段类型    |  说明                  |
+| --------------- | ----------------- | ------- | ------------------- |
+| createAt| 2018-09-30 16:42:38 | Date  | 创建时间 |
+| description| 默认分组 | String  | 描述 |
+| groupID| rTpABa | String  | 分组 ID |
+| groupName| 默认分组 | String  | 分组名称 |
+| id| 15 | Integer  | id |
+| updateAt| 2018-09-30 16:45:38 | Date  | 更新时间 |
+| username| ActorCloud | String  | 创建用户 |
+
+
+## 编辑分组
+
+#### API 定义
+
+```bash
+PUT /api/v1/groups/<group_id>
+```
+
+#### 请求示例
+
+```bash
+PUT /api/v1/groups/15
+```
+
+```json
+{
+  "description": "默认分组",
+  "groupName": "默认分组2"
+}
+```
+
+
+#### 成功响应
+
+```bash
+status 200
+```
+
+```json
+{
+  "createAt": "2018-09-30 16:42:38",
+  "description": "默认分组",
+  "groupID": "rTpABa",
+  "groupName": "默认分组2",
+  "id": 15,
+  "updateAt": "2018-09-30 16:42:56"
+}
+```
+
+
+
+
+## 删除分组
+
+#### API 定义
+
+```bash
+DELETE /api/v1/groups?ids=<group_ids>
+```
+
+#### 请求示例
+
+```bash
+DELETE /api/v1/groups?ids=15
+```
+
+#### 成功响应
+
+```bash
+status 204
+```
+
+
+## 查看分组详情
+
+#### API 定义
+
+```bash
+GET /api/v1/groups/<group_id>
+```
+
+#### 请求示例
+
+```bash
+GET /api/v1/groups/15
+```
+
+#### 成功响应
+
+```bash
+status 200
+```
+
+```json
+{
+  "createAt": "2018-09-30 16:42:38",
+  "description": "默认分组",
+  "groupID": "rTpABa",
+  "groupName": "默认分组",
+  "id": 15,
+  "updateAt": null,
+  "username": "ActorCloud",
+}
+```
+
+
+
 ## 查看分组列表
 
 #### API 定义
@@ -26,71 +176,19 @@ status 200
     {
       "createAt": "2018-10-17 11:20:30",
       "description": "POST.*groups/",
-      "deviceCount": 0,
+      "endDeviceCount": 1,
+      "gatewayCount": 1,
       "groupID": "EtTuHU",
       "groupName": "默认分组",
       "id": 18,
-      "productID": "2ioNzM",
-      "productName": "MQTT产品",
-      "updateAt": null
-    },
-    {
-      "createAt": "2018-10-09 11:23:57",
-      "description": "这是 LwM2M 的分组",
-      "deviceCount": 3,
-      "groupID": "kUoTjf",
-      "groupName": "LwM2M 分组",
-      "id": 17,
-      "productID": "t2Oa5W",
-      "productName": "LWM2M产品",
       "updateAt": null
     }
   ],
   "meta": {
-    "count": 3,
+    "count": 1,
     "limit": 10,
     "page": 1
   }
-}
-```
-
-
-
-
-
-
-
-## 查看分组详情
-
-#### API 定义
-
-```bash
-GET /api/v1/groups/{groupIntID}
-```
-
-#### 请求示例
-
-```bash
-GET /api/v1/groups/15
-```
-
-#### 成功响应
-
-```bash
-status 200
-```
-
-```json
-{
-  "createAt": "2018-09-30 16:42:38",
-  "createUser": "ActorCloud",
-  "description": "默认分组",
-  "groupID": "rTpABa",
-  "groupName": "默认分组",
-  "id": 15,
-  "productID": "p3zZMy",
-  "productName": "智能锁",
-  "updateAt": null
 }
 ```
 
@@ -99,46 +197,32 @@ status 200
 
 | 字段名             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
-| createAt| "2018-09-30 16:42:38" | Date  | 创建时间 |
-| createUser| "ActorCloud" | String  | 创建用户 |
-| description| "认分组..." | String  | 描述 |
-| groupID| "rTpABa" | String  | 分组 ID |
-| groupName| "默认分组" | String  | 分组名称 |
-| id| 15 | Integer  | id |
-| productID| "p3zZMy" | String  | 产品 ID |
-| productName| "智能锁" | String  | 产品名称 |
-| updateAt| "null" | Date  | 更新时间 |
+| endDeviceCount| 1 | Integer  | 分组下设备数量 |
+| gateway| 1 | Integer  | 分组下网关数量 |
 
 
-
-
-
-
-
-
-
-## 创建分组
+## 分组绑定设备
 
 #### API 定义
 
 ```bash
-POST /api/v1/groups
+GET /api/v1/groups/<group_id>/devices
 ```
 
 #### 请求示例
 
 ```bash
-POST /api/v1/groups
+GET /api/v1/groups/1/devices
 ```
 
 ```json
 {
-  "productID": "p3zZMy",
-  "groupName": "默认分组",
-  "description": "默认分组"
+  "devices":[
+    2,
+    3
+  ]
 }
 ```
-
 
 #### 成功响应
 
@@ -146,97 +230,58 @@ POST /api/v1/groups
 status 201
 ```
 
-```json
-{
-  "createAt": "2018-09-30 16:42:38",
-  "description": "默认分组",
-  "groupID": "rTpABa",
-  "groupName": "默认分组",
-  "id": 15,
-  "productID": "p3zZMy",
-  "updateAt": null
-}
-```
-
-
-
-
-
-
-
-## 编辑分组
+## 分组下的设备数据
 
 #### API 定义
 
 ```bash
-PUT /api/v1/groups/{groupIntID}
+GET /api/v1/device_capability_data?groupIntID={group_id}
 ```
+
+参数说明
+
+| 参数         | 示例 | 类型    | 说明    |
+| ------------ | ---- | ------- | ------- |
+| groupIntID | 12   | Integer | 分组 id |
 
 #### 请求示例
 
 ```bash
-PUT /api/v1/groups/15
-```
-
-```json
-{
-  "createAt": "2018-09-30 16:42:38",
-  "createUser": "ActorCloud",
-  "description": "默认分组",
-  "groupID": "rTpABa",
-  "groupName": "默认分组2",
-  "id": 15,
-  "productID": "p3zZMy",
-  "productName": "智能锁",
-  "updateAt": null
-}
-```
-
-
-#### 成功响应
-
-```bash
-status 200
-```
-
-```json
-{
-  "createAt": "2018-09-30 16:42:38",
-  "description": "默认分组",
-  "groupID": "rTpABa",
-  "groupName": "默认分组2",
-  "id": 15,
-  "productID": "p3zZMy",
-  "updateAt": "2018-09-30 16:42:56"
-}
-```
-
-
-
-
-
-
-
-## 删除分组
-
-#### API 定义
-
-```bash
-DELETE /api/v1/groups?ids={groupIntIDS}
-```
-
-#### 请求示例
-
-```bash
-DELETE /api/v1/groups?ids=15
+GET /api/v1/device_capability_data?groupIntID=12
 ```
 
 #### 成功响应
 
-```bash
-status 204
-```
-
 ```json
-""
+{
+  "items": [
+    {
+      "dataPointID": "hum",
+      "dataPointName": "湿度",
+      "deviceID": "4e9d4e4fcce18fcdcd85ea46aee4115e",
+      "deviceIntID": 12,
+      "deviceName": "网关设备",
+      "msgTime": "2019-01-28 07:47:32",
+      "streamID": "qwerty",
+      "streamName": "温湿度数据流",
+      "value": 80.0
+    },
+    {
+      "dataPointID": "temp",
+      "dataPointName": "温度",
+      "deviceID": "4e9d4e4fcce18fcdcd85ea46aee4115e",
+      "deviceIntID": 12,
+      "deviceName": "网关设备",
+      "msgTime": "2019-01-28 07:47:32",
+      "streamID": "qwerty",
+      "streamName": "温湿度数据流",
+      "value": 37.0
+    }
+  ],
+  "meta": {
+    "count": 2,
+    "limit": 10,
+    "page": 1
+  }
+}
 ```
