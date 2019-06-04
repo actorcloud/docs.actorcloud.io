@@ -4,5 +4,5 @@
 
   * [快速接入指南](notice.md)
   * [设备证书](certs.md)
-  * [设备控制](control.md)
+  * [设备下发](control.md)
   * [REST API](rest.md)
