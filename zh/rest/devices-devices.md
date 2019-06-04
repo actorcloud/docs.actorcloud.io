@@ -275,9 +275,6 @@ DELETE /api/v1/devices?ids=190
 status 204
 ```
 
-```json
-""
-```
 
 ## 设备详情
 
@@ -389,8 +386,8 @@ status 200
 | latitude| 25.064918 | Float  | 纬度 |
 | location| 云南省昆明市五华区丰宁街道金鼎科技园 | String  | 位置 |
 | longitude| 102.678732 | Float  | 经度 |
-| loraData| {"appEUI": "1092ej1029e0192u","appKey": "12u1092u0192je1029u0912uu142j4oi","canJoin": 1,"fcntCheck": 0,"region": "EU863-870","type": "otaa"} | JSON  | LoRa 协议设备数据 |
-| lwm2mData| {"IMEI": "4982747892374918","IMSI": "8347984918218298","autoSub": 1} | JSON  | LwM2M 协议设备数据 |
+| loraData| {"appEUI": "1092ej1029e0192u","appKey": "12u1092u0192je1029u0912uu142j4oi","canJoin": 1,"fcntCheck": 0,"region": "EU863-870","type": "otaa"} | JSON  | LoRa 协议设备数据 |
+| lwm2mData| {"IMEI": "4982747892374918","IMSI": "8347984918218298","autoSub": 1} | JSON  | LwM2M 协议设备数据 |
 | mac| a4:5e:60:be:ef:3b | String  | MAC |
 | manufacturer| Samsung | String  | 制造商 |
 | metaData | {} | JSON | 元数据 |
@@ -407,6 +404,7 @@ status 200
 | updateAt| 2018-10-12 09:39:52 | Date  | 更新时间 |
 
 `LoRa` 协议设备字段说明
+
 | 字段名             | 示例值               | 字段类型    |  说明         |
 | --------------- | ----------------- | ------- | ------------------- |
 |type|otaa|String|入网方式|
@@ -423,6 +421,7 @@ status 200
 
 
 `LwM2M` 协议设备字段说明
+
 | 字段名             | 示例值               | 字段类型    |  说明         |
 | --------------- | ----------------- | ------- | ------------------- |
 |IMEI|7472938749187241|String|IMEI|
