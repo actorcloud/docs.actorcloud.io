@@ -17,7 +17,7 @@
 
 ## 绑定设备
 
-- 设备使用 SSL/TLS 安全连接时应当使用已绑定证书进行加密通信，在证书详情页可以修改证书信息，管理绑定设备。
+- 设备使用 SSL/TLS 安全连接时应当使用已绑定证书进行加密通信，在证书详情页可以修改证书信息，管理绑定设备。注意：需要绑定的设备认证方式必须为证书。
 
 ![certs_bind](_assets/certs_bind.png)
 
@@ -37,7 +37,7 @@
 - 设备密钥：对应设备连接时 MQTT 连接密码；
 - 连接用户名：对应设备连接时 MQTT 连接用户名。
 
-设备详情页编码信息标签页可以查看设备认证信息:
+设备详情页的认证信息模块，可以查看设备认证信息:
 
 ![device_security](./_assets/device_security_2.png)
 
@@ -50,9 +50,9 @@ import paho.mqtt.client as mqtt
 import json
 
 # 设备需要在 ActorCloud 平台注册
-client_id = 'ef14be2cfd2f555397bde858750cbda8'
-username = 'ef14be2cfd2f555397bde858750cbda8'
-password = '53e9b7036fcb5f178d30958a563ba049'
+client_id = '6198289b38939358305813fe41551483b1f0'
+username = '6198289b38939358305813fe41551483b1f0'
+password = '2312686198f5722ef570b855694655f1b475'
 HOST = 'iot.actorcloud.io'
 PORT = 8883
 
