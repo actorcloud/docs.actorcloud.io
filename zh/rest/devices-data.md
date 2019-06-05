@@ -50,21 +50,20 @@ GET /api/v1/devices/11/last_event
 #### API 定义
 
 ```bash
-GET /api/v1/devices/<device_id>/events?_page={page}&_limit={pageSize}&timeType=history&start_time={start_time}&end_time={end_time}
+GET /api/v1/devices/<device_id>/events?_page={page}&_limit={pageSize}&start_time={start_time}&end_time={end_time}
 ```
 
 参数说明
 
 | 参数             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
-| timeType| history | String  | 事件类型 |
 | start_time| 2019-05-27+16:26:15 | Date  | 开始时间 |
 | end_time| 2019-05-30+00:00:15 | Date  | 结束时间 |
 
 #### 请求示例
 
 ```bash
-GET /api/v1/devices/11/events?_page=1&_limit=10&timeType=realtime&start_time=2019-05-27+16:26:15&end_time=2019-06-03+16:26:15
+GET /api/v1/devices/11/events?_page=1&_limit=10&start_time=2019-05-27+16:26:15&end_time=2019-06-03+16:26:15
 ```
 
 #### 成功响应
@@ -185,21 +184,20 @@ GET /api/v1/devices/11/last_capability_data
 #### API 定义
 
 ```bash
-GET /api/v1/devices/<device_id>/capability_data?_page={page}&_limit={pageSize}&timeType=history&start_time={start_time}&end_time={end_time}
+GET /api/v1/devices/<device_id>/capability_data?_page={page}&_limit={pageSize}&start_time={start_time}&end_time={end_time}
 ```
 
 参数说明
 
 | 参数             | 示例值               | 字段类型    |  说明                  |
 | --------------- | ----------------- | ------- | ------------------- |
-| timeType| history | String  | 事件类型 |
 | start_time| 2019-05-27+16:26:15 | Date  | 开始时间 |
 | end_time| 2019-05-30+00:00:15 | Date  | 结束时间 |
 
 #### 请求示例
 
 ```bash
-GET /api/v1/devices/11/capability_data?_page=1&_limit=10&timeType=realtime&start_time=2019-05-27+16:26:15&end_time=2019-06-03+16:26:15
+GET /api/v1/devices/11/capability_data?_page=1&_limit=10&start_time=2019-05-27+16:26:15&end_time=2019-06-03+16:26:15
 ```
 
 #### 成功响应
