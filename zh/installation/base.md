@@ -1,43 +1,42 @@
-# Actorcloud安装
+# Actorcloud 部署
 
 ### 先决条件
 
-以下是Actorcloud部署的最低系统配置
+Actorcloud 部署最低系统配置
 
 * 64 位操作系统
-* 如果远程部署第三方组件(Timescaledb, Pulsar, Emqx等)，所需最低配置为2 核 4 G
-* 如果第三方组件部署在同一节点上，所需最低配置为4 核 8 G
+* 如果第三方组件(Timescaledb, Pulsar, Emqx)与 ActorCloud 分开部署，所需最低配置为 2 核 4G
+* 如果第三方组件与 ActorCloud 部署在同一台服务器，所需最低配置为 4 核 8G
 
-Actorcloud支持以下操作系统
+Actorcloud 支持以下操作系统
 
 * Ubuntu 16.04
 
 ### 第三方组件
 
-Actorcloud 需要以下组件
+ActorCloud 需要以下组件
 
-* PostgreSQL 10.5
 * TimescaleDB
 * Pulsar 
-* Emqx
+* EMQ X
 * Nginx
 
-##### Timescaledb
-TimescaleDB在actorcloud中用于存储租户、设备、应用等数据。它是在PostgreSQL数据库的基础上进行开发，所以使用方法基本和传统数据库一致。它可以支持复杂的SQL查询，并针对时间序列数据的快速插入和复杂查询进行了优化，特别适合用于监控，IoT，金融，物流等大数据领域。
+##### TimescaleDB
+TimescaleDB 在 ActorCloud 中用于存储租户、设备、应用等数据。TimescaleDB 是简单可扩展的开源时序数据库。
 
 ##### Pulsar 
 
-Pulsar在actorcloud中用于规则管理，设备数据处理等。Apache Pulsar是一个开源的分布式pub-sub消息系统。
+Pulsar 在 ActorCloud 中用于规则管理，设备数据处理等。Apache Pulsar 是一个开源的分布式 pub-sub 消息系统。
 
-##### Emqx
+##### EMQ X
 
-Emqx 
+EMQ X 在 ActorCloud 用于设备消息服务器。EMQ X 是基于 Erlang/OTP 平台开发的开源物联网消息服务器。
 
 ##### Nginx
 
-Nginx在actorcloud中用于反向代理。Nginx是一款轻量级的文本反向代理服务器及电子邮件代理服务器，其特点是内存少，并发高。
+Nginx在 ActorCloud 中用于反向代理。Nginx 是一款轻量, 高性能的的反向代理服务器。
 
-### 安装Actorcloud
+### ActorCloud 单节点部署
 
-需要在单个Linux节点上安装和配置actorcloud组件，请按照[单节点部署](single_node.md#单节点部署)进行操作
+需要在单个 Linux 节点上安装和配置 ActorCloud 组件，请按照[单节点部署](single_node.md#单节点部署)进行操作
 
