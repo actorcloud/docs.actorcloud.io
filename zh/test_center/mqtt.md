@@ -1,22 +1,21 @@
 # MQTT 客户端
 
 
-- 成功创建设备后，点击**测试中心** -> **MQTT 客户端**可以选取设备进行连接测试。按照设备名称搜索选择一个设备，点击启动连接到消息服务器。
+- 成功创建设备后，点击 **测试中心** -> **MQTT 客户端** 可以选取设备进行连接测试。按照设备名称搜索选择一个设备，点击启动连接到消息服务器。
 
 #### 操作指南
 
-- 上报数据：输入主题、消息进行数据上报，数据将记录到[上行消息](/device/connect_logs.md#上行消息)；
+- 上报数据：输入主题、消息进行数据上报，数据格式必须为 JSON；
 - 订阅主题：输入主题进行在线订阅；
-- 已上报数据：仅包含设备在 MQTT 客户端连接后已上报的数据;
-- 已接收数据：仅包含设备在 MQTT 客户端连接后已接收的数据，数据将记录到[下行消息](/device/connect_logs.md#下行消息)
-- 
+- 已上报数据：仅包含设备在 MQTT 客户端连接后已上报的数据；
+- 已接收数据：仅包含设备在 MQTT 客户端连接后已接收的数据；
 
 ![mqtt](_assets/mqtt.png)
 
-### 运行日志
+### 连接日志
 
-- 设备连接会产生运行日志，在设备详情页**设备信息**标签页中，可以查看当前设备基本信息及运行日志。
-![](/assets/connect_log_device.png)  
+- 设备连接会产生连接日志，在设备详情页**连接日志**标签页中，可以查看当前设备的运行日志。
+![connect_log_device](_assets/connect_log_device.png)
 
 - 根据 MQTT 特性和 **ActorCloud** 接入规则，相同 client Id 的设备不能同时在线，否则会产生"重连-互相踢下线"现象，请创建测试设备或选择离线设备进行调试；
 
@@ -24,8 +23,6 @@
 ### 设备事件
 
 - 设备发布消息产生上行消息记录到设备事件，在设备详情页**设备事件**标签页中可以查看该记录。
-
-![](/assets/device_event.png)
 
 
 
@@ -37,9 +34,9 @@
 - 设备密钥：对应设备连接时 MQTT 连接密码；
 - 连接用户名：对应设备连接时 MQTT 连接用户名。
 
-设备详情页**编码信息**标签页可以查看设备认证信息:
+设备详情页**设备信息**标签页中的认证信息模块，可以查看设备认证信息:
 
-![](/assets/device_decode.png)
+![](_assets/device_decode.png)
 
 示例代码：
 
@@ -50,9 +47,9 @@ import paho.mqtt.client as mqtt
 import json
 
 # 设备需要在 ActorCloud 平台注册
-client_id = '10C61F1A1F40'
-username = '10C61F1A1F40'
-password = 'ce07c199187811e8a12b525440546606'
+client_id = '6198289b38939358305813fe41551483b1f0'
+username = '6198289b38939358305813fe41551483b1f0'
+password = '2312686198f5722ef570b855694655f1b475'
 PORT = 1883
 HOST = 'iot.actorcloud.io'
 
@@ -95,9 +92,9 @@ import paho.mqtt.client as mqtt
 import json
 
 # 设备需要在 ActorCloud 平台注册
-client_id = '10C61F1A1F40'
-username = '10C61F1A1F40'
-password = 'ce07c199187811e8a12b525440546606'
+client_id = '6198289b38939358305813fe41551483b1f0'
+username = '6198289b38939358305813fe41551483b1f0'
+password = '2312686198f5722ef570b855694655f1b475'
 HOST = 'iot.actorcloud.io'
 PORT = 8883
 
@@ -133,7 +130,7 @@ client.loop_forever()
 
 - 双向认证适用于认证方式为**证书**的设备，需要使用 **ActorCloud** 根证书 + 自签名证书，证书密钥进行认证。
 
-![](/assets/certs_download.png)
+![](_assets/certs_download.png)
 
 设备绑定相应证书详情页中，点击**下载证书**后解压文件得到：
 
@@ -155,9 +152,9 @@ import paho.mqtt.client as mqtt
 import json
 
 # 设备需要在 ActorCloud 平台注册且认证方式为 "证书"
-client_id = '10C61F1A1F41'
-username = '10C61F1A1F41'
-password = '630a7f6b54d75e50a2e59b4baca722d4'
+client_id = '6198289b38939358305813fe41551483b1f0'
+username = '6198289b38939358305813fe41551483b1f0'
+password = '2312686198f5722ef570b855694655f1b475'
 HOST = 'iot.actorcloud.io'
 
 # 双向认证端口

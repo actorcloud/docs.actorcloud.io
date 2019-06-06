@@ -6,12 +6,12 @@
 * [设备快速接入指南](access_guide/notice.md)
 
 ## 设备管理
-* [产品管理](device/product.md)
-  * [创建产品](device/product_create.md)
-  * [设备列表](device/product.md#设备列表)
-  * [功能定义](device/product.md#功能定义)
-    * [数据流](device/product.md#数据流)
-    * [功能点](device/product.md#功能点)
+* [产品管理](products/product.md)
+  * [创建产品](products/product_create.md)
+  * [设备列表](products/product.md#设备列表)
+  * [功能定义](products/product.md#功能定义)
+    * [数据流](products/product.md#数据流)
+    * [功能点](products/product.md#功能点)
 * [设备注册](device/device_create.md)
 * [设备列表](device/device.md#设备列表)
 * [设备信息](device/device.md#设备信息)
@@ -27,7 +27,7 @@
 * [定时任务](rule_engine/schedule.md)
 
 ## 告警管理
-* [当前告警](alert/alert.md)
+* [当前告警](alert/alert.md#当前告警)
 * [历史告警](alert/alert.md#历史告警)
 
 ## 测试中心
