@@ -21,10 +21,9 @@
   * [证书管理](device/certs.md)
 
 ## 规则管理
-* [消息规则](rule_engine/message_rules.md)
 * [业务规则](rule_engine/business_rules.md#业务规则)
-* [动作](rule_engine/business_rules.md#动作)
-* [定时任务](rule_engine/schedule.md)
+* [围栏规则](rule_engine/scope_rules.md#围栏规则)
+* [动作](rule_engine/actions.md#动作)
 
 ## 告警管理
 * [当前告警](alert/alert.md)
