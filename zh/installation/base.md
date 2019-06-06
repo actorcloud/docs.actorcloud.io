@@ -34,7 +34,7 @@ EMQ X 在 ActorCloud 用于设备消息服务器。EMQ X 是基于 Erlang/OTP �
 
 ##### Nginx
 
-Nginx在 ActorCloud 中用于反向代理。Nginx 是一款轻量, 高性能的的反向代理服务器。
+Nginx 在 ActorCloud 中用于反向代理。Nginx 是一款轻量, 高性能的的反向代理服务器。
 
 ### ActorCloud 单节点部署
 
