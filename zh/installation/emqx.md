@@ -147,3 +147,34 @@
    ```
 
 ## EMQ X 配置
+### 插件配置
+
+EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
+
+* emqx_auth_http 插件配置
+
+  ```
+  # async_tasks_node 为config.yml 配置
+  auth.http.auth_req = http://async_tasks_node/api/v1/emqx/auth
+  auth.http.auth_req.method = post
+  auth.http.auth_req.params = device_id=%c,username=%u,password=%P,cn=%cn,ip=%a
+  ```
+
+* emqx_web_hook 插件配置
+
+  ```
+  web.hook.api.url = http://async_tasks_node/api/v1/emqx/callback
+  web.hook.rule.client.connected.1     = {"action": "on_client_connected"}
+  web.hook.rule.client.disconnected.1  = {"action": "on_client_disconnected"} 
+  web.hook.rule.message.acked.1        = {"action": "on_message_acked"}
+  ```
+
+  
+
+### 启用插件
+
+访问`http://emqx:18083/#/plugins` 启动插件
+
+* emqx_auth_http
+* emqx_lwm2m
+* emqx_web_hook
