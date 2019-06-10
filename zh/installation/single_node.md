@@ -203,7 +203,7 @@ ActorCloud 前端服务采用 [Nginx](https://www.nginx.com/) 运行, 以下操�
 2. 拷贝前端服务到 Nginx `www` 目录下
 
    ```bash
-   cp -r ./dist/* www
+   cp -r ./dist/* /etc/nginx/www/
    ```
 
 3. 重启 Nginx 
