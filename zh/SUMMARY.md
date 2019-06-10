@@ -12,6 +12,7 @@
   * [功能定义](products/product.md#功能定义)
     * [数据流](products/product.md#数据流)
     * [功能点](products/product.md#功能点)
+  * [编解码插件](products/codec.md#编解码插件)
 * [设备注册](device/device_create.md)
 * [设备列表](device/device.md#设备列表)
 * [设备信息](device/device.md#设备信息)
