@@ -32,3 +32,55 @@ sudo service postgresql restart
 ```
 
 ## TimescaleDB 配置
+
+### postgresql.conf 修改
+
+postgresql.conf 存放路径为`/etc/postgresql/10/main/postgresql.conf`
+
+* Postgresql 配置修改可参考 [Setting Parameters](https://www.postgresql.org/docs/10/config-setting.html)
+* TimescaleDB 配置修改可参考 [Further configuration / manual tuning](https://docs.timescale.com/v1.3/getting-started/configuring#further-config)`
+
+### pg_hba.conf 修改
+
+pg_hba.conf  存放路径为`/etc/postgresql/10/main/pg_hba.conf`
+
+配置修改可参考 [The pg_hba.conf File](https://www.postgresql.org/docs/10/auth-pg-hba-conf.html)
+
+### ActorCloud 数据库配置
+
+* 进入 psql 命令行
+
+  ```bash
+  $ sudo -u postgres psql
+  ```
+
+* 创建数据库
+
+  ```
+  CREATE DATABASE actorcloud;
+  ```
+
+* 创建角色
+
+  ```plsql
+  CREATE USER actorcloud WITH ENCRYPTED PASSWORD 'public';
+  ```
+
+
+* 角色权限分配
+
+  注意: 依据情况适当赋予角色权限！
+
+  ```plsql
+  ALTER ROLE "actorcloud" WITH LOGIN;  # 允许角色登录
+  ALTER ROLE "actorcloud" WITH SUPERUSER; # 设置角色为超级管理员
+  ALTER ROLE "actorcloud" WITH CREATEDB; # 允许角色创建数据库
+  ALTER ROLE "actorcloud" WITH CREATEROLE; # 允许角色创建角色
+  ```
+
+* 授予数据库权限
+
+  ```plsql
+  grant all privileges on database actorcloud to actorcloud;
+  ```
+ 
