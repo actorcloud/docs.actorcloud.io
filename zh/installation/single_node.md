@@ -11,10 +11,13 @@
 1. 下载并安装依赖以及常用程序
 
    ```bash
-   # local utf-8 config
-   $ export LANG="en_US.UTF-8" && export LC_ALL="en_US.UTF-8" && export LC_CTYPE=en_US.UTF-8
-   
    $ sudo apt-get update
+
+   # local utf-8 config(optional)
+   $ DEBIAN_FRONTEND=noninteractive sudo apt-get install -y locales \
+    && sudo sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
+    && sudo dpkg-reconfigure --frontend=noninteractive locales \
+    && sudo update-locale LANG=en_US.UTF-8
    
    $ sudo apt-get -y install wget gcc curl
    ```
@@ -47,7 +50,6 @@
 
    ```bash
    $ sudo apt-get install -y supervisor
-   $ sudo systemctl enable supervisord
    ```
 
 6. Node 安装
@@ -83,9 +85,12 @@
 组件安装需要进入 ActorCloud 项目`server/`路径下执行
 
 1. 获取 ActorCloud
-
+   默认 ActorCloud 项目在`/opt` 目录下
    ```bash
-   $ git clone https://github.com/actorcloud/ActorCloud
+   # 目录 /opt 权限更改
+   $ sudo chown -R ubuntu:ubuntu /opt
+
+   $ cd /opt && git clone https://github.com/actorcloud/ActorCloud
    ```
 
 2. 安装 ActorCloud 依赖
@@ -163,15 +168,21 @@ ActorCloud 后端服务采用 [Supervisor](http://supervisord.org/) 运行, 以�
    ```bash
    $ sudo supervisorctl update
    ```
+   
+4. 拷贝反向代理配置到 Nginx `services/`目录下
 
-4. 查看 ActorCloud 运行情况
+   ```bash
+   $ sudo cp ./deploy/production/nginx/services/ /etc/nginx/services/
+   ```
+   
+5. 查看 ActorCloud 运行情况
 
    ```bash
    $ sudo supervisorctl status
    ```
    ![actorcloud_run_status](_assets/actorcloud_run_status.png)
 
-5. 运行，暂停，重启 ActorCloud
+6. 运行，暂停，重启 ActorCloud
 
    ```bash
    # 运行
