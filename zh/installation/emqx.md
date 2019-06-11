@@ -173,8 +173,8 @@ EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
 
 ### 启用插件
 
-访问`http://emqx:18083/#/plugins` 启动插件
+访问 EMQX Dashboard 里的 Plugins 页面启动以下三个插件。
 
 * emqx_auth_http
-* emqx_lwm2m
 * emqx_web_hook
+* emqx_lwm2m（无该协议接入需求则不需要启动）
