@@ -20,7 +20,7 @@
 #### 模拟输入说明
 
 - 主题：消息 topic
-- 消息：JSON 格式，如 `{"tmp":17}`，`[{"tmp":17},{"hmd":80}]`
+- 消息：JSON 格式，如 `{"temp":17}`，`[{"temp":17},{"hmd":80}]`
 
 ActorCloud 会对数据类型进行转换
 
@@ -202,11 +202,11 @@ ActorCloud 会对数据类型进行转换
   }
   ```
 
-  例如，若选择温度功能点（tmp），设置值为 22，则对应 data 为：
+  例如，若选择温度功能点（temp），设置值为 22，则对应 data 为：
 
   ```json
   {
-    "temp":22
+    "temp": 22
   }
   ```
 
@@ -239,7 +239,7 @@ ActorCloud 会对数据类型进行转换
 - data_type：`response`
 - result.task_id：对应下发的 task_id
 - result.code：状态码，`0`：成功，`1`：失败
-- data：响应内容
+- data：响应内容。无响应内容时，可为空对象{}
 
 
 
@@ -360,8 +360,8 @@ def decode(topic, message):
 
 
 def _trans_data(data):
-    if 'tmp' in data:
-        v = data['tmp']
+    if 'temp' in data:
+        v = data['temp']
         return {'temperature': {'time': v['ts'], 'value': v['v']}}
     elif 'hmd' in data:
         v = data['hmd']
@@ -370,7 +370,7 @@ def _trans_data(data):
         return {'is_working': 1 == data['st']}
    
 if __name__ == '__main__':
-    message = b'[{"tmp": {"ts": 1547660823, "v": -3.7}}, {"hmd": {"ts": 1547660823, "v": 34}}]'
+    message = b'[{"temp": {"ts": 1547660823, "v": -3.7}}, {"hmd": {"ts": 1547660823, "v": 34}}]'
     decode_result = decode(b'/19/0/0', message)
     print(decode_result)
 ```
