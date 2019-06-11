@@ -2,6 +2,7 @@
 
 ## 快速入门
 * [概览](README.md)
+* [系统安装](installation/base.md)
 * [ActorCloud 入门](introduction.md)
 * [设备快速接入指南](access_guide/notice.md)
 
