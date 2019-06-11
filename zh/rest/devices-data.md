@@ -268,19 +268,13 @@ GET /api/v1/devices/11/capability_data?_page=1&_limit=10&start_time=2019-05-27+1
 #### API 定义
 
 ```bash
-GET /api/v1/devices/<device_id>/last_data_charts?timeUnit={time_unit}
+GET /api/v1/devices/<device_id>/last_data_charts
 ```
-
-参数说明
-
-| 参数     | 示例 | 类型   | 说明                               |
-| -------- | ---- | ------ | ---------------------------------- |
-| timeUnit | 5m   | String | 时间单位，支持：5m、1h、6h、1d、1w |
 
 #### 请求示例
 
 ```bash
-GET /api/v1/devices/11/last_data_charts?timeUnit=1h
+GET /api/v1/devices/11/last_data_charts
 ```
 
 #### 成功响应

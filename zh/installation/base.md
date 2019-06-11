@@ -8,10 +8,6 @@ Actorcloud 部署最低系统配置
 * 如果第三方组件(Timescaledb, Pulsar, Emqx)与 ActorCloud 分开部署，所需最低配置为 2 核 4G
 * 如果第三方组件与 ActorCloud 部署在同一台服务器，所需最低配置为 4 核 8G
 
-Actorcloud 支持以下操作系统
-
-* Ubuntu 16.04
-
 ### 第三方组件
 
 ActorCloud 需要以下组件
@@ -38,7 +34,7 @@ Nginx 在 ActorCloud 中用于反向代理。Nginx 是一款轻量, 高性能的
 
 ### ActorCloud 单节点部署
 
-需要在单个 Linux 节点上安装和配置 ActorCloud 组件，请按照[单节点部署](single_node.md#单节点部署)进行操作
+需要在单个 Linux 节点上安装和配置 ActorCloud 组件，请按照[单节点部署](single_node.md)进行操作
 
 ### ActorCloud Docker 部署
-需要在在 Docker 安装和配置 ActorCloud 组件，请按照[Docker部署](docker.md#Docker 部署)进行操作
+需要在在 Docker 安装和配置 ActorCloud 组件，请按照[Docker部署](docker.md)进行操作

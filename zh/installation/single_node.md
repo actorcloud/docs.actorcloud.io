@@ -1,7 +1,8 @@
 # 单节点部署
 
-本指南介绍如何在单个 Linux 节点上部署 ActorCloud
+本文档介绍如何在单个 Linux 节点上部署 ActorCloud
 
+> 该文档基于 Ubuntu 16.04
 
 
 ### 安装
@@ -73,22 +74,18 @@
 
 ##### 第三方组件安装
 
-1. [TimescaleDB 安装](timescaledb.md#TimescaleDB 安装)
+1. [TimescaleDB 安装](timescaledb.md#timescaledb-安装)
+2. [Pulsar 安装](pulsar.md#pulsar-安装)
+3. [EMQ X 安装](emqx.md#emq-x-安装)
+4. [Nginx 安装](nginx.md#nginx-安装)
 
-2. [Pulsar 安装](pulsar.md#Pulsar 安装)
-
-3. [EMQ X 安装](emqx.md#EMQ X 安装)
-
-4. [Nginx 安装](nginx.md#Nginx 安装)
-
-   
 
 
 ##### ActorCloud 安装
 
 组件安装需要进入 ActorCloud 项目`server/`路径下执行
 
-1. 获取 ActorCloud 
+1. 获取 ActorCloud
 
    ```bash
    $ git clone https://github.com/actorcloud/ActorCloud
@@ -113,10 +110,10 @@
 
 ##### 第三方组件配置
 
-1. [TimescaleDB 配置](timescaledb.md#TimescaleDB 配置)
-2. [Pulsar 配置](pulsar.md#Pulsar 配置)
-3. [EMQ X 配置](emqx.md#EMQ X 配置)
-4. [Nginx 配置](nginx.md#Nginx 配置)
+1. [TimescaleDB 配置](timescaledb.md#timescaledb-配置)
+2. [Pulsar 配置](pulsar.md#pulsar-配置)
+3. [EMQ X 配置](emqx.md#emq-x-配置)
+4. [Nginx 配置](nginx.md#nginx-配置)
 
 ##### ActorCloud 配置
 
