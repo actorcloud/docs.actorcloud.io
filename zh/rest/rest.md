@@ -4,10 +4,9 @@
 
   * [认证与基础查询](url.md)
   * [错误处理](error.md)
-  * [产品操作](product.md)
-  * [设备操作](device.md)
-  * [设备信息](device_info.md)
-  * [分组操作](group.md)
-  * [分组设备管理](group_device.md)
-  * [证书](certs.md)
-  
+  * [设备管理](devices-devices.md)
+  * [设备数据](devices-data.md)
+  * [设备日志](device_logs.md)
+  * [分组管理](devices-groups.md)
+  * [产品管理](products.md)
+  * [告警管理](alerts.md)

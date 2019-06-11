@@ -39,4 +39,3 @@ String split_part(String text, String delimiter, int position)
 - position：位置，从 1 开始
 
 该函数返回分割以后的特定位置的字符串
-

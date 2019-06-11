@@ -1,6 +1,6 @@
 # 告警管理
 
-[业务规则](/rule_engine/business_rules.md)或[围栏规则](/location/location.md#电子围栏)中触发动作类型为**告警**的动作信息将记录到告警管理中。
+[业务规则](/rule_engine/business_rules.md)或[围栏规则](/rule_engine/scope_rules.md)中触发动作类型为**告警**的动作信息将记录到告警管理中。
 
 ### 当前告警
 
