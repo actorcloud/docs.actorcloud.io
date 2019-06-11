@@ -2,11 +2,13 @@
 
 ### 先决条件
 
-Actorcloud 部署最低系统配置
+**Actorcloud 部署最低系统配置**
 
 * 64 位操作系统
 * 如果第三方组件(Timescaledb, Pulsar, Emqx)与 ActorCloud 分开部署，所需最低配置为 2 核 4G
 * 如果第三方组件与 ActorCloud 部署在同一台服务器，所需最低配置为 4 核 8G
+
+**该文档基于 Ubuntu 16.04**
 
 ### 第三方组件
 

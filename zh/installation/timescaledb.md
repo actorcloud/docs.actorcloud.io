@@ -17,19 +17,16 @@ $ sudo apt-get install -y postgresql-10
 # Add PPA
 $ sudo add-apt-repository ppa:timescale/timescaledb-ppa
 $ sudo apt-get update
-
 # Now install appropriate package for PG version
 $ sudo apt install -y timescaledb-postgresql-10
 ```
 
 3. 启用 TimescaleDB 插件
-
 ```bash
 sudo timescaledb-tune
 ```
 
 4. 重启 PostgreSQL
-
 ```bash
 sudo service postgresql restart
 ```
