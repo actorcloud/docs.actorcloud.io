@@ -12,7 +12,7 @@
 
    ```bash
    $ sudo apt-get update
-
+   
    # local utf-8 config(optional)
    $ DEBIAN_FRONTEND=noninteractive sudo apt-get install -y locales \
     && sudo sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
@@ -52,24 +52,8 @@
    $ sudo apt-get install -y supervisor
    ```
 
-6. Node 安装
-
-   ```bash
-   $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-   $ sudo apt-get install -y nodejs
-   ```
-
-7. Yarn 安装
-
-   ```bash
-   $ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
    
-   $ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-   
-   $ sudo apt-get update && sudo apt-get install yarn
-   ```
 
-   
 
 ##### 第三方组件安装
 
@@ -93,18 +77,13 @@
    $ cd /opt && git clone https://github.com/actorcloud/ActorCloud
    ```
 
-2. 安装 ActorCloud 依赖
+2. 安装 ActorCloud 后端依赖
 
-   依赖安装需要在ActorCloud 项目路径下执行
+   依赖安装需要在ActorCloud 项目 `server/` 路径下执行
 
    ```bash
-   # 后端依赖安装 server/下执行
-   $ pipenv install
-   # 前端依赖安装 ui/目录下执行
-   $ yarn install
+   $ pipenv install --skip-lock
    ```
-
-
 
 
 
@@ -132,7 +111,9 @@ $ vi server/instance/config.yml
 配置文件修改(参考备注修改)，以下配置部署前必须修改
 
 * language: 系统语言
-* log_path: ActorCloud 运行日志存放路径
+* backend_node: 后端节点, 内网地址+端口
+* async_tasks_node: 异步任务节点, 内网地址+端口
+* log_path:  ActorCloud 运行日志存放路径
 * secret_key:  flask [SECRET_KEY](http://flask.pocoo.org/docs/1.0/config/#SECRET_KEY)
 * admin_email, admin_password: 超级用户登录邮箱和密码
 * site_name, site_domain, email_title:  用户邀请注册信息
@@ -156,11 +137,11 @@ ActorCloud 后端服务采用 [Supervisor](http://supervisord.org/) 运行, 以�
    ```bash
    $ pipenv run flask deploy
    ```
-   
+
 2. 拷贝 Supervisor 配置
 
    ```bash
-   $ sudo cp server/deploy/production/supervisor/actorcloud.conf /etc/supervisor/conf.d/
+   $ sudo cp server/config/actorcloud_supervisord.conf /etc/supervisor/conf.d/
    ```
 
 3. 更新 Supervisor配置
@@ -168,21 +149,15 @@ ActorCloud 后端服务采用 [Supervisor](http://supervisord.org/) 运行, 以�
    ```bash
    $ sudo supervisorctl update
    ```
-   
-4. 拷贝反向代理配置到 Nginx `services/`目录下
 
-   ```bash
-   $ sudo cp ./deploy/production/nginx/services/ /etc/nginx/services/
-   ```
-   
-5. 查看 ActorCloud 运行情况
+4. 查看 ActorCloud 运行情况
 
    ```bash
    $ sudo supervisorctl status
    ```
    ![actorcloud_run_status](_assets/actorcloud_run_status.png)
 
-6. 运行，暂停，重启 ActorCloud
+5. 运行，暂停，重启 ActorCloud
 
    ```bash
    # 运行
@@ -191,29 +166,5 @@ ActorCloud 后端服务采用 [Supervisor](http://supervisord.org/) 运行, 以�
    $ sudo supervisorctl stop actorcloud:*
    # 重启
    $ sudo supervisorctl restart actorcloud:*
-   ```
-
-
-
-##### ActorCloud 前端服务运行
-
-ActorCloud 前端服务采用 [Nginx](https://www.nginx.com/) 运行, 以下操作需要在 `ui/` 目录下执行
-
-1. 编译前端代码
-
-   ```bash
-   $ yarn build
-   ```
-
-2. 拷贝前端服务到 Nginx `www` 目录下
-
-   ```bash
-   cp -r ./dist/* /etc/nginx/www/
-   ```
-
-3. 重启 Nginx 
-
-   ```bash
-   sudo service nginx restart
    ```
 

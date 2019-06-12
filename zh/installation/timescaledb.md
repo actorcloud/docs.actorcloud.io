@@ -38,7 +38,7 @@ sudo service postgresql restart
 postgresql.conf 存放路径为`/etc/postgresql/10/main/postgresql.conf`
 
 * Postgresql 配置修改可参考 [Setting Parameters](https://www.postgresql.org/docs/10/config-setting.html)
-* TimescaleDB 配置修改可参考 [Further configuration / manual tuning](https://docs.timescale.com/v1.3/getting-started/configuring#further-config)`
+* TimescaleDB 配置修改可参考 [Further configuration / manual tuning](https://docs.timescale.com/v1.3/getting-started/configuring#further-config)
 
 ### pg_hba.conf 修改
 
