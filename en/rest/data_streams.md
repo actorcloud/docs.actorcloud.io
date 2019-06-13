@@ -1,20 +1,20 @@
-# 数据流
+# Data stream
 
-## 查看数据流列表
+## View data stream list
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/data_streams?productID={productID}&_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/data_streams?productID=2ioNzM&_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -25,22 +25,22 @@ status 200
   "items": [
     {
       "id": 17,
-      "productName": "MQTT产品",
+      "productName": "MQTT product",
       "streamDataType": 1,
       "streamDataTypeLabel": "JSON",
-      "streamName": "测试",
+      "streamName": "Test",
       "streamType": 2,
-      "streamTypeLabel": "数据下发",
+      "streamTypeLabel": "data issue",
       "topic": "hello"
     },
     {
       "id": 1,
-      "productName": "MQTT产品",
+      "productName": "MQTT product",
       "streamDataType": 1,
       "streamDataTypeLabel": "JSON",
-      "streamName": "温湿度",
+      "streamName": "Temperature and humidity",
       "streamType": 1,
-      "streamTypeLabel": "终端上报",
+      "streamTypeLabel": "Terminal reporting",
       "topic": "hum_temp"
     }
   ],
@@ -58,21 +58,21 @@ status 200
 
 
 
-## 查看数据流详情
+## View data stream details
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/data_streams/{dataStreamsID}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/data_streams/9
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -82,8 +82,8 @@ status 200
 {
   "createAt": "2018-09-30 16:48:22",
   "dataPointNames": [
-    "经度",
-    "纬度"
+    "longitude",
+    "latitude"
   ],
   "dataPoints": [
     28,
@@ -103,23 +103,23 @@ status 200
 ```
 
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name          | Sample value    | Type |  Description        |
 | --------------- | ----------------- | ------- | ------------------- |
-| createAt| "2018-09-30 16:48:22" | Date  | 创建时间 |
-| dataPointNames| ["经度","纬度"] | Array  | 功能点名称 |
-| dataPoints| [28,29] | Array  | 功能点 ID |
-| detail| "null" | String  | 备注 |
+| createAt| "2018-09-30 16:48:22" | Date  | Creation time |
+| dataPointNames| ["latitude Longitude"] | Array  | Data point name |
+| dataPoints| [28,29] | Array  | Data point ID |
+| detail| "null" | String  | Remarks |
 | id| 9 | Integer  | id |
-| productID| "p3zZMy" | String  | 产品 ID |
-| streamDataType| 1 | Integer  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
-| streamDataTypeLabel| "JSON" | String  | 数据类型 可选参数: JSON: 1, 二进制: 2 |
-| streamName| "location" | String  | 数据流名称 |
-| streamType| 1 | Integer  | 数据流类型 可选参数: 设备数据上报: 1, 设备数据下发: 2, 网关数据上报: 3, 网关数据下发: 4. 其中只有网关产品才可选网关数据上报、网关数据下发 |
-| topic| "topic" | String  | 主题 |
-| updateAt| "null" | Date  | 更新时间 |
-| userIntID| 23 | Integer  | 用户 ID |
+| productID| "p3zZMy" | String  | Product ID |
+| streamDataType| 1 | Integer  | Data Type Optional Parameters: JSON: 1, Binary: 2 |
+| streamDataTypeLabel| "JSON" | String  | Data Type Optional Parameters: JSON: 1, Binary: 2 |
+| streamName| "location" | String  | Data stream name |
+| streamType| 1 | Integer  | Data stream type Optional parameters: Device data report: 1, Device data issue: 2, Gateway data report: 3, Gateway data issue: 4. Gateway data report and issue is optional only for gateway products. |
+| topic| "topic" | String  | Topic |
+| updateAt| "null" | Date  | Update time |
+| userIntID| 23 | Integer  | User ID |
 
 
 
@@ -129,15 +129,15 @@ status 200
 
 
 
-## 创建数据流
+## Create data stream
 
-#### API 定义
+#### API 
 
 ```bash
 POST /api/v1/data_points
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 POST /api/v1/data_points
@@ -145,12 +145,12 @@ POST /api/v1/data_points
 
 ```json
 {
-  "dataPointName": "经度",
+  "dataPointName": "longitude",
   "dataPointID": "x",
   "productIntID": "128",
   "pointDataType": 1,
   "dataTransType": 1,
-  "unitName": "经度",
+  "unitName": "longitude",
   "unitSymbol": "x",
   "upperLimit": "180",
   "lowerLimit": "0",
@@ -162,7 +162,7 @@ POST /api/v1/data_points
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 201
@@ -173,7 +173,7 @@ status 201
   "binarySize": null,
   "createAt": "2018-09-30 16:46:53",
   "dataPointID": "x",
-  "dataPointName": "经度",
+  "dataPointName": "longitude",
   "dataStep": 0.01,
   "dataTransType": 1,
   "detail": null,
@@ -186,7 +186,7 @@ status 201
   "lowerLimit": 0,
   "pointDataType": 1,
   "productID": "p3zZMy",
-  "unitName": "经度",
+  "unitName": "longitude",
   "unitSymbol": "x",
   "updateAt": null,
   "upperLimit": 180
@@ -199,15 +199,15 @@ status 201
 
 
 
-## 编辑数据流
+## Edit data stream
 
-#### API 定义
+#### API 
 
 ```bash
 PUT /api/v1/data_points/{dataStreamsID}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 PUT /api/v1/data_points/31
@@ -240,7 +240,7 @@ PUT /api/v1/data_points/31
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -277,21 +277,21 @@ status 200
 
 
 
-## 删除数据流
+## Delete data stream
 
-#### API 定义
+#### API 
 
 ```bash
 DELETE /api/v1/data_points?ids={dataStreamsIDS}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 DELETE /api/v1/data_points?ids=30
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 204
