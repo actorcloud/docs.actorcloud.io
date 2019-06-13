@@ -3,13 +3,13 @@
 
 ### Get certificate list
 
-**API Definition：**
+**API：**
 
 ```bash
 GET /api/v1/certs?_page=1&_limit=10 
 ```
 
-**Successful response：**
+**Response：**
 
 ```json
 {
@@ -37,7 +37,7 @@ GET /api/v1/certs?_page=1&_limit=10
 
 **Field description：**
 
-| Field name | Sample value     | Field Type | Description |
+| Name | Sample value     | Type | Description |
 | -------- | ------------------- | ------- | ------------- |
 | createAt | 2018-03-27 11:26:31 | Date    | Creation time |
 | enable   | 1                   | Integer | Whether Available: 1: Available 0: Unavailable |
@@ -52,20 +52,20 @@ GET /api/v1/certs?_page=1&_limit=10&name_like=Certificate name
 
 **Field description：**
 
-| Field name | Type | Description |
+| Name | Type | Description |
 | ------ | --- | ----------- |
 | name_like  | String | Filter by certificate name |
 
 
 ### Create a certificate
 
-**API Definition：**
+**API：**
 
 ```bash
 POST /api/v1/certs
 ```
 
-**Request body：**
+**Body：**
 
 ```json
 {
@@ -76,7 +76,7 @@ POST /api/v1/certs
 
 **Field description：**
 
-| Field name | Sample value | Field Type | required to fill or not | Description |
+| Name | Sample value | Type | required to fill or not | Description |
 | ------ | ---- | ------- | ---- | ------------- |
 | name   | Default certificate | String  | true | Certificate name |
 | enable | 1    | Integer | true | Whether Available: 1: Available 0: Unavailable |
@@ -84,7 +84,7 @@ POST /api/v1/certs
 
 ### View certificate details
 
-**API Definition：**
+**API：**
 
 ```bash
 GET /api/v1/certs/{cert_id}
@@ -93,7 +93,7 @@ GET /api/v1/certs/{cert_id}
 api.js?7a86:64 /api/v1/certs/14
 loader.js?1e59:60 
 
-**Successful response：**
+**Response：**
 
 ```json
 {
@@ -112,9 +112,9 @@ loader.js?1e59:60
 
 **Field description：**
 
-| Field name | Sample value                         | Field Type | Description |
-| ---------- | ------------------------------------ | ---------- | ----------- |
-| CN         | CyOTtJod0:Y5AlQ1rKq3wcXnpzyZgadLHINC | String     | CN          |
+| Name | Sample value                         | Type   | Description |
+| ---- | ------------------------------------ | ------ | ----------- |
+| CN   | CyOTtJod0:Y5AlQ1rKq3wcXnpzyZgadLHINC | String | CN          |
 | cert       | -----BEGIN CERTIFICATE-----
 MIIDEzCCAfsCAQAwDQYJKo | String  | Certificate key          |
 | createAt   | 2018-03-23 15:45:51                                | Date    | Create time          |
@@ -131,13 +131,13 @@ MIIErjCCA5agAwIBAgIQBY | String  |               |
 
 ### Edit certificate information
 
-**API Definition：**
+**API :**
 
 ```bash
 PUT /api/v1/certs/{cert_id}
 ```
 
-**Request body：**
+**Body：**
 
 ```json
 {
@@ -150,7 +150,7 @@ PUT /api/v1/certs/{cert_id}
 
 ### Delete certificate
 
-**API Definition：**
+**API：**
 
 ```bash
 # Single delete
@@ -160,7 +160,7 @@ DELETE /api/v1/certs?ids={cert_id}
 DELETE /api/v1/certs?ids={cert_id, cert_id, cert_id}
 ```
 
-**Successful response：**
+**Response：**
 
 ```bash
 HTTP Status Code 204
@@ -169,13 +169,13 @@ HTTP Status Code 204
 
 ### Get a list of devices bounded with certificates 
 
-**API Definition：**
+**API：**
 
 ```bash
 GET /api/v1/certs/{cert_id}/devices?_page=1&_limit=10
 ```
 
-**Successful response：**
+**Response：**
 
 ```json
 {
@@ -237,7 +237,7 @@ GET /api/v1/certs/{cert_id}/devices?_page=1&_limit=10
 
 **Field description：**
 
-| Field name   | Sample value   | Field type | Description       |
+| Name  | Sample value   | Type | Description       |
 | --------------- | ------------------- | ------- | ------------------- |
 | authType        | 1                   | Integer | Authentication method, 1: token 2: certificate |
 | blocked         | 0                   | Integer | allow access or not, 0: Allow 1: Not allowed |
@@ -264,12 +264,13 @@ GET /api/v1/certs/{cert_id}/devices?_page=1&_limit=10
 
 ### Get the list of devicesunbound  for the certificate
 
-**API 定义：**
+**API ：**
+
 ```bash
 GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10
 ```
 
-**Successful response：**
+**Response：**
 
 ```json
 {
@@ -295,11 +296,11 @@ GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10
 
 **Field description：**
 
-| Field name  | Sample value                  | 字段类型 | 说明     |
-| ----------- | ----------------------------- | -------- | -------- |
-| deviceName  | Integrated sensor_10C61FA1F47 | String   | 设备名称 |
-| id          | 439                           | Integer  | 主键 ID  |
-| productName | Environmental monitoring      | String   | 产品名称 |
+| Name        | Sample value                  | Type    | Description    |
+| ----------- | ----------------------------- | ------- | -------------- |
+| deviceName  | Integrated sensor_10C61FA1F47 | String  | Device name    |
+| id          | 439                           | Integer | Primary key ID |
+| productName | Environmental monitoring      | String  | Product name   |
 
 
 
@@ -310,7 +311,7 @@ GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10&deviceName_like
 
 **Field description：**
 
-| Field name | T   | description |
+| Name | Type | description |
 | ------ | --- | ----------- |
 | deviceName_like  | String | Filter by device name |
 | groupName_like  | String | Filter by group name |
@@ -320,12 +321,13 @@ GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10&deviceName_like
 
 ### Binding device within the certificate
 
-**API 定义：**
+**API ：**
+
 ```bash
 POST /api/v1/certs/{cert_id}/devices
 ```
 
-**Request body：**
+**Body：**
 
 ```json
 {
@@ -336,17 +338,18 @@ POST /api/v1/certs/{cert_id}/devices
 }
 ```
 
-**字段说明：**
+**Field description：**
 
-| 字段名          | 示例值     | 字段类型   | 是否必填  | 说明  |
+| Name       | Sample value | Type | Required to fill or not | Description |
 | ------------ | ------- | ------ | ----- | --- |
-| devicesIntID | 433,439 | object | false | 设备主键 ID    |
+| devicesIntID | 433,439 | object | false | Device primary key ID |
 
 
 
 
 ### Remove device within the certificate
-**API 定义：**
+**API ：**
+
 ```bash
 # Single delete
 DELETE /api/v1/certs/{cert_id}/devices?ids={cert_id}
@@ -355,8 +358,7 @@ DELETE /api/v1/certs/{cert_id}/devices?ids={cert_id}
 DELETE /api/v1/certs/{cert_id}/devices?ids={cert_id, cert_id, cert_id}
 ```
 
-
-**Successful response：**
+**Response：**
 
 ```bash
 HTTP Status Code 204
@@ -366,12 +368,13 @@ HTTP Status Code 204
 
 ### View Device Binded Certificate
 
-**API 定义：**
+**API ：**
+
 ```bash
 GET /api/v1/devices/{device_id}/certs?_page=1&_limit=10
 ```
 
-**Successful response：**
+**Response：**
 
 ```json
 {
@@ -393,24 +396,25 @@ GET /api/v1/devices/{device_id}/certs?_page=1&_limit=10
 
 **Field description：**
 
-| Field description | 示例值                 | 字段类型    | 说明            |
+| Name | Sample value      | Type | Description |
 | -------- | ------------------- | ------- | ------------- |
-| createAt | 2018-03-23 15:45:51 | Date    | 创建时间          |
+| createAt | 2018-03-23 15:45:51 | Date    | Creation time |
 | enable   | 1                   | Integer | Available 1 Available 0: Unavailable |
-| id       | 14                  | Integer | 主键 ID         |
-| name     | Default certificate | String  | 证书名称          |
+| id       | 14                  | Integer | Primary key ID |
+| name     | Default certificate | String  | Certificate name |
 
 
 
 
 ### Get device bindable certificate
 
-**API 定义：**
+**API ：**
+
 ```bash
 GET /api/v1/emq_select/devices/{device_id}/not_joined_certs
 ```
 
-**Successful response：**
+**Response：**
 
 ```json
 {
@@ -430,21 +434,23 @@ GET /api/v1/emq_select/devices/{device_id}/not_joined_certs
 
 **Field description：**
 
-| Field name | Sample value                  | Field type | Description      |
-| ---------- | ----------------------------- | ---------- | ---------------- |
-| id         | 22                            | Integer    | Primary key  ID  |
-| name       | Two-way authentication access | String     | Certificate name |
+| Name | Sample value                  | Type    | Description      |
+| ---- | ----------------------------- | ------- | ---------------- |
+| id   | 22                            | Integer | Primary key  ID  |
+| name | Two-way authentication access | String  | Certificate name |
 
 
 
 ### Device binding certificate
 
-**API 定义：**
+**API ：**
+
 ```bash
 POST /api/v1/devices/{device_id}/certs
 ```
 
-**Request body：**
+**Body：**
+
 ```json
 {
   "ids": [
@@ -455,7 +461,7 @@ POST /api/v1/devices/{device_id}/certs
 
 **Field description：**
 
-| Field name | Sample value | Field type | Required to fill or not | description |
+| Name | Sample value | Type | Required to fill or not | Description |
 | --- | --- | ------ | ----- | --- |
 | ids | [22, 23]  | [] | true | Device ID array |
 
@@ -463,7 +469,8 @@ POST /api/v1/devices/{device_id}/certs
 
 ### Delete device bound certificate
 
-**API 定义：**
+**API ：**
+
 ```bash
 # Single delete
 DELETE /api/v1/devices/{device_id}/certs?ids=14
@@ -472,7 +479,7 @@ DELETE /api/v1/devices/{device_id}/certs?ids=14
 DELETE /api/v1/devices/{device_id}/certs?ids={cert_id, cert_id, cert_id}
 ```
 
-**Successful response：**
+**Response：**
 
 ```bash
 HTTP Status Code 204

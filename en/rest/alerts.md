@@ -2,19 +2,19 @@
 
 ## Current Alert Details
 
-#### API Definition
+#### API 
 
 ```bash
 GET /api/v1/current_alerts/<alert_id>
 ```
 
-#### Request Example
+#### Example
 
 ```bash
 GET /api/v1/current_alerts/11
 ```
 
-#### Successful Response
+#### Response
 
 ```bash
 status 200
@@ -48,7 +48,7 @@ status 200
 
 #### Field description
 
-| Field name    | Sample value   | Field type |  Description       |
+| Name    | Sample value   | Type    |  Description       |
 | --------------- | ----------------- | ------- | ------------------- |
 | alertContent| The current is excessive. Please check the equipment | String  | Alert Content |
 | alertDetail| {"temp":23} | Object  | Generate alert details |
@@ -67,19 +67,19 @@ status 200
 
 ## Current alert list
 
-#### API definition
+#### API 
 
 ```bash
 GET /api/v1/current_alerts?_page={page}&_limit={pageSize}
 ```
 
-#### Request Example
+#### Example
 
 ```bash
 GET /api/v1/current_alerts?_page=1&_limit=10
 ```
 
-#### Successful Response
+#### Response
 
 ```bash
 status 200
@@ -123,19 +123,19 @@ status 200
 
 ## Historical alert details
 
-#### API  Definition
+#### API
 
 ```bash
 GET /api/v1/history_alerts/<alert_id>
 ```
 
-#### Request Example
+#### Example
 
 ```bash
 GET /api/v1/history_alerts/11
 ```
 
-#### Successful Response
+#### Response
 
 ```bash
 status 200
@@ -163,26 +163,26 @@ status 200
 
 #### Field description
 
-| Field name    | Sample value   | Field type |  Description       |
+| Name    | Sample value   | Type |  Description       |
 | --------------- | ----------------- | ------- | ------------------- |
 | endTime| 2018-10-17 15:20:16 | Date  | Alert end time |
 
 
 ## Historical alert list
 
-#### API Definition
+#### API
 
 ```bash
 GET /api/v1/history_alerts?_page={page}&_limit={pageSize}
 ```
 
-#### Request Example
+#### Example
 
 ```bash
 GET /api/v1/history_alerts?_page=1&_limit=10
 ```
 
-#### Successful Response
+#### Response
 
 ```bash
 status 200
