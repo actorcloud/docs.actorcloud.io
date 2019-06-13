@@ -1,22 +1,22 @@
-# 功能点
+# Data point
 
-## 查看功能点列表
+## View data point list
 
 <!-- !#!GET_/api/v1/data_points?productID={productID}&_page={page}&_limit={pageSize}!#! -->
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/data_points?productID={productID}&_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/data_points?productID=2ioNzM&_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -29,10 +29,10 @@ status 200
       "binarySize": null,
       "createAt": "2018-10-15 17:37:53",
       "dataPointID": "fsdf",
-      "dataPointName": "测试字符",
+      "dataPointName": "Test character",
       "dataStep": null,
       "dataTransType": 1,
-      "dataTransTypeLabel": "只上报",
+      "dataTransTypeLabel": "Report only",
       "detail": null,
       "enum": [],
       "faultValue": null,
@@ -42,9 +42,9 @@ status 200
       "locationType": null,
       "lowerLimit": null,
       "pointDataType": 3,
-      "pointDataTypeLabel": "字符串",
+      "pointDataTypeLabel": "String",
       "productID": "2ioNzM",
-      "productName": "MQTT产品",
+      "productName": "MQTT product",
       "registerAddr": null,
       "unitName": null,
       "unitSymbol": null,
@@ -55,10 +55,10 @@ status 200
       "binarySize": null,
       "createAt": "2018-10-15 17:13:45",
       "dataPointID": "wrqwr",
-      "dataPointName": "测试布尔",
+      "dataPointName": "Test boolean",
       "dataStep": null,
       "dataTransType": 3,
-      "dataTransTypeLabel": "可上报可下发",
+      "dataTransTypeLabel": "report and issue",
       "detail": null,
       "enum": null,
       "faultValue": null,
@@ -68,9 +68,9 @@ status 200
       "locationType": null,
       "lowerLimit": null,
       "pointDataType": 5,
-      "pointDataTypeLabel": "布尔",
+      "pointDataTypeLabel": "Boolean",
       "productID": "2ioNzM",
-      "productName": "MQTT产品",
+      "productName": "MQTT product",
       "registerAddr": null,
       "unitName": null,
       "unitSymbol": null,
@@ -89,23 +89,23 @@ status 200
 
 
 
-## 查看功能点详情
+## View data point details
 
 <!-- !#!GET_/api/v1/data_points/{id}!#! -->
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/data_points/{dataPointIntID}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/data_points/42
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -117,7 +117,7 @@ status 200
   "createAt": "2018-10-15 17:37:53",
   "createUser": "actorcloud",
   "dataPointID": "fsdf",
-  "dataPointName": "测试字符",
+  "dataPointName": "Test character",
   "dataStep": null,
   "dataTransType": 1,
   "detail": null,
@@ -139,47 +139,47 @@ status 200
 ```
 
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name          | Sample value    | Type |  Description        |
 | --------------- | ----------------- | ------- | ------------------- |
-| binarySize| "null" | Integer  | 二进制长度 (数值类型为二进制(11)时选填)。Modbus 协议产品时，若数据类型是布尔，表示数据在第几位 |
-| createAt| "2018-10-15 17:37:53" | Date  | 创建时间 |
-| createUser| "actorcloud" | String  | 创建用户 |
-| dataPointID| "fsdf" | String  | 功能点 ID |
-| dataPointName| "测试字符" | String  | 功能点名称 |
-| dataStep| "null" | Float  | 数据步长 (数据类型为数值类型(1)时选填) |
-| dataTransType| 1 | Integer  | 数据传输类型 可选参数: 只上报: 1, 只下发: 2, 可上报可下发: 3 |
-| detail| "null" | String  | 备注 |
-| enum| [] | JSON  | 枚举值 |
-| faultValue| "null" | String  | 故障值 (数据类型为故障类型(4)时必填) |
+| binarySize| "null" | Integer  | Binary length (optional when numeric type is binary (11)). In the case of Modbus protocol product, if the data type is Boolean, it means where the data is in |
+| createAt| "2018-10-15 17:37:53" | Date  | Creation time |
+| createUser| "actorcloud" | String  | Creation user |
+| dataPointID| "fsdf" | String  | Data point ID |
+| dataPointName| "Test character" | String  | Name of data point |
+| dataStep| "null" | Float  | Data step size (optional when data type is numerical type (1) |
+| dataTransType| 1 | Integer  | Data transmission type, optional parameters: only report: 1, only issue: 2, both report and issue: 3 |
+| detail| "null" | String  | Remarks |
+| enum| [] | JSON  | Enumeration value |
+| faultValue| "null" | String  | Fault value (required when the data type is fault type (4)) |
 | id| 42 | Integer  | id |
-| isDiscard| "null" | Integer  | 是否丢弃该消息 (数据类型为故障类型(4)时选填) |
-| isLocationType| "null" | Integer  | 是否为位置类型(默认 1) 可选参数: 是: 1, 否: 2 |
-| locationType| "null" | Integer  | 位置类型 可选参数: 经度: 1, 纬度: 2, 海拔: 3 |
-| lowerLimit| "null" | Float  | 下限 (数据类型为数值类型(1)时选填) |
-| pointDataType| 3 | Integer  | 数据格式 可选参数: 数值: 1, 字符串: 3, 故障: 4, 布尔: 5, 地理位置: 6, 定长字符串: 11, 变长字符串: 12, 定长binary: 13, 变长binary: 14, 有符号整型: 15, 无符号整型: 16, 单精度浮点型: 17, 双精度浮点型: 18, bit类型: 19。Modbus 协议产品时，有符号长整型: 21, 无符号长整型: 22, 布尔: 23, 时间: 24, 浮点: 25 |
-| productID| "2ioNzM" | String  | 产品 ID |
-| registerAddr | "null" | String | 地址，Modbus 协议产品时，必须填写 |
-| unitName| "null" | String  | 单位名称 (数据类型为数值类型(1)时选填) |
-| unitSymbol| "null" | String  | 单位符号 (数据类型为数值类型(1)时选填) |
-| updateAt| "null" | Date  | 更新时间 |
-| upperLimit| "null" | Float  | 上限 (数据类型为数值类型(1)时选填) |
+| isDiscard| "null" | Integer  | Discard this message or not(optional when the data type is fault type (4)) |
+| isLocationType| "null" | Integer  | Whether it is a location type (default 1) Optional parameters: Yes: 1, No: 2 |
+| locationType| "null" | Integer  | Location Type Optional parameters: Longitude: 1, Latitude: 2, Altitude: 3 |
+| lowerLimit| "null" | Float  | Lower limit (optional when the data type is numeric type (1)) |
+| pointDataType| 3 | Integer  | Data format optional parameters: Value: 1, String: 3, Fault: 4, Boolean: 5, Geographical location: 6, fixed length string: 11, variable length string: 12, fixed length binary: 13, variable length Binary: 14, signed integer: 15, unsigned integer: 16, single precision floating point type: 17, double precision floating point type: 18, bit type: 19. signed long integer for Modbus protocol products : 21, unsigned long integer: 22, Boolean: 23, time: 24, floating point: 25 |
+| productID| "2ioNzM" | String  | Product ID |
+| registerAddr | "null" | String | Address, required to fill for Modbus protocol product |
+| unitName| "null" | String  | Unit name (optional when the data type is numeric type (1)) |
+| unitSymbol| "null" | String  | Unit symbol (optional when the data type is numeric type (1)) |
+| updateAt| "null" | Date  | Update time |
+| upperLimit| "null" | Float  | Upper limit (optional when the data type is numeric type (1)) |
 
 
 
 
-## 创建功能点
+## Create data point
 
 <!-- !#!POST_/api/v1/data_points!#! -->
 
-#### API 定义
+#### API 
 
 ```bash
 POST /api/v1/data_points
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 POST /api/v1/data_points
@@ -187,12 +187,12 @@ POST /api/v1/data_points
 
 ```json
 {
-  "dataPointName": "经度",
+  "dataPointName": "longitude",
   "dataPointID": "x",
   "productIntID": "128",
   "pointDataType": 1,
   "dataTransType": 1,
-  "unitName": "经度",
+  "unitName": "longitude",
   "unitSymbol": "x",
   "upperLimit": "180",
   "lowerLimit": "0",
@@ -204,7 +204,7 @@ POST /api/v1/data_points
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 201
@@ -215,7 +215,7 @@ status 201
   "binarySize": null,
   "createAt": "2018-09-30 16:46:53",
   "dataPointID": "x",
-  "dataPointName": "经度",
+  "dataPointName": "longitude",
   "dataStep": 0.01,
   "dataTransType": 1,
   "detail": null,
@@ -228,7 +228,7 @@ status 201
   "lowerLimit": 0,
   "pointDataType": 1,
   "productID": "p3zZMy",
-  "unitName": "经度",
+  "unitName": "longitude",
   "unitSymbol": "x",
   "updateAt": null,
   "upperLimit": 180
@@ -238,17 +238,17 @@ status 201
 
 
 
-## 编辑功能点
+## Edit data point
 
 <!-- !#!PUT_/api/v1/data_points/{id}!#! -->
 
-#### API 定义
+#### API 
 
 ```bash
 PUT /api/v1/data_points/{dataStreamsID}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 PUT /api/v1/data_points/31
@@ -281,7 +281,7 @@ PUT /api/v1/data_points/31
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -315,21 +315,21 @@ status 200
 
 
 
-## 删除功能点
+## Delete data point
 
-#### API 定义
+#### API 
 
 ```bash
 DELETE /api/v1/data_points?ids={dataStreamsIDS}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 DELETE /api/v1/data_points?ids=30
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 204
