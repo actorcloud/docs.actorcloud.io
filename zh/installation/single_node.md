@@ -111,7 +111,7 @@ $ vi server/instance/config.yml
 配置文件修改(参考备注修改)，以下配置部署前必须修改
 
 * language: 系统语言
-* backend_node: 后端节点, 内网地址+端口
+* backend_node: 后端 API 服务节点，内网地址+端口
 * async_tasks_node: 异步任务节点, 内网地址+端口
 * log_path:  ActorCloud 运行日志存放路径
 * secret_key:  flask [SECRET_KEY](http://flask.pocoo.org/docs/1.0/config/#SECRET_KEY)
