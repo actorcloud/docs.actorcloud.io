@@ -63,6 +63,7 @@ Pulsar 无需更改默认配置即可运行。为了与 ActorCloud 集成，需�
     db-sink-config.yml
     mail-sink-config.yml
     publish-sink-config.yml
+    emqx-config.yaml
     stream-admin
     ```
 
@@ -105,18 +106,25 @@ Pulsar 无需更改默认配置即可运行。为了与 ActorCloud 集成，需�
       password: Mjg3MjcxMjk4ODkzNjA3NzMzMzc3OTY0MTk0NTI2NjU4NTG  # EMQX Application:AppSecret
     ```
 
-    `stream-admin`，Broker 配置有两种情况：
+    `emqx-config.yml`
+    ```YAML
+    configs:
+      brokerUrl: tcp://127.0.0.1:11883
+      inputTopics: $share/group1/#
+      ruleId: __emqx_all
+    ```
+    仅修改 `brokerUrl`，配置有两种情况：
     - EMQX 和 Pulsar 在同一服务器，使用默认配置，不用修改。
-    - 不在同一服务器，修改为 EMQX 内网地址。该地址对应 EMQX 的 `emqx.conf` 中的 `listener.tcp.internal = 127.0.0.1:11883` 配置，也需要同步修改。同时，为了能保证订阅到系统主题，需要修改 EMQX 的 `acl.conf`，将下面这行注释：
+    - 不在同一服务器，修改为 EMQX **内网**地址。该地址对应 EMQX 的 `emqx.conf` 中的 `listener.tcp.internal = 127.0.0.1:11883` 配置，也需要同步修改。同时，为了能保证订阅到系统主题，需要修改 EMQX 的 `acl.conf`，将下面这行注释或删除：
 
         ```
         {deny, all, subscribe, ["$SYS/#", {eq, "#"}]}.
         ```
+    
     `stream-admin` 配置
     ```
     Tenant="public"
     Namespace="default"
-    Broker="tcp://127.0.0.1:11883"
     Parallelism=1
     ```
 
