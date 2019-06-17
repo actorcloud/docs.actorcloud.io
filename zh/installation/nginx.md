@@ -37,7 +37,7 @@ $ sudo apt-get install nginx
 
    * listen: 监听端口
    * server_name: ip或域名
-   * proxy_pass backend_node: backend_node 的值必须与 ActorCloud instance/config.yml 中配置的一致。
+   * location /api/v1/ proxy_pass: IP和端口应与 ActorCloud instance/config.yml backend_node 中配置的一致
 
 4. 重启nginx
 
