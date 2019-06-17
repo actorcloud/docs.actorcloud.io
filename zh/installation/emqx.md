@@ -170,6 +170,12 @@ EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
   web.hook.rule.message.acked.1        = {"action": "on_message_acked"}
   ```
 
+* emqx_management.conf 插件配置
+  ```
+  # 如 Pulsar 与 EMQ X部署在同一台服务器则需要修改 http 监听端口 
+  management.listener.http = 8081
+  ```
+  
   
 
 ### 启用插件
