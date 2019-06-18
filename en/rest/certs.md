@@ -3,13 +3,13 @@
 
 ### Get certificate list
 
-**API：**
+**API:**
 
 ```bash
 GET /api/v1/certs?_page=1&_limit=10 
 ```
 
-**Response：**
+**Response:**
 
 ```json
 {
@@ -35,7 +35,7 @@ GET /api/v1/certs?_page=1&_limit=10
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name | Sample value     | Type | Description |
 | -------- | ------------------- | ------- | ------------- |
@@ -44,13 +44,13 @@ GET /api/v1/certs?_page=1&_limit=10
 | id       | 22                  | Integer | Primary key ID |
 | name     | Two-way authentication access | String  | Certificate name |
 
-**Query parameters：**
+**Query parameters:**
 
 ```bash
 GET /api/v1/certs?_page=1&_limit=10&name_like=Certificate name
 ```
 
-**Field description：**
+**Field description:**
 
 | Name | Type | Description |
 | ------ | --- | ----------- |
@@ -59,13 +59,13 @@ GET /api/v1/certs?_page=1&_limit=10&name_like=Certificate name
 
 ### Create a certificate
 
-**API：**
+**API:**
 
 ```bash
 POST /api/v1/certs
 ```
 
-**Body：**
+**Body:**
 
 ```json
 {
@@ -74,7 +74,7 @@ POST /api/v1/certs
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name | Sample value | Type | required to fill or not | Description |
 | ------ | ---- | ------- | ---- | ------------- |
@@ -84,7 +84,7 @@ POST /api/v1/certs
 
 ### View certificate details
 
-**API：**
+**API:**
 
 ```bash
 GET /api/v1/certs/{cert_id}
@@ -93,7 +93,7 @@ GET /api/v1/certs/{cert_id}
 api.js?7a86:64 /api/v1/certs/14
 loader.js?1e59:60 
 
-**Response：**
+**Response:**
 
 ```json
 {
@@ -110,7 +110,7 @@ loader.js?1e59:60
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name | Sample value                         | Type   | Description |
 | ---- | ------------------------------------ | ------ | ----------- |
@@ -137,7 +137,7 @@ MIIErjCCA5agAwIBAgIQBY | String  |               |
 PUT /api/v1/certs/{cert_id}
 ```
 
-**Body：**
+**Body:**
 
 ```json
 {
@@ -150,7 +150,7 @@ PUT /api/v1/certs/{cert_id}
 
 ### Delete certificate
 
-**API：**
+**API:**
 
 ```bash
 # Single delete
@@ -160,7 +160,7 @@ DELETE /api/v1/certs?ids={cert_id}
 DELETE /api/v1/certs?ids={cert_id, cert_id, cert_id}
 ```
 
-**Response：**
+**Response:**
 
 ```bash
 HTTP Status Code 204
@@ -169,13 +169,13 @@ HTTP Status Code 204
 
 ### Get a list of devices bounded with certificates 
 
-**API：**
+**API:**
 
 ```bash
 GET /api/v1/certs/{cert_id}/devices?_page=1&_limit=10
 ```
 
-**Response：**
+**Response:**
 
 ```json
 {
@@ -235,7 +235,7 @@ GET /api/v1/certs/{cert_id}/devices?_page=1&_limit=10
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name  | Sample value   | Type | Description       |
 | --------------- | ------------------- | ------- | ------------------- |
@@ -264,13 +264,13 @@ GET /api/v1/certs/{cert_id}/devices?_page=1&_limit=10
 
 ### Get the list of devicesunbound  for the certificate
 
-**API ：**
+**API :**
 
 ```bash
 GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10
 ```
 
-**Response：**
+**Response:**
 
 ```json
 {
@@ -294,7 +294,7 @@ GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name        | Sample value                  | Type    | Description    |
 | ----------- | ----------------------------- | ------- | -------------- |
@@ -304,12 +304,12 @@ GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10
 
 
 
-**Query parameter：**
+**Query parameter:**
 ```bash
 GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10&deviceName_like=test device
 ```
 
-**Field description：**
+**Field description:**
 
 | Name | Type | description |
 | ------ | --- | ----------- |
@@ -321,13 +321,13 @@ GET /api/v1/certs/{cert_id}/not_joined_devices?_page=1&_limit=10&deviceName_like
 
 ### Binding device within the certificate
 
-**API ：**
+**API :**
 
 ```bash
 POST /api/v1/certs/{cert_id}/devices
 ```
 
-**Body：**
+**Body:**
 
 ```json
 {
@@ -338,7 +338,7 @@ POST /api/v1/certs/{cert_id}/devices
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name       | Sample value | Type | Required to fill or not | Description |
 | ------------ | ------- | ------ | ----- | --- |
@@ -348,7 +348,7 @@ POST /api/v1/certs/{cert_id}/devices
 
 
 ### Remove device within the certificate
-**API ：**
+**API :**
 
 ```bash
 # Single delete
@@ -358,7 +358,7 @@ DELETE /api/v1/certs/{cert_id}/devices?ids={cert_id}
 DELETE /api/v1/certs/{cert_id}/devices?ids={cert_id, cert_id, cert_id}
 ```
 
-**Response：**
+**Response:**
 
 ```bash
 HTTP Status Code 204
@@ -368,13 +368,13 @@ HTTP Status Code 204
 
 ### View Device Binded Certificate
 
-**API ：**
+**API :**
 
 ```bash
 GET /api/v1/devices/{device_id}/certs?_page=1&_limit=10
 ```
 
-**Response：**
+**Response:**
 
 ```json
 {
@@ -394,7 +394,7 @@ GET /api/v1/devices/{device_id}/certs?_page=1&_limit=10
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name | Sample value      | Type | Description |
 | -------- | ------------------- | ------- | ------------- |
@@ -408,13 +408,13 @@ GET /api/v1/devices/{device_id}/certs?_page=1&_limit=10
 
 ### Get device bindable certificate
 
-**API ：**
+**API :**
 
 ```bash
 GET /api/v1/emq_select/devices/{device_id}/not_joined_certs
 ```
 
-**Response：**
+**Response:**
 
 ```json
 {
@@ -432,7 +432,7 @@ GET /api/v1/emq_select/devices/{device_id}/not_joined_certs
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name | Sample value                  | Type    | Description      |
 | ---- | ----------------------------- | ------- | ---------------- |
@@ -443,13 +443,13 @@ GET /api/v1/emq_select/devices/{device_id}/not_joined_certs
 
 ### Device binding certificate
 
-**API ：**
+**API :**
 
 ```bash
 POST /api/v1/devices/{device_id}/certs
 ```
 
-**Body：**
+**Body:**
 
 ```json
 {
@@ -459,7 +459,7 @@ POST /api/v1/devices/{device_id}/certs
 }
 ```
 
-**Field description：**
+**Field description:**
 
 | Name | Sample value | Type | Required to fill or not | Description |
 | --- | --- | ------ | ----- | --- |
@@ -469,7 +469,7 @@ POST /api/v1/devices/{device_id}/certs
 
 ### Delete device bound certificate
 
-**API ：**
+**API :**
 
 ```bash
 # Single delete
@@ -479,7 +479,7 @@ DELETE /api/v1/devices/{device_id}/certs?ids=14
 DELETE /api/v1/devices/{device_id}/certs?ids={cert_id, cert_id, cert_id}
 ```
 
-**Response：**
+**Response:**
 
 ```bash
 HTTP Status Code 204

@@ -1,15 +1,15 @@
-# 设备信息
+# Device Information
 
 
-### 查看设备运行日志
+### View device running logs
 
-**API 定义：**
+**API :**
 
 ```bash
 GET /api/v1/devices/{device_id}/connect_logs?_page=1&_limit=10
 ```
 
-**成功响应：**
+**Response:**
 
 ```json
 {
@@ -18,9 +18,9 @@ GET /api/v1/devices/{device_id}/connect_logs?_page=1&_limit=10
       "IP": "221.226.150.197",
       "createAt": "2018-03-27 05:30:37",
       "deviceID": "10C61F1A1F40",
-      "deviceName": "传感器_10C61F1A1F40",
+      "deviceName": "Sensor_10C61F1A1F40",
       "deviceStatus": 0,
-      "deviceStatusLabel": "下线",
+      "deviceStatusLabel": "offline",
       "id": 3229,
       "keepAlive": null,
       "tenantID": "CyOTtJod0",
@@ -30,9 +30,9 @@ GET /api/v1/devices/{device_id}/connect_logs?_page=1&_limit=10
       "IP": "221.226.150.197",
       "createAt": "2018-03-27 05:30:36",
       "deviceID": "10C61F1A1F40",
-      "deviceName": "传感器_10C61F1A1F40",
+      "deviceName": "Sensor_10C61F1A1F40",
       "deviceStatus": 1,
-      "deviceStatusLabel": "上线",
+      "deviceStatusLabel": "online",
       "id": 3228,
       "keepAlive": 60,
       "tenantID": "CyOTtJod0",
@@ -47,38 +47,38 @@ GET /api/v1/devices/{device_id}/connect_logs?_page=1&_limit=10
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名               | 示例值                 | 字段类型    | 说明                   |
+| Name           | Sample value      | Type | Description        |
 | ----------------- | ------------------- | ------- | -------------------- |
-| IP                | 221.226.150.197     | String  | 设备连接IP               |
-| createAt          | 2018-03-27 05:30:37 | Date    | 创建时间                 |
-| deviceID          | 10C61F1A1F40        | String  | 设备编号                 |
-| deviceName        | 传感器_10C61F1A1F40    | String  | 设备名称                 |
-| deviceStatus      | 0                   | String  | 连接状态码，0:下线 1:上线 2:认证失败 |
-| deviceStatusLabel | 下线                  | String  | 连接状态描述               |
-| id                | 3229                | Integer | 主键 ID                 |
-| keepAlive         |                     | Integer | 心跳时长                 |
-| tenantID          | CyOTtJod0           | String  | 所属租户标识符              |
-| updateAt          |                     | Date    | 更新时间                 |
+| IP                | 221.226.150.197     | String  | Device connection IP |
+| createAt          | 2018-03-27 05:30:37 | Date    | Creation time    |
+| deviceID          | 10C61F1A1F40        | String  | Device ID        |
+| deviceName        | Sensor_10C61F1A1F40 | String  | Device Name     |
+| deviceStatus      | 0                   | String  | Connection status code, 0: Offline 1: Online 2: Authentication failed |
+| deviceStatusLabel | Offline           | String  | Connection status description |
+| id                | 3229                | Integer | Primary key ID       |
+| keepAlive         |                     | Integer | Heartbeat duration |
+| tenantID          | CyOTtJod0           | String  | Tenant ID      |
+| updateAt          |                     | Date    | Update time      |
 
 
 
-### 设备安全信息
+### Device security information
 
-设备安全分为证书信息，详见：
+Device security is divided into certificate information, for details, see:
 
-- [证书 API](certs.md)
+- [Certificate API](certs.md)
 
 
-### 查看设备事件
+### View device events
 
- **API 定义：**
+ **API :**
 ```bash
 GET /api/v1/devices/{device_id}/events?_page=1&_limit=10
 ```
 
-**成功响应：**
+**Response:**
 
 ```json
 {
@@ -87,10 +87,10 @@ GET /api/v1/devices/{device_id}/events?_page=1&_limit=10
       "IP": null,
       "createAt": "2018-03-24 08:19:09",
       "deviceID": "10C61F1A1F40",
-      "deviceName": "传感器_10C61F1A1F40",
+      "deviceName": "Sensor_10C61F1A1F40",
       "id": 594,
       "payload": "Hello world!",
-      "productName": "环境监测",
+      "productName": "Environmental monitoring",
       "topic": "hello_topic",
       "updateAt": null
     },
@@ -98,10 +98,10 @@ GET /api/v1/devices/{device_id}/events?_page=1&_limit=10
       "IP": null,
       "createAt": "2018-03-24 08:19:07",
       "deviceID": "10C61F1A1F40",
-      "deviceName": "传感器_10C61F1A1F40",
+      "deviceName": "Sensor_10C61F1A1F40",
       "id": 593,
       "payload": "Hello world!",
-      "productName": "环境监测",
+      "productName": "Environmental monitoring",
       "topic": "hello_topic",
       "updateAt": null
     }
@@ -114,30 +114,31 @@ GET /api/v1/devices/{device_id}/events?_page=1&_limit=10
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名         | 示例值                 | 字段类型    | 说明     |
+| Name     | Sample value      | Type | Description |
 | ----------- | ------------------- | ------- | ------ |
-| IP          |                     | String  | 设备连接IP |
-| createAt    | 2018-03-24 08:19:09 | Date    | 创建时间   |
-| deviceID    | 10C61F1A1F40        | String  | 设备编号   |
-| deviceName  | 传感器_10C61F1A1F40    | String  | 设备名称   |
-| id          | 594                 | Integer | 主键 ID   |
-| payload     | Hello world!        | String  | 载荷     |
-| productName | 环境监测                | String  | 产品名称   |
-| topic       | hello_topic         | String  | 作用主题   |
-| updateAt    |                     | Date    | 更新时间   |
+| IP          |                     | String  | Device connection IP |
+| createAt    | 2018-03-24 08:19:09 | Date    | Creation time |
+| deviceID    | 10C61F1A1F40        | String  | Device ID |
+| deviceName  | Sensor_10C61F1A1F40 | String  | Device name |
+| id          | 594                 | Integer | Primary key ID |
+| payload     | Hello world!        | String  | Payload |
+| productName | environmental monitoring | String  | Product name |
+| topic       | hello_topic         | String  | Function topic |
+| updateAt    |                     | Date    | Update time |
 
 
 
-### 设备指令下发
+### Device order issue
 
-**API 定义：**
+**API :**
+
 ```bash
 POST /api/v1/device_publish
 ```
 
-**请求体：**
+**Body:**
 
 ```json
 {
@@ -147,25 +148,25 @@ POST /api/v1/device_publish
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名      | 示例值                 | 字段类型   | 是否必填 | 说明   |
+| Name | Sample value     | Type | Required to fill or not | Description |
 | -------- | ------------------- | ------ | ---- | ---- |
-| deviceID | 10C61F1A1F40        | String | true | 设备编号 |
-| payload  | {"message":"Hello"} | String | true | 载荷   |
-| topic    | /hello              | String | false | 作用主题，不填则为设备自订阅主题 |
-  
+| deviceID | 10C61F1A1F40        | String | true | Device ID |
+| payload  | {"message":"Hello"} | String | true | Payload |
+| topic    | /hello              | String | false | Function topic, if not filled, it is the topic of device self-subscription |
 
 
 
-### 查看设备控制历史
 
- **API 定义：**
+### View device control history
+
+ **API :**
 ```bash
 GET /api/v1/devices/{device_id}/control_logs?_page=1&_limit=10
 ```
 
-**成功响应：**
+**Response:**
 
 ```json
 {
@@ -173,11 +174,11 @@ GET /api/v1/devices/{device_id}/control_logs?_page=1&_limit=10
     {
       "createAt": "2018-03-28 11:19:18",
       "deviceIntID": 427,
-      "deviceName": "传感器_10C61F1A1F40",
+      "deviceName": "Sensor_10C61F1A1F40",
       "id": 134,
       "payload": "{\"message\":\"Hello\"}",
       "publishStatus": 0,
-      "publishStatusLabel": "下发失败",
+      "publishStatusLabel": "Issue failed",
       "publishUser": "EMQ",
       "topic": "/hello",
       "updateAt": "2018-03-28 11:19:18",
@@ -186,11 +187,11 @@ GET /api/v1/devices/{device_id}/control_logs?_page=1&_limit=10
     {
       "createAt": "2018-03-24 11:09:38",
       "deviceIntID": 427,
-      "deviceName": "传感器_10C61F1A1F40",
+      "deviceName": "Sensor_10C61F1A1F40",
       "id": 128,
       "payload": "\"{\\n  \\\"cmd\\\": \\\"upload\\\"\\n}\"",
       "publishStatus": 3,
-      "publishStatusLabel": "不需要回执",
+      "publishStatusLabel": "receipt not required",
       "publishUser": "EMQ",
       "topic": null,
       "updateAt": null,
@@ -205,18 +206,18 @@ GET /api/v1/devices/{device_id}/control_logs?_page=1&_limit=10
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名                | 示例值                 | 字段类型    | 说明                     |
+| Name             | Sample value      | Type | Description           |
 | ------------------ | ------------------- | ------- | ---------------------- |
-| createAt           | 2018-03-28 11:19:18 | Date    | 创建时间                   |
-| deviceIntID        | 427                 | Integer | 设备主键 ID                |
-| deviceName         | 传感器_10C61F1A1F40    | String  | 设备名称                   |
-| id                 | 134                 | Integer | 主键 ID                  |
-| payload            | {"message":"Hello"} | String  | 载荷                     |
-| publishStatus      | 0                   | Integer | 下发状态：0:下发失败 1:已下发 2:发送成功 |
-| publishStatusLabel | 下发失败                | String  | 下发回执描述                 |
-| publishUser        | EMQ                 | String  | 下发者用户名                 |
-| topic              | /hello              | String  | 作用主题                   |
-| updateAt           | 2018-03-28 11:19:18 | Date    | 更新时间                   |
-| userIntID          | 6                   | Integer | 下发用户主键 ID               |
+| createAt           | 2018-03-28 11:19:18 | Date    | Creation time      |
+| deviceIntID        | 427                 | Integer | Device primary key ID |
+| deviceName         | Sensor_10C61F1A1F40 | String  | Device name         |
+| id                 | 134                 | Integer | Primary key ID    |
+| payload            | {"message":"Hello"} | String  | Payload               |
+| publishStatus      | 0                   | Integer | Publish status: 0: Publish failed 1: Publish completed 2: Successfully send |
+| publishStatusLabel | Issue failed | String  | Publish receipt description |
+| publishUser        | EMQ                 | String  | Username of publisher |
+| topic              | /hello              | String  | Function topic    |
+| updateAt           | 2018-03-28 11:19:18 | Date    | Update time         |
+| userIntID          | 6                   | Integer | Publisher primary key ID |

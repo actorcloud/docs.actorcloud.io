@@ -1,20 +1,20 @@
-# 网关管理
+# Gateway management
 
-## 查看网关列表
+## View gateway list
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/gateways?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/gateways?_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -35,9 +35,9 @@ status 200
       "deviceCount": 2,
       "deviceID": "gw000001",
       "deviceStatus": 1,
-      "deviceStatusLabel": "在线",
+      "deviceStatusLabel": "onlie",
       "deviceUsername": "gw123456",
-      "gatewayName": "智能电表网关",
+      "gatewayName": "Smart meter gateway",
       "gatewayProtocol": 1,
       "gatewayProtocolLabel": "MQTT",
       "hardwareVersion": null,
@@ -46,7 +46,7 @@ status 200
       "mac": "0e:85:90:67:bb:d8",
       "manufacturer": null,
       "productID": "ZKyn1N",
-      "productName": "智能电表",
+      "productName": "Smart meter",
       "serialNumber": null,
       "softVersion": null,
       "token": "gw123456",
@@ -69,7 +69,7 @@ status 200
       "deviceCount": 0,
       "deviceID": "97ae4463b4d558489a2d8c3660222659",
       "deviceStatus": 0,
-      "deviceStatusLabel": "离线",
+      "deviceStatusLabel": "offline",
       "deviceUsername": "97ae4463b4d558489a2d8c3660222659",
       "gatewayName": "1111",
       "gatewayProtocol": 4,
@@ -80,7 +80,7 @@ status 200
       "mac": "111111",
       "manufacturer": null,
       "productID": "ZKyn1N",
-      "productName": "智能电表",
+      "productName": "Smart meter",
       "serialNumber": null,
       "softVersion": null,
       "token": "ad50dee6be875f72823a18376ab7b4c3",
@@ -106,21 +106,21 @@ status 200
 
 
 
-## 查看网关详情
+## View gateway details
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/gateways/{gatewayIntIDS}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/gateways/207
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -139,7 +139,7 @@ status 200
   "deviceID": "gw000001",
   "deviceStatus": 1,
   "deviceUsername": "gw123456",
-  "gatewayName": "智能电表网关",
+  "gatewayName": "Smart meter gateway",
   "gatewayProtocol": 1,
   "gatewayProtocolLabel": "MQTT",
   "hardwareVersion": null,
@@ -148,7 +148,7 @@ status 200
   "mac": "0e:85:90:67:bb:d8",
   "manufacturer": null,
   "productID": "ZKyn1N",
-  "productName": "智能电表",
+  "productName": "Smart meter",
   "serialNumber": null,
   "softVersion": null,
   "token": "gw123456",
@@ -162,40 +162,40 @@ status 200
 ```
 
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name          | Sample value    | Type |  Description        |
 | --------------- | ----------------- | ------- | ------------------- |
-| authType| 1 | Integer  | 认证方式 可选参数: Token: 1, 证书: 2 |
-| blocked| "null" | Integer  | 是否允许访问 0:允许 1:禁止 |
-| createAt| "2018-10-10 15:55:15" | Date  | 创建时间 |
-| createUser| "actorcloud" | String  | 创建用户 |
-| description| "ull..." | String  | 描述 |
-| deviceConsoleIP| "null" | String  | 控制台ip |
-| deviceConsolePort| 22 | Integer  | 控制台端口 |
-| deviceConsoleUsername| "null" | String  | 控制台用户名 |
-| deviceID| "gw000001" | String  | 设备 ID |
-| deviceStatus| 1 | Integer  | 设备运行状态 可选参数: 离线: 0, 在线: 1, 休眠: 2 |
-| deviceUsername| "gw123456" | String  | 设备用户名，用于连接emq |
-| gatewayName| "智能电表网关" | String  | 网关名称 |
-| gatewayProtocol| 1 | Integer  | 网关协议类型 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
-| gatewayProtocolLabel| "MQTT" | String  | 网关协议类型 可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| hardwareVersion| "null" | String  | 硬件版本 |
+| authType| 1 | Integer  | Authentication method Optional parameters: Token: 1, Certificate: 2 |
+| blocked| "null" | Integer  | allow access or not 0: Allow 1: Prohibit |
+| createAt| "2018-10-10 15:55:15" | Date  | Creation time |
+| createUser| "actorcloud" | String  | Creation user |
+| description| "ull..." | String  | description |
+| deviceConsoleIP| "null" | String  | Console ip |
+| deviceConsolePort| 22 | Integer  | Console Port |
+| deviceConsoleUsername| "null" | String  | Console Username |
+| deviceID| "gw000001" | String  | Device ID |
+| deviceStatus| 1 | Integer  | Device running status Optional parameters: Offline: 0, Online: 1, Sleep: 2 |
+| deviceUsername| "gw123456" | String  | Device username, used to connect emq |
+| gatewayName| "Smart meter gateway" | String  | Gateway name |
+| gatewayProtocol| 1 | Integer  | Gateway Protocol Type Optional Parameters: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
+| gatewayProtocolLabel| "MQTT" | String  | Gateway Protocol Type Optional Parameters: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| hardwareVersion| "null" | String  | Hardware Version |
 | id| 207 | Integer  | id |
-| location| "null" | JSON  | 位置 |
+| location| "null" | JSON  | location |
 | mac| "0e:85:90:67:bb:d8" | String  | 0e:85:90:67:bb:d8 |
-| manufacturer| "null" | String  | 制造商 |
-| productID| "ZKyn1N" | String  | 产品 ID |
-| productName| "智能电表" | String  | 产品名称 |
-| serialNumber| "null" | String  | 序列号 |
-| softVersion| "null" | String  | 软件版本 |
-| token| "gw123456" | String  | 设备秘钥 |
-| updateAt| "null" | Date  | 更新时间 |
-| upLinkNetwork| 1 | Integer  | 上联网络，可选参数：2G: 1, 3G: 2, 4G: 3, Wi-Fi: 4, NB-IoT: 5 |
+| manufacturer| "null" | String  | manufacturer |
+| productID| "ZKyn1N" | String  | product ID |
+| productName| "Smart meter" | String  | product name |
+| serialNumber| "null" | String  | Serial Number |
+| softVersion| "null" | String  | Software version |
+| token| "gw123456" | String  | Device key |
+| updateAt| "null" | Date  | Update time |
+| upLinkNetwork| 1 | Integer  | Uplink network，Optional parameter：2G: 1, 3G: 2, 4G: 3, Wi-Fi: 4, NB-IoT: 5 |
 | upLinkNetworkLabel| "2G" | String  | 2G |
-| upLinkProtocol| 7 | Integer  | 上联协议，可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
+| upLinkProtocol| 7 | Integer  | UpLink Protocol，Optional parameter: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
 | upLinkProtocolLabel| "Modbus" | String  | Modbus |
-| userIntID| 2 | Integer  | 用户 ID |
+| userIntID| 2 | Integer  | User ID |
 
 
 
@@ -205,21 +205,21 @@ status 200
 
 
 
-## 查看网关下设备列表
+## View device list under the gateway
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices?gateway={gatewayIntID}&_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices?gateway=207&_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -244,11 +244,11 @@ status 200
       "deviceConsolePort": 22,
       "deviceConsoleUsername": null,
       "deviceID": "fc81ad57cf7056e9973f3503242e0dbe",
-      "deviceName": "智能电表02",
+      "deviceName": "Smart meter 02",
       "deviceStatus": 0,
-      "deviceStatusLabel": "离线",
+      "deviceStatusLabel": "offline",
       "deviceType": 1,
-      "deviceTypeLabel": "终端",
+      "deviceTypeLabel": "terminal",
       "deviceUsername": "fc81ad57cf7056e9973f3503242e0dbe",
       "gateway": 207,
       "hardwareVersion": null,
@@ -261,7 +261,7 @@ status 200
       "physicalNetwork": 1,
       "productID": "ZKyn1N",
       "productIntID": 132,
-      "productName": "智能电表",
+      "productName": "Smart meter",
       "scopes": [],
       "serialNumber": null,
       "softVersion": null,
@@ -287,11 +287,11 @@ status 200
       "deviceConsolePort": 22,
       "deviceConsoleUsername": null,
       "deviceID": "8d05fa80d5be5a42a0c999865222176d",
-      "deviceName": "智能电表01",
+      "deviceName": "Smart meter 01",
       "deviceStatus": 0,
-      "deviceStatusLabel": "离线",
+      "deviceStatusLabel": "offline",
       "deviceType": 1,
-      "deviceTypeLabel": "终端",
+      "deviceTypeLabel": "terminal",
       "deviceUsername": "8d05fa80d5be5a42a0c999865222176d",
       "gateway": 207,
       "hardwareVersion": null,
@@ -304,7 +304,7 @@ status 200
       "physicalNetwork": 1,
       "productID": "ZKyn1N",
       "productIntID": 132,
-      "productName": "智能电表",
+      "productName": "smart meter",
       "scopes": [],
       "serialNumber": null,
       "softVersion": null,
@@ -329,21 +329,21 @@ status 200
 
 
 
-## 查看网关事件
+## View gateway events
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/gateways/{gatewayInt}/events?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/gateways/207/events?_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -356,7 +356,7 @@ status 200
       "IP": null,
       "createAt": "2018-10-17 11:44:48",
       "deviceID": "gw000001",
-      "gatewayName": "智能电表网关",
+      "gatewayName": "Smart meter gateway",
       "id": 81288,
       "msgTime": "2018-10-17 11:44:48",
       "payload": "{\"Telemetry\":[{\"Addr\":52,\"Current\":0.122,\"DeviceID\":\"8d05fa80d5be5a42a0c999865222176d\",\"PowerConsumption\":1.3,\"State\":1,\"TimeStamp\":1539747888,\"Voltage\":237.91},{\"Addr\":1,\"DeviceID\":\"fc81ad57cf7056e9973f3503242e0dbe\",\"State\":1,\"TimeStamp\":1539747888,\"Voltage\":237.9}]}",
@@ -367,7 +367,7 @@ status 200
       "IP": null,
       "createAt": "2018-10-17 11:44:38",
       "deviceID": "gw000001",
-      "gatewayName": "智能电表网关",
+      "gatewayName": "Smart meter gateway",
       "id": 81285,
       "msgTime": "2018-10-17 11:44:38",
       "payload": "{\"Telemetry\":[{\"Addr\":52,\"Current\":0.123,\"DeviceID\":\"8d05fa80d5be5a42a0c999865222176d\",\"PowerConsumption\":1.3,\"State\":1,\"TimeStamp\":1539747878,\"Voltage\":237.85},{\"Addr\":1,\"DeviceID\":\"fc81ad57cf7056e9973f3503242e0dbe\",\"State\":1,\"TimeStamp\":1539747878,\"Voltage\":237.9}]}",
@@ -389,21 +389,21 @@ status 200
 
 
 
-## 查看网关控制
+## View gateway control
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/gateways/{gatewayInt}/control_logs?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/gateways/207/control_logs?_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -1962,7 +1962,7 @@ status 200
         ]
       },
       "publishStatus": 1,
-      "publishStatusLabel": "已下发",
+      "publishStatusLabel": "published",
       "topic": "dd4a15e5d18d5154982ac4c5b2ae6104/Request",
       "updateAt": "2018-11-24 15:41:05",
       "userIntID": 2
@@ -1982,21 +1982,21 @@ status 200
 
 
 
-## 查看网关下设备数据
+## View device data under the gateway
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/gateways/{gatewayInt}/devices_data?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/gateways/207/devices_data?_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -2010,7 +2010,7 @@ status 200
       "dataPointName": "a",
       "deviceID": "9a4a447a1530551ba565b1e093bfaf10",
       "deviceIntID": 9203,
-      "deviceName": "智能电表04",
+      "deviceName": "Smart meter 04",
       "eventValue": 111,
       "msgTime": "2018-11-12 18:00:02:55",
       "stringValue": null
@@ -2030,15 +2030,15 @@ status 200
 
 
 
-## 创建网关
+## Create gateway
 
-#### API 定义
+#### API 
 
 ```bash
 POST /api/v1/gateways
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 POST /api/v1/gateways
@@ -2047,10 +2047,10 @@ POST /api/v1/gateways
 ```json
 {
   "gatewayProtocol": 1,
-  "gatewayName": "默认网关",
+  "gatewayName": "default gateway",
   "gatewayMAC": "10c61f1a1f47",
-  "location": "北京",
-  "manufacturer": "江南",
+  "location": "Beijing",
+  "manufacturer": "Jiangnan",
   "productID": "ZKyn1N",
   "serialNumber": "10c61f1a1f47",
   "softVersion": "v 1.2",
@@ -2065,7 +2065,7 @@ POST /api/v1/gateways
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 201
@@ -2079,14 +2079,14 @@ status 201
   "createAt": "2018-09-30 16:45:39",
   "description": "desc",
   "gatewayMAC": "10c61f1a1f47",
-  "gatewayName": "默认网关",
+  "gatewayName": "Default gateway",
   "gatewayProtocol": 1,
   "hardwareVersion": "v 1.1",
   "id": 10,
-  "location": "北京",
-  "manufacturer": "江南",
+  "location": "Beijing",
+  "manufacturer": "Jiangnan",
   "productID": "ZKyn1N",
-  "productName": "智能电表",
+  "productName": "Smart meter",
   "serialNumber": "10c61f1a1f47",
   "softVersion": "v 1.2",
   "updateAt": null,
@@ -2104,15 +2104,15 @@ status 201
 
 
 
-## 编辑网关
+## Edit gateway
 
-#### API 定义
+#### API 
 
 ```bash
 PUT /api/v1/gateways/{gatewayIntIDS}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 PUT /api/v1/gateways/10
@@ -2127,13 +2127,13 @@ PUT /api/v1/gateways/10
   "createUser": "ActorCloud",
   "description": "desc",
   "gatewayMAC": "10c61f1a1f47",
-  "gatewayName": "默认网关2",
+  "gatewayName": "Default gateway 2",
   "gatewayProtocol": 1,
   "gatewayProtocolLabel": "MQTT",
   "hardwareVersion": "v 1.1",
   "id": 10,
-  "location": "北京",
-  "manufacturer": "江南",
+  "location": "Beijing",
+  "manufacturer": "Jiangnan",
   "productID": "ZKyn1N",
   "serialNumber": "10c61f1a1f47",
   "softVersion": "v 1.2",
@@ -2145,7 +2145,7 @@ PUT /api/v1/gateways/10
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -2159,14 +2159,14 @@ status 200
   "createAt": "2018-09-30 16:45:39",
   "description": "desc",
   "gatewayMAC": "10c61f1a1f47",
-  "gatewayName": "默认网关2",
+  "gatewayName": "Default gateway2",
   "gatewayProtocol": 1,
   "hardwareVersion": "v 1.1",
   "id": 10,
-  "location": "北京",
-  "manufacturer": "江南",
+  "location": "Beijing",
+  "manufacturer": "Jiangnan",
   "productID": "ZKyn1N",
-  "productName": "智能电表",
+  "productName": "Smart meter",
   "serialNumber": "10c61f1a1f47",
   "softVersion": "v 1.2",
   "updateAt": "2018-09-30 16:46:05",
@@ -2184,21 +2184,21 @@ status 200
 
 
 
-## 删除网关
+## Delete gateway
 
-#### API 定义
+#### API 
 
 ```bash
 DELETE /api/v1/gateways?ids={gatewayIntIDS}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 DELETE /api/v1/gateways?ids=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 204

@@ -1,13 +1,14 @@
-# 设备操作 
+#  Device operation
 
-### 获取设备列表
+### Get device list
 
-**API 定义：**
+**API :**
+
 ```bash
 GET /api/v1/devices?_page=1&_limit=10 
 ```
 
- **成功响应：**
+ **Response:**
 
 ```json
 {
@@ -17,15 +18,15 @@ GET /api/v1/devices?_page=1&_limit=10
       "blocked": 0,
       "createAt": "2018-03-23 11:39:44",
       "deviceID": "10C61F1A1F40",
-      "deviceName": "传感器_10C61F1A1F40",
+      "deviceName": "Sensor_10C61F1A1F40",
       "deviceType": 1,
-      "deviceTypeLabel": "终端",
+      "deviceTypeLabel": "Terminal",
       "deviceUsername": "10C61F1A1F40",
       "id": 427,
       "productID": "kGBizO",
-      "productName": "环境监测",
+      "productName": "Environmental monitoring",
       "status": 0,
-      "statusLabel": "离线",
+      "statusLabel": "Offline",
       "token": "10C61F1A1F40"
     }
   ],
@@ -37,98 +38,98 @@ GET /api/v1/devices?_page=1&_limit=10
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名             | 示例值                 | 字段类型    | 说明                  |
+| Name          | Sample value      | Type | Description        |
 | --------------- | ------------------- | ------- | ------------------- |
-| authType        | 1                   | Integer | 认证方式，1:token 2:证书    |
-| blocked         | 0                   | Integer | 是否允许访问，0:允许 1:不允许    |
-| createAt        | 2018-03-24 14:00:06 | Date    | 创建时间                |
-| deviceID        | 10C61F1A1F11        | String  | 设备编号                |
-| deviceName      | 传感器_10C61F1A1F11    | String  | 设备名称                |
-| deviceType      | 1                   | Integer | 设备类型，0:终端 1:网关 2:智能手机 |
-| deviceTypeLabel | 终端                  | String  | 设备类型说明              |
-| deviceUsername  | 10C61F1A1F11        | String  | 设备连接用户名             |
-| id              | 433                 | Integer | 主键 ID                |
-| productID       | fSPvWw              | String  | 产品识别码               |
-| productName     | 默认产品                | String  | 产品名称                |
-| status          | 0                   | Integer | 运行状态，0:离线 1:在线       |
-| statusLabel     | 离线                  | String  | 运行状态信息              |
-| token           | 10C61F1A1F11        | String  | 设备密钥                |
+| authType        | 1                   | Integer | Authentication method, 1: token 2: certificate |
+| blocked         | 0                   | Integer | Allow access or not, 0: Allow 1: Not allowed |
+| createAt        | 2018-03-24 14:00:06 | Date    | Creation time   |
+| deviceID        | 10C61F1A1F11        | String  | Device ID        |
+| deviceName      | Sensor_10C61F1A1F11 | String  | Device name      |
+| deviceType      | 1                   | Integer | Device type, 0: terminal 1: gateway 2: smartphone |
+| deviceTypeLabel | Terminal           | String  | Device type description |
+| deviceUsername  | 10C61F1A1F11        | String  | Username of device connection |
+| id              | 433                 | Integer | Primary key ID     |
+| productID       | fSPvWw              | String  | Product ID      |
+| productName     | Default product | String  | Product name     |
+| status          | 0                   | Integer | Running status, 0: offline 1: online |
+| statusLabel     | Offline           | String  | Running status information |
+| token           | 10C61F1A1F11        | String  | Device key       |
 
 
 
-
-**查询参数：**
+**Query parameter:**
 
 ```bash
-GET /api/v1/devices?_page=1&_limit=10&deviceName_like=共享单车
+GET /api/v1/devices?_page=1&_limit=10&deviceName_like=Shared bicycle
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名     | 类型   | 说明          |
+| Name  | Type | Description |
 | ------ | --- | ----------- |
-| deviceName_like  | String | 按设备名称过滤   |
-| deviceID_like  | String | 按设备编号过滤   |
-| deviceType_like  | Integer | 按设备类型过滤，0: 终端 1: 网关 2: 智能手机   |
-| groupID  | String | 按分组标识符过滤   |
-| productID  | String | 按所属产品标识符过滤   |
+| deviceName_like  | String | Filter by device name |
+| deviceID_like  | String | Filter by device ID |
+| deviceType_like  | Integer | Filter by device type, 0: Terminal 1: Gateway 2: Smartphone |
+| groupID  | String | Filter by group ID |
+| productID  | String | Filter by product ID |
 
 
-### 创建一个设备
+### Create a device
 
-**API 定义：**
+**API :**
+
 ```bash
 POST /api/v1/devices
 ```
 
-**请求体：**
+**Body:**
 
 ```json
 {
-  "deviceName": "综合传感器_10C61FA1F47",
+  "deviceName": "Integrated sensor_10C61FA1F47",
   "productID": "kGBizO",
   "deviceType": 1,
-  "manufacturer": "A 厂",
+  "manufacturer": "A factory",
   "serialNumber": "10C61FA1F47",
   "softVersion": "v 1.0",
   "hardwareVersion": "v 1.0",
   "description": "10C61FA1F47",
-  "location": "玉泉校区",
+  "location": "Yuquan Campus",
   "deviceID": "10C61FA1F47",
   "deviceUsername": "10C61FA1F47",
   "authType": 1
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名             | 示例值               | 字段类型    | 是否必填  | 说明                  |
+| Name          | Sample value    | Type | Required to fill or not | Description      |
 | --------------- | ----------------- | ------- | ----- | ------------------- |
-| deviceName      | 综合传感器_10C61FA1F47 | String  | true  | 设备名称                |
-| productID       | kGBizO            | String  | true  | 产品识别码               |
-| deviceType      | 1                 | Integer | true  | 设备类型，0:终端1:网关2:智能手机 |
-| manufacturer    | A 厂               | String  | false  | 制造商                 |
-| serialNumber    | 10C61FA1F47       | String  | false | 序列号                 |
-| softVersion     | v 1.0             | String  | false  | 软件版本                |
-| hardwareVersion | v 1.0             | String  | false  | 硬件版本                |
-| description     | 10C61FA1F47       | String  | false  | 产品描述                |
-| location        | 玉泉校区              | String  | false  | 安装位置                |
-| deviceID        | 10C61FA1F47       | String  | false  | 设备编号， 不填自动生成 36 位                |
-| deviceUsername  | 10C61FA1F47       | String  | false  | 设备连接用户名，不填自动生成 36 位             |
-| authType        | 1                 | Integer | true  | 认证方式，1:token 2:证书    |
+| deviceName      | Integrated sensor_10C61FA1F47 | String  | true  | Device name     |
+| productID       | kGBizO            | String  | true  | Product ID     |
+| deviceType      | 1                 | Integer | true  | Device type, 0: Terminal 1: Gateway 2: Smartphone |
+| manufacturer    | A factory        | String  | false  | manufacturer     |
+| serialNumber    | 10C61FA1F47       | String  | false | Serial number  |
+| softVersion     | v 1.0             | String  | false  | Software version |
+| hardwareVersion | v 1.0             | String  | false  | Hardware version |
+| description     | 10C61FA1F47       | String  | false  | Product description |
+| location        | Yuquan Campus | String  | false  | Installation location |
+| deviceID        | 10C61FA1F47       | String  | false  | Device number, automatically generated 36 bits without filling |
+| deviceUsername  | 10C61FA1F47       | String  | false  | Device connection user name, automatically generate 36 bit without filling |
+| authType        | 1                 | Integer | true  | Authentication method, 1: token 2: certificate |
 
 
-### 查看设备详情
+### View device details
 
-**API 定义：**
+**API :**
 
 ```bash
 GET /api/v1/devices/{device_id}
 ```
 
-**成功响应：**
+**Response:**
 
 ```json
 {
@@ -143,14 +144,14 @@ GET /api/v1/devices/{device_id}
   "createUser": "EMQ",
   "description": "v 1.0",
   "deviceID": "10C61F1A1F40",
-  "deviceName": "传感器_10C61F1A1F40",
+  "deviceName": "Sensor_10C61F1A1F40",
   "deviceType": 1,
   "deviceUsername": "10C61F1A1F40",
   "hardwareVersion": "v 1.0",
   "id": 427,
   "keepAlive": "",
-  "location": "玉泉校区",
-  "manufacturer": "A 厂",
+  "location": "Yuquan Campus",
+  "manufacturer": "A factory",
   "mqttBroker": "console.actorcloud.io:1883",
   "mqttsBroker": "console.actorcloud.io:8883",
   "mqttssBroker": "console.actorcloud.io:8884",
@@ -158,7 +159,7 @@ GET /api/v1/devices/{device_id}
   "serialNumber": "10C61F1A1F40",
   "softVersion": "10C61F1A1F40",
   "status": 0,
-  "statusLabel": "离线",
+  "statusLabel": "offline",
   "tenantID": "CyOTtJod0",
   "token": "10C61F1A1F40",
   "updateAt": "2018-03-24 14:02:08",
@@ -166,63 +167,63 @@ GET /api/v1/devices/{device_id}
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名             | 示例值                 | 字段类型    | 说明                  |
+| Name          | Sample value      | Type | Description      |
 | --------------- | ------------------- | ------- | ------------------- |
-| authType        | 1                   | Integer | 认证方式，1:token2:证书    |
-| blocked         | 0                   | Integer | 是否允许访问，0:允许1:不允许    |
-| clientIP        |                     | String  | 客户端IP，连接时可见         |
-| coapBroker      | actorcloud.io:5683  | String  |  CoAP 服务器地址                   |
-| coapsBroker     | actorcloud.io:5684  | String  |  CoAP 服务器地址（DTLS）                   |
+| authType        | 1                   | Integer | Authentication method, 1: token2: certificate |
+| blocked         | 0                   | Integer | Allow access or not, 0: Allow 1: Not allowed |
+| clientIP        |                     | String  | Client IP, visible when connected |
+| coapBroker      | actorcloud.io:5683  | String  |  CoAP server address     |
+| coapsBroker     | actorcloud.io:5684  | String  |  CoAP server address（DTLS）     |
 | coapssBroker    | actorcloud.io:5685  | String  |                     |
-| connectedAt     |                     | String  | 连接时间，连接时可见          |
-| createAt        | 2018-03-23 11:39:44 | Date    | 创建时间                |
-| createUser      | EMQ                 | String  | 创建用户名               |
-| description     | v 1.0               | String  | 产品描述                |
-| deviceID        | 10C61F1A1F40        | String  | 设备编号                |
-| deviceName      | 传感器_10C61F1A1F40    | String  | 设备名称                |
-| deviceType      | 1                   | Integer | 设备类型，0:终端 1:网关 2:智能手机 |
-| deviceUsername  | 10C61F1A1F40        | String  | 设备连接用户名             |
-| hardwareVersion | v 1.0               | String  | 硬件版本                |
-| id              | 427                 | Integer | 产品 ID                |
-| keepAlive       |                     | Integer | 心跳时长 （秒）                |
-| location        | 玉泉校区                | String  | 安装位置                |
-| manufacturer    | A 厂                 | String  | 制造商                 |
-| mqttBroker      | actorcloud.io:1883  | String  | MQTT服务器地址           |
-| mqttsBroker     | actorcloud.io:8883  | String  | MQTT服务器地址（TLS）      |
-| mqttssBroker    | actorcloud.io:8884  | String  | MQTT服务器地址（双向认证）                    |
-| productID       | kGBizO              | String  | 产品识别码               |
-| serialNumber    | 10C61F1A1F40        | String  | 序列号                 |
-| softVersion     | 10C61F1A1F40        | String  | 软件版本                |
-| status          | 0                   | Integer | 运行状态，0:离线 1:在线       |
-| statusLabel     | 离线                  | String  | 运行状态信息              |
-| tenantID        | CyOTtJod0           | String  | 所属租户标识符             |
-| token           | 10C61F1A1F40        | String  | 设备密钥                |
-| updateAt        | 2018-03-24 14:02:08 | Date    | 更新时间                |
-| userIntID       | 6                   | Integer | 创建用户主键ID            |
-  
+| connectedAt     |                     | String  | Connection time, visible when connected |
+| createAt        | 2018-03-23 11:39:44 | Date    | Creation time   |
+| createUser      | EMQ                 | String  | Create a username |
+| description     | v 1.0               | String  | Product description |
+| deviceID        | 10C61F1A1F40        | String  | Device ID        |
+| deviceName      | Sensor_10C61F1A1F40 | String  | Device name      |
+| deviceType      | 1                   | Integer | Device type, 0: terminal 1: gateway 2: smartphone |
+| deviceUsername  | 10C61F1A1F40        | String  | Device connection username |
+| hardwareVersion | v 1.0               | String  | Hardware version |
+| id              | 427                 | Integer | Product ID          |
+| keepAlive       |                     | Integer | Heartbeat time (seconds) |
+| location        | Yuquan Campus   | String  | Installation location |
+| manufacturer    | A factory          | String  | Manufacturer    |
+| mqttBroker      | actorcloud.io:1883  | String  | MQTT server address |
+| mqttsBroker     | actorcloud.io:8883  | String  | MQTT server address（TLS） |
+| mqttssBroker    | actorcloud.io:8884  | String  | MQTT Server address (two-way authentication) |
+| productID       | kGBizO              | String  | Product ID     |
+| serialNumber    | 10C61F1A1F40        | String  | Serial Number    |
+| softVersion     | 10C61F1A1F40        | String  | Software version |
+| status          | 0                   | Integer | Running status, 0: offline 1: online |
+| statusLabel     | Offline            | String  | Running status information |
+| tenantID        | CyOTtJod0           | String  | Tenant ID   |
+| token           | 10C61F1A1F40        | String  | Device key      |
+| updateAt        | 2018-03-24 14:02:08 | Date    | Update time     |
+| userIntID       | 6                   | Integer | Create user primary key ID |
+
   
 
-### 编辑设备信息
+### Edit device information
 
-**API 定义：**
+**API :**
 
 ```bash
 PUT /api/v1/devices/{device_id}
 ```
 
-**请求体：**
+**Body:**
 
 ```json
 {
-  "deviceName": "传感器_10C61F1A1F40",
+  "deviceName": "Sensor_10C61F1A1F40",
   "deviceType": 1,
   "softVersion": "10C61F1A1F40",
   "hardwareVersion": "v 1.0",
   "manufacturer": "A 厂",
   "serialNumber": "10C61F1A1F40",
-  "location": "玉泉校区",
+  "location": "Yuquan Campus",
   "description": "v 1.0",
   "authType": 1,
   "blocked": 0
@@ -230,19 +231,20 @@ PUT /api/v1/devices/{device_id}
 ```
 
 
-### 删除设备
+### Delete device
 
-**API 定义：**
+**API :**
+
 ```bash
-# 单个删除
+# Single delete
 DELETE /api/v1/devices?ids={device_id}
 
-# 支出批量删除，多个 device_id 使用英文逗号分隔
+# Support batch deletion, multiple device_ids separated by commas in English
 DELETE /api/v1/device_id?ids={device_id, device_id, device_id}
 ```
 
 
-**成功响应：**
+**Response:**
 
 ```bash
 HTTP Status Code 204

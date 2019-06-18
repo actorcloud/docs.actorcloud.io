@@ -1,13 +1,14 @@
-# 产品操作
+# Product operation
 
-### 获取产品列表
+### Get product list
 
-**API 定义：**
+**API :**
+
 ```bash
 GET /api/v1/products?_page=1&_limit=10 
 ```
-  
-**成功响应：**
+
+**Response:**
 
 ```json
 {
@@ -22,13 +23,13 @@ GET /api/v1/products?_page=1&_limit=10
       ],
       "id": 18,
       "productID": "fSPvWw",
-      "productName": "默认产品",
+      "productName": "Default product",
       "updateAt": null,
       "userIntID": 6
     },
     {
       "createAt": "2018-03-23 11:38:28",
-      "description": "环境监测系列",
+      "description": "Environmental monitoring series",
       "devices": [
         {
           "id": 427
@@ -42,7 +43,7 @@ GET /api/v1/products?_page=1&_limit=10
       ],
       "id": 11,
       "productID": "kGBizO",
-      "productName": "环境监测",
+      "productName": "Environmental monitoring",
       "updateAt": null,
       "userIntID": 6
     }
@@ -55,79 +56,80 @@ GET /api/v1/products?_page=1&_limit=10
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名         | 示例值                 | 字段类型    | 说明         |
+| Name      | Sample value      | Type | Description |
 | ----------- | ------------------- | ------- | ---------- |
-| createAt    | 2018-03-28 10:41:15 | Date    | 创建时间       |
-| description | 环境监测                | String  | 产品描述       |
-| devices     |                     | Array   | 该产品下所有设备 ID |
-| id          | 21                  | Integer | 主键 ID      |
-| productID   | DcSzpG              | String  | 产品识别码      |
-| productName | 环境监测器               | String  | 产品名称       |
-| updateAt    |                     | Date    | 更新时间       |
-| userIntID   | 6                   | Integer | 创建用户主键 ID   |
-  
+| createAt    | 2018-03-28 10:41:15 | Date    | Creation time |
+| description | Environmental monitoring | String  | Product description |
+| devices     |                     | Array   | All device IDs under this product |
+| id          | 21                  | Integer | Primary key ID |
+| productID   | DcSzpG              | String  | Product ID |
+| productName | Environmental monitor | String  | Product name |
+| updateAt    |                     | Date    | Update time |
+| userIntID   | 6                   | Integer | Create user primary key ID |
+
   
 
+**Query parameter:**
 
-**查询参数：**
 ```bash
-GET /api/v1/products?_page=1&_limit=10&pruductName_like=共享单车
+GET /api/v1/products?_page=1&_limit=10&pruductName_like=Shared bicycle
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名     | 类型   | 说明          |
+| Name  | Type | Description |
 | ------ | --- | ----------- |
-| productName_like  | String | 按产品名称过滤   |
+| productName_like  | String | Filter by product name |
 
 
 
 
-### 创建一个产品
+### Create a product
 
-**API 定义：**
+**API :**
+
 ```bash
 POST /api/v1/products
 ```
-  
-**请求体：**
+
+**Body:**
 
 ```json
 {
-  "productName": "环境监测器",
-  "description": "环境监测"
+  "productName": "Environmental monitor",
+  "description": "Environmental monitoring"
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名         | 示例值   | 字段类型   | 是否必填 | 说明   |
-| ----------- | ----- | ------ | ---- | ---- |
-| productName | 环境监测器 | String | true | 产品名称 |
-| description | 环境监测  | String | true | 产品描述 |
+| Name        | Sample value             | Type   | Required to fill or not | Description         |
+| ----------- | ------------------------ | ------ | ----------------------- | ------------------- |
+| productName | Environmental monitor    | String | true                    | Product name        |
+| description | Environmental monitoring | String | true                    | Product description |
+
   
-  
 
 
 
 
-### 查看产品详情
+### View product details
 
-**API 定义：**
+**API :**
 
 ```bash
 GET /api/v1/products/{product_id}
 ```
-  
-**成功响应：**
+
+**Response:**
 
 ```json
 {
   "createAt": "2018-03-23 11:38:28",
   "createUser": "EMQ",
-  "description": "环境监测系列",
+  "description": "Environmental monitoring series",
   "deviceCount": 3,
   "devices": [
     {
@@ -142,66 +144,67 @@ GET /api/v1/products/{product_id}
   ],
   "id": 11,
   "productID": "kGBizO",
-  "productName": "环境监测",
+  "productName": "Environmental monitoring ",
   "updateAt": null,
   "userIntID": 6
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名         | 示例值                                             | 字段类型    | 说明         |
-| ----------- | ----------------------------------------------- | ------- | ---------- |
-| createAt    | 2018-03-23 11:38:28                             | Date    | 创建时间       |
-| createUser  | EMQ                                             | String  | 创建用户名      |
-| description | 环境监测系列                                          | String  | 产品描述       |
-| deviceCount | 3                                               | Integer | 该产品下设备数量   |
-| devices     | [] | Array   | 该产品下所有设备ID |
-| id          | 11                                              | Integer | 产品ID       |
-| productID   | kGBizO                                          | String  | 产品识别码      |
-| productName | 环境监测                                            | String  | 产品名称       |
-| updateAt    |                                                 | Date    | 更新时间       |
-| userIntID   | 6                                               | Integer | 创建用户主键ID   |
+| Name        | Sample value                    | Type    | Description                          |
+| ----------- | ------------------------------- | ------- | ------------------------------------ |
+| createAt    | 2018-03-23 11:38:28             | Date    | Creation time                        |
+| createUser  | EMQ                             | String  | Creation username                    |
+| description | Environmental monitoring series | String  | Product description                  |
+| deviceCount | 3                               | Integer | Number of devices under this product |
+| devices     | []                              | Array   | All device IDs under this product    |
+| id          | 11                              | Integer | Product ID                           |
+| productID   | kGBizO                          | String  | Product ID                           |
+| productName | Environmental monitoring        | String  | Product name                         |
+| updateAt    |                                 | Date    | Update time                          |
+| userIntID   | 6                               | Integer | Create user primary key ID           |
+
   
-  
-  
 
 
 
 
-### 编辑产品信息
 
-**API 定义：**
+### Edit product information
+
+**API :**
 
 ```bash
 PUT /api/v1/products/{product_id}
 ```
 
-**请求体：**
+**Body:**
 
 ```json
 {
-  "productName": "环境监测器",
-  "description": "环境监测使用"
+  "productName": "Environmental monitor",
+  "description": "for environmental monitoring "
 }
 ```
 
 
 
 
-### 删除产品
+### Delete product
 
-**API 定义：**
+**API :**
+
 ```bash
-# 单个删除
+# Single delete
 DELETE /api/v1/products?ids={product_id}
 
-# 支出批量删除，多个 product_id 使用英文逗号分隔
+# Support batch deletion, multiple device_ids separated by English commas
 DELETE /api/v1/products?ids={product_id, product_id, product_id}
 ```
 
 
-**成功响应：**
+**Response:**
 
 ```bash
 HTTP Status Code 204

@@ -1,20 +1,21 @@
-# 分组操作
+# Group operation
 
-### 获取分组列表
+### Get group list
 
-**API 定义：**
+**API :**
+
 ```bash
 GET /api/v1/groups?_page=1&_limit=10 
 ```
 
-**成功响应：**
+**Response:**
 
 ```json
 {
   "items": [
     {
       "createAt": "2018-03-23 13:51:48",
-      "description": "上报数据",
+      "description": "Reporting data",
       "devices": [
         {
           "id": 427
@@ -24,10 +25,10 @@ GET /api/v1/groups?_page=1&_limit=10
         }
       ],
       "groupID": "9H6t1L",
-      "groupName": "上报分组",
+      "groupName": "Reporting group",
       "id": 4,
       "productID": "kGBizO",
-      "productName": "环境监测",
+      "productName": "Environmental monitoring",
       "updateAt": null,
       "userIntID": 6
     }
@@ -40,76 +41,77 @@ GET /api/v1/groups?_page=1&_limit=10
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名         | 示例值                             | 字段类型    | 说明         |
+| Name      | Sample value                  | Type | Description |
 | ----------- | ------------------------------- | ------- | ---------- |
-| createAt    | 2018-03-23 13:51:48             | Date    | 创建时间       |
-| description | 上报数据                            | String  | 产品描述       |
-| devices     | [] | Array   | 该产品下所有设备 ID |
-| groupID     | 9H6t1L                          | String  | 分组标识符      |
-| groupName   | 上报分组                            | String  | 分组名称       |
-| id          | 4                               | Integer | 主键 ID      |
-| productID   | kGBizO                          | String  | 产品识别码      |
-| productName | 环境监测                            | String  | 产品名称       |
-| updateAt    |                                 | Date    | 更新时间       |
-| userIntID   | 6                               | Integer | 创建用户主键ID   |
+| createAt    | 2018-03-23 13:51:48             | Date    | Creation time |
+| description | Reporting data              | String  | Product description |
+| devices     | [] | Array   | All device IDs under this product |
+| groupID     | 9H6t1L                          | String  | Group ID |
+| groupName   | Reporting group             | String  | Group name |
+| id          | 4                               | Integer | Primary key ID |
+| productID   | kGBizO                          | String  | Product ID |
+| productName | Environmental monitoring    | String  | Product name |
+| updateAt    |                                 | Date    | Update time |
+| userIntID   | 6                               | Integer | Create a user primary key ID |
 
+**Query parameter:**
 
-**查询参数：**
 ```bash
-GET /api/v1/products?_page=1&_limit=10&pruductName_like=共享单车
+GET /api/v1/products?_page=1&_limit=10&pruductName_like=shared bicycle
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名     | 类型   | 说明          |
+| Name  | Type | Description |
 | ------ | --- | ----------- |
-| groupName_like  | String | 按分组名称过滤   |
-| groupID_like  | String | 按分组标识符过滤   |
+| groupName_like  | String | Filter by group name |
+| groupID_like  | String | Filter by group id |
 
 
-### 创建一个分组
+### Create a group
 
-**API 定义：**
+**API :**
+
 ```bash
 POST /api/v1/groups
 ```
 
-**请求体：**
+**Body:**
 
 ```json
 {
-  "groupName": "默认分组",
+  "groupName": "Default group",
   "productID": "kGBizO",
-  "description": "默认分组"
+  "description": "Default group"
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名         | 示例值    | 字段类型   | 是否必填 | 说明    |
-| ----------- | ------ | ------ | ---- | ----- |
-| groupName   | 默认分组   | String | true | 所属分组  |
-| productID   | kGBizO | String | true | 产品识别码 |
-| description | 默认分组   | String | true | 分组描述  |
+| Name        | Sample value  | Type   | required to fill or not | Description       |
+| ----------- | ------------- | ------ | ----------------------- | ----------------- |
+| groupName   | Default group | String | true                    | Subordinate Group |
+| productID   | kGBizO        | String | true                    | Product ID        |
+| description | Default group | String | true                    | Group description |
 
 
-### 查看分组详情
+### View group details
 
-**API 定义：**
+**API :**
 
 ```bash
 GET /api/v1/groups/{group_id}
 ```
 
-**成功响应：**
+**Response:**
 
 ```json
 {
   "createAt": "2018-03-23 13:51:48",
   "createUser": "EMQ",
-  "description": "上报数据",
+  "description": "Reporting error",
   "devices": [
     {
       "id": 427
@@ -119,7 +121,7 @@ GET /api/v1/groups/{group_id}
     }
   ],
   "groupID": "9H6t1L",
-  "groupName": "上报分组",
+  "groupName": "Reporting group",
   "id": 4,
   "productID": "kGBizO",
   "updateAt": null,
@@ -127,55 +129,56 @@ GET /api/v1/groups/{group_id}
 }
 ```
 
-**字段说明：**
+**Field description:**
 
-| 字段名         | 示例值                             | 字段类型    | 说明         |
+| Name      | Sample value                  | Type | Description |
 | ----------- | ------------------------------- | ------- | ---------- |
-| createAt    | 2018-03-23 13:51:48             | Date    | 创建时间       |
-| createUser  | EMQ                             | String  | 创建用户名      |
-| description | 上报数据                            | String  | 产品描述       |
-| devices     | [] | Array   | 该产品下所有设备主键 ID |
-| groupID     | 9H6t1L                          | String  | 分组标识符      |
-| groupName   | 上报分组                            | String  | 所属分组       |
-| id          | 4                               | Integer | 主键 ID      |
-| productID   | kGBizO                          | String  | 产品识别码      |
-| updateAt    |                                 | Date    | 更新时间       |
-| userIntID   | 6                               | Integer | 创建用户主键 ID   |
+| createAt    | 2018-03-23 13:51:48             | Date    | Creation time |
+| createUser  | EMQ                             | String  | Creation username |
+| description | Reporting data              | String  | Product description |
+| devices     | [] | Array   | All device primary key IDs under this product |
+| groupID     | 9H6t1L                          | String  | Group ID |
+| groupName   | Reporting group              | String  | Subordinate Group |
+| id          | 4                               | Integer | Primary key ID |
+| productID   | kGBizO                          | String  | Product ID |
+| updateAt    |                                 | Date    | Update time |
+| userIntID   | 6                               | Integer | Create user primary key ID |
 
 
-### 编辑分组信息
+### Edit group information
 
-**API 定义：**
+**API :**
 
 ```bash
 PUT /api/v1/groups/{group_id}
 ```
 
-**请求体：**
+**Body:**
 
 ```json
 {
-  "description": "默认分组",
-  "groupName": "默认分组",
+  "description": "Default group",
+  "groupName": "Default group",
   "id": 4,
   "productID": "Gq2kxM"
 }
 ```
 
 
-### 删除分组
+### Delete group
 
-**API 定义：**
+**API :**
+
 ```bash
-# 单个删除
+# Single delete
 DELETE /api/v1/groups?ids={group_id}
 
-# 支出批量删除，多个 group_id 使用英文逗号分隔
+# Support batch deletion, multiple group_ids separated by English commas
 DELETE /api/v1/groups?ids={group_id, group_id, group_id}
 ```
 
 
-**成功响应：**
+**Response:**
 
 ```bash
 HTTP Status Code 204

@@ -1,45 +1,46 @@
-# 设备
+# Device
 
-## 创建设备
+## Create device
 
-#### 创建说明
+#### Creation instructions
 
-##### 字段约束
+##### Field constraint
 
-- 设备类型与上联系统：
+- Device type and uplink system:
 
-  设备类型 `deviceType` 为 `1 (终端)` 时，必须携带上联系统 `upLinkSystem` 字段，否则 `upLinkSystem` 应当为空。
+  When the deviceType is `1 (terminal)`, it must carry the  `upLinkSystem` field, otherwise `upLinkSystem` should be empty.
 
-- 上联系统与所属网关：
+- Uplink system and affiliated gateway:
 
-  上联系统 `upLinkSystem` 为 `2 (网关)` 时必须携带有效 `gateway` 网关 ID 字段。
+  The uplink system must carry a valid field of ` `gateway ID when it is 2 (gateway)
 
-- 上联系统与所属设备：
+- Uplink system and affiliated device:
 
-  上联系统 `upLinkSystem` 为 `3 (设备)` 时必须携带有效 `parentDevice` 设备 ID 字段。
-
-
-> 详细字段间约束请见设备字段说明。
+  The uplink system must carry a valid field of ` `parentDevice ID when it is 3 (device)
 
 
-##### 多种设备类型
+> See the device field description for detailed field constraints.。
 
-请求参数根据所选产品的云端协议有所不同，除去基础信息之外，下表给出相关差异：
 
-| 云端协议     | 必填项        | 锁定项   |
+##### Multiple device types
+
+The request parameters vary according to the cloud protocol of the selected product. In addition to the basic information, the following table gives the relevant differences:
+
+| cloud protocol | Item required to fill | Locked item |
 | --------------- | ----------------- | ------- |
-| MQTT、CoAP、HTTP、WebSocket、Modbus | 认证方式：`authType` | -- |
-| LwM2M | 接入 IMEI：`IMEI` 、自动订阅： `autoSub` | -- |
-| LoRa | LoRa 协议相关信息，入网方式：`lora.type` 、DevEUI：`deviceID`、AppEUI： `lora.appEUI`、AppKey： `lora.appKey` 、FCnt Check： `lora.fcntCheck`、允许加入：`lora.canJoin` | 入网方式：`lora.type`等于 `otaa` 时 |
-| LoRa | LoRa 协议相关信息，入网方式：`lora.type` 、所属网关：`gateway`、DevAddr： `deviceID`、发射频率： `lora.region` 、NwkSKey： `lora.nwkSKey`、AppSKey：`lora.appSKey`、FCnt Up：`lora.fcntUp`、FCnt Down： `lora.fcntDown`、FCnt Check：`lora.fcntCheck` | 入网方式：`lora.type`等于 `abp` 时 |
+| MQTT、CoAP、HTTP、WebSocket、Modbus | Authentication method：`authType` | -- |
+| LwM2M | Access IMEI：`IMEI` 、Automatic subscription： `autoSub` | -- |
+| LoRa | LoRa Protocol related information, network access method：`lora.type` 、DevEUI：`deviceID`、AppEUI： `lora.appEUI`、AppKey： `lora.appKey` 、FCnt Check： `lora.fcntCheck`、allow to join：`lora.canJoin` | network access method：when `lora.type` equals `otaa` |
+| LoRa | LoRa Protocol related information, network access method：`lora.type` 、Gateway：`gateway`、DevAddr： `deviceID`、Transmitting frequency： `lora.region` 、NwkSKey： `lora.nwkSKey`、AppSKey：`lora.appSKey`、FCnt Up：`lora.fcntUp`、FCnt Down： `lora.fcntDown`、FCnt Check：`lora.fcntCheck` | network access method：when `lora.type  `  equals `abp` |
 
 
-当云端协议为 `LwM2M` 和 `LoRa` 时，协议相关信息分别对应 `lwm2mData` 和 `loraData`，示例如下：
+When the cloud protocol is `LwM2M` and `LoRa`, the protocol related information corresponds to `lwm2mData` and `loraData` respectively, examples are as follows:
 
-`LwM2M` 协议
+`LwM2M` protocol
+
 ```json
 {
-  // 设备的其他信息
+  // Additional information about the device
   "lwm2mData":{
     "IMEI":"",
     "IMSI":"",
@@ -48,10 +49,11 @@
 }
 ```
 
-`LoRa` 协议
+`LoRa` protocol
+
 ```json
 {
-  // 设备的其他信息
+  // Additional information about the device
   "loraData": {
     "appEUI": "1092ej1029e0192u",
     "appKey": "12u1092u0192je1029u0912uu142j4oi",
@@ -63,13 +65,13 @@
 }
 ```
 
-#### API 定义
+#### API 
 
 ```bash
 POST /api/v1/devices
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 POST /api/v1/devices
@@ -80,18 +82,18 @@ POST /api/v1/devices
   "authType": 1,
   "carrier": 1,
   "cloudProtocol": 1,
-  "description": "智能锁",
+  "description": "smart lock",
   "deviceID": "10c61f1a1f47",
-  "deviceName": "智能锁",
+  "deviceName": "smart lock",
   "deviceUsername": "10c61f1a1f47",
   "deviceType": 1,
   "groups":[1,2],
   "hardwareVersion": "v 1.0",
   "latitude": 30.266682,
-  "location": "浙江省杭州市西湖区灵隐街道浙江大学玉泉校区",
+  "location": "Yuquan Campus, Zhejiang University, Lingyin Street, Xihu District, Hangzhou, Zhejiang",
   "longitude": 120.124144,
   "mac":"",
-  "manufacturer": "江南",
+  "manufacturer": "Jiangnan",
   "productID": "p3zZMy",
   "serialNumber": "1061f1a1f47",
   "softVersion": "v 1.2",
@@ -102,7 +104,7 @@ POST /api/v1/devices
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 201
@@ -114,12 +116,12 @@ status 201
   "blocked": 0, 
   "carrier": 3, 
   "createAt": "2019-06-03 09:58:20", 
-  "description": "智能锁", 
+  "description": "smart lock", 
   "deviceConsoleIP": null, 
   "deviceConsolePort": 22, 
   "deviceConsoleUsername": null, 
   "deviceID": "10c61f1a1f47", 
-  "deviceName": "智能锁", 
+  "deviceName": "smart lock", 
   "deviceStatus": 0, 
   "deviceType": 1, 
   "deviceUsername": "10c61f1a1f47", 
@@ -130,12 +132,12 @@ status 201
   "id": 27, 
   "lastConnection": null, 
   "latitude": 30.266682,
-  "location": "浙江省杭州市西湖区灵隐街道浙江大学玉泉校区",
+  "location": "Yuquan Campus, Zhejiang University, Lingyin Street, Xihu District, Hangzhou, Zhejiang",
   "longitude": 120.124144,
   "loraData": null, 
   "lwm2mData": null, 
   "mac": "", 
-  "manufacturer": "江南", 
+  "manufacturer": "Jiangnan", 
   "metaData": null, 
   "parentDevice": null, 
   "productID": "p3zZMy", 
@@ -149,16 +151,16 @@ status 201
 ```
 
 
-## 编辑设备
+## Edit device
 
 
-#### API 定义
+#### API 
 
 ```bash
 PUT /api/v1/devices/{device_id}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 PUT /api/v1/devices/191
@@ -170,12 +172,12 @@ PUT /api/v1/devices/191
   "blocked": 0, 
   "carrier": 3, 
   "createAt": "2019-06-03 09:58:20", 
-  "description": "智能锁", 
+  "description": "smart lock", 
   "deviceConsoleIP": null, 
   "deviceConsolePort": 22, 
   "deviceConsoleUsername": null, 
   "deviceID": "51ab2bc6658e6c604b36bbea1e62beeae666", 
-  "deviceName": "智能锁", 
+  "deviceName": "smart lock", 
   "deviceStatus": 0, 
   "deviceType": 1, 
   "deviceUsername": "51ab2bc6658e6c604b36bbea1e62beeae666", 
@@ -186,12 +188,12 @@ PUT /api/v1/devices/191
   "id": 27, 
   "lastConnection": null, 
   "latitude": 39.908692, 
-  "location": "北京市东城区", 
+  "location": "Dongcheng District, Beijing", 
   "longitude": 116.397477, 
   "loraData": null, 
   "lwm2mData": null, 
   "mac": "12.87", 
-  "manufacturer": "东南", 
+  "manufacturer": "Dongnan", 
   "metaData": null, 
   "parentDevice": null, 
   "productID": "bff530", 
@@ -205,7 +207,7 @@ PUT /api/v1/devices/191
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -217,12 +219,12 @@ status 200
   "blocked": 0, 
   "carrier": 3, 
   "createAt": "2019-06-03 09:58:20", 
-  "description": "智能锁", 
+  "description": "smart lock", 
   "deviceConsoleIP": null, 
   "deviceConsolePort": 22, 
   "deviceConsoleUsername": null, 
   "deviceID": "51ab2bc6658e6c604b36bbea1e62beeae666", 
-  "deviceName": "智能锁", 
+  "deviceName": "smart lock", 
   "deviceStatus": 0, 
   "deviceType": 1, 
   "deviceUsername": "51ab2bc6658e6c604b36bbea1e62beeae666", 
@@ -233,12 +235,12 @@ status 200
   "id": 27, 
   "lastConnection": null, 
   "latitude": 39.908692, 
-  "location": "北京市东城区", 
+  "location": "Dongcheng District, Beijing", 
   "longitude": 116.397477, 
   "loraData": null, 
   "lwm2mData": null, 
   "mac": "12.87", 
-  "manufacturer": "东南", 
+  "manufacturer": "Dongnan", 
   "metaData": null, 
   "parentDevice": null, 
   "productID": "bff530", 
@@ -254,43 +256,43 @@ status 200
 
 
 
-## 删除设备
+## Delete device
 
-#### API 定义
+#### API 
 
 ```bash
 DELETE /api/v1/devices?ids={device_ids}
 ```
-> 支持删除多个设备，ids=1,2,3
+> Support for deleting multiple devices，ids=1,2,3
 
-#### 请求示例
+#### Example
 
 ```bash
 DELETE /api/v1/devices?ids=190
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 204
 ```
 
 
-## 设备详情
+## Device details
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/{device_id}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/46
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -311,18 +313,18 @@ status 200
   "deviceConsolePort": 22, 
   "deviceConsoleUsername": null, 
   "deviceID": "ea78e8af256d57b2a52dcda2f05282cf", 
-  "deviceName": "modubs设备1", 
+  "deviceName": "modubs device1", 
   "deviceStatus": 0, 
-  "deviceStatusLabel": "离线", 
+  "deviceStatusLabel": "offline", 
   "deviceType": 1, 
   "deviceUsername": "ea78e8af256d57b2a52dcda2f05282cf", 
   "gateway": 94, 
-  "gatewayName": "Modbus网关", 
+  "gatewayName": "Modbus gateway", 
   "hardwareVersion": "1.0", 
   "id": 95, 
   "lastConnection": "2019-01-01 15:00:00",
   "latitude": 39.908692, 
-  "location": "北京市东城区", 
+  "location": "Dongcheng District, Beijing", 
   "longitude": 116.397477, 
   "loraData": {
     "appEUI": "1092ej1029e0192u",
@@ -344,7 +346,7 @@ status 200
   "parentDeviceName": "",  
   "productID": "4jMRrz", 
   "productIntID": 36, 
-  "productName": "Modbus产品", 
+  "productName": "Modbus product", 
   "serialNumber": "", 
   "softVersion": "1.0", 
   "token": "da77cafead065dbf8ac1844f11db9d8c", 
@@ -355,95 +357,95 @@ status 200
 ```
 
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name          | Sample value   | Type |  Description        |
 | --------------- | ----------------- | ------- | ------------------- |
-| authType| 1 | Integer  | 认证方式，可选参数: Token: 1, 证书: 2 |
+| authType| 1 | Integer  | Authentication method, optional parameters: Token: 1, Certificate: 2 |
 | authTypeLabel| Token | String  | Token |
-| blocked| 0 | Integer  | 是否允许访问，0:允许 1:禁止 |
-| carrier| 1 | Integer  | 运营商，可选参数: 中国电信: 1, 中国移动: 2, 中国联通: 3, 其他: 4 |
-| cloudProtocol| 1 | Integer  | 云端协议，可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
-| cloudProtocolLabel| MQTT | String  | 云端协议，可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
-| createAt| 2019-09-14 14:55:20 | Date  | 创建时间 |
-| createUser| actorcloud | String  | 创建用户 |
-| description| 智能锁 | String  | 描述 |
-| deviceConsoleIP| 127.0.0.1 | String  | 控制台ip |
-| deviceConsolePort| 22 | Integer  | 控制台端口 |
-| deviceConsoleUsername| root | String  | 控制台用户名 |
-| deviceID| 063da5117b8c5ea5a6b3441edbf99d03 | String  | 设备 ID |
-| deviceName| mqtt设备_1 | String  | 设备名称 |
-| deviceStatus| 0 | Integer  | 设备运行状态，可选参数: 离线: 0, 在线: 1, 休眠: 2 |
-| deviceStatusLabel| 离线 | String  | 设备运行状态，可选参数: 离线: 0, 在线: 1, 休眠: 2 |
-| deviceType| 1 | Integer  | 设备类型，可选参数: 终端: 1, 网关: 2  与上联系统互斥：该处值为 `终端: 1` 时才能填写 `upLinkSystem` 字段 |
-| deviceUsername| 063da5117b8c5ea5a6b3441edbf99d03 | String  | 设备用户名，用于连接emq |
-| gateway| 1 | Integer  | 所属网关，当设备类型 `upLinkSystem` 为 `2 (网关)` 时必须填写网关 ID |
-| gatewayName| 网关1 | String  | 网关名称 |
-| gatewayProtocol| 7 | Integer  | 网关协议 |
-| hardwareVersion| 1.0 | String  | 硬件版本 |
+| blocked| 0 | Integer  | allow access or not, 0: Allow 1: Prohibit |
+| carrier| 1 | Integer  | Carrier, optional parameters: China Telecom: 1, China Mobile: 2, China Unicom: 3, Others: 4 |
+| cloudProtocol| 1 | Integer  | Cloud protocol，optional parameters: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
+| cloudProtocolLabel| MQTT | String  | Cloud protocol，optional parameters: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
+| createAt| 2019-09-14 14:55:20 | Date  | Creation time |
+| createUser| actorcloud | String  | Creation user |
+| description| Smart lock | String  | Description |
+| deviceConsoleIP| 127.0.0.1 | String  | Console IP |
+| deviceConsolePort| 22 | Integer  | Console Port |
+| deviceConsoleUsername| root | String  | Console Username |
+| deviceID| 063da5117b8c5ea5a6b3441edbf99d03 | String  | Device ID |
+| deviceName| mqtt device_1 | String  | Device name |
+| deviceStatus| 0 | Integer  | Device running status, optional parameters: Offline: 0, Online: 1, Sleep: 2 |
+| deviceStatusLabel| Offline | String  | Device running status, optional parameters: Offline: 0, Online: 1, Sleep: 2 |
+| deviceType| 1 | Integer  | Device type, optional parameters: Terminal: 1, Gateway: 2 Mutually exclusive with the uplink system: fill in the `upLinkSystem` field if only the value is `terminal: 1` |
+| deviceUsername| 063da5117b8c5ea5a6b3441edbf99d03 | String  | Device username, used to connect emq |
+| gateway| 1 | Integer  | Gateway , and the ID must be filled in when device type 'upLinkSystem' is 2 (gateway) |
+| gatewayName| Gateway1 | String  | Gateway Name |
+| gatewayProtocol| 7 | Integer  | Gateway Protocol |
+| hardwareVersion| 1.0 | String  | Hardware Version |
 | id| 46 | Integer  | id |
-| lastConnection| 2019-01-01 15:00:00 | Date  | 上次连接时间 |
-| latitude| 25.064918 | Float  | 纬度 |
-| location| 云南省昆明市五华区丰宁街道金鼎科技园 | String  | 位置 |
-| longitude| 102.678732 | Float  | 经度 |
-| loraData| {"appEUI": "1092ej1029e0192u","appKey": "12u1092u0192je1029u0912uu142j4oi","canJoin": 1,"fcntCheck": 0,"region": "EU863-870","type": "otaa"} | JSON  | LoRa 协议设备数据 |
-| lwm2mData| {"IMEI": "4982747892374918","IMSI": "8347984918218298","autoSub": 1} | JSON  | LwM2M 协议设备数据 |
+| lastConnection| 2019-01-01 15:00:00 | Date  | Last connection time |
+| latitude| 25.064918 | Float  | Latitude |
+| location| Jinding Science and Technology Park, Fengning Street, Wuhua District, Kunming, Yunnan | String  | Location |
+| longitude| 102.678732 | Float  | Longitude |
+| loraData| {"appEUI": "1092ej1029e0192u","appKey": "12u1092u0192je1029u0912uu142j4oi","canJoin": 1,"fcntCheck": 0,"region": "EU863-870","type": "otaa"} | JSON  | LoRa Protocol device data |
+| lwm2mData| {"IMEI": "4982747892374918","IMSI": "8347984918218298","autoSub": 1} | JSON  | LwM2M Protocol device data |
 | mac| a4:5e:60:be:ef:3b | String  | MAC |
-| manufacturer| Samsung | String  | 制造商 |
-| metaData | {} | JSON | 元数据 |
-| parentDevice | 2 | Integer | 上联设备 ID， 当上联系统选择 `设备` 时，必须填写|
-| parentDeviceName | 上联设备1 | String | 上联设备名称 |
-| productID| 2ioNzM | String  | 产品 ID |
-| productIntID| 60 | Integer  | 产品 ID |
-| productName| MQTT产品 | String  | 产品名称 |
-| serialNumber| 16OQUWEOI923 | String  | 序列号 |
-| softVersion| 1.0 | String  | 软件版本 |
-| token| 990afd1e9448584abfca5b7154f9bcba | String  | 设备秘钥 |
-| upLinkNetwork| 1 | Integer  | 上联网络，可选参数: 2G: 1, 3G: 2, 4G: 3, Wi-Fi: 4, NB-IoT: 5, BlueTooth: 6, 有线: 7 |
-| upLinkSystem| 1 | Integer  | 上联系统，可选参数: 云: 1, 设备: 2, 网关: 3 |
-| updateAt| 2018-10-12 09:39:52 | Date  | 更新时间 |
+| manufacturer| Samsung | String  | manufacturer |
+| metaData | {} | JSON | Meta Data |
+| parentDevice | 2 | Integer | The uplink device ID, when the uplink system selects `device`, it must be filled in. |
+| parentDeviceName | Uplink device | String | Uplink device name |
+| productID| 2ioNzM | String  | Product  ID |
+| productIntID| 60 | Integer  | Product ID |
+| productName| MQTT Product | String  | Product name |
+| serialNumber| 16OQUWEOI923 | String  | Serial Number |
+| softVersion| 1.0 | String  | Software Version |
+| token| 990afd1e9448584abfca5b7154f9bcba | String  | Device key |
+| upLinkNetwork| 1 | Integer  | UpLink Network，Optional parameter: 2G: 1, 3G: 2, 4G: 3, Wi-Fi: 4, NB-IoT: 5, BlueTooth: 6, wired: 7 |
+| upLinkSystem| 1 | Integer  | Uplink system, optional parameters: Cloud: 1, Device: 2, Gateway: 3 |
+| updateAt| 2018-10-12 09:39:52 | Date  | Update time |
 
-`LoRa` 协议设备字段说明
+`LoRa` Protocol device field description
 
-| 字段名             | 示例值               | 字段类型    |  说明         |
+| Name          | Sample value   | Type |  Description  |
 | --------------- | ----------------- | ------- | ------------------- |
-|type|otaa|String|入网方式|
+|type|otaa|String|Network access method|
 |appSKey||String|appSkey|
-|region|9600|String|发射频率|
+|region|9600|String|Transmitting frequency|
 |fcntCheck|0|Integer|FCnt Check|
 |fcntDown|0|Integer|FCnt Down|
 |fcntUp|0|Integer|FCnt Up|
 |nwkSKey||String|nwkSKey|
-|canJoin|0|Integer|允许加入|
+|canJoin|0|Integer|Allow to join|
 |appEUI| |String|appEUI|
 |appKey| |String|appKey|
 
 
 
-`LwM2M` 协议设备字段说明
+`LwM2M` Protocol device field description
 
-| 字段名             | 示例值               | 字段类型    |  说明         |
+| Name         | Sample value   | Type |  Description  |
 | --------------- | ----------------- | ------- | ------------------- |
 |IMEI|7472938749187241|String|IMEI|
 |IMSI|2384792739482336|String|IMSI|
-|autoSub|1|Integer|是否自动订阅，1: 自动订阅, 0: 不自动订阅|
+|autoSub|1|Integer|Subscribe automatically or not, 1: Subscribe automatically, 0: Not subscribe automatically|
 
-## 设备列表
+## Device list
 
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices?_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -465,9 +467,9 @@ status 200
       "deviceConsolePort": 22, 
       "deviceConsoleUsername": null, 
       "deviceID": "ea78e8af256d57b2a52dcda2f05282cf", 
-      "deviceName": "modubs设备1", 
+      "deviceName": "modubs device 1", 
       "deviceStatus": 0, 
-      "deviceStatusLabel": "离线", 
+      "deviceStatusLabel": "offline", 
       "deviceType": 1,  
       "deviceUsername": "ea78e8af256d57b2a52dcda2f05282cf", 
       "gateway": 94, 
@@ -476,7 +478,7 @@ status 200
       "id": 95, 
       "lastConnection": "2019-01-01 15:00:00",
       "latitude": 39.908692, 
-      "location": "北京市东城区", 
+      "location": "Dongcheng District, Beijing", 
       "longitude": 116.397477, 
       "loraData": {
         "appEUI": "1092ej1029e0192u",
@@ -496,7 +498,7 @@ status 200
       "metaData": {},  
       "productID": "4jMRrz", 
       "productIntID": 36, 
-      "productName": "Modbus产品", 
+      "productName": "Modbus product", 
       "serialNumber": "", 
       "softVersion": "1.0", 
       "tenantID": "CkqVIYpeh", 
@@ -520,38 +522,38 @@ status 200
 
 
 
-## 子设备的创建、编辑
+## Sub-device creation and editing
 
-> 与普通设备的创建、编辑类似，唯一不同的地方是 `parentDevice` 必填，且必须是上联设备的 ID
-
-
+> Similar to the creation and editing of a normal device, the only difference is that `parentDevice` is required and must be the ID of the uplink device.
 
 
 
 
 
-## 子设备删除
-
-> 参考普通设备的删除接口
 
 
+## Sub-device deletion
+
+> Refer to the delete interface of the common device.
 
 
-## 设备事件
 
-#### API 定义
+
+## Device event
+
+#### API 
 
 ```bash
 GET /api/v1/devices/{deviceIntID}/events?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/189/events?_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -564,7 +566,7 @@ status 200
       "IP": null,
       "createAt": "2018-09-30 16:55:31",
       "deviceID": "10c61f1a1f47",
-      "deviceName": "智能锁",
+      "deviceName": "smart lock",
       "id": 7623,
       "msgTime": "2018-09-30 16:55:31",
       "payload": "{ \"x\": 33.2, \"y\": 31.4 }",
@@ -575,7 +577,7 @@ status 200
       "IP": null,
       "createAt": "2018-09-30 16:55:30",
       "deviceID": "10c61f1a1f47",
-      "deviceName": "智能锁",
+      "deviceName": "smart lock",
       "id": 7622,
       "msgTime": "2018-09-30 16:55:30",
       "payload": "{ \"x\": 33.2, \"y\": 31.4 }",
@@ -597,21 +599,21 @@ status 200
 
 
 
-## 查看设备原始数据
+## View device original data
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/original_data?deviceID={deviceID}&metricType=2&time_unit=day
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/original_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=2&time_unit=day
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -621,7 +623,7 @@ status 200
 [
   {
     "dataPointIntID": 1,
-    "dataPointName": "温度",
+    "dataPointName": "temperature",
     "originalData": {
       "time": [],
       "value": []
@@ -629,7 +631,7 @@ status 200
   },
   {
     "dataPointIntID": 2,
-    "dataPointName": "湿度",
+    "dataPointName": "humidity",
     "originalData": {
       "time": [],
       "value": []
@@ -639,13 +641,13 @@ status 200
 ```
 
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name          | Sample value   | Type |  Description        |
 | --------------- | ----------------- | ------- | ------------------- |
-| dataPointIntID| 1 | Integer  | 功能点 ID |
-| dataPointName| "温度" | String  | 功能点名称 |
-| originalData| {"time":[],"value":[]} | Object  | 原始数据 |
+| dataPointIntID| 1 | Integer  | Data point ID |
+| dataPointName| "temperature" | String  | Data point name |
+| originalData| {"time":[],"value":[]} | Object  | Original Data |
 
 
 
@@ -655,21 +657,21 @@ status 200
 
 
 
-## 查看设备指标数据
+## View device metrics data
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/metrics_data?deviceID={deviceID}&metricType=1
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/metrics_data?deviceID=063da5117b8c5ea5a6b3441edbf99d03&metricType=1
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -700,15 +702,15 @@ status 200
 ]
 ```
 
-## 设备控制
+## Device control
 
-#### API 定义
+#### API 
 
 ```bash
 POST /api/v1/device_publish
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 POST /api/v1/device_publish
@@ -723,7 +725,7 @@ POST /api/v1/device_publish
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 201

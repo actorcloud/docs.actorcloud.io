@@ -1,14 +1,14 @@
-# 产品管理
+# Product management
 
-## 创建产品
+## Create product
 
-#### API 定义
+#### API 
 
 ```bash
 POST /api/v1/products
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 POST /api/v1/products
@@ -17,14 +17,14 @@ POST /api/v1/products
 ```json
 {
   "cloudProtocol": 1,
-  "description": "产品描述",
+  "description": "Product description",
   "productName": "LWM2M",
   "productType": 1
 }
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 201
@@ -34,7 +34,7 @@ status 201
 {
   "cloudProtocol": 3,
   "createAt": "2018-09-30 17:02:53",
-  "description": "产品描述",
+  "description": "Product description",
   "gatewayProtocol":null,
   "id": 129,
   "productID": "Bwj2pn",
@@ -45,15 +45,15 @@ status 201
 ```
 
 
-## 编辑产品
+## Edit product
 
-#### API 定义
+#### API 
 
 ```bash
 PUT /api/v1/products/<product_id>
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 PUT /api/v1/products/60
@@ -61,13 +61,13 @@ PUT /api/v1/products/60
 
 ```json
 {
-  "description": "mqtt产品测试1",
-  "productName": "MQTT产品",
+  "description": "mqtt product test 1",
+  "productName": "MQTT product",
 }
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -77,11 +77,11 @@ status 200
 {
   "cloudProtocol": 1,
   "createAt": "2019-09-13 21:26:01",
-  "description": "mqtt产品测试1",
+  "description": "mqtt product test1",
   "gatewayProtocol":null,
   "id": 60,
   "productID": "2ioNzM",
-  "productName": "MQTT产品",
+  "productName": "MQTT product",
   "productType": 1,
   "updateAt": "2018-10-17 11:50:16"
 }
@@ -90,21 +90,21 @@ status 200
 
 
 
-## 删除产品
+## Delete product
 
-#### API 定义
+#### API 
 
 ```bash
 DELETE /api/v1/products?ids=<product_ids>
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 DELETE /api/v1/products?ids=127
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 204
@@ -112,21 +112,21 @@ status 204
 
 
 
-## 产品详情
+## Product details
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/products/<product_id>
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/products/60
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -138,53 +138,53 @@ status 200
   "cloudProtocolLabel": "MQTT",
   "createAt": "2019-09-13 21:26:01",
   "createUser": "actorcloud",
-  "description": "mqtt产品测试1",
+  "description": "mqtt product test 1",
   "deviceCount": 10,
   "gatewayProtocol": null,
   "id": 60,
   "productID": "2ioNzM",
-  "productName": "MQTT产品",
+  "productName": "MQTT product",
   "productType": 1,
-  "productTypeLabel": "设备",
+  "productTypeLabel": "device",
   "updateAt": "2018-10-17 11:50:16"
 }
 ```
 
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name          | Sample value    | Type |  Description        |
 | --------------- | ----------------- | ------- | ------------------- |
-| cloudProtocol| 1 | Integer  | 云端协议，可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
-| cloudProtocolLabel| MQTT | String  | 云端协议，可选参数: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
-| createAt| 2019-09-13 21:26:01 | Date  | 创建时间 |
-| createUser| actorcloud | String  | 创建用户 |
-| description| mqtt产品测试1 | String  | 描述 |
-| deviceCount| 10 | Integer  | 产品下设备数量 |
-| gatewayProtocol| 7 | Integer  | 网关协议（若产品类型为网关） |
+| cloudProtocol| 1 | Integer  | Cloud protocol, optional parameters: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6, Modbus: 7 |
+| cloudProtocolLabel| MQTT | String  | Cloud protocol, optional parameters: MQTT: 1, CoAP: 2, LwM2M: 3, LoRa: 4, HTTP: 5, WebSocket: 6 |
+| createAt| 2019-09-13 21:26:01 | Date  | Creation time |
+| createUser| actorcloud | String  | Creation user |
+| description| mqtt product test 1 | String  | Description |
+| deviceCount| 10 | Integer  | Number of devices under the product |
+| gatewayProtocol| 7 | Integer  | Gateway protocol (if the product type is gateway） |
 | id| 60 | Integer  | id |
-| productID| 2ioNzM | String  | 产品 ID |
-| productName| MQTT产品 | String  | 产品名称 |
-| productType| 1 | String  | 产品类型，设备：1，网关：2 |
-| updateAt| 2018-10-17 11:50:16 | Date  | 更新时间 |
+| productID| 2ioNzM | String  | Product ID |
+| productName| MQTT Product | String  | Product name |
+| productType| 1 | String  | Product type, equipment: 1, gateway: 2 |
+| updateAt| 2018-10-17 11:50:16 | Date  | Update time |
 
 
-## 产品列表
+## Product list
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/products?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/products?_page=1&_limit=10
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -204,9 +204,9 @@ status 200
       "gatewayProtocol": null,
       "id": 7,
       "productID": "05ea56",
-      "productName": "PUT测试",
+      "productName": "PUT test",
       "productType": 1,
-      "productTypeLabel": "设备",
+      "productTypeLabel": "device",
       "updateAt": "2019-06-04 16:55:10"
     },
     {
@@ -220,9 +220,9 @@ status 200
       "gatewayProtocol": null,
       "id": 6,
       "productID": "87b8ee",
-      "productName": "LoRa 产品",
+      "productName": "LoRa product",
       "productType": 1,
-      "productTypeLabel": "设备",
+      "productTypeLabel": "device",
       "updateAt": null
     }
   ],
@@ -234,42 +234,42 @@ status 200
 }
 ```
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| name          | Sample value    | Type |  Description        |
 | --------------- | ----------------- | ------- | ------------------- |
-| dataPointCount| 1 | Integer  | 功能点数量 |
-| dataStreamCount| 1 | Integer  | 数据流数量 |
+| dataPointCount| 1 | Integer  | Number of data point |
+| dataStreamCount| 1 | Integer  | Number of data stream |
 
 
 
 
 
-## 产品下的设备列表
+## List of devices under the product
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices?_page={page}&_limit={pageSize}&productID={productID}
 ```
 
-参数说明
+Parameter Description
 
-| 参数             | 示例               | 参数类型    |  说明                  |
+| Name          | Sample          | Type |  Description        |
 | --------------- | ----------------- | ------- | ------------------- |
-| productID| bff530 | String  | 产品 ID |
+| productID| bff530 | String  | Product ID |
 
-> 返回数据格式与设备列表相同
+> The return data format is the same as the device list
 
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices?_page=1&_limit=10&productID=bff530
 ```
 
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -286,14 +286,14 @@ status 200
       "cloudProtocol": 1,
       "cloudProtocolLabel": "MQTT",
       "createAt": "2019-05-31 11:26:41",
-      "description": "设备描述",
+      "description": "Device description",
       "deviceConsoleIP": null,
       "deviceConsolePort": 22,
       "deviceConsoleUsername": null,
       "deviceID": "e6951abf3639be0b8eff5a5f403e4ee353b6",
-      "deviceName": "全数据设备",
+      "deviceName": "Full data device",
       "deviceStatus": 0,
-      "deviceStatusLabel": "离线",
+      "deviceStatusLabel": "Offline",
       "deviceType": 1,
       "deviceUsername": "e6951abf3639be0b8eff5a5f403e4ee353b6",
       "gateway": null,
@@ -303,7 +303,7 @@ status 200
       ],
       "groupsIndex": [
         {
-          "label": "分组",
+          "label": "group",
           "value": 1
         }
       ],
@@ -311,7 +311,7 @@ status 200
       "id": 22,
       "lastConnection": null,
       "latitude": 39.908692,
-      "location": "北京市东城区东华门街道天安门",
+      "location": "Tiananmen Square, Donghuamen Street, Dongcheng District, Beijing",
       "longitude": 116.397477,
       "loraData": null,
       "lwm2mData": null,
@@ -321,7 +321,7 @@ status 200
       "parentDevice": null,
       "productID": "bff530",
       "productIntID": 1,
-      "productName": "测试产品",
+      "productName": "test product",
       "serialNumber": "28109489328759",
       "softVersion": "1.0",
       "token": "40ee8e9a185e51bbd6b78573a64a1d70198a",
@@ -342,9 +342,9 @@ status 200
       "deviceConsolePort": 22,
       "deviceConsoleUsername": null,
       "deviceID": "dbabdf8ad91ef595bf9e9f35b1eef433",
-      "deviceName": "测试设备1",
+      "deviceName": "test device 1",
       "deviceStatus": 1,
-      "deviceStatusLabel": "在线",
+      "deviceStatusLabel": "online",
       "deviceType": 1,
       "deviceUsername": "dbabdf8ad91ef595bf9e9f35b1eef433",
       "gateway": null,
@@ -354,7 +354,7 @@ status 200
       ],
       "groupsIndex": [
         {
-          "label": "分组",
+          "label": "group",
           "value": 1
         }
       ],
@@ -372,7 +372,7 @@ status 200
       "parentDevice": null,
       "productID": "bff530",
       "productIntID": 1,
-      "productName": "测试产品",
+      "productName": "test product",
       "serialNumber": null,
       "softVersion": null,
       "token": "1974e8f49da9e131ef5fe50bf96f19be",
