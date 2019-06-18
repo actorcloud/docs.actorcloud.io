@@ -1,21 +1,21 @@
-# 设备数据
+# Device data
 
 
-## 实时事件
+## Real-time event
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/<device_id>/last_event
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/11/last_event
 ```
 
-#### 成功响应
+#### Response
 
 ```json
 [
@@ -32,41 +32,41 @@ GET /api/v1/devices/11/last_event
 ]
 ```
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name         | Sample value   | Type |  Description       |
 | --------------- | ----------------- | ------- | ------------------- |
-| data| {'hum': {'time': 1558343626, 'value': 15}, 'temp': {'time': 1558343626, 'value': 59}} | String  | 上报数据 |
-| dataType| event| String  | 数据类型，包含：event，request，response |
-| deviceID| dbabdf8ad91ef595bf9e9f35b1eef433 | String  | 设备 ID |
-| msgTime| 2019-05-20 17:13:46 | Date  | 事件时间|
-| responseResult| {} | JSON  | 响应结果|
-| streamID| 0921uq | String  | 数据流标识|
+| data| {'hum': {'time': 1558343626, 'value': 15}, 'temp': {'time': 1558343626, 'value': 59}} | String  | Reporting data |
+| dataType| event| String  | Data type，including：event，request，response |
+| deviceID| dbabdf8ad91ef595bf9e9f35b1eef433 | String  | Device ID |
+| msgTime| 2019-05-20 17:13:46 | Date  | Event time |
+| responseResult| {} | JSON  | Response result |
+| streamID| 0921uq | String  | Data stream ID |
 | topic| world | String  | topic|
 
 
-## 历史事件
+## Historical event
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/<device_id>/events?_page={page}&_limit={pageSize}&start_time={start_time}&end_time={end_time}
 ```
 
-参数说明
+Parameter Description
 
-| 参数             | 示例值               | 字段类型    |  说明                  |
+| Name     | Sample value   | Type |  Description       |
 | --------------- | ----------------- | ------- | ------------------- |
-| start_time| 2019-05-27+16:26:15 | Date  | 开始时间 |
-| end_time| 2019-05-30+00:00:15 | Date  | 结束时间 |
+| start_time| 2019-05-27+16:26:15 | Date  | start time |
+| end_time| 2019-05-30+00:00:15 | Date  | end time |
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/11/events?_page=1&_limit=10&start_time=2019-05-27+16:26:15&end_time=2019-06-03+16:26:15
 ```
 
-#### 成功响应
+#### Response
 
 ```json
 {
@@ -130,127 +130,127 @@ GET /api/v1/devices/11/events?_page=1&_limit=10&start_time=2019-05-27+16:26:15&e
 }
 ```
 
-## 实时功能数据
+## Real-time functional data
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/<device_id>/last_capability_data
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/11/last_capability_data
 ```
 
-#### 成功响应
+#### Response
 
 ```json
 [
   {
     "dataPointID": "hum",
-    "dataPointName": "湿度",
+    "dataPointName": "humidity",
     "msgTime": "2019-05-20 17:13:46",
     "streamID": "qwerty",
-    "streamName": "温湿度数据流",
+    "streamName": "Temperature and humidity data stream",
     "value": 15
   },
   {
     "dataPointID": "temp",
-    "dataPointName": "温度",
+    "dataPointName": "Temperature",
     "msgTime": "2019-05-20 17:13:46",
     "streamID": "qwerty",
-    "streamName": "温湿度数据流",
+    "streamName": "Temperature and humidity data stream",
     "value": 59
   }
 ]
 ```
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name         | Sample value   | Type |  Description       |
 | --------------- | ----------------- | ------- | ------------------- |
-| dataPointID| hum | String  | 功能点标识 |
-| dataPointName| 温度| String  | 功能点名称 |
-| msgTime| 2019-05-20 17:13:46 | Date  | 事件时间|
-| streamID| 0921uq | String  |数据流标识|
-| streamName| 温湿度数据流 | String  | 数据流名称|
+| dataPointID| hum | String  | Data point ID |
+| dataPointName| Temperatur | String  | Data point ID |
+| msgTime| 2019-05-20 17:13:46 | Date  | Event time |
+| streamID| 0921uq | String  |Data stream ID|
+| streamName| Temperature and humidity data stream | String  | Data stream name |
 | value| 59 | String/Integer/Float/Boolean  | 59|
 
 
-## 历史功能数据
+## Historical function data
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/<device_id>/capability_data?_page={page}&_limit={pageSize}&start_time={start_time}&end_time={end_time}
 ```
 
-参数说明
+Field description
 
-| 参数             | 示例值               | 字段类型    |  说明                  |
+|              |                |     |                    |
 | --------------- | ----------------- | ------- | ------------------- |
-| start_time| 2019-05-27+16:26:15 | Date  | 开始时间 |
-| end_time| 2019-05-30+00:00:15 | Date  | 结束时间 |
+| start_time| 2019-05-27+16:26:15 | Date  | start_time |
+| end_time| 2019-05-30+00:00:15 | Date  | end_time |
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/11/capability_data?_page=1&_limit=10&start_time=2019-05-27+16:26:15&end_time=2019-06-03+16:26:15
 ```
 
-#### 成功响应
+#### Response
 
 ```json
 {
   "items": [
     {
       "dataPointID": "hum",
-      "dataPointName": "湿度",
+      "dataPointName": "Humidity",
       "msgTime": "2019-05-20 17:13:46",
       "streamID": "qwerty",
-      "streamName": "温湿度数据流",
+      "streamName": "Temperature and humidity data stream",
       "value": 15
     },
     {
       "dataPointID": "temp",
-      "dataPointName": "温度",
+      "dataPointName": "Temperature",
       "msgTime": "2019-05-20 17:13:46",
       "streamID": "qwerty",
-      "streamName": "温湿度数据流",
+      "streamName": "Temperature and humidity data stream",
       "value": 59
     },
     {
       "dataPointID": "hum",
-      "dataPointName": "湿度",
+      "dataPointName": "Humidity",
       "msgTime": "2019-05-20 17:13:43",
       "streamID": "qwerty",
-      "streamName": "温湿度数据流",
+      "streamName": "Temperature and humidity data stream",
       "value": 52
     },
     {
       "dataPointID": "temp",
-      "dataPointName": "温度",
+      "dataPointName": "Temperature",
       "msgTime": "2019-05-20 17:13:43",
       "streamID": "qwerty",
-      "streamName": "温湿度数据流",
+      "streamName": "Temperature and humidity data stream",
       "value": 89
     },
     {
       "dataPointID": "hum",
-      "dataPointName": "湿度",
+      "dataPointName": "Humidity",
       "msgTime": "2019-05-20 17:13:40",
       "streamID": "qwerty",
-      "streamName": "温湿度数据流",
+      "streamName": "Temperature and humidity data stream",
       "value": 34
     },
     {
       "dataPointID": "temp",
-      "dataPointName": "温度",
+      "dataPointName": "Temperature",
       "msgTime": "2019-05-20 17:13:40",
       "streamID": "qwerty",
-      "streamName": "温湿度数据流",
+      "streamName": "Temperature and humidity data stream",
       "value": 84
     }
   ],
@@ -263,21 +263,21 @@ GET /api/v1/devices/11/capability_data?_page=1&_limit=10&start_time=2019-05-27+1
 ```
 
 
-## 实时图表数据
+## Real-time chart data
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/<device_id>/last_data_charts
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/11/last_data_charts
 ```
 
-#### 成功响应
+#### Response
 
 ```json
 [
@@ -286,7 +286,7 @@ GET /api/v1/devices/11/last_data_charts
       "time": "2019-05-20 17:13:46",
       "value": 59
     },
-    "chartName": "温湿度数据流/温度",
+    "chartName": "Temperature and humidity data stream/Temperature",
     "dataPointID": "temp",
     "streamID": "qwerty"
   },
@@ -295,45 +295,45 @@ GET /api/v1/devices/11/last_data_charts
       "time": "2019-05-20 17:13:46",
       "value": 15
     },
-    "chartName": "温湿度数据流/湿度",
+    "chartName": "Temperature and humidity data stream/Humidity",
     "dataPointID": "hum",
     "streamID": "qwerty"
   }
 ]
 ```
 
-#### 字段说明
+#### Field description
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+| Name         | Sample value | Type | Description                          |
 | --------------- | ----------------- | ------- | ------------------- |
-| chartData.time| 2019-05-20 17:01:01 | Date  | 图表数据，时间 |
-| chartData.value| 90 | String/Integer/Float/Boolean  | 图表数据，时间对应的值 |
-| chartName| 温湿度数据流/湿度| String  | 图表名称 |
-| dataPointID| hum | String  |功能点标识|
-| streamID| 0921uq | String  |数据流标识|
+| chartData.time| 2019-05-20 17:01:01 | Date  | chart data, time |
+| chartData.value| 90 | String/Integer/Float/Boolean  | Chart data, time corresponding value |
+| chartName| Temperature and humidity data stream/Humidity | String  | chart name |
+| dataPointID| hum | String  |Data point ID|
+| streamID| 0921uq | String  |Data stream ID|
 
 
-## 历史图表数据
+## Historical chart data
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/<device_id>/charts?timeUnit={time_unit}
 ```
 
-参数说明
 
-| 参数     | 示例 | 类型   | 说明                               |
-| -------- | ---- | ------ | ---------------------------------- |
-| timeUnit | 5m   | String | 时间单位，支持：5m、1h、6h、1d、1w |
 
-#### 请求示例
+|          |      |        |                                        |
+| -------- | ---- | ------ | -------------------------------------- |
+| timeUnit | 5m   | String | Time unit, support：5m、1h、6h、1d、1w |
+
+#### 
 
 ```bash
 GET /api/v1/devices/11/charts?timeUnit=1w
 ```
 
-#### 成功响应
+#### 
 
 ```json
 [
@@ -364,7 +364,7 @@ GET /api/v1/devices/11/charts?timeUnit=1w
         47
       ]
     },
-    "chartName": "温湿度数据流/温度",
+    "chartName": "Temperature and humidity data stream/Temperature",
     "dataPointID": "temp",
     "streamID": "qwerty"
   },
@@ -395,67 +395,67 @@ GET /api/v1/devices/11/charts?timeUnit=1w
         42
       ]
     },
-    "chartName": "温湿度数据流/湿度",
+    "chartName": "Temperature and humidity data stream/Humidity",
     "dataPointID": "hum",
     "streamID": "qwerty"
   }
 ]
 ```
 
-#### 字段说明
+#### 
 
-| 字段名             | 示例值               | 字段类型    |  说明                  |
+|              |                |     |                    |
 | --------------- | ----------------- | ------- | ------------------- |
-| chartData.time| ["2019-05-20 17:01:01","2019-05-20 17:01:04"] | List  | 图表数据，时间 |
-| chartData.value| [90,48] | List  | 图表数据，时间对应的值 |
+| chartData.time| ["2019-05-20 17:01:01","2019-05-20 17:01:04"] | List  | Chart data, value of time |
+| chartData.value| [90,48] | List  | Chart data, value of time |
 
 
 
-## 网关下的设备数据
+## Device data under the gateway
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/device_capability_data?gatewayIntID={gateway_id}
 ```
 
-参数说明
 
-| 参数         | 示例 | 类型    | 说明    |
-| ------------ | ---- | ------- | ------- |
-| gatewayIntID | 12   | Integer | 网关 id |
 
-#### 请求示例
+|              |      | T       |           |
+| ------------ | ---- | ------- | --------- |
+| gatewayIntID | 12   | Integer | ateway id |
+
+#### 
 
 ```bash
 GET /api/v1/device_capability_data?gatewayIntID=12
 ```
 
-#### 成功响应
+#### 
 
 ```json
 {
   "items": [
     {
       "dataPointID": "hum",
-      "dataPointName": "湿度",
+      "dataPointName": "Humidity",
       "deviceID": "4e9d4e4fcce18fcdcd85ea46aee4115e",
       "deviceIntID": 12,
-      "deviceName": "网关设备",
+      "deviceName": "Gateway device",
       "msgTime": "2019-01-28 07:47:32",
       "streamID": "qwerty",
-      "streamName": "温湿度数据流",
+      "streamName": "Temperature and humidity data stream",
       "value": 80.0
     },
     {
       "dataPointID": "temp",
-      "dataPointName": "温度",
+      "dataPointName": "Temperature",
       "deviceID": "4e9d4e4fcce18fcdcd85ea46aee4115e",
       "deviceIntID": 12,
-      "deviceName": "网关设备",
+      "deviceName": "Gateway device",
       "msgTime": "2019-01-28 07:47:32",
       "streamID": "qwerty",
-      "streamName": "温湿度数据流",
+      "streamName": "Temperature and humidity data stream",
       "value": 37.0
     }
   ],

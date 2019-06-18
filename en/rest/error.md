@@ -1,25 +1,25 @@
-# 错误处理
+# Error handling
 
-### 错误定义
+### Error definition
 
-HTTP Status Code = 20X 可视为操作成功，状态码大于 300 时错误信息会在响应体里返回。
+HTTP Status Code = 20X can be considered as successful operation. When the status code is greater than 300, the error message will be returned in the response body.。
 
-- **ActorCloud** REST API 常见 HTTP 响应码：
+- **ActorCloud** REST API Common HTTP response code:
 
-| 响应码     | 返回信息  | 说明 |
+| Response code | Returned messages | Description |
 | ------ | ----------- | ------- |
-| 200 | 响应资源 | 响应成功 |
-| 201 | -- | 操作成功 |
-| 204 | -- | 删除成功 |
-| 401 | 错误提示 | 认证失败 |
-| 403 | 当前权限信息 | 无操作权限 |
-| 404 | 错误提示 | URL 或资源不存在 |
-| 422 | 错误字段 | 表单字段错误 |
+| 200 | Response resource | Successful response |
+| 201 | -- | Successful operation |
+| 204 | -- | Successfully deletion |
+| 401 | Error message | Authentication failed |
+| 403 | Current permission information | No operation permission |
+| 404 | Error message | URL or resource does not exist |
+| 422 | Error field | Form field error |
 
 
-### 错误信息
+### Error message
 
-请求错误时 REST API 返回 JSON 格式错误信息：
+When the request is sent incorrectly, the REST API returns error information in JSON format:
 
 ```json
 {
@@ -31,17 +31,17 @@ HTTP Status Code = 20X 可视为操作成功，状态码大于 300 时错误信�
 }
 ```
 
-结构定义如下：
+The structure is defined as follows:
 
-- message： 错误的语义化说明；
-- errors： 错误信息，可为空。包含发生错误的字段以及对应的错误信息；
-- errorCode：错误码，用于区分错误类型。
+- message: Semantic description of errors；
+- errors: Error message which can be empty , and contains the field in which the error occurred and the corresponding error message； 
+- errorCode:Error code to distinguish the type of error.
 
 
 
-### 常见的错误码对照表
+### Common error code comparison table
 
-| 错误码     | 中文含义  | 英文含义 |
+| Error code | Chinese meaning | English Meaning |
 | ------ | ----------- | ------- |
 | BAD_REQUEST | 错误请求 | Bad Request |
 | REFERENCED_ERROR | 引用错误 | Referenced Error |

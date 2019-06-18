@@ -1,20 +1,20 @@
-# 设备日志
+# Device log
 
-## 连接日志
+## Connection log
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/<device_id>/connect_logs?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/1/connect_logs?_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -26,7 +26,7 @@ status 200
     {
       "IP": null,
       "connectStatus": 1,
-      "connectStatusLabel": "上线",
+      "connectStatusLabel": "Online",
       "deviceID": "dbabdf8ad91ef595bf9e9f35b1eef433",
       "keepAlive": null,
       "msgTime": "2019-06-03 14:51:03"
@@ -34,7 +34,7 @@ status 200
     {
       "IP": null,
       "connectStatus": 1,
-      "connectStatusLabel": "上线",
+      "connectStatusLabel": "Online",
       "deviceID": "dbabdf8ad91ef595bf9e9f35b1eef433",
       "keepAlive": null,
       "msgTime": "2019-06-03 14:47:39"
@@ -42,7 +42,7 @@ status 200
     {
       "IP": null,
       "connectStatus": 1,
-      "connectStatusLabel": "上线",
+      "connectStatusLabel": "Online",
       "deviceID": "dbabdf8ad91ef595bf9e9f35b1eef433",
       "keepAlive": null,
       "msgTime": "2019-06-03 14:45:59"
@@ -50,7 +50,7 @@ status 200
     {
       "IP": null,
       "connectStatus": 1,
-      "connectStatusLabel": "上线",
+      "connectStatusLabel": "Online",
       "deviceID": "dbabdf8ad91ef595bf9e9f35b1eef433",
       "keepAlive": null,
       "msgTime": "2019-06-03 14:33:46"
@@ -58,7 +58,7 @@ status 200
     {
       "IP": null,
       "connectStatus": 1,
-      "connectStatusLabel": "上线",
+      "connectStatusLabel": "Online",
       "deviceID": "dbabdf8ad91ef595bf9e9f35b1eef433",
       "keepAlive": null,
       "msgTime": "2019-06-03 13:50:55"
@@ -72,35 +72,35 @@ status 200
 }
 ```
 
-#### 字段说明
+#### Field description
 
-| 字段名    | 示例     | 类型     |  说明  |
+| Name | Sample value | Type |  Description  |
 | ---------| ------- | ------- | -------|
-| IP | 127.0.0.1 | String | 连接 IP |
-| connectStatus | 1 | Integer | 连接状态，0：下线，1：上线，2：认证失败 |
-| connectStatusLabel | 上线 | String | 连接状态，0：下线，1：上线，2：认证失败 |
-| deviceID | dbabdf8ad91ef595bf9e9f35b1eef433 | String | 设备 ID |
-| keepAlive | 60 | Integer | 心跳时间 |
-| msgTime | 2019-06-03 13:50:55 | Date | 连接时间 |
+| IP | 127.0.0.1 | String | Connection IP |
+| connectStatus | 1 | Integer | Connection status, 0: offline, 1: online, 2: authentication failed |
+| connectStatusLabel | Online | String | Connection status, 0: offline, 1: online, 2: authentication failed |
+| deviceID | dbabdf8ad91ef595bf9e9f35b1eef433 | String | Device  ID |
+| keepAlive | 60 | Integer | Heartbeat time |
+| msgTime | 2019-06-03 13:50:55 | Date | Connection time |
 
 
 
-## 控制日志
+## Control log
 
 
-#### API 定义
+#### API 
 
 ```bash
 GET /api/v1/devices/<device_id>/publish_logs?_page={page}&_limit={pageSize}
 ```
 
-#### 请求示例
+#### Example
 
 ```bash
 GET /api/v1/devices/1/publish_logs?_page=1&_limit=10
 ```
 
-#### 成功响应
+#### Response
 
 ```bash
 status 200
@@ -114,7 +114,7 @@ status 200
       "msgTime": "2019-06-03 07:03:39",
       "payload": "{\"message\": \"Hello\"}",
       "publishStatus": 1,
-      "publishStatusLabel": "已下发",
+      "publishStatusLabel": "published",
       "streamID": null,
       "topic": "inbox"
     },
@@ -123,7 +123,7 @@ status 200
       "msgTime": "2019-06-03 06:57:31",
       "payload": "{\"message\": \"Jack\"}",
       "publishStatus": 1,
-      "publishStatusLabel": "已下发",
+      "publishStatusLabel": "published",
       "streamID": null,
       "topic": "inbox"
     },
@@ -132,7 +132,7 @@ status 200
       "msgTime": "2019-06-03 06:55:24",
       "payload": "{\"message\": \"Tom\"}",
       "publishStatus": 1,
-      "publishStatusLabel": "已下发",
+      "publishStatusLabel": "published",
       "streamID": null,
       "topic": "inbox"
     },
@@ -141,7 +141,7 @@ status 200
       "msgTime": "2019-06-03 06:54:19",
       "payload": "{\"message\": \"Hello\"}",
       "publishStatus": 0,
-      "publishStatusLabel": "下发失败",
+      "publishStatusLabel": "publish failed",
       "streamID": null,
       "topic": "inbox"
     },
@@ -150,7 +150,7 @@ status 200
       "msgTime": "2019-05-31 07:13:09",
       "payload": "{\"message\": \"Hello\"}",
       "publishStatus": 1,
-      "publishStatusLabel": "已下发",
+      "publishStatusLabel": "publish",
       "streamID": null,
       "topic": "inbox"
     }
@@ -164,14 +164,14 @@ status 200
 ```
 
 
-#### 字段说明
+#### Field description
 
-| 字段名    | 示例     | 类型     |  说明  |
+| Name | Sample value | Type |  Description  |
 | ---------| ------- | ------- | -------|
-| deviceID | dbabdf8ad91ef595bf9e9f35b1eef433 | String | 设备 ID |
-| msgTime | 2019-06-03 13:50:55 | Date | 下发时间 |
-| payload | {\"message\": \"Hello\"} | String | 连接 IP |
-| publishtStatus | 1 | Integer | 下发状态，0：下发失败，1：已下发，2：已到达，3：定时下发 |
-| publishStatusLabel | 上线 | String | 下发状态，0：下发失败，1：已下发，2：已到达，3：定时下发 |
-| streamID | qwe29j | String | 数据流标识 |
+| deviceID | dbabdf8ad91ef595bf9e9f35b1eef433 | String | Device ID |
+| msgTime | 2019-06-03 13:50:55 | Date | Publish time |
+| payload | {\"message\": \"Hello\"} | String | Connection IP |
+| publishtStatus | 1 | Integer | Publish status, 0: Publish failed, 1: published, 2: Arrived, 3: Publish at regular time |
+| publishStatusLabel | Online | String | Publish status, 0: Publish failed, 1: published, 2: Arrived, 3: Publish at regular time |
+| streamID | qwe29j | String | Data stream ID |
 | topic | inbox | String | topic |

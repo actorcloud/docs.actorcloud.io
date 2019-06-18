@@ -1,55 +1,54 @@
-# 认证与基础查询
+# Authentication and basic query
 
-使用 REST API 之前需要创建一个[应用](../application/application.md)，使用应用 ID 与应用密钥作为调用 API。
+Before using the REST API, you need to create an [application](../application/application.md), and its ID and  key can be used to call API.
 
 
-### URL 地址
+### URL Address
 
-- REST API 访问 URL 地址：
+- REST API access URL address:
 ```bash
 https://console.actorcloud.io/api/v1/
 ```
 
-### 认证方式
+### Authentication Method
 
-- 基于 Basic Auth 认证，用户名为应用 ID，密码为应用密钥：
+- Based on Basic Auth authentication, the username is the application ID and the password is the application key:
 ```bash
 curl -v --basic -u <AppID>:<AppSecret> -k https://console.actorcloud.io/api/v1/overview/current_count
 ```
 
-### 消息体格式
+### Message body format
 
-- 在 HTTP 请求头中定义以下两个值，并在 POST PUT 请求时发送 JSON 格式文本数据。
+- Define the following two values in the HTTP request header and send JSON formatted text data when the POST PUT request is made.
 ```bash
 Content-Type: 'application/json'
 Accept: 'application/json'
 ```
 
-### 响应
-- HTTP Status Code = 20X 可视为操作成功，状态码大于 300 时错误信息会在响应体里返回。
+### Response
+- HTTP Status Code = 20X can be considered as successful operation. When the status code is greater than 300, the error message will be returned in the response body.
 
-错误信息参考[错误处理](error.md)
+Error message refers[error handling](error.md)
 
 
-### 资源列表
+### Resource list
 
-- 在资源列表页中，可以使用 URL 参数进行分页查询。
+- In the resource list page,  the URL parameter can be used for paged queries.
 
-请求示例：
+Example:
 
 ```bash
 GET /api/v1/products?_page=1&_limit=10
 ```
 
-字段说明：
+Field description:
 
-| 字段     | 类型   | 说明          |
+| Name  | Type | Description |
 | ------ | --- | ----------- |
-| _page  | Integer | 当前页码，默认为 1   |
-| _limit | Integer | 分页大小，默认为 10 |
+| _page  | Integer | Current page number, default is 1 |
+| _limit | Integer | Page size, default is 10 |
 
-
-**成功响应：**
+**Response:**
 
 ```json
 {
@@ -64,13 +63,13 @@ GET /api/v1/products?_page=1&_limit=10
       ],
       "id": 18,
       "productID": "fSPvWw",
-      "productName": "默认产品",
+      "productName": "Default product",
       "updateAt": null,
       "userIntID": 6
     },
     {
       "createAt": "2018-03-23 11:38:28",
-      "description": "环境监测系列",
+      "description": "Environmental monitoring series",
       "devices": [
         {
           "id": 427
@@ -84,7 +83,7 @@ GET /api/v1/products?_page=1&_limit=10
       ],
       "id": 11,
       "productID": "kGBizO",
-      "productName": "环境监测",
+      "productName": "Environmental monitoring ",
       "updateAt": null,
       "userIntID": 6
     }
@@ -96,30 +95,30 @@ GET /api/v1/products?_page=1&_limit=10
   }
 }
 ```
-资源列表响应信息中 **items** 为资源列表数据，**meta** 为分页信息。
+In the response information of resource list, **items** is the resource list data, and **meta** is the paging information.
 
-meta 定义：
+meta definition:
 
-| 字段     | 类型   | 说明          |
+| Name | Type | Description |
 | ------ | --- | ----------- |
-| count  | Integer | 符合条件总数   |
-| limit | Integer | 分页大小 |
-| page | Integer | 当前页码 |
+| count  | Integer | Total number of meeting the conditions |
+| limit | Integer | Paging Size |
+| page | Integer | Current page |
 
 
-### 查询参数
-某些资源中，可以使用 URL 参数进行资源过滤，查询格式：**字段名_查询指令=查询值**。
+### Query parameter
+In some resources, the URL parameter can be used to filter resources. Query format: **Field name_Query command=Query value**.
 
-请求示例：
+Example:
 
 ```bash
-GET /api/v1/products?_page=1&_limit=10&productName_like=共享单车
+GET /api/v1/products?_page=1&_limit=10&productName_like=Shared bicycle
 ```
-常见查询指令：
+Common query instructions:
 
-| 指令     | 类型   | 说明          |
+| Instruction | Type | Description |
 | ------ | --- | ----------- |
-| *_like  | -- | 模糊查询   |
+| *_like  | -- | Fuzzy query |
 
-> 具体查询参数参见各资源下文档。
+> For specific query parameters, see the documentation under each resource.
 
