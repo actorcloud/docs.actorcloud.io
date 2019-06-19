@@ -2,7 +2,7 @@
 
 ## 部署前准备
 
-##### 安装 [Docker Engine](https://docs.docker.com/engine/installation/)
+#### 安装 [Docker Engine](https://docs.docker.com/engine/installation/)
 
 如使用 Linux，则可以通过运行[安装脚本](https://get.docker.com/)来安装 Docker Engine
 
@@ -10,7 +10,7 @@
 $  curl -fsSL https://get.docker.com | sh
 ```
 
-##### 创建数据卷
+#### 创建数据卷
 
 用户存放 ActorCloud 数据:
 
@@ -22,17 +22,17 @@ mkdir -p /opt/actorcloud/server /opt/actorcloud/rule-engine
 
 ### 第三方组件部署
 
-##### Emqx 部署
+#### Emqx 部署
 
 
 ### ActorCloud Rule Engine 部署
 
-##### 获取 ActorCloud Rule Engine 镜像
+#### 获取 ActorCloud Rule Engine 镜像
 ```bash
 
 ```
 
-##### 运行 ActorCloud Rule Engine 容器
+#### 运行 ActorCloud Rule Engine 容器
 ActorCloud Server 容器运行命令需要在 `/opt/actorcloud/rule-engine` 下运行
 ```bash
 
@@ -40,13 +40,13 @@ ActorCloud Server 容器运行命令需要在 `/opt/actorcloud/rule-engine` 下�
 
 ### ActorCloud Server 部署
 
-##### 获取 ActorCloud Server 镜像
+#### 获取 ActorCloud Server 镜像
 
 ```bash
 $ docker pull actorcloud-server:latest
 ```
 
-##### 运行 ActorCloud Server 容器
+#### 运行 ActorCloud Server 容器
 
 ActorCloud Server 容器部署命令需要在 `/opt/actorcloud/server` 下运行
 
@@ -78,7 +78,7 @@ $ docker run -it -d --restart=always --name actorcloud-server \
 
 ### ActorCloud Server 配置
 
-##### config.yml 修改
+#### config.yml 修改
 ```bash
 $ vi /opt/actorcloud/server/instance/config.yml
 ```
@@ -110,7 +110,7 @@ $ vi /opt/actorcloud/server/instance/config.yml
 * stream: pulsar配置信息
 
 
-##### Nginx 配置文件修改
+#### Nginx 配置文件修改
 
 * Nginx 配置文件修改参考 [Full Example Configuration](https://www.nginx.com/resources/wiki/start/topics/examples/full/)
 
@@ -127,20 +127,20 @@ $ vi /opt/actorcloud/server/instance/config.yml
 ### ActorCloud Server 运行
 
 ActorCloud Server 采用 [Supervisor](http://supervisord.org/) 运行
-##### 后端服务初始化
+#### 后端服务初始化
 
    ```bash
 $ docker exec -it actorcloud flask deploy
    ```
 
-##### Supervisor 配置更新
+#### Supervisor 配置更新
 
    ```bash
 $ docker exec -it actorcloud-server cp /opt/actorcloud/server/config/actorcloud_supervisord.conf /etc/supervisor/conf.d/
 $ docker exec -it actorcloud-server supervisorctl update
    ```
 
-##### 查看 ActorCloud 运行情况
+#### 查看 ActorCloud 运行情况
 
    ```bash
 $ docker exec -it actorcloud-server supervisorctl status

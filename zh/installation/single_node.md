@@ -7,7 +7,7 @@
 
 ### 安装前准备
 
-##### 基础环境配置
+#### 基础环境配置
 ```bash
 $ sudo apt-get update
 
@@ -20,7 +20,7 @@ $ DEBIAN_FRONTEND=noninteractive sudo apt-get install -y locales \
 $ sudo apt-get -y install wget gcc curl
 ```
 
-##### 获取 ActorCloud 安装包
+#### 获取 ActorCloud 安装包
 ```bash
 $ wget https://github.com/actorcloud/ActorCloud/releases/download/v3.0.0-rc.2/ActorCloud-v3.0.0-rc.2.zip
 
@@ -33,7 +33,7 @@ $ wget https://github.com/actorcloud/ActorCloud/releases/download/v3.0.0-rc.2/Ac
 
 ### ActorCloud Rule Engine 安装
 
-##### 基础环境安装
+#### 基础环境安装
 
 ```bash
 $ sudo apt update
@@ -41,7 +41,7 @@ $ sudo apt install openjdk-8-jdk
 $ sudo apt install maven
 ```
 
-##### Pulsar 安装
+#### Pulsar 安装
 Pulsar 可通过下载二进制安装包进行安装。
 1. 创建 `stream` 目录。
     ```bash
@@ -67,7 +67,7 @@ Pulsar 可通过下载二进制安装包进行安装。
     $ bin/pulsar-daemon start standalone
     ```
 
-##### 编译打包 Rule Engine
+#### 编译打包 Rule Engine
 编译打包需在 `rule-engine/` 路径下执行
 ```bash
 mvn package
@@ -77,7 +77,7 @@ mvn package
 
 ### ActorCloud Server 安装
 
-##### 基础环境安装
+#### 基础环境安装
 
 1. Python3.6 安装
 
@@ -115,7 +115,7 @@ mvn package
    $ sudo apt-get install nginx
    ```
 
-##### ActorCloud Server 安装
+#### ActorCloud Server 安装
 
 安装需要在 ActorCloud 项目 `server/` 路径下执行
 ```bash
@@ -136,7 +136,7 @@ $ pipenv install --skip-lock
 
 配置文件在 `rule-engine/target/x.y.z/` 路径下
 
-##### actorcloud-db-sink-config.yml 修改
+#### actorcloud-db-sink-config.yml
 数据库连接信息
 ```YAML
 configs:
@@ -154,7 +154,7 @@ configs:
     - streamID
     - responseResult
 ```
-##### mail-sink-config.yml 修改
+#### mail-sink-config.yml
 邮件服务器信息
 ```YAML
 configs:
@@ -166,7 +166,7 @@ configs:
   encryptionType: STARTTLS  # OR SSL
   debug: false
 ```
-##### publish-sink-config.yml 修改
+#### publish-sink-config.yml
 `EMQX` 地址和 `Application` 信息
 ```YAML
 configs:
@@ -174,19 +174,25 @@ configs:
   username: actorcloud  # EMQX Application:AppID
   password: Mjg3MjcxMjk4ODkzNjA3NzMzMzc3OTY0MTk0NTI2NjU4NTG  # EMQX Application:AppSecret
 ```
-##### Broker 配置
+#### emqx-config.yml
+EMQX broker 信息
+```YAML
+configs:
+  brokerUrl: tcp://127.0.0.1:11883
+  inputTopics: $share/group1/#
+  ruleId: __emqx_all
+```
 * EMQX 和 Pulsar 在同一服务器，使用默认配置，不用修改
-* 不在同一服务器，修改为 EMQX 内网地址
-  该地址对应 EMQX 的 `emqx.conf` 中的 `listener.tcp.internal = 127.0.0.1:11883` 配置，也需要同步修改。同时，为了能保证订阅到系统主题，需要修改 EMQX 的 `acl.conf`，将下面这行注释：
-    ```config
-    {deny, all, subscribe, ["$SYS/#", {eq, "#"}]}.
-    ```
-
-##### stream-admin 配置
+* 不在同一服务器，修改为 EMQX 内网地址。
+  该地址对应 EMQX 的 emqx.conf 中的 listener.tcp.internal = 127.0.0.1:11883 配置，也需要同步修改。
+  同时，为了能保证订阅到系统主题，需要修改 EMQX 的 acl.conf，将下面这行注释或删除
+  ```config
+  {deny, all, subscribe, ["$SYS/#", {eq, "#"}]}.
+  ```
+#### stream-admin 配置
 ```conf
 Tenant="public"
 Namespace="default"
-Broker="tcp://127.0.0.1:11883"
 Parallelism=1
 ```
 
@@ -194,8 +200,8 @@ Parallelism=1
 
 配置需要在 ActorCloud 项目`server/`路径下执行
 
-##### config.yml 修改
-
+#### config.yml
+ActorCloud Server 配置信息
 ```bash
 $ cp server/config/config.yml server/instance/config.yml
 $ vi server/instance/config.yml
@@ -216,7 +222,7 @@ $ vi server/instance/config.yml
 * mail: 邮件信息配置
 * stream: pulsar配置信息
 
-##### Nginx 配置修改
+#### Nginx 配置修改
 
 若使用 ``` apt-get ``` 安装 Nginx 则目录结构如下
 
@@ -248,11 +254,9 @@ $ vi server/instance/config.yml
 ## 运行
 
 ### ActorCloud Rule Engine 运行
-##### Pulsar 启动
+#### 确保 Pulsar 已启动
 
-* 参考 [Pulsar 运行](https://pulsar.apache.org/docs/zh-CN/deploy-bare-metal/)
-
-##### Rule Engine 启动
+#### Rule Engine 启动
 ```bash
 $ cp -r rule-engine/target/x.y.z /opt/stream/
 $ cd /opt/stream/x.y.z
@@ -262,26 +266,26 @@ $ sudo ./stream-admin create all
 ### ActorCloud Server 运行
 
 ActorCloud Server 采用 [Supervisor](http://supervisord.org/) 运行
-##### 后端服务初始化
+#### 后端服务初始化
 ```bash
 $ pipenv run flask deploy
 ```
 
-##### Supervisor 配置更新
+#### Supervisor 配置更新
 
 ```bash
 $ sudo cp server/config/actorcloud_supervisord.conf /etc/supervisor/conf.d/
 sudo supervisorctl update
 ```
 
-##### 查看 ActorCloud Server 运行情况
+#### 查看 ActorCloud Server 运行情况
 
 ```bash
 $ sudo supervisorctl status
 ```
 ![actorcloud_run_status](_assets/server_run_status.png)
 
-##### 运行，暂停，重启 ActorCloud Server
+#### 运行，暂停，重启 ActorCloud Server
 
 ```bash
 # 运行
