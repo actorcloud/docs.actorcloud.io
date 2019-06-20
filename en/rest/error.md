@@ -2,7 +2,7 @@
 
 ### Error definition
 
-HTTP Status Code = 20X can be considered as successful operation. When the status code is greater than 300, the error message will be returned in the response body.。
+HTTP Status Code = 20X can be considered as successful operation. When the status code is greater than 300, the error message will be returned in the response body.
 
 - **ActorCloud** REST API Common HTTP response code:
 
@@ -41,7 +41,7 @@ The structure is defined as follows:
 
 ### Common error code comparison table
 
-| Error code | Chinese meaning | English Meaning |
+| Error code | Chinese meaning | English meaning |
 | ------ | ----------- | ------- |
 | BAD_REQUEST | 错误请求 | Bad Request |
 | REFERENCED_ERROR | 引用错误 | Referenced Error |

@@ -102,7 +102,7 @@ meta definition:
 | Name | Type | Description |
 | ------ | --- | ----------- |
 | count  | Integer | Total number of meeting the conditions |
-| limit | Integer | Paging Size |
+| limit | Integer | Paging size |
 | page | Integer | Current page |
 
 
