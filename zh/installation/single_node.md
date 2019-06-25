@@ -190,13 +190,13 @@ configs:
 * 不在同一服务器，修改为 EMQX 内网地址。
   该地址对应 EMQX 的 emqx.conf 中的 listener.tcp.internal = 127.0.0.1:11883 配置，也需要同步修改。
   同时，为了能保证订阅到系统主题，需要修改 EMQX 的 acl.conf，将下面这行注释或删除
-  ```config
+  ```bash
   {deny, all, subscribe, ["$SYS/#", {eq, "#"}]}.
   ```
   
 #### stream-admin
 
-```config
+```bash
 Tenant="public"
 Namespace="default"
 Parallelism=1

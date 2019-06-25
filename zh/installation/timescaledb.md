@@ -56,13 +56,13 @@ pg_hba.conf  存放路径为`/etc/postgresql/10/main/pg_hba.conf`
 
 * 创建数据库
 
-  ```
+  ```sql
   CREATE DATABASE actorcloud;
   ```
 
 * 创建角色
 
-  ```plsql
+  ```sql
   CREATE USER actorcloud WITH ENCRYPTED PASSWORD 'public';
   ```
 
@@ -71,7 +71,7 @@ pg_hba.conf  存放路径为`/etc/postgresql/10/main/pg_hba.conf`
 
   注意: 依据情况适当赋予角色权限！
 
-  ```plsql
+  ```sql
   ALTER ROLE "actorcloud" WITH LOGIN;  # 允许角色登录
   ALTER ROLE "actorcloud" WITH SUPERUSER; # 设置角色为超级管理员
   ALTER ROLE "actorcloud" WITH CREATEDB; # 允许角色创建数据库
@@ -80,7 +80,6 @@ pg_hba.conf  存放路径为`/etc/postgresql/10/main/pg_hba.conf`
 
 * 授予数据库权限
 
-  ```plsql
+  ```sql
   grant all privileges on database actorcloud to actorcloud;
   ```
- 
