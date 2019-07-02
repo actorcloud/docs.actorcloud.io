@@ -37,9 +37,9 @@ The format of message is as follows：
 - action: Containing Webhook address and verification token 
 - value: Rule SQL SELECT result
 
-#### 4. Order issued
+#### 4. Device publish
 
-Specify topic, and the platform will issue the specified message to the specified device.
+Specify topic, and the platform will publish the special message to the special device.
 
 #### 5. MQTT Message forwarding
 
