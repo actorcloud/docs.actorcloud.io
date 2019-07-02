@@ -7,7 +7,7 @@ In general, the scope rule SQL is automatically generated after the user selects
 **1. Scope type**
 
 - Active area
--  Prohibited area
+- Prohibited area
 
 **2. Scope range**
 

@@ -29,16 +29,16 @@ The device uplink system can be another device. The sub device list under the de
 
 
 
-### Device event
+### Device events
 
 - The device uplink message record is the message reported by the device. The page can display the latest reported message of the device in real time without refreshing. To view more data about device events, user can jump to the historical data page to view all the data, and filter and search based on the reporting time and data flow.
 
-  ![device_evnets](_assets/device_evnets.png)
+  ![device_evnets](_assets/device_events.png)
 
 
-### Functional data
+### Capability data
 
-- The page can display the latest parsed information reported by the device without refreshing. The user can also view real-time data and historical data, which can be filtered and searched according to the reporting time and function points.
+- The page can display the latest parsed information reported by the device without refreshing. The user can also view real-time data and historical data, which can be filtered and searched according to the reporting time and data points.
 
   ![device_capability_data](_assets/device_capability_data.png)
 
@@ -50,9 +50,9 @@ The device uplink system can be another device. The sub device list under the de
   ![device_chart_data](_assets/device_chart_data.png)
 
 
-### Device issue
+### Device publish
 
-- **ActorCloud** or **External Application** issued a message to the device. Click **Add Command** to send a message to the current device either instantly or periodically.
+- **ActorCloud** or **External Application** publish a message to the device. Click **Add Command** to send a message to the current device either instantly or periodically.
 
   - LwM2M device:
 
@@ -61,7 +61,7 @@ The device uplink system can be another device. The sub device list under the de
   - Other device:
 
     - Custom command: Customize the sending of messages in JSON format;
-  - Platform command: select the data stream defined by the subordinate product, and send it after perfecting the function point;
+    - Platform command: select the data stream defined by the subordinate product, and send it after perfecting the function point;
 
 - Timed tasks:
 

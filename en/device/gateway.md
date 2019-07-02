@@ -25,7 +25,7 @@ When the uplink system of the device is a gateway and the current gateway is sel
 The connection log of gateway  is the same as the connection log of the device, that is the online or offline information of the gateway.
 
 
-### Gateway event
+### Gateway events
 
 The message reported by the gateway is displayed in real time, which is similar to the device event function.
 
