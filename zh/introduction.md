@@ -1,12 +1,14 @@
+# ActorCloud 入门
+
 ### 注册 ActorCloud 账户
 
-1. 打开 [ActorCloud 控制台主页](https://console.actorcloud.io/)，如果之前未登陆过平台或者登录信息已过期将会跳转到登录页面；
+1. 打开 [ActorCloud 控制台主页](https://demo.actorcloud.io/)，如果之前未登陆过平台或者登录信息已过期将会跳转到登录页面；
 
-2. 点击[前去注册](https://console.actorcloud.io/signup)，根据用户使用身份，完善注册信息，创建一个全新的账户；
+2. 点击 [前去注册](https://demo.actorcloud.io/signup)，根据用户使用身份，完善注册信息，创建一个全新的账户；
 
 3. 账户创建成功后跳转到登录页面，使用账户邮箱与密码即可登录系统；
 
-4. 可使用[用户邀请](/user/user.md#用户邀请)功能直接将邀请链接发送到指定邮箱进行注册。
+4. 可使用 [用户邀请](/user/user.md#用户邀请) 功能直接将邀请链接发送到指定邮箱进行注册。
 
 ![sinup.png](assets/sinup.png)
 

@@ -1437,7 +1437,8 @@ gitbook-asciidoc@1.2.2:
 
 gitbook-cli@^2.3.2:
   version "2.3.2"
-  resolved "http://registry.npm.taobao.org/gitbook-cli/download/gitbook-cli-2.3.2.tgz#5e893582e1f743f6fa920c3c3eb36b62ea4a31a0"
+  resolved "https://registry.npm.taobao.org/gitbook-cli/download/gitbook-cli-2.3.2.tgz#5e893582e1f743f6fa920c3c3eb36b62ea4a31a0"
+  integrity sha1-Xok1guH3Q/b6kgw8PrNrYupKMaA=
   dependencies:
     bash-color "0.0.4"
     commander "2.11.0"

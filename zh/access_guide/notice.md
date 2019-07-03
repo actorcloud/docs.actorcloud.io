@@ -1,12 +1,12 @@
-# 快速接入指南
+# 设备快速接入指南
 
 设备快速接入指南将通过实例，指导开发者将 MQTT 协议设备快速接入 ActorCloud 平台，并完成模拟数据上报。
 
-## 案例概述
+### 案例概述
 
 本案例以空调上报温度和模式（制冷，制热）数据为例，帮助开发者快速接入 MQTT 协议设备。
 
-## 接入步骤
+### 接入步骤
 
 1. #### 新建产品
 
@@ -14,7 +14,7 @@
 
    ![](/assets/example_product_create.png)
 
-   新建产品详细操作请参考[创建产品](/device/product_create.md)。
+   新建产品详细操作请参考 [创建产品](/products/product_create.md)。
 
 2. #### 新建数据流
 
@@ -24,7 +24,7 @@
 
    ![](/assets/example_stream_create.png)
 
-   数据流详细介绍请参考[数据流](/device/product.md#数据流)。
+   数据流详细介绍请参考 [数据流](/products/product.md#数据流)。
 
 3. #### 新建功能点
 
@@ -40,7 +40,7 @@
 
    ![](/assets/example_datapoint_create_3.png)
 
-   功能点详细介绍请参考[功能点](/device/product.md#功能点)。
+   功能点详细介绍请参考 [功能点](/products/product.md#功能点)。
 
 4. #### 新建设备
 
@@ -48,7 +48,7 @@
 
    ![](/assets/example_device_create.png)
 
-   新建设备详细操作请参考[创建设备](/device/device_create.md)。
+   新建设备详细操作请参考 [创建设备](/device/device_create.md)。
 
 5. #### 模拟设备上报数据
 
@@ -83,10 +83,10 @@
 
 6. #### 查看设备上报数据
 
-   设备事件：进入设备管理，找到上面创建的设备“**空调设备**”，点击设备名称进入设备详情页，选择“设备事件”选项卡，可以看到刚刚上报的数据信息，可查看实时数据和历史数据。设备事件详细参考[设备事件](/device/device.html#设备事件)。
+   设备事件：进入设备管理，找到上面创建的设备“**空调设备**”，点击设备名称进入设备详情页，选择“设备事件”选项卡，可以看到刚刚上报的数据信息，可查看实时数据和历史数据。设备事件详细参考 [设备事件](/device/device.html#设备事件)。
 
    ![](/assets/example_device_event.png)
 
-   功能数据：选择"功能数据"选项卡，可以看到被解析出来的上报数据, 同样可以查看实时数据和历史数据。功能数据详细参考[功能数据](/device/device.html#功能数据)。
+   功能数据：选择"功能数据"选项卡，可以看到被解析出来的上报数据, 同样可以查看实时数据和历史数据。功能数据详细参考 [功能数据](/device/device.html#功能数据)。
 
    ![](/assets/example_device_data.png)
