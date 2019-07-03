@@ -1,6 +1,8 @@
 # EMQ X 安装与配置
 
-## EMQ X 安装
+
+
+## 安装
 
 您可以根据需要以不同方式安装 EMQ X ：
 
@@ -57,7 +59,7 @@
        stable"
    ```
 
-#### 安装 EMQ X 
+#### `apt` 安装 
 
 1. 更新 `apt` 包索引：
 
@@ -91,17 +93,7 @@
    $ sudo apt install emqx=3.1.0
    ```
 
-4. 启动 EMQ X 
-
-   ```
-   $ emqx start
-   emqx 3.1 is started successfully!
-   $ emqx_ctl status
-   Node 'emqx@127.0.0.1' is started
-   emqx v3.1.0 is running
-   ```
-
-### 使用安装包安装 EMQ X 
+### 安装包安装
 
 如果无法使用 EMQ X 的镜像库来安装 EMQ X ，则可以下载 `.deb` 文件或 `.zip` 文件并手动安装。
 
@@ -115,16 +107,6 @@
    $ sudo dpkg -i /path/to/emqx-ubuntu18.04-v3.1.0_amd64.deb
    ```
 
-3. 启动 EMQ X 
-
-   ```
-   $ emqx start
-   emqx 3.1 is started successfully!
-   $ emqx_ctl status
-   Node 'emqx@127.0.0.1' is started
-   emqx v3.1.0 is running
-   ```
-
 #### 从`.zip`文件安装
 
 1. 转到  [`emqx.io`](https://www.emqx.io/downloads/emq/broker?osType=Linux)  或  [github](https://github.com/emqx/emqx/releases)，选择 Ubuntu 版本，然后下载要安装的 EMQ X 版本的 `.zip` 文件。
@@ -135,18 +117,10 @@
    $ unzip /path/to/emqx-ubuntu18.04-v3.1.0.zip
    ```
 
-3. 启动 EMQ X 
 
-   ```
-   $ cd emqx
-   $ ./bin/emqx start
-   emqx 3.1 is started successfully!
-   $ ./bin/emqx_ctl status
-   Node 'emqx@127.0.0.1' is started
-   emqx v3.1.0 is running
-   ```
 
-## EMQ X 配置
+## 配置
+
 ### 插件配置
 
 EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
@@ -175,11 +149,78 @@ EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
   # 如 Pulsar 与 EMQ X部署在同一台服务器则需要修改 http 监听端口 
   management.listener.http = 8081
   ```
-  
-  
 
-### 启用插件
 
+### 证书配置(可选)
+
+* 生成站点 CA 证书
+
+  ```bash
+  $ openssl x509 -req -days 365 -in my_site.csr -signkey my_site.key -out my_ca.crt
+  ```
+  
+* 重命名购买 CA 证书
+
+  ```bash
+  $ mv xxx.crt root_ca.crt
+  ```
+  
+* 拷贝证书到 emqx 证书路径下
+
+  ```bash
+  $ cp my_ca.crt my_site.key my_site.crt root_ca.crt /opt/emqx/etc/certs
+  ```
+
+* 配置单向认证
+
+  ```
+  listener.ssl.external = 8883
+  listener.ssl.external.keyfile = etc/certs/my_site.key
+  listener.ssl.external.certfile = etc/certs/my_site.crt
+  ```
+
+* 配置双向认证
+
+  ```bash
+  listener.ssl.external2 = 8884
+  listener.ssl.external2.cacertfile = etc/certs/my_ca.crt
+  listener.ssl.external2.keyfile = etc/certs/my_site.key
+  listener.ssl.external2.certfile = etc/certs/my_site.crt
+  listener.ssl.external2.verify = verify_peer
+  ```
+
+
+
+## 启动
+
+### EMQ X 启动 
+* 启动镜像库安装的 EMQ X 
+```
+$ emqx start
+emqx 3.1 is started successfully!
+$ emqx_ctl status
+Node 'emqx@127.0.0.1' is started
+emqx v3.1.0 is running
+```
+* 启动安装包安装的 EMQ X 
+```bash
+$ emqx start
+emqx 3.1 is started successfully!
+$ emqx_ctl status
+Node 'emqx@127.0.0.1' is started
+emqx v3.1.0 is running
+```
+* 启动`.zip`文件安装 EMQ X
+```bash
+$ cd emqx
+$ ./bin/emqx start
+emqx 3.1 is started successfully!
+$ ./bin/emqx_ctl status
+Node 'emqx@127.0.0.1' is started
+emqx v3.1.0 is running
+```
+
+### EMQ X 插件启动
 访问 EMQX Dashboard 里的 Plugins 页面启动以下三个插件。
 
 * emqx_auth_http

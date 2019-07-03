@@ -16,11 +16,6 @@
 
 ```bash
 $ sudo apt-get update
-# local utf-8 config(optional)
-$ DEBIAN_FRONTEND=noninteractive sudo apt-get install -y locales \
-&& sudo sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
-&& sudo dpkg-reconfigure --frontend=noninteractive locales \
-&& sudo update-locale LANG=en_US.UTF-8
 $ sudo apt-get -y install wget gcc curl
 ```
 
@@ -230,7 +225,19 @@ $ vi /opt/actorcloud/server/instance/config.yml
 * mail: 邮件信息配置
 * stream: pulsar配置信息
 
+#### 证书配置(可选)
+用于设备证书连接, 确保 EMQ X 已正确配置证书
+
+* 配置 ActorCloud 证书
+
+  ```bash
+  $ cp /opt/emqx/etc/certs/my_ca.crt /opt/actorcloud/server/instance/certs/actorcloud
+  $ cp /opt/emqx/etc/certs/my_site.key /opt/actorcloud/server/instance/certs/actorcloud
+  $ cp /opt/emqx/etc/certs/root_ca.crt /opt/actorcloud/server/instance/certs/actorcloud
+  ```
+
 #### Nginx
+
 若使用 ``` apt-get ``` 安装 Nginx 则目录结构如下
 * /etc/nginx/ :   nginx 配置文件存放(nginx.conf, virtual_host.conf, www/等)
 * /usr/sbin/nginx :   nginx 程序文件
@@ -276,10 +283,9 @@ $ ./bin/pulsar-daemon start standalone
 # 进入项目运行目录
 $ cd /opt/pulsar/rule_engine
 # rule engine 运行
+$ chmod +x stream-admin
 $ sudo ./stream-admin create all
 ```
-
-
 
 ### ActorCloud Server 运行
 
