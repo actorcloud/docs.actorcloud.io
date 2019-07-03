@@ -226,15 +226,29 @@ $ vi /opt/actorcloud/server/instance/config.yml
 * stream: pulsar配置信息
 
 #### 证书配置(可选)
-用于设备证书连接, 确保 EMQ X 已正确配置证书
 
-* 配置 ActorCloud 证书
+只有双向认证时才需要配置
+
+* 配置 ActorCloud my_ca.crt
 
   ```bash
-  $ cp /opt/emqx/etc/certs/my_ca.crt /opt/actorcloud/server/instance/certs/actorcloud
-  $ cp /opt/emqx/etc/certs/my_site.key /opt/actorcloud/server/instance/certs/actorcloud
-  $ cp /opt/emqx/etc/certs/root_ca.crt /opt/actorcloud/server/instance/certs/actorcloud
+  $ cp /opt/emqx/etc/certs/my_ca.crt /opt/actorcloud/server/instance/certs/actorcloud/
   ```
+
+* 配置 ActorCloud my_ca.key
+
+  ```bash
+  $ cp /opt/emqx/etc/certs/my_site.key /opt/actorcloud/server/instance/certs/actorcloud/my_ca.key
+  ```
+
+* 配置 ActorCloud root_ca.crt
+
+  > 将购买证书时得到的 root_bundle 文件重命名为 root_ca.crt
+
+  ```bash
+  $ cp root_ca.crt /opt/actorcloud/server/instance/certs/actorcloud/
+  ```
+
 
 #### Nginx
 
