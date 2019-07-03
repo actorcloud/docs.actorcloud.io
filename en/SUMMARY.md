@@ -42,11 +42,11 @@
 * [Timer](device/timer.md)
 
 ## Rules
-* [Business rule](rule_engine/business_rules.md)
-* [Scope rule](rule_engine/scope_rules.md)
+* [Business rules](rule_engine/business_rules.md)
+* [Scope rules](rule_engine/scope_rules.md)
 * [Actions](rule_engine/actions.md)
 
-## Alert
+## Alerts
 * [Current](alert/alert.md#current-alert)
 * [Historical](alert/alert.md#historical-alert)
 
@@ -56,11 +56,11 @@
 
 ## Applications
 * [List](application/application.md#application-list)
-* [Role](application/application.md#application-role)
+* [Roles](application/application.md#application-role)
 
 ## Users
-* [User](user/user.md#user)
-* [Role](user/user.md#role)
+* [Users](user/user.md#user)
+* [Roles](user/user.md#role)
 * [Message center](user/user.md#message-center)
 * [Login log](user/user.md#login-log)
 
