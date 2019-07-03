@@ -159,16 +159,10 @@ EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
   $ openssl x509 -req -days 365 -in my_site.csr -signkey my_site.key -out my_ca.crt
   ```
   
-* 重命名购买 CA 证书
-
-  ```bash
-  $ mv xxx.crt root_ca.crt
-  ```
-  
 * 拷贝证书到 emqx 证书路径下
 
   ```bash
-  $ cp my_ca.crt my_site.key my_site.crt root_ca.crt /opt/emqx/etc/certs
+  $ cp my_ca.crt my_site.key my_site.crt /opt/emqx/etc/certs/
   ```
 
 * 配置单向认证
@@ -181,7 +175,7 @@ EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
 
 * 配置双向认证
 
-  ```bash
+  ```
   listener.ssl.external2 = 8884
   listener.ssl.external2.cacertfile = etc/certs/my_ca.crt
   listener.ssl.external2.keyfile = etc/certs/my_site.key
