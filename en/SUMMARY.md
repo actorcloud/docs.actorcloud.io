@@ -9,22 +9,22 @@
   * [Single node](installation/single_node.md)
   * [Docker](installation/docker.md)
 * [Quick start](introduction.md)
-* [Access guide](access_guide/notice.md)
+* [Access guide](access_guide.md)
 
 ## Devices
 * [Devices]()
-  * [Create](device/device_create.md)
-  * [List](device/devices.md)
-  * [Details](device/device.md)
-    * [Information](device/device.md#device-information)
-    * [Connection log](device/device.md#connection-log)
-    * [Sub device](device/device.md#sub-device)
-    * [Events](device/device.md#device-events)
-    * [Capability](device/device.md#capability-data)
-    * [Charts](device/device.md#chart-data)
-    * [Publish](device/device.md#device-publish)
-  * [Gateways](device/gateway.md)
-  * [Groups](device/group.md)
+  * [Create](devices/device_create.md)
+  * [List](devices/devices.md)
+  * [Details](devices/device.md)
+    * [Information](devices/device.md#device-information)
+    * [Connection log](devices/device.md#connection-log)
+    * [Sub device](devices/device.md#sub-device)
+    * [Events](devices/device.md#device-events)
+    * [Capability](devices/device.md#capability-data)
+    * [Charts](devicess/device.md#chart-data)
+    * [Publish](devices/device.md#device-publish)
+  * [Gateways](devices/gateway.md)
+  * [Groups](devices/group.md)
 * [Products]()
   * [Create](products/product_create.md)
   * [List](products/products.md)
@@ -35,11 +35,11 @@
       * [Data stream](products/product.md#datastream)
       * [Data Point](products/product.md#datapoint)
     * [Codec](products/codec.md)
-* [Security](device/security.md)
-  * [Certificate](device/certs.md)
-  * [One-way authentication](device/one_auth.md)
-  * [Mutual Authentication](device/two_auth.md)
-* [Timer](device/timer.md)
+* [Security](devices/security.md)
+  * [Certificate](devices/certs.md)
+  * [One-way authentication](devices/one_auth.md)
+  * [Mutual Authentication](devices/two_auth.md)
+* [Timer](devices/timer.md)
 
 ## Rules
 * [Business rules](rule_engine/business_rules.md)
@@ -47,22 +47,22 @@
 * [Actions](rule_engine/actions.md)
 
 ## Alerts
-* [Current](alert/alert.md#current-alert)
-* [Historical](alert/alert.md#historical-alert)
+* [Current](alerts/alerts.md#current-alerts)
+* [Historical](alerts/alerts.md#historical-alerts)
 
 ## Test center
 * [MQTT](test_center/mqtt.md)
 * [CoAP](test_center/coap.md)
 
 ## Applications
-* [List](application/application.md#application-list)
-* [Roles](application/application.md#application-role)
+* [List](applications/applications.md#application-list)
+* [Roles](applications/applications.md#application-role)
 
 ## Users
-* [Users](user/user.md#user)
-* [Roles](user/user.md#role)
-* [Message center](user/user.md#message-center)
-* [Login log](user/user.md#login-log)
+* [Users](users/users.md#user)
+* [Roles](users/users.md#role)
+* [Message center](users/users.md#message-center)
+* [Login log](users/users.md#login-log)
 
 
 ## appendix

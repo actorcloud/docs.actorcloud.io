@@ -9,22 +9,22 @@
   * [单节点部署](installation/single_node.md)
   * [Docker 部署](installation/docker.md)
 * [ActorCloud 入门](introduction.md)
-* [设备快速接入指南](access_guide/notice.md)
+* [设备快速接入指南](access_guide.md)
 
 ## 设备管理
 * [设备管理]()
-  * [新建设备](device/device_create.md)
-  * [设备列表](device/devices.md)
-  * [设备详情](device/device.md)
-    * [设备信息](device/device.md#设备信息)
-    * [连接日志](device/device.md#连接日志)
-    * [子设备](device/device.md#子设备)
-    * [设备事件](device/device.md#设备事件)
-    * [功能数据](device/device.md#功能数据)
-    * [图表数据](device/device.md#图表数据)
-    * [设备下发](device/device.md#设备下发)
-  * [网关管理](device/gateway.md)
-  * [分组管理](device/group.md)
+  * [新建设备](devices/device_create.md)
+  * [设备列表](devices/devices.md)
+  * [设备详情](devices/device.md)
+    * [设备信息](devices/device.md#设备信息)
+    * [连接日志](devices/device.md#连接日志)
+    * [子设备](devices/device.md#子设备)
+    * [设备事件](devices/device.md#设备事件)
+    * [功能数据](devices/device.md#功能数据)
+    * [图表数据](devices/device.md#图表数据)
+    * [设备下发](devices/device.md#设备下发)
+  * [网关管理](devices/gateway.md)
+  * [分组管理](devices/group.md)
 * [产品管理]()
   * [新建产品](products/product_create.md)
   * [产品列表](products/products.md)
@@ -35,11 +35,11 @@
       * [数据流](products/product.md#数据流)
       * [功能点](products/product.md#功能点)
     * [编解码插件](products/codec.md)
-* [安全管理](device/security.md)
-  * [证书管理](device/certs.md)
-  * [单项认证](device/one_auth.md)
-  * [双向认证](device/two_auth.md)
-* [定时下发](device/timer.md)
+* [安全管理](devices/security.md)
+  * [证书管理](devices/certs.md)
+  * [单项认证](devices/one_auth.md)
+  * [双向认证](devices/two_auth.md)
+* [定时下发](devices/timer.md)
 
 ## 规则管理
 * [业务规则](rule_engine/business_rules.md)
@@ -47,22 +47,22 @@
 * [动作](rule_engine/actions.md)
 
 ## 告警管理
-* [当前告警](alert/alert.md#当前告警)
-* [历史告警](alert/alert.md#历史告警)
+* [当前告警](alerts/alerts.md#当前告警)
+* [历史告警](alerts/alerts.md#历史告警)
 
 ## 测试中心
 * [MQTT 客户端](test_center/mqtt.md)
 * [CoAP 客户端](test_center/coap.md)
 
 ## 应用管理
-* [应用列表](application/application.md#应用列表)
-* [应用角色](application/application.md#应用角色)
+* [应用列表](applications/applications.md#应用列表)
+* [应用角色](applications/applications.md#应用角色)
 
 ## 用户管理
-* [用户](user/user.md#用户)
-* [角色](user/user.md#角色)
-* [消息中心](user/user.md#消息中心)
-* [登录日志](user/user.md#登录日志)
+* [用户](users/users.md#用户)
+* [角色](users/users.md#角色)
+* [消息中心](users/users.md#消息中心)
+* [登录日志](users/users.md#登录日志)
 
 
 ## 附录
