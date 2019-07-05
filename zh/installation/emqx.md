@@ -158,11 +158,19 @@ EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
   ```bash
   $ openssl x509 -req -days 365 -in my_site.csr -signkey my_site.key -out my_ca.crt
   ```
-  
+
 * 拷贝证书到 emqx 证书路径下
 
   ```bash
-  $ cp my_ca.crt my_site.key my_site.crt /opt/emqx/etc/certs/
+  $ cp my_ca.crt my_site.key my_site.crt root_ca.crt /opt/emqx/etc/certs/
+  ```
+
+* 配置 Websocket SSL
+
+  ```
+  listener.wss.external = 8084
+  listener.wss.external.keyfile = /etc/emqx/certs/my_site.key
+  listener.wss.external.certfile = /etc/emqx/certs/my_site.crt
   ```
 
 * 配置单向认证
@@ -171,6 +179,7 @@ EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
   listener.ssl.external = 8883
   listener.ssl.external.keyfile = etc/certs/my_site.key
   listener.ssl.external.certfile = etc/certs/my_site.crt
+  listener.ssl.external.cacertfile = etc/certs/root_ca.crt
   ```
 
 * 配置双向认证
@@ -187,8 +196,8 @@ EMQ X 插件配置文件在 `emqx/etc/plugins` 目录下
 
 ## 启动
 
-### EMQ X 启动 
-* 启动镜像库安装的 EMQ X 
+### EMQ X 启动
+* 启动镜像库安装的 EMQ X
 ```
 $ emqx start
 emqx 3.1 is started successfully!
@@ -196,7 +205,7 @@ $ emqx_ctl status
 Node 'emqx@127.0.0.1' is started
 emqx v3.1.0 is running
 ```
-* 启动安装包安装的 EMQ X 
+* 启动安装包安装的 EMQ X
 ```bash
 $ emqx start
 emqx 3.1 is started successfully!
