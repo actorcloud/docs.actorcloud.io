@@ -4,7 +4,7 @@
 
 - 设备使用设备编号、设备密钥、连接用户名认证
 - 设备认证方式为 Token
-- 设备接入地址为：`iot.actorcloud.io:8883`
+- 设备接入地址为：`broker.actorcloud.io:8883`
 
 使用设备编号，设备密钥，连接用户名可以连接到消息服务器：
 
@@ -29,7 +29,7 @@ import json
 client_id = '6198289b38939358305813fe41551483b1f0'
 username = '6198289b38939358305813fe41551483b1f0'
 password = '2312686198f5722ef570b855694655f1b475'
-HOST = 'iot.actorcloud.io'
+HOST = 'broker.actorcloud.io'
 PORT = 8883
 
 

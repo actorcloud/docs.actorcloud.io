@@ -51,7 +51,7 @@ client_id = '6198289b38939358305813fe41551483b1f0'
 username = '6198289b38939358305813fe41551483b1f0'
 password = '2312686198f5722ef570b855694655f1b475'
 PORT = 1883
-HOST = 'iot.actorcloud.io'
+HOST = 'broker.actorcloud.io'
 
 
 def on_connect(client, userdata, flags, rc):
@@ -95,7 +95,7 @@ import json
 client_id = '6198289b38939358305813fe41551483b1f0'
 username = '6198289b38939358305813fe41551483b1f0'
 password = '2312686198f5722ef570b855694655f1b475'
-HOST = 'iot.actorcloud.io'
+HOST = 'broker.actorcloud.io'
 PORT = 8883
 
 
@@ -155,7 +155,7 @@ import json
 client_id = '6198289b38939358305813fe41551483b1f0'
 username = '6198289b38939358305813fe41551483b1f0'
 password = '2312686198f5722ef570b855694655f1b475'
-HOST = 'iot.actorcloud.io'
+HOST = 'broker.actorcloud.io'
 
 # 双向认证端口
 PORT = 8884
