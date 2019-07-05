@@ -2,7 +2,7 @@
 
 The trigger action information  with the action type of **Alarm** in the [business rule](/rule_engine/business_rules.md) or [scope rule](/rule_engine/scope_rules.md) will be recorded in the alert management.
 
-### Current alert
+### Current alerts
 
 Currently triggered and persistent alert information includes alert content, number of alerts, and alert level. It is supported to filter and search by alert name, device name, and alert level. When the same rule is triggered continuously, the number of alerts will be accumulated. When the new arrival message alert no longer exists, the record will be automatically moved to the historical alert. Click the delete button to permanently delete the record.
 
@@ -12,7 +12,7 @@ Currently triggered and persistent alert information includes alert content, num
 
 
 
-### Historical alert
+### Historical alerts
 
 For the same rule, if the new arrival message no longer triggers the alert, the corresponding information in the current alert  will be moved to the **historical alert**.
 
