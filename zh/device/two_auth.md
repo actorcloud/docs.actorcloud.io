@@ -5,7 +5,7 @@
 - 需要使用**设备编号**与**连接用户名**
 - 设备认证方式为 证书
 - 使用平台绑定设备的证书
-- 设备接入地址为：`iot.actorcloud.io:8884`
+- 设备接入地址为：`broker.actorcloud.io:8884`
 
 设备绑定相应证书详情页中，点击下载证书后解压文件得到：
 
@@ -31,7 +31,7 @@ import json
 client_id = 'ef14be2cfd2f555397bde858750cbda8'
 username = 'ef14be2cfd2f555397bde858750cbda8'
 password = '630a7f6b54d75e50a2e59b4baca722d4'
-HOST = 'iot.actorcloud.io'
+HOST = 'broker.actorcloud.io'
 
 # 双向认证端口
 PORT = 8884

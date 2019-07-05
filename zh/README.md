@@ -37,12 +37,12 @@
 
 | 名称  | 接入地址 | 使用说明 |
 | ------- | ------- | ----|
-| MQTT  | iot.actorcloud.io:1883 | 普通 MQTT 接入 |
-| MQTT/SSL  | iot.actorcloud.io:8883 | SSL MQTT 接入（单向认证） |
-| MQTT/SSL  | iot.actorcloud.io:8884 | SSL MQTT 接入 （双向认证）|
-| CoAP(LwM2M)  | iot.actorcloud.io:5683/mqtt | CoAP/LwM2M 接入 |
-| CoAP(LwM2M)/DTLS  | iot.actorcloud.io:5684/mqtt | DTLS CoAP/LwM2M 接入 |
-| MQTT/WebSocket  | iot.actorcloud.io:8083/mqtt | WebSocket 接入 |
-| MQTT/WebSocket/SSL  | iot.actorcloud.io:8084/mqtt | SSL WebSocket 接入 |
+| MQTT  | broker.actorcloud.io:1883 | 普通 MQTT 接入 |
+| MQTT/SSL  | broker.actorcloud.io:8883 | SSL MQTT 接入（单向认证） |
+| MQTT/SSL  | broker.actorcloud.io:8884 | SSL MQTT 接入 （双向认证）|
+| CoAP(LwM2M)  | broker.actorcloud.io:5683/mqtt | CoAP/LwM2M 接入 |
+| CoAP(LwM2M)/DTLS  | broker.actorcloud.io:5684/mqtt | DTLS CoAP/LwM2M 接入 |
+| MQTT/WebSocket  | broker.actorcloud.io:8083/mqtt | WebSocket 接入 |
+| MQTT/WebSocket/SSL  | broker.actorcloud.io:8084/mqtt | SSL WebSocket 接入 |
 | 私有 TCP协议透传 | 需定制 | 私有 TCP协议透传 |
 
