@@ -1,15 +1,17 @@
 # Summary
 
 ## Getting started
-* [Overview](README.md)
-* [ActorCloud deploy](installation/base.md)
-  * [Third party]()
-    * [TimescaleDB](installation/timescaledb.md)
-    * [EMQ X](installation/emqx.md)
-  * [Single node](installation/single_node.md)
-  * [Docker](installation/docker.md)
-* [Quick start](introduction.md)
-* [Access guide](access_guide.md)
+* [Introduction](README.md)
+* [Quick start](getting_started/quick_start.md)
+* [Access guide](getting_started/access_guide.md)
+
+## Installation
+* [Overview](installation/base.md)
+* [Third party]()
+  * [TimescaleDB](installation/timescaledb.md)
+  * [EMQ X](installation/emqx.md)
+* [Single node](installation/single_node.md)
+* [Docker](installation/docker.md)
 
 ## Devices
 * [Devices]()

@@ -1,4 +1,4 @@
-# ActorCloud 入门
+# ActorCloud 快速入门
 
 ### 注册 ActorCloud 账户
 
@@ -10,7 +10,7 @@
 
 4. 可使用 [用户邀请](/user/user.md#用户邀请) 功能直接将邀请链接发送到指定邮箱进行注册。
 
-![sinup.png](assets/sinup.png)
+![sinup.png](_assets/sinup.png)
 
 > 如果用户通过邀请链接进入注册页面，页面不再提供账户类型选择。
 
@@ -19,7 +19,7 @@
 
 - 使用已注册账号的邮箱和密码登录。
 
-![login.png](assets/login.png)
+![login.png](_assets/login.png)
 
 ##### 个人用户与企业用户的区别
 
@@ -38,14 +38,12 @@
 - 消息数统计：设备登录、发布、接收、订阅、取消订阅次数折线图统计；
 - 流量统计：设备登录、发布、接收、订阅、取消订阅流量折线图统计。
 
-![overview.png](assets/overview.png)
-
+![overview.png](_assets/overview.png)
 
 
 ### 顶部菜单栏操作
 
-![top_bar_details](assets/top_bar_details.png)
-
+![top_bar_details](_assets/top_bar_details.png)
 
 
 #### 全局快速搜索
@@ -53,17 +51,14 @@
 - 全局搜索框中输入名称可以快速搜索定位到响应的设备、网关。
 
 
-
 #### 账户信息变更
 
 - 点击右上角当前登录用户的用户名展开账户信息变更选项，点击**公司信息**可进行**公司信息**（公司账户）修改操作，可上传公司 Logo 强化品牌形象。
 
 
-
 #### 修改密码
 
 - 点击右上角当前登录用户的用户名展开账户信息变更选项，点击**修改密码**可进行**修改密码**操作。
-
 
 
 #### 切换主题

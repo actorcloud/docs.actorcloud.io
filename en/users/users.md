@@ -1,4 +1,4 @@
-# User
+# Users
 
 **ActorCloud** provides complete system management functions. The operations such as user management, user permission control, invitation registration, and user role management can be performed by company account.
 
@@ -16,7 +16,7 @@ Go to **User Management -> User ** and click **Invite Record ** tab page to view
 
 
 
-# Role
+# Roles
 
 Go to **User Management -> Roles**. Permissions of users must be assigned through user roles. New users need to be associated with related roles. **ActorCloud** provides three levels of  roles by default:
 
