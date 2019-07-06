@@ -39,6 +39,30 @@ $ tar -zxvf ActorCloud-v3.0.0-rc.3.tar.gz -C /opt
 #### EMQ X
 [EMQ X 安装](emqx.md#emq-x-安装)
 
+
+### ActorCloud codec 安装(可选)
+
+ActorCloud Codec 需配合企业版 EMQX 使用
+
+#### Docker Engine 安装
+
+```bash
+$ curl -fsSL https://get.docker.com | sh
+```
+
+#### 获取 ActorCloud codec 镜像
+
+```bash
+$ docker pull actorcloudcli/actorcloud-codec
+```
+
+#### 运行 ActorCloud codec
+
+```bash
+$ docker run -it -d --restart=always --name actorcloud-codec \
+         -p 7002:7002 actorcloudcli/actorcloud-codec
+```
+
 ### ActorCloud Rule Engine 安装
 
 #### 基础环境安装
