@@ -2,7 +2,7 @@
 
 业务规则应用于每一条设备上报至平台的数据流，通过预定义数据的相关规则与关联触发动作，当数据流里的数据满足规则定义时即可触发相应的动作。
 
-创建业务规则前，需要预先进行[功能定义](/products/product.md#功能定义)。
+创建业务规则前，需要预先进行 [功能定义](/products/product.md#功能定义)。
 
 规则的触发采用 `SQL` 的方式。
 
@@ -12,25 +12,25 @@ FROM "{topic}"
 WHERE condition
 ```
 
-- `SELECT`：消息的 payload，`SELECT *`，`SELECT temperature AS temp`，`SELECT payload$$hum AS hum`(适用于 {"payload":{"hum":89}} 的情况)
+- `SELECT`：消息的 payload，`SELECT *`，`SELECT temperature AS temp`，`SELECT payload$$hum AS hum`
 
 -  `FROM` ：消息的 topic，topic 的结构为：
-`/{protocol}/{tenantID}/{productID}/{deviceID}/{realTopic}`
+`/{productID}/{deviceID}/{realTopic}`
 
 业务规则 SQL 主要包含关联对象，条件频率和条件
 
 #### 1. 关联对象
 
-具体的 topic 可以界面上使用`查询主题`进行查询，根据情况可以关联到具体设备的数据流或者产品下所有设备的数据流。
+具体的 topic 可以在界面上使用`查询主题`进行查询，根据情况可以关联到具体设备的数据流或者产品下所有设备的数据流。
 
 关联到具体设备的数据流
 ```
-/mqtt/CcSMji6gp/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world
+/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world
 ```
 
 关联到产品下所有设备的数据流，使用 `+` 通配符
 ```
-/mqtt/CcSMji6gp/bff530/+/world
+/bff530/+/world
 ```
 
 #### 2. 条件频率
@@ -43,7 +43,7 @@ WHERE condition
 
 ```sql
 SELECT * 
-FROM "/mqtt/CcSMji6gp/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
+FROM "/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
 WHERE temp > 10
 ```
 
@@ -54,7 +54,7 @@ WHERE temp > 10
 
 ```sql
 SELECT * 
-FROM "/mqtt/CcSMji6gp/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
+FROM "/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
 WHERE temp > 10
 GROUP BY slidingwindow('mi', 2)
 HAVING COUNT(*) >= 5
@@ -66,7 +66,7 @@ HAVING COUNT(*) >= 5
 
 ```sql
 SELECT * 
-FROM "/mqtt/CcSMji6gp/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
+FROM "/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
 WHERE temp > 10
 GROUP BY slidingwindow('mi', 2)
 HAVING COUNT(*) = size()
@@ -78,7 +78,7 @@ HAVING COUNT(*) = size()
 
 ```sql
 SELECT * 
-FROM "/mqtt/CcSMji6gp/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
+FROM "/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
 GROUP BY tumblingwindow('mi', 2)
 HAVING size() = 0
 ```
@@ -90,12 +90,31 @@ HAVING size() = 0
 ![business_rule_create](_assets/business_rule_create.png)
 
 
+
+### 获取消息属性值
+
+规则 SQL 使用 `$$` 的方式获取属性值。若消息为
+
+```json
+{
+  "data":{
+    "temp":{
+      "time":1562316233,
+      "value":18
+    }
+  }
+}
+```
+
+则可以通过 `data$$temp$$value` 获取温度值
+
+
 **特别注意**
 
 若选择触发动作为`告警`，**必须**查询 topic，方法如下：
 ```sql
-SELECT getMetadataPropertyValue('/mqtt/CcSMji6gp/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world','topic') as topic,*
-FROM "/mqtt/CcSMji6gp/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
+SELECT getMetadataPropertyValue('/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world','topic') as topic,*
+FROM "/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world"
 ```
 
 **SQL 函数说明**
@@ -107,7 +126,11 @@ slidingwindow(String unit, long size)
 ```
 tumblingwindow(String unit, long size)
 ```
+参数说明：
+- unit：时间单位
+- size：大小
 
+unit 说明：
 | unit | 说明 |
 | ---- | ---- |
 | mc   | 微秒  |
@@ -117,7 +140,24 @@ tumblingwindow(String unit, long size)
 | hh   | 小时 |
 | dd   | 天   |
 
+示例：
+
+```sql
+slidingwindow('ss', 30)
+tumblingwindow('hh', 1)
+```
+***
+
 ```
 String getMetadataPropertyValue(String topic, String property)
 ```
 获取元数据中的特定属性值，此处仅支持获取 topic 的值
+
+参数说明：
+- topic：消息 topic
+- property：属性，此处仅支持 topic
+
+示例：
+```sql
+getMetadataPropertyValue('/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world', 'topic')
+```

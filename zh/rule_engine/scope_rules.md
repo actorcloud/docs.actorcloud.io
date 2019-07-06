@@ -7,7 +7,7 @@
 **1. 围栏类型**
 
 - 活动区域
--  禁止区域
+- 禁止区域
 
 **2. 围栏范围**
 
@@ -22,20 +22,67 @@
 SQL 样例
 
 ```sql
-SELECT split_part(getMetadataPropertyValue('/+/CcSMji6gp/#', 'topic'), '/' , 5) AS device_id
-FROM "/+/CcSMji6gp/#"
-WHERE inCircle(data$$lat, data$$lng, 39.917739, 116.357634, 2083.487794747287)
-    AND device_id in ('client_id_5000','client_id_50001')
+SELECT *
+FROM "/#"
+WHERE inCircle(data$$lat$$value, data$$lng$$value, 39.917739, 116.357634, 2083.487794747287)
+    AND split_part(getMetadataPropertyValue('/#', 'topic'), '/' , 5) in ('client_id_5000','client_id_50001')
 ```
+
+**说明**
+
+`split_part(getMetadataPropertyValue('/#', 'topic'), '/' , 5)` 函数是为了从 topic 中取出设备 id
+
 
 **函数说明**
 
 ```
 String split_part(String text, String delimiter, int position)
 ```
-参数说明
+返回分割以后的特定位置的字符串
+
+参数说明：
 - text：待分割的字符串
 - delimiter：分隔符
 - position：位置，从 1 开始
 
-该函数返回分割以后的特定位置的字符串
+例子：
+```sql
+split_part('a,b,c', ',', 2)   # b
+split_part('/bff530/dbabdf8ad91ef595bf9e9f35b1eef433/world', '/', 3)  #  dbabdf8ad91ef595bf9e9f35b1eef433
+```
+
+***
+
+```
+boolean inCircle(double lat, double lng, double centerlat, double centerlng, double radius)
+```
+判断经纬度是否位于一个圆形范围内
+
+参数说明：
+- lat：纬度
+- lng：经度
+- centerLat：圆形范围圆心纬度
+- centerLng：圆形范围圆心经度
+- radius：圆形范围半径，单位为**米**
+
+例子：
+```sql
+inCircle(26.21453, 104.102951, 39.917739, 116.357634, 2083.487794747287)
+```
+***
+
+```
+boolean inPolygon(double lat, double lng, String pointArrayStr)
+```
+
+判断经纬度是否位于一个多边形范围内
+
+参数说明
+- lat：纬度
+- lng：经度
+- pointArrayStr：多边形经纬度列表字符串，如：`'[[39.922637,116.362612],[39.90315,116.397631],[39.888795,116.361239]]'`
+
+例子：
+```sql
+inPolygon(26.21453, 104.102951, '[[39.922637,116.362612],[39.90315,116.397631],[39.888795,116.361239]]')
+```
