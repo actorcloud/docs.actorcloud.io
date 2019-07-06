@@ -1,15 +1,17 @@
 # Summary
 
 ## 快速入门
-* [概览](README.md)
-* [ActorCloud 部署](installation/base.md)
-  * [第三方组件]()
-    * [TimescaleDB](installation/timescaledb.md)
-    * [EMQ X](installation/emqx.md)
-  * [单节点部署](installation/single_node.md)
-  * [Docker 部署](installation/docker.md)
-* [ActorCloud 入门](introduction.md)
-* [设备快速接入指南](access_guide.md)
+* [简介](README.md)
+* [快速入门](getting_started/quick_start.md)
+* [设备快速接入指南](getting_started/access_guide.md)
+
+## 部署
+* [概览](installation/base.md)
+* [第三方组件]()
+  * [TimescaleDB](installation/timescaledb.md)
+  * [EMQ X](installation/emqx.md)
+* [单节点部署](installation/single_node.md)
+* [Docker 部署](installation/docker.md)
 
 ## 设备管理
 * [设备管理]()
