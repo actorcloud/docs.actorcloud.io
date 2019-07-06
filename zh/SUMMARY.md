@@ -1,6 +1,6 @@
 # Summary
 
-## 快速入门
+## 开始使用
 * [简介](README.md)
 * [快速入门](getting_started/quick_start.md)
 * [设备快速接入指南](getting_started/access_guide.md)
