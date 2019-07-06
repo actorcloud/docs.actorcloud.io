@@ -28,7 +28,32 @@ mkdir -p /opt/actorcloud/server /opt/actorcloud/rule_engine
 #### EMQ X
 [EMQ X 安装](emqx.md#emq-x-安装)
 
-### ActorCloud Rule Engine 部署
+### ActorCloud codec 安装(可选)
+
+ActorCloud Codec 需配合企业版 EMQX 使用
+
+#### Docker Engine 安装
+
+```bash
+$ curl -fsSL https://get.docker.com | sh
+```
+
+#### 获取 ActorCloud codec 镜像
+
+```bash
+$ docker pull actorcloudcli/actorcloud-codec
+```
+
+#### 运行 ActorCloud codec
+
+```bash
+$ docker run -it -d --restart=always \
+         --name actorcloud-codec \
+         -p 7002:7002 \
+         actorcloudcli/actorcloud-codec
+```
+
+### ActorCloud Rule Engine 安装
 
 #### 获取 ActorCloud Rule Engine 镜像
 ```bash
@@ -44,14 +69,14 @@ $ docker run -it -d --restart=always --name actorcloud-rule_engine \
     -v $PWD/data:/opt/pulsar/data \
     -v $PWD/logs:/opt/pulsar/logs \
     -v $PWD/rule_engine:/opt/pulsar/rule_engine \
-    actorcloud-rule_engine
+    actorcloudcli/actorcloud-rule_engine
 ```
 目录及端口说明
 * data: rule_engine 数据存放
 * logs: 日志存放目录
 * rule_engine: rule_engine 配置存放
 
-### ActorCloud Server 部署
+### ActorCloud Server 安装
 
 #### 获取 ActorCloud Server 镜像
 ```bash
@@ -71,7 +96,7 @@ $ docker run -it -d --restart=always --name actorcloud-server \
     -v $PWD/instance:/opt/actorcloud/server/instance \
     -v $PWD/logs:/opt/tmp/logs \
     -v $PWD/nginx:/etc/nginx \
-    actorcloud-server:latest
+    actorcloudcli/actorcloud-server:latest
 ```
 目录说明
 * static: 静态文件存放目录
