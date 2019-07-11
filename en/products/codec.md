@@ -19,8 +19,8 @@ Write script code with reference to the data format specification. After testing
 
 #### Analog input description
 
-- Topic: message topic
-- Message: JSON format, such as `{"temp":17}`，`[{"temp":17},{"hmd":80}]`
+- topic: message topic
+- message: JSON format, such as `{"temp": 17}`，`[{"temp": 17},{"hmd": 80}]`
 
 ActorCloud can convert data types.
 
@@ -30,14 +30,14 @@ Click the `Running` button to check if the results are as expected.
 
 #### Running result description
 
-- Error: script error or validation error
-- Status_code: status code
-- Result: the result after processing which will be specified in the follows.
+- error: script error or validation error
+- status_code: status code
+- result: the result after processing which will be specified in the follows
 
 ##### Decoding
 
-1. result` is the result of deserialization of the JSON string
-2. The fields of `stream_id` and `data` of the decoding result must correspond to the data stream and data points defined by the product function, otherwise the verification fails.
+1. `result` is the result of deserialization of the JSON string
+2. The fields of `stream_id` and `data` of the decoding result must correspond to the data stream and data points defined by the product function, otherwise the verification fails
 
 The return format is as follows:
 
@@ -63,7 +63,9 @@ The return format is as follows:
 
 ##### Encoding
 
-**Special note**, considering that the encoding will involve binary data,  the returned result is displayed as a string
+**Special note**
+
+considering that the encoding will involve binary data,  the returned result is displayed as a string.
 
 The return format is as follows:
 
@@ -76,23 +78,23 @@ The return format is as follows:
 
 **Note**
 
-The two functions of decode and encode needs to be included in codec script, otherwise the validation fails. If a function is not needed in the script, it can return directly
+The two functions of decode and encode needs to be included in codec script, otherwise the validation fails. If a function is not needed in the script, it can return directly.
 
 ### Submit
 
-The result can be submitted only if the result is not `error`. After clicking the 'Submit' button to submit, it needs to be reviewed by the administrator successfully before it can be used normally.
+The result can be submitted only if the result is not `error`. After clicking the `Submit` button to submit, it needs to be reviewed by the administrator successfully before it can be used normally.
 
 ### Review
 
-1. Log in with the super administrator account and go to: Device Management -> Product Management -> Codec Plugin review, click the `Rewiew` button of the corresponding product codec plugin.
-2. Check the 'pass' in the review result, then click `OK` to make the codec plugin take effect.
+1. Log in with the super administrator account and go to: `Device Management` -> `Product Management` -> `Codec Plugin` review, click the `Rewiew` button of the corresponding product codec plugin
+2. Check the `pass` in the review result, then click `OK` to make the codec plugin take effect
 
 
 ## 3. Format description
 
 `data_type` and `data` are required to fill.
 
-### 1) Message report
+### 1) Device Event
 
 - data_type: `event`
 - stream_id: required to fill
@@ -190,17 +192,14 @@ The format is as follows:
 }
 ```
 
-- data_type:`request`
-
+- data_type: `request`
 - stream_id: for platform instructions
-
 - task_id: identify the task to be delivered for response
-
 - data: publish content. When the custom command is selected, it corresponds to the actual input content. If the platform command is selected, it is:
 
   ```json
   {
-    "${dataPointID}":"${value}",
+    "${dataPointID}": "${value}",
   }
   ```
 
@@ -238,20 +237,16 @@ The format is as follows:
 }
 ```
 
-- data_type:`response`
+- data_type: `response`
 - result.task_id: corresponding published task_id
-- result.code: status code, `0`: successful, `1`: failed
+- result.code: status code, `0` means success, `1` means failure
 - data: response content. It can be an empty object{} when there is no response content
-
-
-
-
 
 ## 4. Codec function description
 
 ### 1) Encoding function description
 
-Encode ActorCloud messages to the format required by the device
+Encode ActorCloud messages to the format required by the device.
 
   ```python
   def encode(topic, message):
@@ -259,15 +254,15 @@ Encode ActorCloud messages to the format required by the device
       return status_code, result
   ```
 
-Parameter Description
+Parameter Description:
 
 - topic: `bytes` type, message topic
-- message:`bytes` type, message payload
+- message: `bytes` type, message payload
 
-Return description
+Return description:
 
-- status_code:`int` type, status code, `0`: successful, `1`: failed
-- result:`bytes` type, encoding result
+- status_code: `int` type, status code, `0` means success, `1` means failure
+- result: `bytes` type, encoding result
 
 **Example**
 
@@ -315,7 +310,7 @@ if __name__ == '__main__':
 
 ```
 
-Encoding result
+Encoding result:
 
 ```bash
 (0, b'\x01\x00\x01\x0c\x0e\xcc\xc4')
@@ -323,7 +318,7 @@ Encoding result
 
 ### 2) Decoding function description
 
-Parse reporting messages of device into a standard format defined by ActorCloud
+Parse reporting messages of device into a standard format defined by ActorCloud.
 
 ```python
 def decode(topic, message):
@@ -331,15 +326,15 @@ def decode(topic, message):
     return status_code, result
 ```
 
-Parameter Description
+Parameter Description:
 
 - topic: `bytes` type, message topic
-- message:`bytes` type, message payload
+- message: `bytes` type, message payload
 
-Return description
+Return description:
 
-- status_code:`int` type, status code, `0`: successful, `1`: failed
-- result:`bytes` type, encoding result
+- status_code: `int` type, status code, `0` means success, `1` means failure
+- result: `bytes` type, encoding result
 
 **Example**
 
