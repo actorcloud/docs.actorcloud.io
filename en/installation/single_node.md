@@ -130,7 +130,7 @@ $ cp -r /opt/actorcloud/deploy/rule_engine /opt/pulsar
    $ sudo apt-get install nginx
    ```
 
-#### Server dependent installation
+#### Create the virtualenv 
 
 Installation needs to be performed in the path of `/opt/actorcloud/server/` 
 ```bash
@@ -313,7 +313,7 @@ If ``` apt-get ``` is used to install Nginx, the directory structure is as follo
 
 ## Running
 
-### ActorCloud Rule Engine Running
+### Running ActorCloud Rule Engine
 
 #### Pulsar running
 PulsarActorCloud Rule Engine runs on Pulsar
@@ -323,7 +323,7 @@ $ cd /opt/pulsar
 $ ./bin/pulsar-daemon start standalone
 ```
 
-#### Rule Engine running
+#### Running Rule Engine
 
 ```bash
 # Enter the project running directory
@@ -333,23 +333,23 @@ $ chmod +x stream-admin
 $ sudo ./stream-admin create all
 ```
 
-### ActorCloud Server running
+### Running ActorCloud service
 
 ActorCloud Server runs with [Supervisor](http://supervisord.org/).
 
-#### Server initialization
+#### Initialize the Database
 ```bash
 $ pipenv run flask deploy
 ```
 
-#### Supervisor configuration update
+#### Update Supervisor's configuration
 
 ```bash
 $ sudo cp server/config/actorcloud_supervisord.conf /etc/supervisor/conf.d/
 $ sudo supervisorctl update
 ```
 
-#### Server running status
+#### View the running status of ActorCloud
 
 ```bash
 $ sudo supervisorctl status

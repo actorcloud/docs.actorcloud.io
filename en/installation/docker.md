@@ -173,7 +173,7 @@ configs:
 
 * EMQX and Pulsar are on the same server, using the default configuration without modification
 
-* If not on the same server, it was modified to EMQX intranet address.
+* If not on the same server, it was modified to EMQX internal address.
 
   This address corresponds to the listener.tcp.internal = 127.0.0.1:11883 configuration in emqx.conf of EMQX and needs to be modified synchronously.
   At the same time, in order to guarantee the subscription to the system topic,  the acl.conf of EMQX needs to be modified, and the following line needs to be comment or deleted.
@@ -225,27 +225,27 @@ For configuration file modification (refer to note modification), the following 
 
 ## Running
 
-### ActorCloud Rule Engine running
+### Running ActorCloud Rule Engine
 ```bash
 docker exec -it actorcloud-rule_engine chmod +x /opt/pulsar/rule_engine/stream-admin
 docker exec -it actorcloud-rule_engine /opt/pulsar/rule_engine/stream-admin create all
 ```
 
-### ActorCloud server running
+### Running ActorCloud service
 
 ActorCloud Server runs with [Supervisor](http://supervisord.org/) 
-#### Backend service initialization
+#### Initialize the Database
 ```bash
 $ docker exec -it actorcloud flask deploy
 ```
 
-#### Supervisor configuration update
+#### Update Supervisor's configuration
 ```bash
 $ docker exec -it actorcloud-server cp /opt/actorcloud/server/config/actorcloud_supervisord.conf /etc/supervisor/conf.d/
 $ docker exec -it actorcloud-server supervisorctl update
 ```
 
-#### View ActorCloud running status
+#### View the running status of ActorCloud
 ```bash
 $ docker exec -it actorcloud-server supervisorctl status
 ```

@@ -147,7 +147,7 @@ If you are unable to install EMQ X using EMQ X's image library, you can download
    ```
 
 ## EMQ X configuration
-### Plugin configuration
+### Configuration plugin
 
 The EMQ X plugin configuration file is in the `emqx/etc/plugins` directory.
 
@@ -171,7 +171,7 @@ The EMQ X plugin configuration file is in the `emqx/etc/plugins` directory.
 
   
 
-### Start plugin
+### Enable plugin
 
 Visit the Plugins page in the EMQX Dashboard to start the following three plugins.
 
