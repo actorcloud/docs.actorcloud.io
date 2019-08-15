@@ -358,3 +358,28 @@ $ sudo supervisorctl stop actorcloud:*
 # 重启
 $ sudo supervisorctl restart actorcloud:*
 ```
+
+
+
+### ActorCloud Admin 配置
+
+ActorCloud 作为多租户平台，可以通过 Admin 用户来管理租户以及平台配置信息
+
+#### 登录admin账户
+
+使用 ActorCloud server 配置文件中的 `admin_email`, `admin_password` 登录
+![actorcloud_run_status](_assets/admin_login.png)
+
+#### 系统管理
+
+* 系统信息修改
+  ![actorcloud_run_status](_assets/system_info.png)
+
+* 图标信息修改
+  ![actorcloud_run_status](_assets/logo_info.png)
+
+  
+
+
+
+
