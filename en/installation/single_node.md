@@ -366,3 +366,18 @@ $ sudo supervisorctl stop actorcloud:*
 # restart
 $ sudo supervisorctl restart actorcloud:*
 ```
+
+### ActorCloud Admin Configuration
+  As a multi-tenant platform, ActorCloud manages tenant and platform configuration information through the  user of  Admin
+
+#### Login to account of admin 
+  Log in with `admin_email`, `admin_password` in the ActorCloud server configuration file
+  ![actorcloud_run_status](_assets/en_admin_login.png)
+ 
+#### System Management
+ 
+  * System information modification
+    ![actorcloud_run_status](_assets/en_system_info.png)
+  
+  * Icon information modification
+    ![actorcloud_run_status](_assets/en_logo_info.png)
