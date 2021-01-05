@@ -4,7 +4,7 @@
   "description": "***EMQ* 设备管理平台** **ActorCloud** 正式上线，访问 [https://console.actorcloud.io](https://console.actorcloud.io/) 可进行功能预览、使用体验。",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "gitbook": "^3.2.3",
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-prism": "^2.3.0",
